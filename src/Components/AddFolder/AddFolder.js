@@ -1,5 +1,6 @@
 import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
+import Nav from '../Nav/Nav'
 class AddFolder extends React.Component{
     render(){
         return(

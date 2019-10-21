@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.navLinksContainer {
+    display: flex;
+    border: 1px solid black;
+}
+
+.navPageLinks {
+    float: left;
+    flex: 1;
+    width: fit-content;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navAcctLinks {
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    width: fit-content;
+}
+
+.navLinksContainer ul {
+    display: flex;
+    list-style-type: none;
+    padding: 1px;
+    margin: 1px;
+}
+
+.navLinksContainer ul li {
+    height: fit-content;
+    text-align: center;
+    padding: 2px;
+}

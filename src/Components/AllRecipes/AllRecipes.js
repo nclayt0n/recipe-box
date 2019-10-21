@@ -1,10 +1,11 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
+import Nav from '../Nav/Nav'
 class AllRecipes extends React.Component{
 render(){
     return(
         <div className="allRecipes">
-// recipe component here with filtered recipes
+ recipe component here with filtered recipes
         </div>
     )
 }
