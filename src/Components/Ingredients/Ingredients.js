@@ -1,6 +1,7 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
 import Context from '../../Context'
+const uuidv4 = require('uuid/v4');
 
  //compressArrayFunction found @ https://gist.github.com/ralphcrisostomo/3141412
 function compressArray(original) {
@@ -9,7 +10,7 @@ function compressArray(original) {
  for (let i = 0; i < original.length; i++) {
      let myCount = 0;	
      for (let w = 0; w < copy.length; w++) {
-         if (original[i] == copy[w]) {
+         if (original[i] === copy[w]) {
              myCount++;
              delete copy[w];
          }
@@ -29,8 +30,8 @@ function createIngredientsCount(items){
     let results = ingredients.reduce((a, b)=>a.concat(b), []);
     let newArray = compressArray(results);
     return newArray.map(item=>{
-        return <><label htmlFor={item.value}>{item.value} ({item.count})</label>
-            <input name={item.value} type="checkbox"/><br/>
+        return <><label htmlFor={item.value} key={uuidv4()} >{item.value} ({item.count})</label>
+            <input name={item.value} key={uuidv4()}  type="checkbox"/><br/>
             </>
     })
 }
