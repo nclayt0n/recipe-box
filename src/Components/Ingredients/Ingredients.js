@@ -1,6 +1,7 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
 import Context from '../../Context'
+import './Ingredients.css'
 const uuidv4 = require('uuid/v4');
 
  //compressArrayFunction found @ https://gist.github.com/ralphcrisostomo/3141412
@@ -16,9 +17,11 @@ function compressArray(original) {
          }
      }
      if (myCount > 0) {
-         let a = new Object();
-         a.value = original[i];
-         a.count = myCount;
+         let a={
+             value:original[i],
+             count:myCount,
+         }
+
          compressed.push(a);
      }
  }
@@ -30,9 +33,9 @@ function createIngredientsCount(items){
     let results = ingredients.reduce((a, b)=>a.concat(b), []);
     let newArray = compressArray(results);
     return newArray.map(item=>{
-        return <><label htmlFor={item.value} key={uuidv4()} >{item.value} ({item.count})</label>
+        return <div className="ingredients" key={uuidv4()}><label htmlFor={item.value} key={uuidv4()} >{item.value} ({item.count})</label>
             <input name={item.value} key={uuidv4()}  type="checkbox"/><br/>
-            </>
+            </div>
     })
 }
 class Ingredients extends React.Component{
@@ -41,10 +44,10 @@ class Ingredients extends React.Component{
 let displayedIngredients;
 (this.props.recipes!==undefined)?(displayedIngredients=createIngredientsCount(this.props)):(displayedIngredients=createIngredientsCount(this.context));   
         return(
-        <div className="ingredients">
+        <section className="ingredientsList">
             <h3>Ingredients</h3>
             {displayedIngredients}
-        </div>)
+        </section>)
     }
 }
 export default withRouter(Ingredients)

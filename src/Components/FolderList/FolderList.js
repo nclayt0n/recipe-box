@@ -1,7 +1,7 @@
 import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
-
+import './FolderList.css'
 class FolderList extends React.Component{
     static contextType=Context;
     render(){

@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.ingredients {
+    width: fit-content;
+    padding: 10px;
+}
+
+.ingredientsList {
+    border: 1px solid orange;
+    margin: auto;
+    padding: 20px;
+    width: fit-content;
+}

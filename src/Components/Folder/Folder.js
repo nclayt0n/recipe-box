@@ -1,19 +1,19 @@
 import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
+const uuidv4 = require('uuid/v4');
 
-function findFolder(id,folders,recipes){
+function findFolder(id,folders){
 console.log(id,folders)
 const folder = folders.filter(f => f.id === id);
 let folderName=(folder[0].name) 
-findRecipes(id,recipes)
 return folderName
 }
 function findRecipes(folderId,recipes){
     let recipeList=recipes.filter(r=>r.folderId===folderId);
     console.log(recipeList)
-    return recipeList.map(recipe=><section className="individualFolder">
-        <Link to={`/recipe/${recipe.id}`}>Pumpkin Pie</Link><br/>
+    return recipeList.map(recipe=><section className="individualFolder" key={uuidv4()}>
+        <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link><br/>
         <button><a href="updateFolder.html">Update</a></button>
         <button>Delete</button>
 </section>)
