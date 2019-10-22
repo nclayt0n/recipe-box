@@ -1,6 +1,5 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
-import Nav from '../Nav/Nav'
 class AllRecipes extends React.Component{
 render(){
     return(
