@@ -23,8 +23,8 @@ const STORE = {
             "ingredients": ["apple", "cinammon", "crust"],
             "instructions": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit..",
             "link": "www.notArealSite.com",
-            "created by": "Oprah"
-
+            "createdBy": "Oprah",
+            "measurements": [{ "apples": "1 cup" }, { "crust": "1 crust" }, { "cinammon": "1 tsp" }]
 
         },
         {
@@ -35,17 +35,19 @@ const STORE = {
             "ingredients": ["pumpkin", "nutmeg", "crust"],
             "instructions": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit..",
             "link": "www.notArealSite.com",
-            "created by": "Barb"
+            "created by": "Barb",
+            "measurements": [{ "pumpkin": "1 cup" }, { "crust": "1 crust" }, { "nutmeg": "1 tsp" }]
         },
         {
             "id": "d26e01a6-ffaf-11e8-8eb2-f2801f1b9fd1",
             "name": "Peach Pie",
             "modified": "2018-03-01T00:00:00.000Z",
             "folderId": "b07161a6-ffaf-11e8-8eb2-f2801f1b9fd1",
-            "ingredients": ["peach", "sugar", "crust"],
+            "ingredients": [{ name: "peach", measurement: { quantity: 1, unit: cup } }, { name: "sugar", measurement: { quantity: 1, unit: cup } }, { name: "crust", measurement: { quantity: 1, unit: package } }],
             "instructions": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit..",
             "link": "www.notArealSite.com",
-            "created by": "Mom"
+            "createdBy": "Mom",
+            "measurements": [{ "peach": "1 cup" }, { "crust": "1 crust" }, { "sugar": "1 tsp" }]
         },
         {
             "id": "d26e0570-ffaf-11e8-8eb2-f2801f1b9fd1",
@@ -55,7 +57,8 @@ const STORE = {
             "ingredients": ["sweet potato", "cinammon", "crust"],
             "instructions": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit..",
             "link": "www.notArealSite.com",
-            "created by": "Coolio"
+            "createdBy": "Coolio",
+            "measurements": [{ "sweet potato": "1.5 cup" }, { "crust": "1 crust" }, { "cinammon": "1 tsp" }]
         }
     ]
 

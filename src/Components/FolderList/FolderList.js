@@ -12,6 +12,7 @@ class FolderList extends React.Component{
             <div className='folderList'>
                 <ul className='list'><Link to={'/folder-list'}>FolderList</Link>
                 {folders}
+                    <li><Link to={'/all-recipes'}>All Recipes</Link></li>
                 </ul>
             </div>
         )
