@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
 import './Ingredients.css'
 const uuidv4 = require('uuid/v4');
@@ -45,7 +45,7 @@ let displayedIngredients;
 (this.props.recipes!==undefined)?(displayedIngredients=createIngredientsCount(this.props)):(displayedIngredients=createIngredientsCount(this.context));   
         return(
         <section className="ingredientsList">
-            <h3>Ingredients</h3>
+            <h3><Link to={'/ingredients'}>Ingredients</Link></h3>
             {displayedIngredients}
         </section>)
     }

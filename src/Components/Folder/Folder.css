@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+.folder {
+    border: 1px solid green;
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
+}
+
+.folderRecipeList {
+    padding: 10px;
+    display: flex;
+    width: fit-content;
+}
+
+.buttonBox {
+    margin: auto;
+    padding: 15px;
+    width: fit-content;
+}
+
+h2 {
+    text-align: center;
+}

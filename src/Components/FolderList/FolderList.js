@@ -9,8 +9,8 @@ class FolderList extends React.Component{
             return <li key={folder.id}><Link to={`/folder/${folder.id}`}>{folder.name}</Link></li>
         })
         return(
-            <div className="FolderList">
-                <ul><Link to={'/folder-list'}>FolderList</Link>
+            <div className='folderList'>
+                <ul className='list'><Link to={'/folder-list'}>FolderList</Link>
                 {folders}
                 </ul>
             </div>
