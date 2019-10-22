@@ -29,23 +29,20 @@ function createIngredientsCount(items){
     let results = ingredients.reduce((a, b)=>a.concat(b), []);
     let newArray = compressArray(results);
     return newArray.map(item=>{
-        return <li>{item.value}, {item.count}</li>
+        return <><label htmlFor={item.value}>{item.value} ({item.count})</label>
+            <input name={item.value} type="checkbox"/><br/>
+            </>
     })
 }
-
 class Ingredients extends React.Component{
     static contextType=Context;
-    
     render(){
 let displayedIngredients;
 (this.props.recipes!==undefined)?(displayedIngredients=createIngredientsCount(this.props)):(displayedIngredients=createIngredientsCount(this.context));   
-
-
         return(
         <div className="ingredients">
-            <ul>Ingredients
+            <h3>Ingredients</h3>
             {displayedIngredients}
-            </ul>
         </div>)
     }
 }
