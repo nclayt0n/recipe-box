@@ -28,12 +28,18 @@ this.state={
     recipes:[...STORE.recipes],
   }
   }
+  handleAddRecipe=(recipe)=>{
+    this.setState({
+      recipes:[...this.state.recipes,recipe]
+    })
+  }
   
   render(){
     console.log(this.state)
     const contextValue={
       folders:this.state.folders,
       recipes:this.state.recipes,
+      addRecipe:this.handleAddRecipe,
     }
     return (
     <div className="App">

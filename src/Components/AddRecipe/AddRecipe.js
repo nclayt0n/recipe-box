@@ -56,15 +56,17 @@ class AddRecipe extends React.Component{
         let note=e.target.note.value;
         let link= e.target.link.value;
         let createdBy=e.target.creator.value;
-        let folder=e.target.folder.value;
+        let folderId=e.target.folder.value;
         let recipe={
             title,
             ingredients:this.state.ingredients,
             note,
             link,
             createdBy,
-            folder
+            folderId
         }
+        //here send to api then in that api call then have the this.context.addRecipe
+        this.context.addRecipe(recipe)
     }
 
     render(){
@@ -110,10 +112,12 @@ class AddRecipe extends React.Component{
                             <input type="text" name="link"/><br/>
                             <label htmlFor="creator">Created by:</label>
                             <input type="text" name="creator"/><br/>
-                            <label htmlFor="folder">Folder:</label>
-                            <select name="folder" id="folderSelect">
-                                <option value="folder1">folder 1</option>
-                            </select>
+                            <label htmlFor='folder'>Folder:
+            <select name="folder">
+            {this.context.folders.map((folder)=>{
+             return(<option name="folder" key={folder.id} value={folder.id}>{folder.name}</option>)
+            })}
+            </select></label>
                             <button type="submit">Submit</button>
                     </fieldset>
                 </form>   
