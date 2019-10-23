@@ -1,19 +1,26 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
+import Context from '../../Context'
 
 class AddRecipe extends React.Component{
+    static contextType=Context;
+    handleSubmit=(e,context)=>{
+
+}
     render(){
         return (
             <div className="addRecipe">
-             <form>
+             <form onSubmit={e=>this.handleSubmit(e,this.context)}>
             <fieldset>
             <legend>Add Recipe Form</legend>
             <label htmlFor="title">Title:</label>
             <input type="text" name="title"/><br/>
             <label htmlFor="instructions">Instructions:</label>
             <input type="text" name="instructions"/><br/>
-            <label htmlFor="ingredients">Ingredients:</label>
-            <input type="text" name="ingredients"/><br/>
+            <label htmlFor="ingredientName">Ingredient name:</label>
+            <input type="text" name="ingredientName"/><br/>
+            <label htmlFor="ingredientQuantity">Ingredient Quantity:</label>
+            <input type="text" name="ingredientQuantity"/><br/>
             <label htmlFor="note">Recipe note:</label>
             <input type="text" name="note"/><br/>
             <label htmlFor="link">Link:</label>
