@@ -23,7 +23,8 @@ const STORE = {
             "ingredients": [{ name: "peach", quantity: 1, unit: "cup" }, { name: "sugar", quantity: 1, unit: "cup" }, { name: "crust", quantity: 1, unit: "package" }],
             "instructions": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit..",
             "link": "www.notArealSite.com",
-            "createdBy": "Oprah"
+            "createdBy": "Oprah",
+            "note": "enjoy",
         },
         {
             "id": "d26e0034-ffaf-11e8-8eb2-f2801f1b9fd1",
@@ -33,7 +34,8 @@ const STORE = {
             "ingredients": [{ name: "pumpkin", quantity: 2, unit: "cup" }, { name: "sugar", quantity: 1, unit: "cup" }, { name: "crust", quantity: 1, unit: "package" }],
             "instructions": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit..",
             "link": "www.notArealSite.com",
-            "created by": "Barb"
+            "created by": "Barb",
+            "note": "enjoy",
         },
         {
             "id": "d26e01a6-ffaf-11e8-8eb2-f2801f1b9fd1",
@@ -53,7 +55,8 @@ const STORE = {
             "ingredients": [{ name: "sweet potatoes", quantity: 3, unit: "cup" }, { name: "sugar", quantity: 1.5, unit: "cup" }, { name: "crust", quantity: 1, unit: "package" }],
             "instructions": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit..",
             "link": "www.notArealSite.com",
-            "createdBy": "Coolio"
+            "createdBy": "Coolio",
+            "note": "enjoy",
         }
     ]
 
