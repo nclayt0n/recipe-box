@@ -12,7 +12,6 @@ recipe.folderName=folder[0].name;
 return recipe;
 }
 
-
 class Recipe extends React.Component{
     static contextType=Context;
     createDisplayedIngredients=(ingredients)=>{
@@ -31,7 +30,7 @@ class Recipe extends React.Component{
                {ingredients}
                 <li>Created By: {recipe.createdBy}</li>
                 <li>{recipe.link}</li>
-                <li><Link to={`/${recipe.folderId}`}>{recipe.folderName}</Link></li>
+                <button><Link to={`/folder/${recipe.folderId}`}>{recipe.folderName}</Link></button>
                 </ul>
                 <button><Link to={`/update-recipe/${recipe.id}`}>Update Recipe</Link></button>
                 <button onClick={()=>this.props.history.goBack()}>Back</button>

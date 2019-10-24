@@ -11,7 +11,7 @@ render(){
     let displayedRecipes;
 (this.props.recipes!==undefined)?(displayedRecipes=this.props.recipes):(displayedRecipes=this.context.recipes);
     return(
-        <div className="allRecipes">
+        <div className='allRecipes'>
         <ul>Recipes
  {this.createDisplayedRecipes(displayedRecipes)}
  </ul>

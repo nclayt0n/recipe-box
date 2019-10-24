@@ -34,8 +34,8 @@ function createIngredientsCount(items){
     // let results = ingredients.reduce((a, b)=>a.concat(b), []);
     // let newArray = compressArray(results);
     // return newArray.map(item=>{
-    //     return <div className="ingredients" key={uuidv4()}><label htmlFor={item.value} key={uuidv4()} >{item.value} ({item.count})</label>
-    //         <input name={item.value} key={uuidv4()}  type="checkbox"/><br/>
+    //     return <div className='ingredients' key={uuidv4()}><label htmlFor={item.value} key={uuidv4()} >{item.value} ({item.count})</label>
+    //         <input name={item.value} key={uuidv4()}  type='checkbox'/><br/>
     //         </div>
     // })
     return items.recipes.map(recipes=>recipes.ingredients.map(ingredient=><li  key={uuidv4()}>{ingredient.name}, {ingredient.quantity} {ingredient.unit}</li>))
@@ -47,7 +47,7 @@ class Ingredients extends React.Component{
         let displayedIngredients;
         (this.props.recipes!==undefined)?(displayedIngredients=createIngredientsCount(this.props)):(displayedIngredients=createIngredientsCount(this.context));
         return(
-        <section className="ingredientsList"  key={uuidv4()}>
+        <section className='ingredientsList'  key={uuidv4()}>
             <h3 key={uuidv4()}><Link to={'/ingredients'}  >Ingredients</Link></h3>
             {displayedIngredients}
         </section>)

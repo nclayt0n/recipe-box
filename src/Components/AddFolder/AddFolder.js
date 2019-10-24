@@ -12,13 +12,13 @@ class AddFolder extends React.Component{
     }
     render(){
         return(
-        <div className="AddFolder">
-            <form action="POST"  onSubmit={(e)=>this.handleSubmit(e)}>
+        <div className='AddFolder'>
+            <form action='POST'  onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>
                     <legend>Add Folder Form</legend>
                     <label htmlFor ='folderName'>Folder Name:</label> 
-                    <input type="text" name="folderName"/>
-                    <button type="submit">Submit
+                    <input type='text' name='folderName'/>
+                    <button type='submit'>Submit
                     </button>
                 </fieldset>
             </form>

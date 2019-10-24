@@ -13,7 +13,7 @@ function findRecipes(folderId,recipes){
     let recipeList=recipes.filter(r=>r.folderId===folderId);
     console.log(recipeList)
 
-    return recipeList.map(recipe=><section className="folderRecipeList" key={uuidv4()}>
+    return recipeList.map(recipe=><section className='folderRecipeList' key={uuidv4()}>
         <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link><br/></section>)
 }
 class Folder extends React.Component{

@@ -8,15 +8,15 @@ e.preventDefault()
 class LoginForm extends React.Component{
     render(){
         return(
-            <div className="loginForm">
-              <form id="loginForm">
+            <div className='loginForm'>
+              <form id='loginForm'>
         <fieldset>
             <legend>Login Form</legend>
-            <label for="username">Email:</label>
-            <input type="text" name="username"/>
-            <label for="password">Password:</label>
-            <input type="text" name="password"/>
-            <button onClick={(e)=>this.onsubmit}><a href="usersHomePage.html">Submit</a></button>
+            <label for='username'>Email:</label>
+            <input type='text' name='username'/>
+            <label for='password'>Password:</label>
+            <input type='text' name='password'/>
+            <button onClick={(e)=>this.onsubmit}><a href='usersHomePage.html'>Submit</a></button>
         </fieldset>
 
     </form>  

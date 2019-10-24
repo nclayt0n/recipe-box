@@ -34,7 +34,7 @@ const STORE = {
             "ingredients": [{ name: "pumpkin", quantity: 2, unit: "cup" }, { name: "sugar", quantity: 1, unit: "cup" }, { name: "crust", quantity: 1, unit: "package" }],
             "instructions": "Corporis accusamus placeat quas non voluptas. Harum fugit molestias qui. Velit ex animi reiciendis quasi. Suscipit totam delectus ut voluptas aut qui rerum. Non veniam eius molestiae rerum quam.\n \rUnde qui aperiam praesentium alias. Aut temporibus id quidem recusandae voluptatem ut eum. Consequatur asperiores et in quisquam corporis maxime dolorem soluta. Et officiis id est quia sunt qui iste reiciendis saepe. Ut aut doloribus minus non nisi vel corporis. Veritatis mollitia et molestias voluptas neque aspernatur reprehenderit..",
             "link": "www.notArealSite.com",
-            "created by": "Barb",
+            "createdBy": "Barb",
             "note": "enjoy",
         },
         {

@@ -18,7 +18,7 @@ class HomePage extends React.Component{
             <AddRecipe/>
             <AllRecipes />
             <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
-            <section className="ingredientsList">
+            <section className='ingredientsList'>
             <Link to={'/ingredients'}>Ingredients</Link></section>
            
             <Search/>
