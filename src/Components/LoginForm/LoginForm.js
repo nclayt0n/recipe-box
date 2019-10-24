@@ -16,7 +16,7 @@ class LoginForm extends React.Component{
             <input type='text' name='username'/>
             <label for='password'>Password:</label>
             <input type='text' name='password'/>
-            <button onClick={(e)=>this.onsubmit}><a href='usersHomePage.html'>Submit</a></button>
+            <button onClick={(e)=>this.onsubmit}><a href='home-page'>Submit</a></button>
         </fieldset>
 
     </form>  

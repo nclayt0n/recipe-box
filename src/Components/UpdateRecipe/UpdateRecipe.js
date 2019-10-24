@@ -6,7 +6,10 @@ const uuidv4 = require('uuid/v4');
 function findFolderandRecipe(id,folders,recipes){
 const results=recipes.filter(recipe=>recipe.id===id);
 const recipe=results[0];
-const folder = folders.filter(f =>f.id ===recipe.folderId );
+console.log(folders)
+console.log(results)
+const folder = folders.filter(f=>f.id===recipe.folderId );
+console.log(folder)
 recipe.folderName=folder[0].name;
 return recipe;
 }
@@ -14,6 +17,12 @@ return recipe;
 
 class UpdateRecipe extends React.Component{  
      static contextType=Context; 
+     constructor(){
+         super()
+         this.state={
+             ingredients:[]
+         }
+     }
      handleSubmit=(e,context)=>{
         e.preventDefault()
         // let title=e.target.title.value;
@@ -33,13 +42,12 @@ class UpdateRecipe extends React.Component{
         //here send to api then in that api call then have the this.context.addRecipe
         // this.context.updateRecipe(recipe)
     }
-     createDisplayedIngredients=(ingredients)=>{
-        return ingredients.map(ingredient=>{return<li key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})}
+    createDisplayedIngredients=(ingredients)=>{
+        return ingredients.map(ingredient=>`${ingredient.name} ${ingredient.quantity} ${ingredient.unit}`)}
     render(){
-        console.log(this.props)
         let recipe=findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
         const ingredients=this.createDisplayedIngredients(recipe.ingredients)
-        console.log(recipe)
+        console.log(this.context)
         return (
             <div className='updateRecipe'>
             <h3>Recipe</h3>
@@ -49,7 +57,7 @@ class UpdateRecipe extends React.Component{
                 {recipe.name}
                 </textarea><br/>
                 <label htmlFor='instructions'>
-                INTRUCTIONS: </label><br/>
+                Instructions: </label><br/>
                 <textarea name='instructions'>
                 {recipe.instructions}
                 </textarea><br/>
@@ -58,9 +66,23 @@ class UpdateRecipe extends React.Component{
                 {recipe.createdBy}
                 </textarea><br/>
                 {/* {ingredients} */}
-                {/* <li>{recipe.link}</li> */}
-                {/* <li><Link to={`/${recipe.folderId}`}>{recipe.folderName}</Link></li> */}
-                
+                //make an input with a checkbox with ingredient name. if checked bring up a field to alter that ingredient.
+                <label htmlFor="ingredients">Ingredients:</label><br/>
+                <textarea name='ingredients' readOnly>
+                </textarea><br/>
+                <label htmlFor='link'>Link:</label><br/>
+                <textarea name='link'>
+                {recipe.link}
+                </textarea><br/>
+                <label htmlFor='folder_name'>Choose a different folder to Move recipe: </label> 
+           <br/>
+            <select name="folder">
+            <option name='folder'>{recipe.folderName}</option>
+            {this.context.folders.filter(folder=>folder.id!==recipe.folderId).map((folder)=>{
+             return(<option name="folder" key={folder.id}>{folder.name}</option>)
+            })}
+            {console.log(recipe, this.context.folders)}
+            </select>
                 <button type='submit'>Update</button>
                 </form>
                 <button onClick={()=>this.props.history.goBack()}>Back</button>
