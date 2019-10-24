@@ -11,7 +11,7 @@ import Context from '../../Context'
 class HomePage extends React.Component{
     static contextType=Context;
     render(){
-        console.log(this.context)
+        console.log(this.props)
         return(
         <div>
             <AddFolder/>

@@ -13,12 +13,13 @@ class AddRecipe extends React.Component{
         }    
         
     }
- createDisplayedIngredients=(ingredients)=>{return ingredients.map(ingredient=>{return<><label key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</label><br/></>})}
+    createDisplayedIngredients=(ingredients)=>ingredients.map(ingredient=>{let x=` ${ingredient.name} ${ingredient.quantity} ${ingredient.unit}`
+return x})
     addIngredientInput=()=>{
         let newInput=
             <>
             <label htmlFor="ingredientName">Ingredient name:</label>
-            <input type="text" name="ingredientName"/><br/>
+            <input type="text" name="ingredientName" autofocus/><br/>
             <label htmlFor="ingredientQuantity">Ingredient Quantity:</label>
             <input type="text" name="ingredientQuantity"/><br/>
             <label htmlFor="ingredientUnit">Ingredient Unit:</label>
@@ -95,15 +96,14 @@ class AddRecipe extends React.Component{
                         <label htmlFor="ingredientUnitOther"> Other Unit:</label>
                         <input type="text" name="ingredientUnitOther"/><br/>
                         <button type="submit">Enter</button><br/>
-                        {(this.state.ingredients.length>0)?'Ingredients: ':null}<br/> 
-                        {this.createDisplayedIngredients(this.state.ingredients)}
+                        
                     </fieldset>
                 </form>
                 <form onSubmit={e=>this.handleSubmit(e,this.context)}>
                     <fieldset>
                         <legend>Recipe </legend>
                             <label htmlFor="title">Title:</label>
-                            <input type="text" name="title"/><br/>
+                            <input type="text" name="title"/><br/> 
                             <label htmlFor="instructions">Instructions:</label>
                             <input type="text" name="instructions"/><br/>
                             <label htmlFor="note">Recipe note:</label>
@@ -113,14 +113,18 @@ class AddRecipe extends React.Component{
                             <label htmlFor="creator">Created by:</label>
                             <input type="text" name="creator"/><br/>
                             <label htmlFor='folder'>Folder:
-            <select name="folder">
-            {this.context.folders.map((folder)=>{
-             return(<option name="folder" key={folder.id} value={folder.id}>{folder.name}</option>)
-            })}
-            </select></label>
+                            <select name="folder">
+                                {this.context.folders.map((folder)=>{
+                                return(<option name="folder" key={folder.id} value={folder.id}>{folder.name}</option>)})}
+                            </select>
+                            </label><br/>
+                            {(this.state.ingredients.length>0)?'Ingredients: ':null}<br/> 
+                            <textarea value={this.createDisplayedIngredients(this.state.ingredients)}>
+                            </textarea>
                             <button type="submit">Submit</button>
                     </fieldset>
                 </form>   
+               {(this.props.location.pathname==="/home-page")?null:<button onClick={()=>this.props.history.goBack()}>Cancel</button>} 
             </div>
         )
     }

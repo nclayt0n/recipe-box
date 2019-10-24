@@ -33,13 +33,18 @@ this.state={
       recipes:[...this.state.recipes,recipe]
     })
   }
+  handleAddFolder=(folder)=>{
+    this.setState({
+      folders:[...this.state.folders,folder]
+    })
+  }
   
   render(){
-    console.log(this.state)
     const contextValue={
       folders:this.state.folders,
       recipes:this.state.recipes,
       addRecipe:this.handleAddRecipe,
+      addFolder:this.handleAddFolder,
     }
     return (
     <div className="App">
@@ -59,8 +64,8 @@ this.state={
       <Route path='/folder-list' component={FolderList}/>
       <Route path='/ingredients' component={Ingredients}/>
       <Route path='/search' component={Search}/>
-      <Route path='/update-folder' component={UpdateFolder}/>
-      <Route path='/update-recipe' component={UpdateRecipe}/>
+      <Route path='/update-folder/:id' component={UpdateFolder}/>
+      <Route path='/update-recipe/:id' component={UpdateRecipe}/>
       </Context.Provider>
       <Route path='/' component={NotFound}/>
 </Switch>

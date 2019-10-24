@@ -12,29 +12,29 @@ recipe.folderName=folder[0].name;
 return recipe;
 }
 
+
 class Recipe extends React.Component{
     static contextType=Context;
+    createDisplayedIngredients=(ingredients)=>{
+        return ingredients.map(ingredient=>{return<li key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})}
     render(){
-        //ingredients=[{
-        //    food:"peach",
-        //      measurements:"1 cup"
-        //},]
         let recipe=findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
-        const ingredients=recipe.ingredients.join(',')
+        const ingredients=this.createDisplayedIngredients(recipe.ingredients)
         console.log(recipe)
         //will need to add measurements and break apart into ingrdients
         return(
             <div className='recipe'>
             <h3>Recipe</h3>
-                create all fields that need to be displayed in recipe
                 <ul>{recipe.name}
                 <li>INTRUCTIONS: {recipe.instructions}</li>
-                <li>INGREDIENTS:  {ingredients}</li>
+                <Link to={'/ingredients'}>INGREDIENTS:</Link> 
+               {ingredients}
                 <li>Created By: {recipe.createdBy}</li>
                 <li>{recipe.link}</li>
                 <li><Link to={`/${recipe.folderId}`}>{recipe.folderName}</Link></li>
-                
                 </ul>
+                <button><Link to={`/update-recipe/${recipe.id}`}>Update Recipe</Link></button>
+                <button onClick={()=>this.props.history.goBack()}>Back</button>
             </div>
         )
     }
