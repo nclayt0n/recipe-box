@@ -1,11 +1,11 @@
 import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
+const uuidv4 = require('uuid/v4');
 class AllRecipes extends React.Component{
     static contextType=Context;
     createDisplayedRecipes(recipes){
-        console.log(recipes)
-        return recipes.map(recipe=><li><Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link></li>)
+        return recipes.map(recipe=><li key={uuidv4()}><Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link></li>)
     }
 render(){
     let displayedRecipes;

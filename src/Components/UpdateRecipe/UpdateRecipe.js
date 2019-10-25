@@ -6,10 +6,7 @@ const uuidv4 = require('uuid/v4');
 function findFolderandRecipe(id,folders,recipes){
 const results=recipes.filter(recipe=>recipe.id===id);
 const recipe=results[0];
-console.log(folders)
-console.log(results)
 const folder = folders.filter(f=>f.id===recipe.folderId );
-console.log(folder)
 recipe.folderName=folder[0].name;
 return recipe;
 }
@@ -23,13 +20,12 @@ class UpdateRecipe extends React.Component{
              ingredients:[]
          }
      }
-     handleSubmit=(e,context)=>{
+     handleSubmit=(e)=>{
         e.preventDefault()
         // let title=e.target.title.value;
         // let note=e.target.note.value;
         // let link= e.target.link.value;
         let createdBy=e.target.createdBy.value;
-        console.log(createdBy)
         // let folderId=e.target.folder.value;
         // let recipe={
         //     title,
@@ -81,7 +77,6 @@ class UpdateRecipe extends React.Component{
             {this.context.folders.filter(folder=>folder.id!==recipe.folderId).map((folder)=>{
              return(<option name="folder" key={folder.id}>{folder.name}</option>)
             })}
-            {console.log(recipe, this.context.folders)}
             </select>
                 <button type='submit'>Update</button>
                 </form>

@@ -19,7 +19,6 @@ class Recipe extends React.Component{
     render(){
         let recipe=findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
         const ingredients=this.createDisplayedIngredients(recipe.ingredients)
-        console.log(recipe)
         //will need to add measurements and break apart into ingrdients
         return(
             <div className='recipe'>

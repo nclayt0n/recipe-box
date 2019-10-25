@@ -2,6 +2,7 @@ import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
 import './AddRecipe.css'
+import ValidationError from '../../Validation/ValidationError';
 const uuidv4 = require('uuid/v4');
 
 class AddRecipe extends React.Component{
@@ -9,7 +10,10 @@ class AddRecipe extends React.Component{
     constructor(){
         super()
         this.state={
-            ingredients:[]
+            ingredients:[],
+            nameError:'',
+            ingredientsError:'',
+            instructionsError:'',
         }    
         
     }
@@ -51,16 +55,17 @@ return x})
         })
     }
 
-    handleSubmit=(e,context)=>{
+    handleSubmit=(e)=>{
         e.preventDefault()
-        let title=e.target.title.value;
+        let name=e.target.name.value;
         let note=e.target.note.value;
         let link= e.target.link.value;
         let createdBy=e.target.createdBy.value;
         let folderId=e.target.folder.value;
         let instructions=e.target.instructions.value;
         let recipe={
-            title,
+            id:uuidv4(),
+            name,
             instructions,
             ingredients:this.state.ingredients,
             note,
@@ -68,10 +73,32 @@ return x})
             createdBy,
             folderId
         }
+        this.validateRecipe(recipe)
         //here send to api then in that api call then have the this.context.addRecipe
-        this.context.addRecipe(recipe)
+    }   
+    validateRecipe=(recipe)=>{
+        if(recipe.name.length<3){
+            this.setState({nameError: '*Required & Must be atleast 3 characters'
+        }) 
+        }else{this.setState({nameError:''})}
+        if(recipe.ingredients.length<1){
+            this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'})
+        }
+        else{this.setState({ingredientsError:''})}
+        if(recipe.instructions.length<1){
+            this.setState({instructionsError:'*Required & Must add instruction'})
+            
+        }
+        else{this.setState({instructionsError:''})}
+       
+        this.recipeCall(recipe)
     }
-
+    recipeCall=(recipe)=>{
+        //will post to DB and also to context
+        if(recipe.name.length===0 && recipe.ingredients.length===0 && recipe.instructions.length ===0){return null}else{
+            this.context.addRecipe(recipe)
+            this.props.history.push('/home-page')}
+    }
     render(){
         return (
             <div className='addRecipe'>
@@ -101,13 +128,15 @@ return x})
                         
                     </fieldset>
                 </form>
-                <form onSubmit={e=>this.handleSubmit(e,this.context)}>
+                <form onSubmit={e=>this.handleSubmit(e)}>
                     <fieldset>
                         <legend>Recipe </legend>
-                            <label htmlFor='title'>Title:</label>
-                            <input type='text' name='title'/><br/> 
+                            <label htmlFor='name'>Name:</label>
+                            <input type='text' name='name'/><br/> 
+                            <ValidationError Namemessage={this.state.nameError}/>
                             <label htmlFor='instructions'>Instructions:</label>
                             <textarea name='instructions' placeholder='add instructions'></textarea><br/>
+                            <ValidationError Instructionsmessage={this.state.instructionsError}/>
                             <label htmlFor='note'>Recipe note:</label>
                             <input type='text' name='note'/><br/>
                             <label htmlFor='link'>Link:</label>
@@ -123,7 +152,7 @@ return x})
                             {(this.state.ingredients.length>0)?'Ingredients: ':null}<br/> 
                             {(this.state.ingredients.length>0)?<textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly>
                             </textarea>:null}
-                        
+                            <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
                             <button type='submit'>Submit</button>
                     </fieldset>
                 </form>   

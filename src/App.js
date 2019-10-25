@@ -38,6 +38,16 @@ this.state={
       folders:[...this.state.folders,folder]
     })
   }
+  handleUpdateRecipe=(recipe)=>{
+    this.setState({
+        recipes:[...this.state.recipes.filter(r=>r.id!==recipe.id),recipe]
+    })
+  }
+  handleUpdateFolder=(folder)=>{
+    this.setState({
+        folders:[...this.state.folders.filter(f=>f.id!==folder.id),folder]
+    })
+  }
   
   render(){
     const contextValue={
@@ -45,9 +55,11 @@ this.state={
       recipes:this.state.recipes,
       addRecipe:this.handleAddRecipe,
       addFolder:this.handleAddFolder,
+      updateRecipe:this.handleUpdateRecipe,
+      updateFolder:this.handleUpdateFolder,
     }
     return (
-    <div className="App">
+    <div className='App'>
     <Header/>
     <Nav/>
     <Switch>

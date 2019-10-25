@@ -29,7 +29,6 @@ function compressArray(original) {
 };
 
 function createIngredientsCount(items){
-    console.log(items)
     // const ingredients=[...items.recipes.map(recipe=> recipe.ingredients)]
     // let results = ingredients.reduce((a, b)=>a.concat(b), []);
     // let newArray = compressArray(results);
