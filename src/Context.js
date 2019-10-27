@@ -5,8 +5,10 @@ const Context = React.createContext({
     recipes: [],
     addRecipe: () => {},
     addFolder: () => {},
-    updateRecipe:()=>{},
-    updateFolder:()=>{},
+    updateRecipe: () => {},
+    updateFolder: () => {},
+    deleteRecipe: () => {},
+    deleteFolder: () => {},
 
 })
 export default Context

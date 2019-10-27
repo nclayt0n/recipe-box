@@ -24,7 +24,8 @@ class Folder extends React.Component{
             <button onClick={()=>this.props.history.goBack()}>{folderName}</button>
             {recipeList}
             <div className='buttonBox'><button><Link to={`/update-folder/${this.props.match.params.id}`}>Update Folder</Link></button>
-            <button><Link to={'/add-recipe'}>Add Recipe</Link></button></div>
+            <button><Link to={'/add-recipe'}>Add Recipe</Link></button>
+            <button onClick={()=>this.context.deleteFolder(this.props.match.params.id,this.props)}>Delete Folder</button></div>
             
             </div>
         )

@@ -49,6 +49,21 @@ this.state={
         folders:[...this.state.folders.filter(f=>f.id!==folder.id),folder]
     })
   }
+  handleDeleteRecipe=(recipeId,props)=>{
+    console.log(props)
+    props.history.push('/folder-list')
+    this.setState({
+            recipes: this.state.recipes.filter(recipe => recipe.id !== recipeId)
+        });
+  }
+  handleDeleteFolder=(folderId,props)=>{
+    console.log(props)
+    props.history.push('/home-page')
+    this.setState({
+            folders: this.state.folders.filter(folder => folder.id !== folderId)
+        });
+  }
+
   
   render(){
     const contextValue={
@@ -58,6 +73,8 @@ this.state={
       addFolder:this.handleAddFolder,
       updateRecipe:this.handleUpdateRecipe,
       updateFolder:this.handleUpdateFolder,
+      deleteRecipe:this.handleDeleteRecipe,
+      deleteFolder:this.handleDeleteFolder,
     }
     return (
     <div className='App'>
