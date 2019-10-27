@@ -24,8 +24,8 @@ class AddFolder extends React.Component{
         console.log(style)
         return(
             <>
-             {(this.props.location.pathname==='/home-page')?'null':<Header/>}
-        {(this.props.location.pathname==='/home-page')?'null':<Nav/>}
+             {(this.props.location.pathname==='/home-page')?'':<Header/>}
+        {(this.props.location.pathname==='/home-page')?'':<Nav/>}
         <div className='addFolder' style={style.addFDivStyle} >
             <form action='POST'  onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>

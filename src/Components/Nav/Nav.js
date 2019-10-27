@@ -11,7 +11,6 @@ class Nav extends React.Component{
                <li><Link to={'/ingredients'}>Ingredients</Link></li>
                <li><Link to={'/add-recipe'}>Add Recipe</Link></li>
                <li><Link to={'/add-folder'}>Add Folder</Link></li>
-               <li><Link to={'/search'}>Search</Link></li>
            </ul> 
            <ul className='navAcctLinks'>
             <li><Link to={'/register'}>Create New Account</Link></li>
