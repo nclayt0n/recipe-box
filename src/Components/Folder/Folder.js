@@ -23,7 +23,7 @@ class Folder extends React.Component{
            <div className='folder'>
             <button onClick={()=>this.props.history.goBack()}>{folderName}</button>
             {recipeList}
-            <div className='buttonBox'><button><Link to={'/update-folder'}>Update Folder</Link></button>
+            <div className='buttonBox'><button><Link to={`/update-folder/${this.props.match.params.id}`}>Update Folder</Link></button>
             <button><Link to={'/add-recipe'}>Add Recipe</Link></button></div>
             
             </div>

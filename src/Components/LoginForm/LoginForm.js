@@ -12,10 +12,10 @@ class LoginForm extends React.Component{
               <form id='loginForm'>
         <fieldset>
             <legend>Login Form</legend>
-            <label for='username'>Email:</label>
-            <input type='text' name='username'/>
-            <label for='password'>Password:</label>
-            <input type='text' name='password'/>
+            <label for='username'>Email:
+            <input type='text' name='username'/></label>
+            <label for='password'>Password:
+            <input type='text' name='password'/></label>
             <button onClick={(e)=>this.onsubmit}><a href='home-page'>Submit</a></button>
         </fieldset>
 

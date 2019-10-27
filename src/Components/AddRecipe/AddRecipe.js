@@ -22,11 +22,11 @@ return x})
     addIngredientInput=()=>{
         let newInput=
             <>
-            <label htmlFor='ingredientName'>Ingredient name:</label>
-            <input type='text' name='ingredientName' autofocus/><br/>
-            <label htmlFor='ingredientQuantity'>Ingredient Quantity:</label>
-            <input type='text' name='ingredientQuantity'/><br/>
-            <label htmlFor='ingredientUnit'>Ingredient Unit:</label>
+            <label htmlFor='ingredientName'>Ingredient name:
+            <input type='text' name='ingredientName' autofocus/></label><br/>
+            <label htmlFor='ingredientQuantity'>Ingredient Quantity:
+            <input type='text' name='ingredientQuantity'/></label><br/>
+            <label htmlFor='ingredientUnit'>Ingredient Unit:
             <select name='ingredientUnit' >
             <option value=''></option>
             <option value='Cup'>Cup</option>
@@ -38,9 +38,9 @@ return x})
             <option value='Pint'>Pint</option>
             <option value='Bundle'>Bundle</option>
             <option value='Other'>Other</option>
-                </select>
-            <label htmlFor='ingredientUnitOther'> Other Unit:</label>
-            <input type='text' name='ingredientUnitOther'/><br/>
+                </select></label>
+            <label htmlFor='ingredientUnitOther'> Other Unit:
+            <input type='text' name='ingredientUnitOther'/></label><br/>
             </>
         return newInput
     }
@@ -105,11 +105,11 @@ return x})
                 <h3><Link to={'/add-recipe'}>Add Recipe Form</Link> </h3>
                 <form onSubmit={e=>this.addIngredient(e)}>
                     <fieldset>
-                        <legend>Add Each Ingredient Before Submitting </legend><label htmlFor='ingredientName'>Ingredient Name:</label>
-                        <input type='text' name='ingredientName'/><br/>
-                        <label htmlFor='ingredientQuantity'>Ingredient Quantity:</label>
-                        <input type='text' name='ingredientQuantity'/><br/>
-                        <label htmlFor='ingredientUnit'>Ingredient Unit: </label>
+                        <legend>Add Each Ingredient Before Submitting </legend><label htmlFor='ingredientName'>Ingredient Name:
+                        <input type='text' name='ingredientName'/></label><br/>
+                        <label htmlFor='ingredientQuantity'>Ingredient Quantity:
+                        <input type='text' name='ingredientQuantity'/></label><br/>
+                        <label htmlFor='ingredientUnit'>Ingredient Unit: 
                         <select name='ingredientUnit' >
                             <option value=''></option>
                             <option value='Cup'>Cup</option>
@@ -121,28 +121,28 @@ return x})
                             <option value='Pint'>Pint</option>
                             <option value='Bundle'>Bundle</option>
                             <option value='Other'>Other</option>
-                        </select>
-                        <label htmlFor='ingredientUnitOther'> Other Unit:</label>
+                        </select></label>
+                        <label htmlFor='ingredientUnitOther'> Other Unit:
                         <input type='text' name='ingredientUnitOther'/><br/>
-                        <button type='submit'>Enter</button><br/>
+                        <button type='submit'>Enter</button></label><br/>
                         
                     </fieldset>
                 </form>
                 <form onSubmit={e=>this.handleSubmit(e)}>
                     <fieldset>
                         <legend>Recipe </legend>
-                            <label htmlFor='name'>Name:</label>
-                            <input type='text' name='name'/><br/> 
+                            <label htmlFor='name'>Name:
+                            <input type='text' name='name'/></label><br/> 
                             <ValidationError Namemessage={this.state.nameError}/>
-                            <label htmlFor='instructions'>Instructions:</label>
-                            <textarea name='instructions' placeholder='add instructions'></textarea><br/>
+                            <label htmlFor='instructions'>Instructions:
+                            <textarea name='instructions' placeholder='add instructions'></textarea></label><br/>
                             <ValidationError Instructionsmessage={this.state.instructionsError}/>
-                            <label htmlFor='note'>Recipe note:</label>
-                            <input type='text' name='note'/><br/>
-                            <label htmlFor='link'>Link:</label>
-                            <input type='text' name='link'/><br/>
-                            <label htmlFor='createdBy'>Created by:</label>
-                            <input type='text' name='createdBy'/><br/>
+                            <label htmlFor='note'>Recipe note:
+                            <input type='text' name='note'/></label><br/>
+                            <label htmlFor='link'>Link:
+                            <input type='text' name='link'/></label><br/>
+                            <label htmlFor='createdBy'>Created by:
+                            <input type='text' name='createdBy'/></label><br/>
                             <label htmlFor='folder'>Folder:
                             <select name='folder'>
                                 {this.context.folders.map((folder)=>{
