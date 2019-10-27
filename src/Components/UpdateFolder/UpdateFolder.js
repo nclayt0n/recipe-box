@@ -18,6 +18,7 @@ class UpdateFolder extends React.Component{
     handleSubmit=(e)=>{
         const updatedName=(e.target.updatedName.value)
         if(updatedName.length===0){this.setState({nameError:'New name must be 3 characters, or cancel to go back.'})}else{this.context.updateFolder({name:updatedName,id:this.props.match.params.id,user_id:2})}
+        this.props.history.goBack()
     }
     render(){
         console.log(this.props)
@@ -28,7 +29,6 @@ class UpdateFolder extends React.Component{
                     <legend>Update Folder: {this.findFolderName()}</legend>
                     <label htmlFor ='updatedName'>Update Name: <br/>
                     <input type='text' name='updatedName'/></label><br/>
-                    <ValidationError Namemessage={this.state.nameError}/>
                     <button type='submit'>Submit
                     </button><br/><button onClick={()=>this.props.history.goBack()}>Cancel</button>
                 </fieldset>

@@ -42,6 +42,7 @@ this.state={
     this.setState({
         recipes:[...this.state.recipes.filter(r=>r.id!==recipe.id),recipe]
     })
+    console.log('success')
   }
   handleUpdateFolder=(folder)=>{
     this.setState({

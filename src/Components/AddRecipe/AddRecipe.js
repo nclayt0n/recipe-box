@@ -17,8 +17,8 @@ class AddRecipe extends React.Component{
         }    
         
     }
-    createDisplayedIngredients=(ingredients)=>ingredients.map(ingredient=>{let x=` ${ingredient.name} ${ingredient.quantity} ${ingredient.unit}`
-return x})
+    createDisplayedIngredients=(ingredients)=>ingredients.map(ingredient=>{let i=` ${ingredient.name} ${ingredient.quantity} ${ingredient.unit}`
+    return i})
     addIngredientInput=()=>{
         let newInput=
             <>
@@ -27,17 +27,17 @@ return x})
             <label htmlFor='ingredientQuantity'>Ingredient Quantity:
             <input type='text' name='ingredientQuantity'/></label><br/>
             <label htmlFor='ingredientUnit'>Ingredient Unit:
-            <select name='ingredientUnit' >
-            <option value=''></option>
-            <option value='Cup'>Cup</option>
-            <option value='Pinch'>Pinch</option>
-            <option value='Package'>Package</option>
-            <option value='Teaspoon'>Teaspoon</option>
-            <option value='Tablespoon'>Tablespoon</option>
-            <option value='Ounce'>Ounce</option>
-            <option value='Pint'>Pint</option>
-            <option value='Bundle'>Bundle</option>
-            <option value='Other'>Other</option>
+                <select name='ingredientUnit' >
+                    <option value=''></option>
+                    <option value='Cup'>Cup</option>
+                    <option value='Pinch'>Pinch</option>
+                    <option value='Package'>Package</option>
+                    <option value='Teaspoon'>Teaspoon</option>
+                    <option value='Tablespoon'>Tablespoon</option>
+                    <option value='Ounce'>Ounce</option>
+                    <option value='Pint'>Pint</option>
+                    <option value='Bundle'>Bundle</option>
+                    <option value='Other'>Other</option>
                 </select></label>
             <label htmlFor='ingredientUnitOther'> Other Unit:
             <input type='text' name='ingredientUnitOther'/></label><br/>
@@ -49,7 +49,7 @@ return x})
         let quantity;
         (e.target.ingredientQuantity.value.length===0)?quantity=1:quantity=e.target.ingredientQuantity.value;
         let ingredientUnit;
-        (e.target.ingredientUnit.value==='Other')? ingredientUnit=e.target.ingredientUnitOther.value:ingredientUnit=e.target.ingredientUnit.value;
+        (e.target.ingredientUnit.value==='other')? ingredientUnit=e.target.ingredientUnitOther.value:ingredientUnit=e.target.ingredientUnit.value;
         this.setState({
         ingredients:[...this.state.ingredients,{name:e.target.ingredientName.value,quantity,unit:ingredientUnit}]
         })
@@ -112,15 +112,15 @@ return x})
                         <label htmlFor='ingredientUnit'>Ingredient Unit: 
                         <select name='ingredientUnit' >
                             <option value=''></option>
-                            <option value='Cup'>Cup</option>
-                            <option value='Pinch'>Pinch</option>
-                            <option value='Package'>Package</option>
-                            <option value='Teaspoon'>Teaspoon</option>
-                            <option value='Tablespoon'>Tablespoon</option>
-                            <option value='Ounce'>Ounce</option>
-                            <option value='Pint'>Pint</option>
-                            <option value='Bundle'>Bundle</option>
-                            <option value='Other'>Other</option>
+                            <option value='cup'>Cup</option>
+                            <option value='pinch'>Pinch</option>
+                            <option value='package'>Package</option>
+                            <option value='teaspoon'>Teaspoon</option>
+                            <option value='tablespoon'>Tablespoon</option>
+                            <option value='ounce'>Ounce</option>
+                            <option value='pint'>Pint</option>
+                            <option value='bundle'>Bundle</option>
+                            <option value='other'>Other</option>
                         </select></label>
                         <label htmlFor='ingredientUnitOther'> Other Unit:
                         <input type='text' name='ingredientUnitOther'/><br/>
