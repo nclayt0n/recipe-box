@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+footer {
+    border: 1px solid black;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: block;
+    background-color: var(--oliveDrab);
+    /* background-image: url('../Header/headerImages/spices.jpg'); */
+    background-size: 100%;
+    background-position: center;
+}
+
+h3 {
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+    color: var(--beige)
+}

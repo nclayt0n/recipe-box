@@ -20,6 +20,7 @@ import NotFound from './Components/NotFound/NotFound';
 import Nav from './Components/Nav/Nav';
 import STORE from './STORE/STORE'
 import Context from './Context'
+import './App.css'
 class App extends React.Component {
   constructor(){
     super()
@@ -76,7 +77,7 @@ this.state={
       deleteFolder:this.handleDeleteFolder,
     }
     return (
-    <div className='App'>
+    <div className='App' >
       <Context.Provider value={contextValue}>
         <Switch>    
           <Route exact path='/' component={LandingPage}/>

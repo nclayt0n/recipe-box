@@ -3,10 +3,24 @@
 }
 
 .header {
+    height: 50px;
     display: flex;
     justify-content: center;
+    /* background-image: url('./headerImages/spices.jpg'); */
+    background-size: 100%;
+    background-position: center;
+    background-color: #476B30;
 }
 
 img {
     width: 125px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+.headerLink {
+    color: var(--steelBlue);
+    background-color: rgba(71, 107, 48, 0.623)
 }

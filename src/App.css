@@ -1,0 +1,21 @@
+:root {
+    --yellowish: #DDB372;
+    --redish: #98503C;
+    --brownish: #AD8A74;
+    --steelBlue: #C6D2E0;
+    --rose: #9C4F4E;
+    --tan: #C49179;
+    --olive: #476B30;
+    --black: #1C1B1C;
+    --grayish: #6A614F;
+    --seaGreen: #799D5E;
+    --lightGreen: #94E474;
+    --oliveDrab: #4D9D2C;
+    --beige: #EAF8E4;
+    background-size: 100%;
+    background-color: var(--beige);
+}
+
+* {
+    border-radius: 5px;
+}

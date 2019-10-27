@@ -7,9 +7,9 @@ class LandingPage extends React.Component{
             <div className='landingPage'>
                 <div className='greeting'>
                    
-                    <h4>Bring joy back to the kitchen </h4>
-                    <button><Link to='/register'>Create User</Link></button>
-                    <button><Link to='login'>Login</Link></button>
+                    <h4></h4>
+                    <div className='landingPageLinkBox'><button><Link to='/register' className='landingButtons'>Create User</Link></button>
+                    <button><Link  to='login' className='landingButtons'>Login</Link></button></div>
                 </div>
             </div>
         )
