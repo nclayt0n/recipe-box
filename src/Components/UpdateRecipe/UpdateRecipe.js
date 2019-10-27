@@ -2,6 +2,8 @@ import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
 import moment from 'moment'
+import Header from '../Header/Header'
+import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
 const uuidv4 = require('uuid/v4');
 
@@ -160,7 +162,9 @@ class UpdateRecipe extends React.Component{
     render(){
         let recipe=this.findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
         const displayedIngredients= this.createIngredientFields(this.state)
-        return (
+        return (<>
+         <Header/>
+         <Nav/>
             <div className='updateRecipe'>
             <h3>Recipe</h3> <button type='button' onClick={()=>this.updateIngredient(recipe)}>{(this.state.ingredients.length===0)?('Update Ingredients'):('Reset Ingredients')}</button> 
             <form onSubmit={e=>this.handleSubmit(e,recipe)}>
@@ -198,7 +202,7 @@ class UpdateRecipe extends React.Component{
                 </form> 
                 
                 <button onClick={()=>this.props.history.goBack()}>Cancel</button>
-            </div>
+            </div></>
         )
     }
 }

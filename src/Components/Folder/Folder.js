@@ -2,6 +2,8 @@ import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
 import './Folder.css'
+import Nav from '../Nav/Nav'
+import Header from '../Header/Header'
 const uuidv4 = require('uuid/v4');
 
 function findFolder(id,folders){
@@ -20,6 +22,9 @@ class Folder extends React.Component{
         let folderName=findFolder(this.props.match.params.id,this.context.folders,this.context.recipes);
         let recipeList=findRecipes(this.props.match.params.id,this.context.recipes);
         return(
+            <>
+             <Header/>
+        <Nav/>
            <div className='folder'>
             <button onClick={()=>this.props.history.goBack()}>{folderName}</button>
             {recipeList}
@@ -27,7 +32,7 @@ class Folder extends React.Component{
             <button><Link to={'/add-recipe'}>Add Recipe</Link></button>
             <button onClick={()=>this.context.deleteFolder(this.props.match.params.id,this.props)}>Delete Folder</button></div>
             
-            </div>
+            </div></>
         )
     }
 }

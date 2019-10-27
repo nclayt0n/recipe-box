@@ -1,6 +1,8 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
 import Context from '../../Context'
+import Header from '../Header/Header'
+import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
 const uuidv4 = require('uuid/v4');
 
@@ -22,7 +24,9 @@ class UpdateFolder extends React.Component{
     }
     render(){
         console.log(this.props)
-        return(
+        return(<>
+         <Header/>
+       <Nav/>
         <div className='AddFolder'>
             <form action='POST'  onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>
@@ -33,7 +37,7 @@ class UpdateFolder extends React.Component{
                     </button><br/><button onClick={()=>this.props.history.goBack()}>Cancel</button>
                 </fieldset>
             </form>
-        </div>
+        </div></>
         )
     }
 }

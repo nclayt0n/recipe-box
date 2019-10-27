@@ -2,6 +2,8 @@ import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
 import './Ingredients.css'
+import Header from '../Header/Header';
+import Nav from '../Nav/Nav'
 const uuidv4 = require('uuid/v4');
 
  //compressArrayFunction found @ https://gist.github.com/ralphcrisostomo/3141412
@@ -42,14 +44,16 @@ function createIngredientsCount(items){
 
 class Ingredients extends React.Component{
     static contextType=Context;
-    render(){
+    render(){ 
         let displayedIngredients;
         (this.props.recipes!==undefined)?(displayedIngredients=createIngredientsCount(this.props)):(displayedIngredients=createIngredientsCount(this.context));
-        return(
+        return(<>
+        <Header/>
+        <Nav/>
         <section className='ingredientsList'  key={uuidv4()}>
             <h3 key={uuidv4()}><Link to={'/ingredients'}  >Ingredients</Link></h3>
             {displayedIngredients}
-        </section>)
+        </section></>)
     }
 }
 export default withRouter(Ingredients)

@@ -3,6 +3,8 @@ import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
 import './AddRecipe.css'
 import ValidationError from '../../Validation/ValidationError';
+import Header from '../Header/Header'
+import Nav from '../Nav/Nav'
 const uuidv4 = require('uuid/v4');
 
 class AddRecipe extends React.Component{
@@ -100,7 +102,9 @@ class AddRecipe extends React.Component{
             this.props.history.push('/home-page')}
     }
     render(){
-        return (
+        return (<>
+        {(this.props.location.pathname==='/home-page')?'':<Header/>}
+        {(this.props.location.pathname==='/home-page')?'':<Nav/>}
             <div className='addRecipe'>
                 <h3><Link to={'/add-recipe'}>Add Recipe Form</Link> </h3>
                 <form onSubmit={e=>this.addIngredient(e)}>
@@ -157,7 +161,7 @@ class AddRecipe extends React.Component{
                     </fieldset>
                 </form>   
                {(this.props.location.pathname==='/home-page')?null:<button onClick={()=>this.props.history.goBack()}>Cancel</button>} 
-            </div>
+            </div></>
         )
     }
 }

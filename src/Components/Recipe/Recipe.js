@@ -1,8 +1,9 @@
 import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
+import Header from '../Header/Header'
+import Nav from '../Nav/Nav'
 const uuidv4 = require('uuid/v4');
-
 
 function findFolderandRecipe(id,folders,recipes){
 const results=recipes.filter(recipe=>recipe.id===id);
@@ -21,7 +22,9 @@ class Recipe extends React.Component{
         let recipe=findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
         const ingredients=this.createDisplayedIngredients(recipe.ingredients)
         //will need to add measurements and break apart into ingrdients
-        return(
+        return(<>
+         <Header/>
+         <Nav/>
             <div className='recipe'>
             <h3>Recipe</h3>
                 <ul>{recipe.name}
@@ -35,7 +38,7 @@ class Recipe extends React.Component{
                 <button><Link to={`/update-recipe/${recipe.id}`}>Update Recipe</Link></button>
                 <button onClick={()=>this.props.history.goBack()}>Back</button><br/>
                 <button type='button' onClick={()=>this.context.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
-            </div>
+            </div></>
         )
     }
 }

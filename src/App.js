@@ -63,9 +63,8 @@ this.state={
             folders: this.state.folders.filter(folder => folder.id !== folderId)
         });
   }
-
-  
   render(){
+    console.log(this.props)
     const contextValue={
       folders:this.state.folders,
       recipes:this.state.recipes,
@@ -78,31 +77,30 @@ this.state={
     }
     return (
     <div className='App'>
-    <Header/>
-    <Nav/>
-    <Switch>
-      <Route exact path='/' component={LandingPage}/>
-      <Route path='/login' component={LoginForm}/>
-      <Route path='/register' component={RegistrationForm}/>
       <Context.Provider value={contextValue}>
-      <Route path='/home-page' component={HomePage}/>
-      <Route path='/add-folder' component={AddFolder}/>
-      <Route path='/add-recipe' component={AddRecipe}/>
-      <Route path='/all-recipes' component={AllRecipes}/>
-      <Route path='/recipe/:id' component={Recipe}/>
-      <Route path='/folder/:id' component={Folder}/>
-      <Route path='/folder-list' component={FolderList}/>
-      <Route path='/ingredients' component={Ingredients}/>
-      <Route path='/search' component={Search}/>
-      <Route path='/update-folder/:id' component={UpdateFolder}/>
-      <Route path='/update-recipe/:id' component={UpdateRecipe}/>
+        <Switch>    
+          <Route exact path='/' component={LandingPage}/>
+          <Route path='/login' component={LoginForm}/>
+          <Route path='/register' component={RegistrationForm}/>
+      
+          <Route path='/home-page' component={HomePage}/>
+          <Route path='/add-folder' component={AddFolder}/>
+          <Route path='/add-recipe' component={AddRecipe}/>
+          <Route path='/all-recipes' component={AllRecipes}/>
+          <Route path='/recipe/:id' component={Recipe}/>
+          <Route path='/folder/:id' component={Folder}/>
+          <Route path='/folder-list' component={FolderList}/>
+          <Route path='/ingredients' component={Ingredients}/>
+          <Route path='/search' component={Search}/>
+          <Route path='/update-folder/:id' component={UpdateFolder}/>
+          <Route path='/update-recipe/:id' component={UpdateRecipe}/>
+          <Route path='/header' component={Header}/>
+          <NotFound/>
+        </Switch>
       </Context.Provider>
-      <Route path='/' component={NotFound}/>
-</Switch>
-     <Footer/>
+      <Footer/>
     </div>
-  );
-  }
+  );}
 }
 
 export default App;

@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.landingPage {
+    height: 300px;
+    background-image: url(./LandingImage/RecipeBox.png);
+    background-position: center;
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: fixed;
+    top: 0;
+}
+
+.greeting {
+    width: fit-content;
+    padding: 0px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+h4 {
+    margin-top: 150px;
+}
