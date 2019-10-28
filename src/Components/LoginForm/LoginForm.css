@@ -1,10 +1,13 @@
 .loginForm {
-    margin: 60px;
-    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    width: 500px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     background-color: white;
     border: 1px solid var(--gray);
+    flex-direction: column;
 }
 
 .loginForm fieldset {
@@ -12,7 +15,7 @@
 }
 
 .loginForm input {
-    width: 90%;
+    width: 40%;
     margin: 5px;
     padding: 5px;
     justify-content: center;
