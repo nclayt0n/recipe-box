@@ -22,12 +22,16 @@ class UpdateRecipe extends React.Component{
      }
      validateRecipe=(updatedRecipe)=>{
          console.log(updatedRecipe)
+         console.log(this.state)
         if(updatedRecipe.name.length<3){
             this.setState({nameError: '*Required & Must be atleast 3 characters'
         }) 
         }else{this.setState({nameError:''})}
         if(updatedRecipe.ingredients.length<1){
             this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'})
+        }
+        if( updatedRecipe.ingredients!==undefined||updatedRecipe.ingredients[0].name.length){
+            this.setState({ingredientsError:'*Required & Must add at least 1 ingredient name with 3 characters'})
         }
         else{this.setState({ingredientsError:''})}
         if(updatedRecipe.instructions.length<1){
@@ -39,7 +43,8 @@ class UpdateRecipe extends React.Component{
     }
     recipeCall=(updatedRecipe)=>{
         //will post to DB and also to context
-        if(updatedRecipe.name.length===0 && updatedRecipe.ingredients.length===0 && updatedRecipe.instructions.length ===0){ return null}if(updatedRecipe.name.length<3|| updatedRecipe.ingredients.length<1||updatedRecipe.instructions.length<1){
+        if(updatedRecipe.name.length===0 && updatedRecipe.ingredients.length===0 && updatedRecipe.instructions.length ===0){ return null}if(updatedRecipe.name.length<3|| updatedRecipe.ingredients.length<1||updatedRecipe.instructions.length<1 ||
+            updatedRecipe.ingredients[0].name.length<3){
            return null
         }
         else{  
@@ -52,7 +57,7 @@ class UpdateRecipe extends React.Component{
      }
     addIngredient=(recipe)=>{
         const ingredient={name:'',quantity:'',unit:''}
-        if(this.state.ingredients.length===0){this.setState({ingredients:[...recipe.ingredients,ingredient]})
+        if(this.state.ingredients.length===0){this.setState({ingredients:[...this.state.ingredients,ingredient]})
     }else{
         this.setState({ingredients:[...this.state.ingredients,ingredient]})}
     }
@@ -166,11 +171,11 @@ class UpdateRecipe extends React.Component{
          <Header/>
          <Nav/>
             <div className='updateRecipe'>
-            <h3>Recipe</h3> <button type='button' onClick={()=>this.updateIngredient(recipe)}>{(this.state.ingredients.length===0)?('Update Ingredients'):('Reset Ingredients')}</button> 
+            <h3>Recipe</h3> <button type='button' onClick={()=>this.updateIngredient(recipe)}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
             <form onSubmit={e=>this.handleSubmit(e,recipe)}>
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                 {(this.state.ingredients.length===0)?(null):(displayedIngredients)}
-                {(this.state.ingredients.length===0)?(null):( <button type='button' onClick={()=>this.addIngredient(recipe)}>Add Ingredient</button>)}
+                {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):( <button type='button' onClick={()=>this.addIngredient(recipe)}>Add Ingredient</button>)}
                 <br/><label htmlFor='name'>Name:</label><br/>
                 <textarea name='name' defaultValue={recipe.name}>
                 </textarea><br/>
