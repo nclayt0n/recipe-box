@@ -6,6 +6,7 @@
 .navLinksContainer {
     display: flex;
     border: 1px solid black;
+    width: 100%;
 }
 
 .navPageLinks {
@@ -14,6 +15,7 @@
     width: fit-content;
     align-items: center;
     justify-content: flex-start;
+    border: 1px solid orange;
 }
 
 .navAcctLinks {
@@ -21,6 +23,7 @@
     align-items: center;
     justify-content: flex-end;
     width: fit-content;
+    border: 1px solid yellow;
 }
 
 .navLinksContainer ul {
