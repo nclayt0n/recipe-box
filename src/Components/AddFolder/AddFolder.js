@@ -12,7 +12,7 @@ class AddFolder extends React.Component{
     handleSubmit=(e)=>{
         const folderName=(e.target.folderName.value)
         this.context.addFolder({name:folderName,id:uuidv4(),user_id:2})
-        this.props.history.push('/home-page')
+        this.props.history.push('/folder-list')
     }
     render(){  
         console.log(this.props)
