@@ -6,7 +6,7 @@ class Header extends React.Component{
     render(){
     return(
         <div className='header' >
-            <h3><Link to='/home-page' className='headerLink'> RecipeBox </Link> </h3>
+            <Link to='/home-page' className='headerLink'> <img src={require('./headerImages/purpleLogo.png')} alt=""/></Link>
         </div>
     )}
 }
