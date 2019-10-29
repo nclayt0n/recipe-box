@@ -18,7 +18,6 @@ class Recipe extends React.Component{
     createDisplayedIngredients=(ingredients)=>{
         return ingredients.map(ingredient=>{return<li key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})}
     render(){
-        console.log(this.props)
         let recipe=findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
         const ingredients=this.createDisplayedIngredients(recipe.ingredients)
         //will need to add measurements and break apart into ingrdients

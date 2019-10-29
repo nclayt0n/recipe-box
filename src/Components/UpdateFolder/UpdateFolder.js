@@ -23,7 +23,6 @@ class UpdateFolder extends React.Component{
         this.props.history.goBack()
     }
     render(){
-        console.log(this.props)
         return(<>
          <Header/>
        <Nav/>

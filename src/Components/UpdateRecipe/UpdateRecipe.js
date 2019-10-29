@@ -21,8 +21,6 @@ class UpdateRecipe extends React.Component{
             }
      }
      validateRecipe=(updatedRecipe)=>{
-         console.log(updatedRecipe)
-         console.log(this.state)
         if(updatedRecipe.name.length<3){
             this.setState({nameError: '*Required & Must be atleast 3 characters'
         }) 
@@ -76,7 +74,6 @@ class UpdateRecipe extends React.Component{
         let createdBy=e.target.createdBy.value
         let instructions=e.target.instructions.value
         let folderId=e.target.folder.value   
-        console.log(folderId)
         const localTime = moment().format('YYYY-MM-DD');
         let proposedDate = localTime + "T00:00:00.000Z";
         
@@ -130,7 +127,6 @@ class UpdateRecipe extends React.Component{
                 createdBy,
                 note
             }
-            console.log(folderId)
             this.validateRecipe(updatedRecipe)
         //here send to api then in that api call then have the this.context.addRecipe
         }

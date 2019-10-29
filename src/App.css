@@ -1,22 +1,9 @@
 :root {
-    --redish: #98503C;
-    --rose: rgb(199, 75, 133);
-    --yellowish: #DDB372;
-    --tan: #C49179;
-    --brownish: #AD8A74;
-    --grayish: #6A614F;
-    --seaGreen: #799D5E;
-    --lightGreen: #94E474;
-    --oliveDrab: #4D9D2C;
-    --olive: #476B30;
     --gray: #BFBCC0;
-    --beige: #EAF8E4;
-    --lightPink: #F9DDE5;
-    --medPink: #E48994;
-    --pink: #E9A4AD;
     --purple: #5E1770;
-    --lightPurple: #B484B4;
-    --medPurple: #9D6AA3;
+    --brick: #703217;
+    --green: #297017;
+    --blue: #175670;
     background-size: 100%;
     background-color: #5E1770;
 }

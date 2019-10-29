@@ -43,7 +43,6 @@ this.state={
     this.setState({
         recipes:[...this.state.recipes.filter(r=>r.id!==recipe.id),recipe]
     })
-    console.log('success')
   }
   handleUpdateFolder=(folder)=>{
     this.setState({
@@ -51,21 +50,18 @@ this.state={
     })
   }
   handleDeleteRecipe=(recipeId,props)=>{
-    console.log(props)
     props.history.push('/folder-list')
     this.setState({
             recipes: this.state.recipes.filter(recipe => recipe.id !== recipeId)
         });
   }
   handleDeleteFolder=(folderId,props)=>{
-    console.log(props)
     props.history.push('/home-page')
     this.setState({
             folders: this.state.folders.filter(folder => folder.id !== folderId)
         });
   }
   render(){
-    console.log(this.props)
     const contextValue={
       folders:this.state.folders,
       recipes:this.state.recipes,

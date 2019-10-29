@@ -15,14 +15,12 @@ class AddFolder extends React.Component{
         this.props.history.push('/folder-list')
     }
     render(){  
-        console.log(this.props)
         let style;
          if(this.props.location.pathname==='/home-page'){
             style=hpStyles
         }if(this.props.location.pathname==='/add-folder'){
             style=addFStyles
         } 
-        console.log(style)
         return(
             <>
              {(this.props.location.pathname==='/home-page')?'':<Header/>}

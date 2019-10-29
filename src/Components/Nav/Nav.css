@@ -14,12 +14,15 @@
 }
 
 .btn-toggle-nav {
+    margin: 0;
     width: 60px;
     height: 100%;
     background-image: url('./NavImage/Hamburger_icon.png');
+    background-color: #BE1716;
     background-repeat: no-repeat;
     background-size: 40%;
     background-position: center;
+    border: none;
     cursor: pointer;
 }
 
@@ -70,8 +73,8 @@
 }
 
 .nav-sidebar ul li a {
-    /* display: block; */
-    display: none;
+    display: block;
+    /* display: none; */
     height: 60px;
     padding: 0 10px;
     text-decoration: none;
@@ -85,6 +88,17 @@
 .nav-sidebar ul li a:hover {
     background-color: #222;
 }
+
+
+/*action we want onClick
+.nav-sidebar ul{
+    visibility:visible;
+}
+.nav-sidebar{
+    width:272px};
+.nav-sidebar a{
+    opacity:0.5};
+    */
 
 
 /* .navPageLinks {
