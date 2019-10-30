@@ -95,7 +95,7 @@ this.state={
           <NotFound/>
         </Switch>
       </Context.Provider>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );}
 }

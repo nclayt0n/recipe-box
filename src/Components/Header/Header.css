@@ -3,6 +3,10 @@
 }
 
 .header {
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    right: 0px; */
     height: 90px;
     display: flex;
     justify-content: center;
@@ -10,7 +14,7 @@
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #5C1474;
+    background-color: var(--purple);
     padding: 0;
     margin: 0;
 }
