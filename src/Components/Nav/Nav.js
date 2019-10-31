@@ -19,7 +19,6 @@ class Nav extends React.Component{
         }
     }
     render(){
-        console.log(this.state.clicked,this.state.hidden,this.state.visible)
         return(<>
         <nav className='nav-main' style={(this.state.clicked===false)?(this.state.visible.main):(this.state.hidden.main)}>
             <button className='btn-toggle-nav' onClick={()=>this.navStyles()} style={(this.state.clicked===false)?(this.state.visible.toggleBtn):(this.state.hidden.toggleBtn)}></button>
