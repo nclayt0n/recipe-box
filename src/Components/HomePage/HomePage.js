@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter,Link} from 'react-router-dom'
+import {withRouter,Link,Route} from 'react-router-dom'
 import AddFolder from '../AddFolder/AddFolder'
 import AddRecipe from '../AddRecipe/AddRecipe'
 import FolderList from '../FolderList/FolderList';
@@ -19,7 +19,9 @@ class HomePage extends React.Component{
         <div> 
             <Header/>
             <Nav/>
-        <div className='addFolderContainer'><AddFolder/></div>
+        <div className='addFolderContainer'>
+            
+        <AddFolder/></div>
            
             <AddRecipe/>
             <AllRecipes />

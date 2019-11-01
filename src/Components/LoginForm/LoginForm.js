@@ -2,11 +2,6 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import './LoginForm.css'
 
-
-onsubmit=(e)=>{
-e.preventDefault()
-}
-
 class LoginForm extends React.Component{
     render(){
         return(

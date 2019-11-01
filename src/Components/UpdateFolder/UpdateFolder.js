@@ -26,7 +26,7 @@ class UpdateFolder extends React.Component{
         return(<>
          <Header/>
        <Nav/>
-        <div className='AddFolder'>
+        <div className='updateFolder'>
             <form action='POST'  onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>
                     <legend>Update Folder: {this.findFolderName()}</legend>

@@ -39,7 +39,10 @@ class Ingredients extends React.Component{
     }}
 
     render(){  
-        console.log(this.state)
+        // if(this.props!== undefined){
+        //     this.setState({selectedRecipeIds:this.props.history.match.params.id})
+        // }
+        console.log(this.props)
         let recipeOptions=this.context.recipes.map((recipe)=>{ 
             return <option value={recipe.id}>{recipe.name}</option>})
 
@@ -61,22 +64,23 @@ class Ingredients extends React.Component{
             <h3 key={uuidv4()}><Link to={'/ingredients'}>Ingredients</Link></h3>
             {(this.state.clicked===false)?(<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
             <ValidationError Ingredientsmessage={this.state.error}/>
-           <ul>
+           <div key={uuidv4()}>
                 {(this.state.displayed===undefined)?
                 (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
                 {(this.state.allRecipes===true)?
                 (this.state.displayed.map(recipes=>{
                     return recipes.ingredients.map(ingredient=>{
-                        return <li key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>
+                        return <form><label><input type='checkbox'/></label><input key={uuidv4()} value={ingredient.name+ingredient.quantity+ingredient.unit}/></form>
                     })
                     })):(this.state.displayed.map(recipes=>{
                     return recipes.map(recipe=>recipe.ingredients.map(ingredient=>{
-                        return <li key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>
+                        return <><input key={uuidv4()} type='checkbox'/><label key={uuidv4()}>{ingredient.name}{ingredient.quantity}{ingredient.unit}
+                        </label><br/></>
                     }))
                     })
                 )}
 
-            </ul> 
+            </div> 
         </section></>)
     }
 }
