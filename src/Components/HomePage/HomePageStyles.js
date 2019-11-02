@@ -79,7 +79,6 @@ const hpStyles = {
 
         },
         ul: {
-            gt
             padding: '10px',
             fontSize: '22px',
             fontWeight: 'bold',
