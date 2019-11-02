@@ -1,10 +1,12 @@
 import React from 'react'
-const addFStyles = {
-    addFolderDivStyle: {
+const addRStyles = {
+    addRecipeStyle: {
+
         border: '2px solid black',
         width: 'fit-content',
         textAlign: 'center',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         margin: 'auto',
         marginTop: '50px',
@@ -14,4 +16,4 @@ const addFStyles = {
 }
 
 
-export default addFStyles
+export default addRStyles

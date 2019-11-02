@@ -5,6 +5,8 @@ import './AddRecipe.css'
 import ValidationError from '../../Validation/ValidationError';
 import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
+import hpStyles from '../HomePage/HomePageStyles'
+import addRStyles from './AddRecipeStyles'
 const uuidv4 = require('uuid/v4');
 
 class AddRecipe extends React.Component{
@@ -102,10 +104,17 @@ class AddRecipe extends React.Component{
             this.props.history.push('/home-page')}
     }
     render(){
+        let style;
+        if(this.props.location.pathname==='/home-page'){
+            style=hpStyles
+        }if(this.props.location.pathname==='/add-recipe'){
+            style=addRStyles
+        } 
+        console.log(style)
         return (<>
         {(this.props.location.pathname==='/home-page')?'':<Header/>}
         {(this.props.location.pathname==='/home-page')?'':<Nav/>}
-            <div className='addRecipe'>
+            <div className='addRecipe' style={style.addRecipeStyle}>
                 <h3><Link to={'/add-recipe'}>Add Recipe Form</Link> </h3>
                 <form onSubmit={e=>this.addIngredient(e)}>
                     <fieldset>

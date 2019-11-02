@@ -3,7 +3,7 @@ import {withRouter,Link,Route} from 'react-router-dom'
 import AddFolder from '../AddFolder/AddFolder'
 import AddRecipe from '../AddRecipe/AddRecipe'
 import FolderList from '../FolderList/FolderList';
-import AllRecipes from '../AllRecipes/AllRecipes'
+import RecipeList from '../RecipeList/RecipeList'
 import Search from '../Search/Search'
 import Context from '../../Context'
 import hpStyles from '../HomePage/HomePageStyles'
@@ -24,10 +24,10 @@ class HomePage extends React.Component{
         <AddFolder/></div>
            
             <AddRecipe/>
-            <AllRecipes />
+            <RecipeList />
             <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
             <section className='ingredientsList'>
-            <Link to={'/ingredients'}>Ingredients</Link></section>
+            <Link style={{color:'black',textDecoration:'none',cursor:'pointer'}} to={'/ingredients'}>Ingredients</Link></section>
         </div>
         )}
 }

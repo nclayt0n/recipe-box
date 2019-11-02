@@ -25,7 +25,7 @@ class Nav extends React.Component{
             {/* <ul className='navPageLinks' style={navStyles.mainUl}>
                 <li style={navStyles.mainUlLi}><Link to={'/home-page'}>Home</Link></li>
                 <li style={navStyles.mainUlLi}><Link to={'/folder-list'}>Folders</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/all-recipes'}>All Recipes</Link></li>
+                <li style={navStyles.mainUlLi}><Link to={'/recipe-list'}>All Recipes</Link></li>
                 <li style={navStyles.mainUlLi}><Link to={'/ingredients'}>Ingredients</Link></li>
                 <li style={navStyles.mainUlLi}><Link to={'/add-recipe'}>Add Recipe</Link></li>
                 <li style={navStyles.mainUlLi}><Link to={'/add-folder'}>Add Folder</Link></li>
@@ -53,7 +53,7 @@ class Nav extends React.Component{
                 </li>
 
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
-                    <Link to={'/all-recipes'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>All Recipes</Link>
+                    <Link to={'/recipe-list'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>All Recipes</Link>
                 </li>
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/ingredients'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Ingredients</Link>

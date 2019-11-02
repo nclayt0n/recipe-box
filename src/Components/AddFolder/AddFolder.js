@@ -31,17 +31,19 @@ class AddFolder extends React.Component{
     
     }
     render(){  
+        
         let style;
          if(this.props.location.pathname==='/home-page'){
             style=hpStyles
         }if(this.props.location.pathname==='/add-folder'){
             style=addFStyles
         } 
+        console.log(style)
         return(
             <>
              {(this.props.location.pathname==='/home-page')?'':<Header/>}
         {(this.props.location.pathname==='/home-page')?'':<Nav/>}
-        <div className='addFolder' style={style.addFDivStyle} >
+        <div className='addFolder' style={style.addFolderDivStyle} >
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>
                     <legend>Add Folder Form</legend>

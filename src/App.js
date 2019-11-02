@@ -8,7 +8,7 @@ import RegistrationForm from './Components/RegistrationForm/RegistrationForm';
 import LandingPage from './Components/LandingPage/LandingPage';
 import AddFolder from './Components/AddFolder/AddFolder';
 import AddRecipe from './Components/AddRecipe/AddRecipe'
-import AllRecipes from './Components/AllRecipes/AllRecipes';
+import RecipeList from './Components/RecipeList/RecipeList';
 import Folder from './Components/Folder/Folder';
 import FolderList from './Components/FolderList/FolderList';
 import Ingredients from './Components/Ingredients/Ingredients';
@@ -83,7 +83,7 @@ this.state={
           <Route path='/home-page' component={HomePage}/>
           <Route path='/add-folder' component={AddFolder}/>
           <Route path='/add-recipe' component={AddRecipe}/>
-          <Route path='/all-recipes' component={AllRecipes}/>
+          <Route path='/recipe-list' component={RecipeList}/>
           <Route path='/recipe/:id' component={Recipe}/>
           <Route path='/folder/:id' component={Folder}/>
           <Route path='/folder-list' component={FolderList}/>
