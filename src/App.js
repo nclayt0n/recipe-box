@@ -1,5 +1,6 @@
 import React from 'react';
 import {Switch,Route} from 'react-router-dom'
+import config from './config'
 import HomePage from './Components/HomePage/HomePage'
 import Header from './Components/Header/Header'
 import LoginForm from './Components/LoginForm/LoginForm'
@@ -25,10 +26,41 @@ class App extends React.Component {
   constructor(){
     super()
 this.state={
-    folders:[...STORE.folders],
-    recipes:[...STORE.recipes],
+    folders:[],
+    recipes:[],
   }
   }
+  componentDidMount() {
+        const options = {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_TOKEN}`,
+            },
+        };
+        Promise.all([
+                fetch(`${config.API_ENDPOINT}/recipes`,
+          options),
+                fetch(`${config.API_ENDPOINT}/folders`,
+          options)
+            ])
+            .then(([recipesRes, foldersRes]) => {
+                if (!recipesRes.ok)
+                    return recipesRes.json().then(e => Promise.reject(e));
+                if (!foldersRes.ok)
+                    return foldersRes.json().then(e => Promise.reject(e));
+
+                return Promise.all([recipesRes.json(), foldersRes.json()]);
+            })
+            .then(([recipes, folders]) => {
+              console.log(recipes)
+                this.setState({ recipes, folders });
+            })
+            .catch(error => {
+                console.error({ error });
+            });
+
+    }
   handleAddRecipe=(recipe)=>{
     this.setState({
       recipes:[...this.state.recipes,recipe]

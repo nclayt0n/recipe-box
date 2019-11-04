@@ -24,9 +24,9 @@ class Recipe extends React.Component{
         return(<>
          <Header/>
          <Nav/>
-            <div className='recipe'>
+            <div className='recipe' style={{margin:'auto',display:'flex',flexDirection:'column',width:'60%'}}>
             <h3>Recipe</h3>
-                <ul>{recipe.name}
+                <ul style={{margin:'auto', }} >{recipe.name}
                 <li>INTRUCTIONS: {recipe.instructions}</li>
                 <Link to={'/ingredients'}>INGREDIENTS:</Link> 
                {ingredients}

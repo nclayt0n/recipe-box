@@ -1,5 +1,5 @@
 require('dotenv').config()
 module.exports = {
-    API_ENDPOINT: process.env.API_ENDPOINT,
-    API_KEY: process.env.API_KEY
+    API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT,
+    API_TOKEN: process.env.REACT_APP_API_TOKEN
 }
