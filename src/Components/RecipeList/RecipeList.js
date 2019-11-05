@@ -12,13 +12,13 @@ class RecipeList extends React.Component{
         return recipes.map(recipe=><li key={uuidv4()} style={style.recipeListStyle.li}><Link to={`/recipe/${recipe.id}`} style={style.recipeListStyle.liA}>{recipe.name}</Link></li>)
     }
 render(){
+
     let style;
     if(this.props.location.pathname==='/home-page'){
         style=hpStyles
     }if(this.props.location.pathname==='/recipe-list'){
         style=recipeListStyles
     } 
-    console.log(this.props,style)
     let displayedRecipes;
 (this.props.recipes!==undefined)?(displayedRecipes=this.props.recipes):(displayedRecipes=this.context.recipes);
     return(

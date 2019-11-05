@@ -26,7 +26,6 @@ class Ingredients extends React.Component{
         let selectedFolders=[];
         for (var i = 0, l = this.context.recipes.length; i < l; i++) {
             if(e.target.folderSort[i].selected){
-                console.log(e.target.folderSort[i].selected)
 
                 selectedFolders.push(e.target.folderSort[i].value);
             }
@@ -65,9 +64,7 @@ class Ingredients extends React.Component{
         if(this.state.displayed===undefined){
             this.setState({error:'No Recipes To Display, try again'})
         }if(selectedRecipes.length>0||selectedRecipes!==undefined){
-            console.log('hi')
             let displayed=this.state.selectedRecipeIds.map((recipeId)=>this.state.displayed.filter(f=>{return(recipeId===f.id)}));
-            console.log(displayed)
         }
             
         if(selectedRecipes.length===0||selectedRecipes[0]==='allR'){
@@ -80,22 +77,16 @@ class Ingredients extends React.Component{
         let sort=selectedRecipes.filter((recipeId)=>this.state.selectedFolderIds.filter(f=>{return(recipeId===f)}))
     }
     render(){  
-        console.log(this.state)
         let folderOptions=this.context.folders.map((folder,idx)=>
             <option key={uuidv4()} value={folder.id}>{folder.name}</option>);
 
         let filteredRecipes=this.state.selectedFolderIds.map(id=>{
-            console.log("folderId",id)
            return  this.context.recipes.filter(r=>{
-                console.log('recipe:',r.folderId===id)
                     return (r.folderId===id)})})
-                    console.log('filteredRecipes:',filteredRecipes)
         if(this.state.selectedFolderIds>1){
             let filteredRecipes= [].concat.apply([], filteredRecipes)
                 return filteredRecipes;
         }
-
-   console.log('filteredRecipes:',filteredRecipes)
 
         let recipeOptions;
         (this.state.selectedFolderIds.includes('allF'))?

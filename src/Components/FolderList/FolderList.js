@@ -13,8 +13,7 @@ class FolderList extends React.Component{
             style=hpStyles
         }if(this.props.location.pathname==='/folder-list'){
             style=folderListStyles
-        } 
-        console.log(this.props,style)
+        }
         const folders=this.context.folders.map(folder=>{
             return <li key={folder.id} style={style.folderListStyle.li}><Link to={`/folder/${folder.id}`} style={style.folderListStyle.liA}>{folder.name}</Link></li>
         })

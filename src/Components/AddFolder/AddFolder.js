@@ -1,6 +1,7 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
 import Context from '../../Context'
+import config from '../../config'
 import hpStyles from '../HomePage/HomePageStyles'
 import addFStyles from './AddFolderStyles'
 import Header from '../Header/Header'
@@ -24,21 +25,42 @@ class AddFolder extends React.Component{
             this.setState({error:'Name Must contain at least 3 characters'})
         }
         if(folderName.length>=3){
-                this.context.addFolder({name:folderName,id:uuidv4(),user_id:2})
-            this.props.history.push('/folder-list')
+
+            const url=`${config.API_ENDPOINT}/folders`;
+        const options={
+            method:'POST',
+            headers:{
+          'content-type':'application/json',
+          'Authorization':`Bearer ${config.API_TOKEN}`,
+        },
+        body: JSON.stringify({'name':folderName})
+    };
+    fetch(url,options)
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error(response.statusText);
+    })
+    .then(responseJson => this.context.addFolder(responseJson))
+    .catch(error =>{
+        console.error(error)
+    })
+
+                // this.context.addFolder({name:folderName,id:uuidv4(),user_id:2})
+            // this.props.history.push('/folder-list')
            
         }
     
     }
     render(){  
-        
+        console.log(this.context)
         let style;
          if(this.props.location.pathname==='/home-page'){
             style=hpStyles
         }if(this.props.location.pathname==='/add-folder'){
             style=addFStyles
-        } 
-        console.log(style)
+        }
         return(
             <>
              {(this.props.location.pathname==='/home-page')?'':<Header/>}

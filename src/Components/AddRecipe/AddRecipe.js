@@ -7,6 +7,8 @@ import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
 import hpStyles from '../HomePage/HomePageStyles'
 import addRStyles from './AddRecipeStyles'
+import config from '../../config'
+import moment from 'moment';
 const uuidv4 = require('uuid/v4');
 
 class AddRecipe extends React.Component{
@@ -53,7 +55,10 @@ class AddRecipe extends React.Component{
         let quantity;
         (e.target.ingredientQuantity.value.length===0)?quantity=1:quantity=e.target.ingredientQuantity.value;
         let ingredientUnit;
+        (e.target.ingredientUnit.value.length!==0)?
+        ingredientUnit=e.target.ingredientUnit.value:ingredientUnit='not specified';
         (e.target.ingredientUnit.value==='other')? ingredientUnit=e.target.ingredientUnitOther.value:ingredientUnit=e.target.ingredientUnit.value;
+
         this.setState({
         ingredients:[...this.state.ingredients,{name:e.target.ingredientName.value,quantity,unit:ingredientUnit}]
         })
@@ -65,20 +70,18 @@ class AddRecipe extends React.Component{
         let note=e.target.note.value;
         let link= e.target.link.value;
         let createdBy=e.target.createdBy.value;
-        let folderId=e.target.folder.value;
+        let folder_id=parseInt(e.target.folder.value);
         let instructions=e.target.instructions.value;
         let recipe={
-            id:uuidv4(),
             name,
             instructions,
             ingredients:this.state.ingredients,
             note,
             link,
             createdBy,
-            folderId
+            folder_id
         }
         this.validateRecipe(recipe)
-        //here send to api then in that api call then have the this.context.addRecipe
     }   
     validateRecipe=(recipe)=>{
         if(recipe.name.length<3){
@@ -95,13 +98,47 @@ class AddRecipe extends React.Component{
         }
         else{this.setState({instructionsError:''})}
        
-        this.recipeCall(recipe)
+        this.callApi(recipe)
     }
     recipeCall=(recipe)=>{
         //will post to DB and also to context
         if(recipe.name.length===0 && recipe.ingredients.length===0 && recipe.instructions.length ===0){return null}else{
             this.context.addRecipe(recipe)
             this.props.history.push('/home-page')}
+    }
+    callApi=(recipe)=>{
+        const {name,
+            instructions,
+            ingredients,
+            note,
+            link,
+            createdBy,
+            folder_id}=recipe    
+            console.log(JSON.stringify(recipe)) 
+            console.log(JSON.stringify(ingredients))
+        const url=`${config.API_ENDPOINT}/recipes`;
+        const options={
+            method:'POST',
+            headers:{
+          'content-type':'application/json',
+          'Authorization':`Bearer ${config.API_TOKEN}`,
+        },
+        body: JSON.stringify({'name':name,'date_created':moment().format(),'folder_id':folder_id,'instructions':instructions,ingredients,note,link,created_by:createdBy,user_id:1})
+    };
+    
+        fetch(url,options)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        })
+        .then(responseJson => this.context.addRecipe(responseJson))
+        .catch(error =>{
+            this.setState({error})
+        })
+       
+        // this.props.history.push('/')
     }
     render(){
         let style;
@@ -110,7 +147,6 @@ class AddRecipe extends React.Component{
         }if(this.props.location.pathname==='/add-recipe'){
             style=addRStyles
         } 
-        console.log(style)
         return (<>
         {(this.props.location.pathname==='/home-page')?'':<Header/>}
         {(this.props.location.pathname==='/home-page')?'':<Nav/>}

@@ -42,7 +42,6 @@ class Ingredients extends React.Component{
         // if(this.props!== undefined){
         //     this.setState({selectedRecipeIds:this.props.history.match.params.id})
         // }
-        console.log(this.props)
         let recipeOptions=this.context.recipes.map((recipe)=>{ 
             return <option value={recipe.id}>{recipe.name}</option>})
 

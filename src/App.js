@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {Switch,Route} from 'react-router-dom'
 import config from './config'
 import HomePage from './Components/HomePage/HomePage'
@@ -29,7 +29,7 @@ this.state={
     folders:[],
     recipes:[],
   }
-  }
+}
   componentDidMount() {
         const options = {
             method: 'GET',
@@ -53,7 +53,6 @@ this.state={
                 return Promise.all([recipesRes.json(), foldersRes.json()]);
             })
             .then(([recipes, folders]) => {
-              console.log(recipes)
                 this.setState({ recipes, folders });
             })
             .catch(error => {
@@ -94,6 +93,7 @@ this.state={
         });
   }
   render(){
+    console.log(config.API_ENDPOINT)
     const contextValue={
       folders:this.state.folders,
       recipes:this.state.recipes,
