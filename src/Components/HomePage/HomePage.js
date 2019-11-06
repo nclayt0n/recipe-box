@@ -14,6 +14,7 @@ import Nav from '../Nav/Nav';
 
 class HomePage extends React.Component{
     static contextType=Context;
+    
     render(){
         return(
         <div> 

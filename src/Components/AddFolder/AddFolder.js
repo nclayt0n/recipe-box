@@ -33,8 +33,9 @@ class AddFolder extends React.Component{
           'content-type':'application/json',
           'Authorization':`Bearer ${config.API_TOKEN}`,
         },
-        body: JSON.stringify({'name':folderName})
+        body: JSON.stringify({'name':folderName,'user_id':2})
     };
+
     fetch(url,options)
     .then(response => {
         if (response.ok) {

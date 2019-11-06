@@ -18,6 +18,8 @@ import Recipe from './Components/Recipe/Recipe';
 import UpdateRecipe from './Components/UpdateRecipe/UpdateRecipe';
 import UpdateFolder from './Components/UpdateFolder/UpdateFolder';
 import NotFound from './Components/NotFound/NotFound';
+import PublicOnlyRoute from './Utils/PublicOnlyRoute'
+import PrivateRoute from './Utils/PrivateRoute'
 import Nav from './Components/Nav/Nav';
 import STORE from './STORE/STORE'
 import Context from './Context'
@@ -109,22 +111,22 @@ this.state={
       <Context.Provider value={contextValue}>
         <Switch>    
           <Route exact path='/' component={LandingPage}/>
-          <Route path='/login' component={LoginForm}/>
-          <Route path='/register' component={RegistrationForm}/>
+          <PublicOnlyRoute path='/login' component={LoginForm}/>
+          <PublicOnlyRoute path='/register' component={RegistrationForm}/>
       
-          <Route path='/home-page' component={HomePage}/>
-          <Route path='/add-folder' component={AddFolder}/>
-          <Route path='/add-recipe' component={AddRecipe}/>
-          <Route path='/recipe-list' component={RecipeList}/>
-          <Route path='/recipe/:id' component={Recipe}/>
-          <Route path='/folder/:id' component={Folder}/>
-          <Route path='/folder-list' component={FolderList}/>
-          <Route path='/ingredients' component={Ingredients}/>
-          <Route path='/search' component={Search}/>
-          <Route path='/update-folder/:id' component={UpdateFolder}/>
-          <Route path='/update-recipe/:id' component={UpdateRecipe}/>
-          <Route path='/header' component={Header}/>
-          <NotFound/>
+          <PrivateRoute path='/home-page' component={HomePage}/>
+          <PrivateRoute path='/add-folder' component={AddFolder}/>
+          <PrivateRoute path='/add-recipe' component={AddRecipe}/>
+          <PrivateRoute path='/recipe-list' component={RecipeList}/>
+          <PrivateRoute path='/recipe/:id' component={Recipe}/>
+          <PrivateRoute path='/folder/:id' component={Folder}/>
+          <PrivateRoute path='/folder-list' component={FolderList}/>
+          <PrivateRoute path='/ingredients' component={Ingredients}/>
+          <PrivateRoute path='/search' component={Search}/>
+          <PrivateRoute path='/update-folder/:id' component={UpdateFolder}/>
+          <PrivateRoute path='/update-recipe/:id' component={UpdateRecipe}/>
+          <PrivateRoute path='/header' component={Header}/>
+          <Route component={NotFound}/>
         </Switch>
       </Context.Provider>
       {/* <Footer/> */}

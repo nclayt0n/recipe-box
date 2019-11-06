@@ -30,7 +30,7 @@ function findRecipes(folderId,recipes){
 class Folder extends React.Component{
     static contextType=Context;
     deleteFolder=(id,props)=>{
-        const url=`${config.API_ENDPOINT}/folders/${id}`;
+        const url=`${config.API_ENDPOINT}/folder/${id}`;
         const options={
             method:'DELETE',
             headers:{

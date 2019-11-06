@@ -59,12 +59,18 @@ class UpdateRecipe extends React.Component{
     }else{
         this.setState({ingredients:[...this.state.ingredients,ingredient]})}
     }
-    findFolderandRecipe(id,folders,recipes){ 
-        const results=recipes.filter(recipe=>recipe.id===id);
+    findFolderandRecipe(id,folders,recipes){
+        id=parseInt(id)
+        if(folders===undefined){
+            return null
+        }else{
+            const results=recipes.filter(recipe=>recipe.id===id);
         const recipe=results[0];
-        const folder = folders.filter(f=>f.id===recipe.folderId );
+        const folder = folders.filter(f=>f.id===recipe.folder_id );
         recipe.folderName=folder[0].name; 
-        return recipe
+        return recipe  
+        }
+      
     }
      handleSubmit=(e,recipe)=>{
         e.preventDefault()  
@@ -156,17 +162,18 @@ class UpdateRecipe extends React.Component{
                             <option value='other'>other</option>
                         </select></label>
                         <label htmlFor={`ingredientUnitOther${idx}`}> Other Unit:
-                        <input type='text' name={`ingredientUnitOther${idx}`}/><br/></label>
+                        <input type='text' name={`ingredientUnitOther${idx}`}/><br/></label>x
                 <button type='button' onClick={()=>this.deleteIngredient(idx)}>Delete</button>
             </fieldset>)
         }
     render(){
         let recipe=this.findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
         const displayedIngredients= this.createIngredientFields(this.state)
+        console.log(this.state)
         return (<>
          <Header/>
          <Nav/>
-            <div className='updateRecipe'>
+            <div className='updateRecipe' style={{margin:'auto',display:'flex',flexDirection:'column',width:'60%'}}>
             <h3>Recipe</h3> <button type='button' onClick={()=>this.updateIngredient(recipe)}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
             <form onSubmit={e=>this.handleSubmit(e,recipe)}>
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
