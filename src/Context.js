@@ -6,6 +6,8 @@ const Context = React.createContext({
     user_id: '',
     addRecipe: () => {},
     addFolder: () => {},
+    addFolders: () => {},
+    addRecipes: () => {},
     updateRecipe: () => {},
     updateFolder: () => {},
     deleteRecipe: () => {},

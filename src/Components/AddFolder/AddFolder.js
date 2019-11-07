@@ -32,7 +32,7 @@ class AddFolder extends React.Component{
             method:'POST',
             headers:{
           'content-type':'application/json',
-          'Authorization':`Bearer ${config.API_TOKEN}`,
+          'Authorization': `Bearer ${TokenService.getAuthToken()}`,
         },
         body: JSON.stringify({'name':folderName,'user_id':this.context.user_id})
     };
@@ -48,9 +48,7 @@ class AddFolder extends React.Component{
     .catch(error =>{
         console.error(error)
     })
-
-                // this.context.addFolder({name:folderName,id:uuidv4(),user_id:2})
-            // this.props.history.push('/folder-list')
+            this.props.history.push('/folder-list')
            
         }
     

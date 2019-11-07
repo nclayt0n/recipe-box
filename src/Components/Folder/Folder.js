@@ -5,6 +5,7 @@ import Context from '../../Context'
 import './Folder.css'
 import Nav from '../Nav/Nav'
 import Header from '../Header/Header'
+import TokenService from '../../services/token-service'
 const uuidv4 = require('uuid/v4');
 
 function findFolder(id,folders){
@@ -35,7 +36,7 @@ class Folder extends React.Component{
             method:'DELETE',
             headers:{
           'content-type':'application/json',
-          'Authorization':`Bearer ${config.API_TOKEN}`,
+          'Authorization': `Bearer ${TokenService.getAuthToken()}`,
         },
         body: JSON.stringify({'id':id})
     };
@@ -44,6 +45,7 @@ class Folder extends React.Component{
         .catch(error =>{
             this.setState({error})
         })
+        props.history.push(`/home-page`)
     }
     render(){
         let id=parseInt(this.props.match.params.id)
@@ -54,12 +56,18 @@ class Folder extends React.Component{
              <Header/>
         <Nav/>
            <div className='folder'>
-            <button onClick={()=>this.props.history.goBack()}>{folderName}</button>
-            {recipeList}
-            <div className='buttonBox'><button><Link to={`/update-folder/${this.props.match.params.id}`}>Update Folder</Link></button>
-            <button><Link to={'/add-recipe'}>Add Recipe</Link></button>
-            <button type='button' onClick={()=>this.deleteFolder(id,this.props)}>Delete Folder</button></div>
-            
+                <button type='button' onClick={()=>this.props.history.goBack()}>{folderName}
+                </button>
+                {recipeList}
+                <div className='buttonBox'>
+                    <button type='button'>
+                        <Link to={`/update-folder/${this.props.match.params.id}`}>Update Folder</Link>
+                    </button>
+                    <button>
+                        <Link to={'/add-recipe'}>Add Recipe</Link>
+                    </button>
+                    <button type='button' onClick={()=>this.deleteFolder(id,this.props)}>Delete Folder</button>
+                </div>
             </div></>
         )
     }

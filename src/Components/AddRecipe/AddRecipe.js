@@ -9,6 +9,7 @@ import hpStyles from '../HomePage/HomePageStyles'
 import addRStyles from './AddRecipeStyles'
 import config from '../../config'
 import moment from 'moment';
+import TokenService from '../../services/token-service'
 const uuidv4 = require('uuid/v4');
 
 class AddRecipe extends React.Component{
@@ -121,7 +122,7 @@ class AddRecipe extends React.Component{
             method:'POST',
             headers:{
           'content-type':'application/json',
-          'Authorization':`Bearer ${config.API_TOKEN}`,
+          'Authorization': `Bearer ${TokenService.getAuthToken()}`,
         },
         body: JSON.stringify({'name':name,'date_created':moment().format(),'folder_id':folder_id,'instructions':instructions,ingredients,note,link,created_by:createdBy,user_id:this.context.user_id})
     };
@@ -138,7 +139,7 @@ class AddRecipe extends React.Component{
             this.setState({error})
         })
        
-        // this.props.history.push('/')
+        this.props.history.push('/home-page')
     }
     render(){
         let style;

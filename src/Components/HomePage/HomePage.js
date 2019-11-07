@@ -49,7 +49,8 @@ class HomePage extends React.Component{
                 return Promise.all([recipesRes.json(), foldersRes.json()]);
             })
             .then(([recipes, folders]) => {
-                this.context({ recipes, folders });
+                this.context.addRecipes(recipes);
+                this.context.addFolders(folders)
             })
             .catch(error => {
                 console.error({ error });
@@ -57,6 +58,7 @@ class HomePage extends React.Component{
 
     }
     render(){
+        console.log(this.context)
         return(
         <div> 
             <Header/>

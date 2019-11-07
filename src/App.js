@@ -68,6 +68,12 @@ this.state={
   //           });
 
   //   }
+  handleAddFolders=(folders)=>{
+    this.setState({folders:[...folders]})
+  }
+  handleAddRecipes=(recipes)=>{
+    this.setState({recipes:[...recipes]})
+  }
   handleAddRecipe=(recipe)=>{
     this.setState({
       recipes:[...this.state.recipes,recipe]
@@ -94,8 +100,8 @@ this.state={
             recipes: this.state.recipes.filter(recipe => recipe.id !== recipeId)
         });
   }
-  handleDeleteFolder=(folderId,props)=>{
-    props.history.push(`/home-page`)
+  handleDeleteFolder=(folderId)=>{
+    
     this.setState({
             folders: this.state.folders.filter(folder => folder.id !== folderId)
         });
@@ -104,11 +110,13 @@ this.state={
     console.log(config.API_ENDPOINT)
     console.log(TokenService.getAuthToken())
     const contextValue={
-      user_id:this.state.user_id,
+      user_id:TokenService.decodeAuthToken(TokenService.getAuthToken()),
       folders:this.state.folders,
       recipes:this.state.recipes,
       addRecipe:this.handleAddRecipe,
+      addRecipes:this.handleAddRecipes,
       addFolder:this.handleAddFolder,
+      addFolders:this.handleAddFolders,
       updateRecipe:this.handleUpdateRecipe,
       updateFolder:this.handleUpdateFolder,
       deleteRecipe:this.handleDeleteRecipe,

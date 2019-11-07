@@ -4,6 +4,7 @@ import Context from '../../Context'
 import config from '../../config'
 import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
+import TokenService from '../../services/token-service'
 const uuidv4 = require('uuid/v4');
 
 
@@ -23,7 +24,7 @@ class Recipe extends React.Component{
             method:'DELETE',
             headers:{
           'content-type':'application/json',
-          'Authorization':`Bearer ${config.API_TOKEN}`,
+          'Authorization': `Bearer ${TokenService.getAuthToken()}`,
         },
         body: JSON.stringify({'id':id})
     };
@@ -32,6 +33,7 @@ class Recipe extends React.Component{
         .catch(error =>{
             this.setState({error})
         })
+        props.history.push('/recipe-list')
     }
 
     createDisplayedIngredients=(ing)=>{
