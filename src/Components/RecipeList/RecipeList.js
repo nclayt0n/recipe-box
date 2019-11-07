@@ -14,7 +14,7 @@ class RecipeList extends React.Component{
 render(){
 
     let style;
-    if(this.props.location.pathname==='/home-page'){
+    if(this.props.location.pathname===`/home-page`){
         style=hpStyles
     }if(this.props.location.pathname==='/recipe-list'){
         style=recipeListStyles
@@ -23,8 +23,8 @@ render(){
 (this.props.recipes!==undefined)?(displayedRecipes=this.props.recipes):(displayedRecipes=this.context.recipes);
     return(
         <>
-        {(this.props.location.pathname!=='/home-page')?<Header/>:''}
-        {(this.props.location.pathname==='/home-page')?'':<Nav/>}
+        {(this.props.location.pathname!==`/home-page`)?<Header/>:''}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <div className='RecipeList' style={style.recipeListStyle.div}>
             <ul style={style.recipeListStyle.ul}>Recipes
             {this.createDisplayedRecipes(displayedRecipes,style)}

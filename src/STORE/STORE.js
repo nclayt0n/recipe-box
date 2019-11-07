@@ -2,7 +2,7 @@ const STORE = {
     "folders": [{
             "id": "d26e0034-ffaf-11e8-8eb2-f2801f1b9fb7",
             "name": "Important",
-            "user_id": 2
+            "user_id": 0
         },
         {
             "id": "d26e0034-ffaf-11e8-8eb2-f2801f1b9fb4",
@@ -30,6 +30,7 @@ const STORE = {
             "link": "www.notArealSite.com",
             "createdBy": "Oprah",
             "note": "enjoy",
+            "user_id": 0
         },
         {
             "id": "b0715efe-ffaf-11e8-8eb2-f2801f1b9fd6",

@@ -9,7 +9,7 @@ class FolderList extends React.Component{
     static contextType=Context;
     render(){
         let style;
-        if(this.props.location.pathname==='/home-page'){
+        if(this.props.location.pathname===`/home-page`){
             style=hpStyles
         }if(this.props.location.pathname==='/folder-list'){
             style=folderListStyles
@@ -18,8 +18,8 @@ class FolderList extends React.Component{
             return <li key={folder.id} style={style.folderListStyle.li}><Link to={`/folder/${folder.id}`} style={style.folderListStyle.liA}>{folder.name}</Link></li>
         })
         return(<>
-        {(this.props.location.pathname==='/home-page')?'':<Header/>}
-        {(this.props.location.pathname==='/home-page')?'':<Nav/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Header/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
             <div className='folderList' style={style.folderListStyle.div}>
                 <ul className='list' style={style.folderListStyle.ul}><Link to={'/folder-list'}style={style.folderListStyle.ulA}>FolderList</Link>
                 {folders}

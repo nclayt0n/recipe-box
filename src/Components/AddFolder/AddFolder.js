@@ -7,6 +7,7 @@ import addFStyles from './AddFolderStyles'
 import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
+import TokenService from '../../services/token-service'
 const uuidv4 = require('uuid/v4');
 
 
@@ -33,7 +34,7 @@ class AddFolder extends React.Component{
           'content-type':'application/json',
           'Authorization':`Bearer ${config.API_TOKEN}`,
         },
-        body: JSON.stringify({'name':folderName,'user_id':2})
+        body: JSON.stringify({'name':folderName,'user_id':this.context.user_id})
     };
 
     fetch(url,options)
@@ -56,16 +57,17 @@ class AddFolder extends React.Component{
     }
     render(){  
         console.log(this.context)
+        console.log(this.props)
         let style;
-         if(this.props.location.pathname==='/home-page'){
+         if(this.props.location.pathname===`/home-page`){
             style=hpStyles
         }if(this.props.location.pathname==='/add-folder'){
             style=addFStyles
         }
         return(
             <>
-             {(this.props.location.pathname==='/home-page')?'':<Header/>}
-        {(this.props.location.pathname==='/home-page')?'':<Nav/>}
+             {(this.props.location.pathname===`/home-page`)?'':<Header/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <div className='addFolder' style={style.addFolderDivStyle} >
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>

@@ -104,7 +104,7 @@ class AddRecipe extends React.Component{
         //will post to DB and also to context
         if(recipe.name.length===0 && recipe.ingredients.length===0 && recipe.instructions.length ===0){return null}else{
             this.context.addRecipe(recipe)
-            this.props.history.push('/home-page')}
+            this.props.history.push(`/home-page`)}
     }
     callApi=(recipe)=>{
         const {name,
@@ -123,7 +123,7 @@ class AddRecipe extends React.Component{
           'content-type':'application/json',
           'Authorization':`Bearer ${config.API_TOKEN}`,
         },
-        body: JSON.stringify({'name':name,'date_created':moment().format(),'folder_id':folder_id,'instructions':instructions,ingredients,note,link,created_by:createdBy,user_id:1})
+        body: JSON.stringify({'name':name,'date_created':moment().format(),'folder_id':folder_id,'instructions':instructions,ingredients,note,link,created_by:createdBy,user_id:this.context.user_id})
     };
     
         fetch(url,options)
@@ -142,14 +142,14 @@ class AddRecipe extends React.Component{
     }
     render(){
         let style;
-        if(this.props.location.pathname==='/home-page'){
+        if(this.props.location.pathname===`/home-page`){
             style=hpStyles
         }if(this.props.location.pathname==='/add-recipe'){
             style=addRStyles
         } 
         return (<>
-        {(this.props.location.pathname==='/home-page')?'':<Header/>}
-        {(this.props.location.pathname==='/home-page')?'':<Nav/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Header/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
             <div className='addRecipe' style={style.addRecipeStyle}>
                 <h3><Link to={'/add-recipe'}>Add Recipe Form</Link> </h3>
                 <form onSubmit={e=>this.addIngredient(e)}>
@@ -205,7 +205,7 @@ class AddRecipe extends React.Component{
                             <button type='submit'>Submit</button>
                     </fieldset>
                 </form>   
-               {(this.props.location.pathname==='/home-page')?null:<button onClick={()=>this.props.history.goBack()}>Cancel</button>} 
+               {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()}>Cancel</button>} 
             </div></>
         )
     }

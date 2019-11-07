@@ -3,7 +3,9 @@ import {withRouter} from 'react-router-dom'
 import './LoginForm.css'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
+import Context from '../../Context'
 class LoginForm extends React.Component{
+  static contextType=Context;
     static defaultProps = {
     location: {},
     history: {
@@ -11,12 +13,16 @@ class LoginForm extends React.Component{
     },
   }
 
-  handleLoginSuccess = () => {
+
+  handleLoginSuccess = (token) => {
+  let user_id=TokenService.decodeAuthToken(token)
+this.context.user_id=user_id;
+console.log(this.context.user_id)
       console.log(this.props)
     const { location, history } = this.props
     console.log(location)
     const destination = (location.state || {}).from || '/'
-    history.push('/home-page')
+    history.push(`/home-page`)
   }
 
   state = { error: null }
@@ -35,18 +41,16 @@ class LoginForm extends React.Component{
   }
 handleSubmitJWTAuth=ev=>{
   ev.preventDefault()
-  
   this.setState({error:null})
   const {email,password}=ev.target
   console.log( email.value,password.value)
   AuthApiService.postLogin(email.value,
     password.value)
   .then(res=>{
-
     email.value=''
     password.value=''
     TokenService.saveAuthToken(res.authToken)
-    this.handleLoginSuccess()
+    this.handleLoginSuccess(res.authToken)
   })
   .catch(res=>{
     this.setState({error:res.error})

@@ -24,44 +24,50 @@ import Nav from './Components/Nav/Nav';
 import STORE from './STORE/STORE'
 import Context from './Context'
 import './App.css'
+import TokenService from './services/token-service'
 class App extends React.Component {
+  static defaultProps={folders:STORE.folders[0],
+  recipes:STORE.recipes[0]} 
   constructor(){
     super()
 this.state={
     folders:[],
     recipes:[],
+    user_id:0
   }
 }
-  componentDidMount() {
-        const options = {
-            method: 'GET',
-            headers: {
-                'content-type': 'application/json',
-                'Authorization': `Bearer ${config.API_TOKEN}`,
-            },
-        };
-        Promise.all([
-                fetch(`${config.API_ENDPOINT}/recipes`,
-          options),
-                fetch(`${config.API_ENDPOINT}/folders`,
-          options)
-            ])
-            .then(([recipesRes, foldersRes]) => {
-                if (!recipesRes.ok)
-                    return recipesRes.json().then(e => Promise.reject(e));
-                if (!foldersRes.ok)
-                    return foldersRes.json().then(e => Promise.reject(e));
+  // componentDidMount() {
+  //   this.setState({user_id:this.context.user_id})
+  //       const options = {
+  //           method: 'GET',
+  //           headers: {
+  //               'content-type': 'application/json',
+  //               'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+  //           },
 
-                return Promise.all([recipesRes.json(), foldersRes.json()]);
-            })
-            .then(([recipes, folders]) => {
-                this.setState({ recipes, folders });
-            })
-            .catch(error => {
-                console.error({ error });
-            });
+  //       };
+  //       Promise.all([
+  //               fetch(`${config.API_ENDPOINT}/recipes`,
+  //         options),
+  //               fetch(`${config.API_ENDPOINT}/folders`,
+  //         options)
+  //           ])
+  //           .then(([recipesRes, foldersRes]) => {
+  //               if (!recipesRes.ok)
+  //                   return recipesRes.json().then(e => Promise.reject(e));
+  //               if (!foldersRes.ok)
+  //                   return foldersRes.json().then(e => Promise.reject(e));
 
-    }
+  //               return Promise.all([recipesRes.json(), foldersRes.json()]);
+  //           })
+  //           .then(([recipes, folders]) => {
+  //               this.setState({ recipes, folders });
+  //           })
+  //           .catch(error => {
+  //               console.error({ error });
+  //           });
+
+  //   }
   handleAddRecipe=(recipe)=>{
     this.setState({
       recipes:[...this.state.recipes,recipe]
@@ -89,14 +95,16 @@ this.state={
         });
   }
   handleDeleteFolder=(folderId,props)=>{
-    props.history.push('/home-page')
+    props.history.push(`/home-page`)
     this.setState({
             folders: this.state.folders.filter(folder => folder.id !== folderId)
         });
   }
   render(){
     console.log(config.API_ENDPOINT)
+    console.log(TokenService.getAuthToken())
     const contextValue={
+      user_id:this.state.user_id,
       folders:this.state.folders,
       recipes:this.state.recipes,
       addRecipe:this.handleAddRecipe,

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link,withRouter} from 'react-router-dom'
-
+import TokenService from '../../services/token-service'
 import navStyles from './NavStyles'
 // import './Nav.css'
 class Nav extends React.Component{
@@ -10,6 +10,10 @@ class Nav extends React.Component{
         hidden:navStyles.hidden,
         visible:navStyles.visible}
     }
+    handleLogoutClick = () => {
+        return TokenService.clearAuthToken()
+      }
+    
     navStyles=()=>{
         if(this.state.clicked===false){this.setState({clicked:true})
     
@@ -31,17 +35,16 @@ class Nav extends React.Component{
                 <li style={navStyles.mainUlLi}><Link to={'/add-folder'}>Add Folder</Link></li>
             </ul>  */}
             <ul className='navAcctLinks' style={(this.state.clicked===false)?(this.state.hidden.mainUl):(this.state.visible.mainUl)}>
-                <li style={(this.state.clicked===false)?(this.state.hidden.mainUlLi):(this.state.visible.mainUlLi)}><Link to={'/register'}>Create New Account</Link></li>
-                <li style={(this.state.clicked===false)?(this.state.hidden.mainUlLi):(this.state.visible.mainUlLi)}><Link to={'/login'}></Link>Login</li>
-                <li style={(this.state.clicked===false)?(this.state.hidden.mainUlLi):(this.state.visible.mainUlLi)}>Logout</li>
+              
+                <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.mainUlLi):(this.state.visible.mainUlLi)} onClick={this.handleLogoutClick}>Logout</Link>
             </ul>
 
     </nav>
     <aside className='nav-sidebar' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sidebar)}>
         <ul className='navPageLinks' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sideBar)}>
-        {this.props.location.pathname==='/home-page'?null:
+        {this.props.location.pathname===`/home-page`?null:
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
-                    <Link to={'/home-page'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Home</Link>
+                    <Link to={`/home-page${this.context.user_id}`} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Home</Link>
                 </li>}
                 {this.props.location.pathname==='/recipe-list'?null:
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
