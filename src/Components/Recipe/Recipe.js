@@ -19,6 +19,7 @@ class Recipe extends React.Component{
     return recipe;
 }
     deleteRecipe=(id,props)=>{
+        console.log(id)
         const url=`${config.API_ENDPOINT}/recipe/${id}`;
         const options={
             method:'DELETE',
@@ -59,6 +60,7 @@ class Recipe extends React.Component{
             
             return<li key={uuidv4()}>{ingredient}</li>})}}
     render(){
+        console.log(this.context)
         let recipe=this.findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
         const ingredients=this.createDisplayedIngredients(recipe.ingredients)
         console.log(recipe)

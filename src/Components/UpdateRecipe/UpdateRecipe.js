@@ -5,6 +5,8 @@ import moment from 'moment'
 import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
+import TokenService from '../../services/token-service'
+import config from '../../config'
 const uuidv4 = require('uuid/v4');
 
 class UpdateRecipe extends React.Component{  
@@ -17,7 +19,8 @@ class UpdateRecipe extends React.Component{
                 nameError:'',
                 ingredientsError:'',
                 instructionsError:'',
-                deleted:false
+                deleted:false,
+                recipe:{}
             }
      }
      validateRecipe=(updatedRecipe)=>{
@@ -40,13 +43,27 @@ class UpdateRecipe extends React.Component{
       this.recipeCall(updatedRecipe)
     }
     recipeCall=(updatedRecipe)=>{
+        console.log(updatedRecipe)
         //will post to DB and also to context
         if(updatedRecipe.name.length===0 && updatedRecipe.ingredients.length===0 && updatedRecipe.instructions.length ===0){ return null}if(updatedRecipe.name.length<3|| updatedRecipe.ingredients.length<1||updatedRecipe.instructions.length<1 ||
             updatedRecipe.ingredients[0].name.length<3){
            return null
         }
         else{  
-        this.context.updateRecipe(updatedRecipe) 
+            const url=`${config.API_ENDPOINT}/recipe/${updatedRecipe.id}`;
+            const options={
+                method:'PATCH',
+                headers:{
+              'content-type':'application/json',
+              'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify({'id':updatedRecipe.id})
+        };
+            fetch(url,options)
+            .then(this.context.updateRecipe(updatedRecipe))
+            .catch(error =>{
+                this.setState({error})
+            })
         this.props.history.goBack()
     }
 }
@@ -65,10 +82,10 @@ class UpdateRecipe extends React.Component{
             return null
         }else{
             const results=recipes.filter(recipe=>recipe.id===id);
-        const recipe=results[0];
-        const folder = folders.filter(f=>f.id===recipe.folder_id );
-        recipe.folderName=folder[0].name; 
-        return recipe  
+            const recipe=results[0];
+            const folder = folders.filter(f=>f.id===recipe.folder_id );
+            recipe.folderName=folder[0].name; 
+            return recipe  
         }
       
     }
@@ -96,7 +113,7 @@ class UpdateRecipe extends React.Component{
             note
         }
             this.validateRecipe(updatedRecipe)
-           
+            console.log(updatedRecipe.concat(recipe))
         }
         if(this.state.ingredients.length===0&&this.state.deleted===true){
             let updatedRecipe={
@@ -110,8 +127,8 @@ class UpdateRecipe extends React.Component{
             createdBy,
             note
         }
+        console.log(updatedRecipe.concat(recipe))
             this.validateRecipe(updatedRecipe)
-           
         }
         if(this.state.ingredients.length>0){
             let ingredients=[];
@@ -133,6 +150,7 @@ class UpdateRecipe extends React.Component{
                 createdBy,
                 note
             }
+            console.log(updatedRecipe.concat(recipe))
             this.validateRecipe(updatedRecipe)
         //here send to api then in that api call then have the this.context.addRecipe
         }
@@ -174,7 +192,8 @@ class UpdateRecipe extends React.Component{
          <Header/>
          <Nav/>
             <div className='updateRecipe' style={{margin:'auto',display:'flex',flexDirection:'column',width:'60%'}}>
-            <h3>Recipe</h3> <button type='button' onClick={()=>this.updateIngredient(recipe)}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
+            <h3>Recipe</h3> 
+            <button type='button' onClick={()=>this.updateIngredient(recipe)}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
             <form onSubmit={e=>this.handleSubmit(e,recipe)}>
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                 {(this.state.ingredients.length===0)?(null):(displayedIngredients)}

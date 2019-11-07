@@ -1,6 +1,5 @@
 import React from 'react'
 import {Switch,Route} from 'react-router-dom'
-import config from './config'
 import HomePage from './Components/HomePage/HomePage'
 import Header from './Components/Header/Header'
 import LoginForm from './Components/LoginForm/LoginForm'
@@ -20,7 +19,6 @@ import UpdateFolder from './Components/UpdateFolder/UpdateFolder';
 import NotFound from './Components/NotFound/NotFound';
 import PublicOnlyRoute from './Utils/PublicOnlyRoute'
 import PrivateRoute from './Utils/PrivateRoute'
-import Nav from './Components/Nav/Nav';
 import STORE from './STORE/STORE'
 import Context from './Context'
 import './App.css'
@@ -107,10 +105,12 @@ this.state={
         });
   }
   render(){
-    console.log(config.API_ENDPOINT)
-    console.log(TokenService.getAuthToken())
+    let userId;
+    (TokenService.getAuthToken()===null)?userId=0:
+      userId=TokenService.decodeAuthToken(TokenService.getAuthToken())
     const contextValue={
-      user_id:TokenService.decodeAuthToken(TokenService.getAuthToken()),
+      
+      user_id:userId,
       folders:this.state.folders,
       recipes:this.state.recipes,
       addRecipe:this.handleAddRecipe,

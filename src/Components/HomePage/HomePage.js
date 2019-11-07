@@ -13,17 +13,18 @@ import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import TokenService from '../../services/token-service'
 import config from '../../config'
+import { thisExpression } from '@babel/types';
 
 class HomePage extends React.Component{
     static contextType=Context;
-//     constructor(){
-//         super()
-//     this.state={
-//     folders:[],
-//     recipes:[],
-//     user_id:0
-//   }
-// }
+    constructor(){
+        super()
+    this.state={
+    folders:[],
+    recipes:[],
+    user_id:Number
+  }
+}
   componentDidMount() {
     this.setState({user_id:this.context.user_id})
         const options = {
@@ -49,16 +50,14 @@ class HomePage extends React.Component{
                 return Promise.all([recipesRes.json(), foldersRes.json()]);
             })
             .then(([recipes, folders]) => {
-                this.context.addRecipes(recipes);
+                this.context.addRecipes(recipes)
                 this.context.addFolders(folders)
             })
             .catch(error => {
                 console.error({ error });
             });
-
     }
     render(){
-        console.log(this.context)
         return(
         <div> 
             <Header/>
@@ -67,7 +66,7 @@ class HomePage extends React.Component{
             
         <AddFolder/></div>
            
-            <AddRecipe/>
+            <AddRecipe />
             <RecipeList />
             <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
             <section className='ingredientsList'>

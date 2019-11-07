@@ -14,7 +14,6 @@ function findFolder(id,folders){
         return null
     }else{
 const folder = folders.filter(f =>f.id === id );
-console.log(folder)
 let folderName=(folder[0].name) 
 return folderName}
 }

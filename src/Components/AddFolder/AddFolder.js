@@ -44,7 +44,7 @@ class AddFolder extends React.Component{
         }
         throw new Error(response.statusText);
     })
-    .then(responseJson => this.context.addFolder(responseJson))
+    .then(responseJson =>this.context.addFolder(responseJson))
     .catch(error =>{
         console.error(error)
     })
