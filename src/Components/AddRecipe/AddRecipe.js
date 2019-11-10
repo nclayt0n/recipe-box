@@ -116,7 +116,7 @@ class AddRecipe extends React.Component{
             createdBy,
             folder_id}=recipe    
          
-        const url=`${config.API_ENDPOINT}/api/recipes`;
+        const url=`${config.API_ENDPOINT}/recipes`;
         const options={
             method:'POST',
             headers:{

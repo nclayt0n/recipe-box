@@ -22,7 +22,7 @@ class Recipe extends React.Component{
     return recipe;
 }
     deleteRecipe=(id,props)=>{
-        const url=`${config.API_ENDPOINT}/api/recipe/${id}`;
+        const url=`${config.API_ENDPOINT}/recipe/${id}`;
         const options={
             method:'DELETE',
             headers:{

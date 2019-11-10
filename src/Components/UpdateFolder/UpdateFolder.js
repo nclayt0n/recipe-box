@@ -24,7 +24,7 @@ class UpdateFolder extends React.Component{
         const updatedName=(e.target.updatedName.value)
         if(updatedName.length===0){this.setState({nameError:'New name must be 3 characters, or cancel to go back.'})
     }else{
-        const url=`${config.API_ENDPOINT}/api/folder/${this.props.match.params.id}`;
+        const url=`${config.API_ENDPOINT}/folder/${this.props.match.params.id}`;
         const options={
             method:'PATCH',
             headers:{
