@@ -31,7 +31,7 @@ class Folder extends React.Component{
     static contextType=Context;
     state={error:''}
     deleteFolder=(id,props)=>{
-        const url=`${config.API_ENDPOINT}/folder/${id}`;
+        const url=`${config.API_ENDPOINT}/api/folder/${id}`;
         const options={
             method:'DELETE',
             headers:{

@@ -144,7 +144,7 @@ class UpdateRecipe extends React.Component{
            return null
         }
         else{  
-            const url=`${config.API_ENDPOINT}/recipe/${updatedRecipe.id}`;
+            const url=`${config.API_ENDPOINT}/api/recipe/${updatedRecipe.id}`;
             const options={
                 method:'PATCH',
                 headers:{

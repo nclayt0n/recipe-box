@@ -25,7 +25,7 @@ class AddFolder extends React.Component{
         }
         if(folderName.length>=3){
 
-            const url=`${config.API_ENDPOINT}/folders`;
+            const url=`${config.API_ENDPOINT}/api/folders`;
             const options={
                 method:'POST',
                 headers:{

@@ -36,9 +36,9 @@ class HomePage extends React.Component{
 
         };
         Promise.all([
-                fetch(`${config.API_ENDPOINT}/recipes`,
+                fetch(`${config.API_ENDPOINT}/api/recipes`,
           options),
-                fetch(`${config.API_ENDPOINT}/folders`,
+                fetch(`${config.API_ENDPOINT}/api/folders`,
           options)
             ])
             .then(([recipesRes, foldersRes]) => {
