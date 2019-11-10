@@ -25,6 +25,8 @@ class FolderList extends React.Component{
                 {folders}
                     <li style={style.folderListStyle.li}><Link to={'/recipe-list'} style={style.folderListStyle.liA}>All Recipes</Link></li>
                 </ul>
+                {(this.props.location.pathname===`/home-page`)?null: (<><button><Link to={'/add-folder'}>Add Folder</Link></button>
+        <button type='button' onClick={()=>this.props.history.goBack()}>Back</button></>)}
             </div></>
         )
     }

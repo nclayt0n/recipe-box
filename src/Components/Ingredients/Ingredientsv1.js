@@ -33,14 +33,6 @@ class Ingredients extends React.Component{
         } 
         this.setState({clicked:true,
     selectedFolderIds:[...selectedFolders]})
-        // if(selectedFolders.length===0||selectedFolders[0]==='allF'){
-        //     for(let i=0;i<this.context.recipes.length;i++){ 
-        //         console.log(this.context.folders[i].id)
-        //         this.setState({selectedFolderIds:[...this.state.selectedFolderIds,this.context.folders[i].id]})
-               
-        //     }
-            
-        // }
         
         let displayed=this.state.selectedFolderIds.map((folderId)=>this.context.recipes.filter(f=>{return(folderId===f.folderId)}));
         if(selectedFolders[0]==='allF'){
@@ -98,7 +90,7 @@ class Ingredients extends React.Component{
             if(recipes.length===0||recipes===undefined){
                 return null
             }else{
-                return recipes.map(recipe=>{ console.log(recipe)
+                return recipes.map(recipe=>{ 
                     return <option key={uuidv4()} value={recipe.id}>{recipe.name}</option>}
             )}
            }));

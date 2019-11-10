@@ -24,7 +24,6 @@ const AuthApiService = {
             },
             body: JSON.stringify(user),
         }
-        console.log(options)
         return fetch(`${config.API_ENDPOINT}/users`, options)
             .then(res =>
                 (!res.ok) ?

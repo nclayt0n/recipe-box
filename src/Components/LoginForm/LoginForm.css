@@ -44,6 +44,7 @@
 .loginForm button,
 .loginForm a {
     margin: auto;
+    margin-bottom: 5px;
     padding: 5px;
     background-color: var(--purple);
     color: white;

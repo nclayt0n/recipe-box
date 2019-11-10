@@ -21,6 +21,8 @@
     width: fit-content;
 }
 
-h2 {
+h2,
+h3 {
+    color: black;
     text-align: center;
 }

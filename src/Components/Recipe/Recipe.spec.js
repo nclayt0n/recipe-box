@@ -26,6 +26,5 @@ import * as Context from '../../Context'
 const wrapper=shallow(<Recipe contextValues={contextValues}/>)
 expect(toJson(wrapper))
 .toMatchSnapshot()
-     console.log(Context)
 });
      })

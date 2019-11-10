@@ -26,7 +26,6 @@ import * as Context from '../../Context'
 const wrapper=shallow(<Folder contextValues={contextValues}/>)
 expect(toJson(wrapper))
 .toMatchSnapshot()
-     console.log(Context)
 });
      })
 

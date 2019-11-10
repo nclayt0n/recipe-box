@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter,Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
 import Header from '../Header/Header'
 class RegistrationForm extends React.Component{

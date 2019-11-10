@@ -6,12 +6,14 @@ import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
 import TokenService from '../../services/token-service'
 import xss from 'xss'
+import ValidationError from '../../Validation/ValidationError'
 const uuidv4 = require('uuid/v4');
 
 
 
 class Recipe extends React.Component{
     static contextType=Context;
+    state={error:''}
     findFolderandRecipe=(id,folders,recipes)=>{
     const results=recipes.filter(recipe=>recipe.id===parseInt(id));
     const recipe=results[0];
@@ -20,7 +22,6 @@ class Recipe extends React.Component{
     return recipe;
 }
     deleteRecipe=(id,props)=>{
-        console.log(id)
         const url=`${config.API_ENDPOINT}/recipe/${id}`;
         const options={
             method:'DELETE',
@@ -65,7 +66,6 @@ class Recipe extends React.Component{
         }else{
         recipe= recipe
         }
-        console.log(recipe)
  const ingredients=this.createDisplayedIngredients(recipe.ingredients)
         return(<>
          <Header/>
@@ -73,7 +73,7 @@ class Recipe extends React.Component{
             <div className='recipe' style={{margin:'auto',display:'flex',flexDirection:'column',width:'60%'}}>
             <h3>Recipe</h3>
                 <ul style={{margin:'auto', }} >{recipe.name}
-                <li>INTRUCTIONS: {recipe.instructions}</li>
+                <li>INSTRUCTIONS: {recipe.instructions}</li>
                 <Link to={'/ingredients'}>INGREDIENTS:</Link> 
                 {ingredients}
                 {(recipe.created_by.length===0)?(null):
@@ -86,7 +86,8 @@ class Recipe extends React.Component{
                 </ul>
                 <button><Link to={`/update-recipe/${recipe.id}`}>Update Recipe</Link></button>
                 <button onClick={()=>this.props.history.goBack()}>Back</button><br/>
-                <button type='button' onClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                <button type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                <ValidationError Namemessage={this.state.error}/>
             </div></>
         )
     }

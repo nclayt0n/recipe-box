@@ -6,10 +6,10 @@ import './Folder.css'
 import Nav from '../Nav/Nav'
 import Header from '../Header/Header'
 import TokenService from '../../services/token-service'
+import ValidationError from '../../Validation/ValidationError'
 const uuidv4 = require('uuid/v4');
 
 function findFolder(id,folders){
-    console.log(id, folders)
     if(folders.length===0){
         return null
     }else{
@@ -29,6 +29,7 @@ function findRecipes(folderId,recipes){
 }
 class Folder extends React.Component{
     static contextType=Context;
+    state={error:''}
     deleteFolder=(id,props)=>{
         const url=`${config.API_ENDPOINT}/folder/${id}`;
         const options={
@@ -52,22 +53,29 @@ class Folder extends React.Component{
         let recipeList=findRecipes(id,this.context.recipes);
         return(
             <>
-             <Header/>
-        <Nav/>
-           <div className='folder'>
-                <button type='button' onClick={()=>this.props.history.goBack()}>{folderName}
-                </button>
-                {recipeList}
-                <div className='buttonBox'>
-                    <button type='button'>
-                        <Link to={`/update-folder/${this.props.match.params.id}`}>Update Folder</Link>
-                    </button>
-                    <button>
-                        <Link to={'/add-recipe'}>Add Recipe</Link>
-                    </button>
-                    <button type='button' onClick={()=>this.deleteFolder(id,this.props)}>Delete Folder</button>
+                <Header/>
+                <Nav/>
+                <div className='folder'>
+                    <h3>{folderName}</h3>
+                    {recipeList}
+                    <div className='buttonBox'>
+                        <button type='button'>
+                            <Link to={`/update-folder/${this.props.match.params.id}`}>Update Folder</Link>
+                        </button><br/>
+                        <button type='button' 
+                            onClick={()=>this.setState({error:'to confirm delete, doubleClick.'})}
+                            onDoubleClick={()=>this.deleteFolder(id,this.props)}>Delete Folder
+                        </button><br/>
+                        <ValidationError Namemessage={this.state.error}/><br/>
+                        <button>
+                            <Link to={'/add-recipe'}>Add Recipe</Link>
+                        </button><br/>
+                        <button type='button' 
+                            onClick={()=>this.props.history.goBack()}>Back
+                        </button>
+                    </div>
                 </div>
-            </div></>
+                </>
         )
     }
 }

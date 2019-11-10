@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter,Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import Context from '../../Context'
 import moment from 'moment'
 import Header from '../Header/Header'
@@ -23,19 +23,7 @@ class UpdateRecipe extends React.Component{
                 recipe:{}
             }
      }
-     
-     deleteIngredient=(idx)=>{
-         this.setState({ingredients:this.state.ingredients.slice(0,idx).concat(this.state.ingredients.slice(idx + 1,this.state.ingredients.length)),deleted:true})
-     }
-    addIngredient=(recipe)=>{
-        const ingredient={name:'',quantity:'',unit:''}
-        if(this.state.ingredients.length===0){this.setState({ingredients:[...this.state.ingredients,ingredient]})
-    }else{
-        this.setState({ingredients:[...this.state.ingredients,ingredient]})}
-    }
-    findFolderandRecipe(id,folders,recipes){
-
-        console.log(folders)
+     findFolderandRecipe(id,folders,recipes){
         id=parseInt(id)
         if(folders===undefined){
             return null
@@ -46,8 +34,28 @@ class UpdateRecipe extends React.Component{
             recipe.folderName=folder[0].name; 
             return recipe  
         }
-      
     }
+
+     updateIngredient=(recipe)=>{
+        if(typeof(recipe.ingredients)==='string'){
+         recipe.ingredients=JSON.parse(recipe.ingredients)
+        }else{
+          recipe.ingredients =recipe.ingredients
+        }
+        this.setState({ingredients:recipe.ingredients})
+    }
+
+    addIngredient=(recipe)=>{
+        const ingredient={name:'',quantity:'',unit:''}
+        if(this.state.ingredients.length===0){this.setState({ingredients:[...this.state.ingredients,ingredient]})
+    }else{
+        this.setState({ingredients:[...this.state.ingredients,ingredient]})}
+    } 
+
+    deleteIngredient=(idx)=>{
+         this.setState({ingredients:this.state.ingredients.slice(0,idx).concat(this.state.ingredients.slice(idx + 1,this.state.ingredients.length)),deleted:true})
+    }
+    
      handleSubmit=(e,recipe)=>{
         e.preventDefault()  
         let name=e.target.name.value;
@@ -85,7 +93,7 @@ class UpdateRecipe extends React.Component{
             createdBy,
             note
         }
-        // console.log(updatedRecipe.concat(recipe))
+   
             this.validateRecipe(updatedRecipe)
         }
         if(this.state.ingredients.length>0){
@@ -108,9 +116,7 @@ class UpdateRecipe extends React.Component{
                 createdBy:createdBy||recipe.created_by,
                 note:note||recipe.note
             }
-            // console.log(updatedRecipe.concat(recipe))
             this.validateRecipe(updatedRecipe)
-        //here send to api then in that api call then have the this.context.addRecipe
         }
     }
     validateRecipe=(updatedRecipe)=>{
@@ -155,9 +161,7 @@ class UpdateRecipe extends React.Component{
         this.props.history.push(`/home-page`)
     }
 }
-    updateIngredient=(recipe)=>{
-         this.setState({ingredients:recipe.ingredients})
-    }
+    
     createIngredientFields=(recipe)=>{
         return recipe.ingredients.map((ingredient,idx)=>
             <fieldset key={uuidv4()}>Ingredient:<br/>
@@ -180,7 +184,7 @@ class UpdateRecipe extends React.Component{
                             <option value='other'>other</option>
                         </select></label>
                         <label htmlFor={`ingredientUnitOther${idx}`}> Other Unit:
-                        <input type='text' name={`ingredientUnitOther${idx}`}/><br/></label>x
+                        <input type='text' name={`ingredientUnitOther${idx}`}/><br/></label>
                 <button type='button' onClick={()=>this.deleteIngredient(idx)}>Delete</button>
             </fieldset>)
         }
@@ -197,7 +201,7 @@ class UpdateRecipe extends React.Component{
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                 {(this.state.ingredients.length===0)?(null):(displayedIngredients)}
                 {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):
-                (<button type='button' onClick={()=>this.addIngredient(recipe)}>Add Ingredient</button>)}
+                (<button type='button' onClick={()=>this.addIngredient(recipe)}>Add Another Ingredient</button>)}
                 <br/><label htmlFor='name'>Name:</label><br/>
                 <textarea name='name' defaultValue={recipe.name}>
                 </textarea><br/>

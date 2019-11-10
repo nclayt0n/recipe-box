@@ -34,43 +34,10 @@ this.state={
     user_id:0
   }
 }
-  // componentDidMount() {
-  //   this.setState({user_id:this.context.user_id})
-  //       const options = {
-  //           method: 'GET',
-  //           headers: {
-  //               'content-type': 'application/json',
-  //               'Authorization': `Bearer ${TokenService.getAuthToken()}`,
-  //           },
-
-  //       };
-  //       Promise.all([
-  //               fetch(`${config.API_ENDPOINT}/recipes`,
-  //         options),
-  //               fetch(`${config.API_ENDPOINT}/folders`,
-  //         options)
-  //           ])
-  //           .then(([recipesRes, foldersRes]) => {
-  //               if (!recipesRes.ok)
-  //                   return recipesRes.json().then(e => Promise.reject(e));
-  //               if (!foldersRes.ok)
-  //                   return foldersRes.json().then(e => Promise.reject(e));
-
-  //               return Promise.all([recipesRes.json(), foldersRes.json()]);
-  //           })
-  //           .then(([recipes, folders]) => {
-  //               this.setState({ recipes, folders });
-  //           })
-  //           .catch(error => {
-  //               console.error({ error });
-  //           });
-
-  //   }
   handleAddFolders=(folders)=>{
     this.setState({folders:[...folders]})
   }
   handleAddRecipes=(recipes)=>{
-    console.log(recipes)
     this.setState({recipes:[...recipes]})
   }
   handleAddRecipe=(recipe)=>{

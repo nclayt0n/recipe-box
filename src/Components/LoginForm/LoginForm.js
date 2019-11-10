@@ -1,9 +1,10 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {withRouter,Link} from 'react-router-dom'
 import './LoginForm.css'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 import Context from '../../Context'
+import ValidationError from '../../Validation/ValidationError'
 class LoginForm extends React.Component{
   static contextType=Context;
     static defaultProps = {
@@ -13,19 +14,15 @@ class LoginForm extends React.Component{
     },
   }
 
-
+state = { error: null }
   handleLoginSuccess = (token) => {
   let user_id=TokenService.decodeAuthToken(token)
 this.context.user_id=user_id;
-console.log(this.context.user_id)
-      console.log(this.props)
-    const { location, history } = this.props
-    console.log(location)
-    const destination = (location.state || {}).from || '/'
-    history.push(`/home-page`)
-  }
 
-  state = { error: null }
+    const { location, history } = this.props
+    const destination = (location.state || {}).from || '/home-page'
+    history.push(destination)
+  }
 
   handleSubmitBasicAuth = ev => {
     ev.preventDefault()
@@ -43,16 +40,17 @@ handleSubmitJWTAuth=ev=>{
   ev.preventDefault()
   this.setState({error:null})
   const {email,password}=ev.target
-  console.log( email.value,password.value)
   AuthApiService.postLogin(email.value,
     password.value)
-  .then(res=>{
+  .then(res=>{ 
     email.value=''
     password.value=''
     TokenService.saveAuthToken(res.authToken)
     this.handleLoginSuccess(res.authToken)
+   
   })
   .catch(res=>{
+   
     this.setState({error:res.error})
   })
 }
@@ -69,10 +67,12 @@ handleSubmitJWTAuth=ev=>{
             <label htmlFor='username'>   Email:<br/><input type='text' name='email'/></label><br/>
             <label htmlFor='password'>Password:
             <br/><input type='password' name='password'/></label><br/>
-            <button type='submit'>Submit</button>
+            <button type='submit'>Login</button>
+            <button><Link to='/register' className='landingButtons'>Create New Account</Link></button>
         </fieldset>
 
     </form>  
+    <ValidationError Namemessage={error}/>
             </div>
         )
     }

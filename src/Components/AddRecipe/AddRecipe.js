@@ -10,7 +10,6 @@ import addRStyles from './AddRecipeStyles'
 import config from '../../config'
 import moment from 'moment';
 import TokenService from '../../services/token-service'
-const uuidv4 = require('uuid/v4');
 
 class AddRecipe extends React.Component{
     static contextType=Context;
@@ -104,7 +103,6 @@ class AddRecipe extends React.Component{
         }
         else{this.setState({instructionsError:''})}
         if(recipe.name.length===0 || recipe.ingredients.length===0 || recipe.instructions.length ===0 || recipe.folder_id===undefined){return null}else{
-            // console.log(this.state,recipe,'sent')
         this.callApi(recipe)
     }
 }
@@ -116,18 +114,16 @@ class AddRecipe extends React.Component{
             link,
             createdBy,
             folder_id}=recipe    
-            console.log(recipe)
-            console.log(JSON.stringify(recipe)) 
-            console.log(JSON.stringify(recipe.ingredients))
+         
         const url=`${config.API_ENDPOINT}/recipes`;
         const options={
             method:'POST',
             headers:{
-          'content-type':'application/json',
-          'Authorization': `Bearer ${TokenService.getAuthToken()}`,
-        },
-        body: JSON.stringify({'name':name,'date_created':moment().format(),'folder_id':folder_id,'instructions':instructions,ingredients:ingredients,note,link,created_by:createdBy,user_id:this.context.user_id})
-    };
+                'content-type':'application/json',
+                'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify({'name':name,'date_created':moment().format(),'folder_id':folder_id,'instructions':instructions,ingredients:ingredients,note,link,created_by:createdBy,user_id:this.context.user_id})
+        };
     
         fetch(url,options)
         .then(response => {
@@ -140,8 +136,11 @@ class AddRecipe extends React.Component{
         .catch(error =>{
             this.setState({error})
         })
-       console.log(TokenService.getAuthToken())
-        this.props.history.push('/home-page')
+        if(this.props.location.pathname==='/home-page'){
+            this.props.history.push('/home-page')
+        }else{
+            this.props.history.push('/recipe-list')
+        }  
     }
     render(){
         let style;
