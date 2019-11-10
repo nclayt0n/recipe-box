@@ -9,7 +9,7 @@ const AuthApiService = {
             },
             body: JSON.stringify({ email: email, password: password }),
         }
-        return fetch(`${config.API_ENDPOINT}/auth/login`, options)
+        return fetch(`${config.API_ENDPOINT}/api/auth/login`, options)
             .then(res =>
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e) && console.log('not succesful')) :
@@ -24,7 +24,7 @@ const AuthApiService = {
             },
             body: JSON.stringify(user),
         }
-        return fetch(`${config.API_ENDPOINT}/users`, options)
+        return fetch(`${config.API_ENDPOINT}/api/users`, options)
             .then(res =>
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json())

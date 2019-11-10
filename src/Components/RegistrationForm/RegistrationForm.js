@@ -12,22 +12,22 @@ class RegistrationForm extends React.Component{
       handleSubmit = ev => {
         ev.preventDefault()
         const { full_name, email, password } = ev.target
-    this.setState({error:null})
-    AuthApiService.postUser({
-      email:email.value,
-      password:password.value,
-      full_name:full_name.value,
-    })
-    .then(user=>{
-      full_name.value = ''
-        email.value = ''
-        password.value = ''
-        const { history } = this.props
-    history.push('/login')
-    })
-      .catch(res=>{
-        this.setState({error:res.error})
-      })
+        this.setState({error:null})
+        AuthApiService.postUser({
+          email:email.value,
+          password:password.value,
+          full_name:full_name.value,
+        })
+        .then(user=>{
+          full_name.value = ''
+          email.value = ''
+          password.value = ''
+          const { history } = this.props
+          history.push('/login')
+        })
+        .catch(res=>{
+          this.setState({error:res.error})
+        })
       }
     
     render(){
