@@ -21,6 +21,7 @@ class AddRecipe extends React.Component{
             nameError:'',
             ingredientsError:'',
             instructionsError:'',
+            folderError:'',
         }    
         
     }
@@ -85,6 +86,11 @@ class AddRecipe extends React.Component{
         this.validateRecipe(recipe)
     }   
     validateRecipe=(recipe)=>{
+        if(recipe.folder_id=== undefined){
+            this.setState({folderError:'Must create a folder before creating a recipe.'})
+        }else{
+            this.setState({folderError:''})
+        }
         if(recipe.name.length<3){
             this.setState({nameError: '*Required & Must be atleast 3 characters'
         }) 
@@ -95,18 +101,13 @@ class AddRecipe extends React.Component{
         else{this.setState({ingredientsError:''})}
         if(recipe.instructions.length<1){
             this.setState({instructionsError:'*Required & Must add instruction'})
-            
         }
         else{this.setState({instructionsError:''})}
-       
+        if(recipe.name.length===0 || recipe.ingredients.length===0 || recipe.instructions.length ===0 || recipe.folder_id===undefined){return null}else{
+            // console.log(this.state,recipe,'sent')
         this.callApi(recipe)
     }
-    recipeCall=(recipe)=>{
-        //will post to DB and also to context
-        if(recipe.name.length===0 && recipe.ingredients.length===0 && recipe.instructions.length ===0){return null}else{
-            this.context.addRecipe(recipe)
-            this.props.history.push(`/home-page`)}
-    }
+}
     callApi=(recipe)=>{
         const {name,
             instructions,
@@ -115,8 +116,9 @@ class AddRecipe extends React.Component{
             link,
             createdBy,
             folder_id}=recipe    
+            console.log(recipe)
             console.log(JSON.stringify(recipe)) 
-            console.log(JSON.stringify(ingredients))
+            console.log(JSON.stringify(recipe.ingredients))
         const url=`${config.API_ENDPOINT}/recipes`;
         const options={
             method:'POST',
@@ -124,7 +126,7 @@ class AddRecipe extends React.Component{
           'content-type':'application/json',
           'Authorization': `Bearer ${TokenService.getAuthToken()}`,
         },
-        body: JSON.stringify({'name':name,'date_created':moment().format(),'folder_id':folder_id,'instructions':instructions,ingredients,note,link,created_by:createdBy,user_id:this.context.user_id})
+        body: JSON.stringify({'name':name,'date_created':moment().format(),'folder_id':folder_id,'instructions':instructions,ingredients:ingredients,note,link,created_by:createdBy,user_id:this.context.user_id})
     };
     
         fetch(url,options)
@@ -138,7 +140,7 @@ class AddRecipe extends React.Component{
         .catch(error =>{
             this.setState({error})
         })
-       
+       console.log(TokenService.getAuthToken())
         this.props.history.push('/home-page')
     }
     render(){
@@ -193,12 +195,14 @@ class AddRecipe extends React.Component{
                             <input type='text' name='link'/></label><br/>
                             <label htmlFor='createdBy'>Created by:
                             <input type='text' name='createdBy'/></label><br/>
+                            <ValidationError Foldermessage={this.state.folderError}/>
                             <label htmlFor='folder'>Folder:
                             <select name='folder'>
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
                             </select>
                             </label><br/>
+                            
                             {(this.state.ingredients.length>0)?'Ingredients: ':null}<br/> 
                             {(this.state.ingredients.length>0)?<textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly>
                             </textarea>:null}

@@ -5,6 +5,7 @@ import config from '../../config'
 import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
 import TokenService from '../../services/token-service'
+import xss from 'xss'
 const uuidv4 = require('uuid/v4');
 
 
@@ -37,33 +38,35 @@ class Recipe extends React.Component{
         props.history.push('/recipe-list')
     }
 
-    createDisplayedIngredients=(ing)=>{
-        // making ingredients pretty
-        let i=[];
-        let j=[];
-        let k=[];
-        i=ing.split('}');
-        j=i.join().split('{');
-       k=j.map((jj)=>jj.slice(1,jj.length-2));
-
-       let ingredients=[];
-       for(let num=1;num<k.length;num++){
-            ingredients.push(k[num])
-       }
-       ingredients[0]=`"${ingredients[0]}`;
-        if(ingredients===undefined){
-            return null
-        }else{
+    createDisplayedIngredients=(ingredients)=>{
         return ingredients.map((ingredient,idx)=>{
-           ingredient=(ingredient.split('"').join(" ").split(','))
-        //    ingredient[idx].replace(/['"]+/g,'');
-            
-            return<li key={uuidv4()}>{ingredient}</li>})}}
-    render(){
-        console.log(this.context)
+            return<li key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})
+        } 
+   
+    render(){     
+        
         let recipe=this.findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
-        const ingredients=this.createDisplayedIngredients(recipe.ingredients)
+         if(typeof(recipe.ingredients)==='string'){
+         recipe={    
+            id: recipe.id,
+            name: xss(recipe.name),
+            date_created: recipe.date_created,
+            date_modified: recipe.date_modified,
+            ingredients: JSON.parse(recipe.ingredients),
+            instructions: xss(recipe.instructions),
+            link: xss(recipe.link),
+            created_by: xss(recipe.created_by),
+            note: xss(recipe.note),
+            folder_id: recipe.folder_id,
+            folderName:recipe.folderName,
+            user: recipe.user,
+            }
+            recipe= recipe
+        }else{
+        recipe= recipe
+        }
         console.log(recipe)
+ const ingredients=this.createDisplayedIngredients(recipe.ingredients)
         return(<>
          <Header/>
          <Nav/>

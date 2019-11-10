@@ -23,50 +23,7 @@ class UpdateRecipe extends React.Component{
                 recipe:{}
             }
      }
-     validateRecipe=(updatedRecipe)=>{
-        if(updatedRecipe.name.length<3){
-            this.setState({nameError: '*Required & Must be atleast 3 characters'
-        }) 
-        }else{this.setState({nameError:''})}
-        if(updatedRecipe.ingredients.length<1){
-            this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'})
-        }
-        if( updatedRecipe.ingredients!==undefined||updatedRecipe.ingredients[0].name.length){
-            this.setState({ingredientsError:'*Required & Must add at least 1 ingredient name with 3 characters'})
-        }
-        else{this.setState({ingredientsError:''})}
-        if(updatedRecipe.instructions.length<1){
-            this.setState({instructionsError:'*Required & Must add instruction'})
-            
-        }
-        else{this.setState({instructionsError:''})}
-      this.recipeCall(updatedRecipe)
-    }
-    recipeCall=(updatedRecipe)=>{
-        console.log(updatedRecipe)
-        //will post to DB and also to context
-        if(updatedRecipe.name.length===0 && updatedRecipe.ingredients.length===0 && updatedRecipe.instructions.length ===0){ return null}if(updatedRecipe.name.length<3|| updatedRecipe.ingredients.length<1||updatedRecipe.instructions.length<1 ||
-            updatedRecipe.ingredients[0].name.length<3){
-           return null
-        }
-        else{  
-            const url=`${config.API_ENDPOINT}/recipe/${updatedRecipe.id}`;
-            const options={
-                method:'PATCH',
-                headers:{
-              'content-type':'application/json',
-              'Authorization': `Bearer ${TokenService.getAuthToken()}`,
-            },
-            body: JSON.stringify({'id':updatedRecipe.id})
-        };
-            fetch(url,options)
-            .then(this.context.updateRecipe(updatedRecipe))
-            .catch(error =>{
-                this.setState({error})
-            })
-        this.props.history.goBack()
-    }
-}
+     
      deleteIngredient=(idx)=>{
          this.setState({ingredients:this.state.ingredients.slice(0,idx).concat(this.state.ingredients.slice(idx + 1,this.state.ingredients.length)),deleted:true})
      }
@@ -77,6 +34,8 @@ class UpdateRecipe extends React.Component{
         this.setState({ingredients:[...this.state.ingredients,ingredient]})}
     }
     findFolderandRecipe(id,folders,recipes){
+
+        console.log(folders)
         id=parseInt(id)
         if(folders===undefined){
             return null
@@ -113,7 +72,6 @@ class UpdateRecipe extends React.Component{
             note
         }
             this.validateRecipe(updatedRecipe)
-            console.log(updatedRecipe.concat(recipe))
         }
         if(this.state.ingredients.length===0&&this.state.deleted===true){
             let updatedRecipe={
@@ -127,7 +85,7 @@ class UpdateRecipe extends React.Component{
             createdBy,
             note
         }
-        console.log(updatedRecipe.concat(recipe))
+        // console.log(updatedRecipe.concat(recipe))
             this.validateRecipe(updatedRecipe)
         }
         if(this.state.ingredients.length>0){
@@ -141,20 +99,62 @@ class UpdateRecipe extends React.Component{
              }
             let updatedRecipe={
                 id:recipe.id,
-                name,
-                modified:proposedDate,
-                folderId,
-                ingredients:ingredients,  
-                link,
-                instructions,
-                createdBy,
-                note
+                name:name||recipe.name,
+                date_modified:proposedDate,
+                folderId:folderId||recipe.folder_id,
+                ingredients:ingredients||recipe.ingredients,  
+                link:link||recipe.link,
+                instructions:instructions||recipe.instructions,
+                createdBy:createdBy||recipe.created_by,
+                note:note||recipe.note
             }
-            console.log(updatedRecipe.concat(recipe))
+            // console.log(updatedRecipe.concat(recipe))
             this.validateRecipe(updatedRecipe)
         //here send to api then in that api call then have the this.context.addRecipe
         }
     }
+    validateRecipe=(updatedRecipe)=>{
+        if(updatedRecipe.name.length<3){
+            this.setState({nameError: '*Required & Must be atleast 3 characters'
+        }) 
+        }else{this.setState({nameError:''})}
+        if(updatedRecipe.ingredients.length<1){
+            this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'})
+        }
+        if( updatedRecipe.ingredients!==undefined||updatedRecipe.ingredients[0].name.length){
+            this.setState({ingredientsError:'*Required & Must add at least 1 ingredient name with 3 characters'})
+        }
+        else{this.setState({ingredientsError:''})}
+        if(updatedRecipe.instructions.length<1){
+            this.setState({instructionsError:'*Required & Must add instruction'})
+            
+        }
+        else{this.setState({instructionsError:''})}
+      this.recipeCall(updatedRecipe)
+    }
+    recipeCall=(updatedRecipe)=>{
+        if(updatedRecipe.name.length===0 && updatedRecipe.ingredients.length===0 && updatedRecipe.instructions.length ===0){ return null}if(updatedRecipe.name.length<3|| updatedRecipe.ingredients.length<1||updatedRecipe.instructions.length<1 ||
+            updatedRecipe.ingredients[0].name.length<3){
+           return null
+        }
+        else{  
+            const url=`${config.API_ENDPOINT}/recipe/${updatedRecipe.id}`;
+            const options={
+                method:'PATCH',
+                headers:{
+              'content-type':'application/json',
+              'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify(updatedRecipe)
+        };
+            fetch(url,options)
+            .then(this.context.updateRecipe(updatedRecipe))
+            .catch(error =>{
+                this.setState({error})
+            })
+        this.props.history.push(`/home-page`)
+    }
+}
     updateIngredient=(recipe)=>{
          this.setState({ingredients:recipe.ingredients})
     }
@@ -187,7 +187,6 @@ class UpdateRecipe extends React.Component{
     render(){
         let recipe=this.findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
         const displayedIngredients= this.createIngredientFields(this.state)
-        console.log(this.state)
         return (<>
          <Header/>
          <Nav/>
@@ -197,7 +196,8 @@ class UpdateRecipe extends React.Component{
             <form onSubmit={e=>this.handleSubmit(e,recipe)}>
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                 {(this.state.ingredients.length===0)?(null):(displayedIngredients)}
-                {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):( <button type='button' onClick={()=>this.addIngredient(recipe)}>Add Ingredient</button>)}
+                {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):
+                (<button type='button' onClick={()=>this.addIngredient(recipe)}>Add Ingredient</button>)}
                 <br/><label htmlFor='name'>Name:</label><br/>
                 <textarea name='name' defaultValue={recipe.name}>
                 </textarea><br/>

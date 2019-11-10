@@ -70,6 +70,7 @@ this.state={
     this.setState({folders:[...folders]})
   }
   handleAddRecipes=(recipes)=>{
+    console.log(recipes)
     this.setState({recipes:[...recipes]})
   }
   handleAddRecipe=(recipe)=>{
@@ -140,7 +141,8 @@ this.state={
           <PrivateRoute path='/ingredients' component={Ingredients}/>
           <PrivateRoute path='/search' component={Search}/>
           <PrivateRoute path='/update-folder/:id' component={UpdateFolder}/>
-          <PrivateRoute path='/update-recipe/:id' component={UpdateRecipe}/>
+          <PrivateRoute path='/update-recipe/:id'
+           component={UpdateRecipe}/>
           <PrivateRoute path='/header' component={Header}/>
           <Route component={NotFound}/>
         </Switch>
