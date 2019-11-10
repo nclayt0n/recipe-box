@@ -85,8 +85,9 @@ class AddRecipe extends React.Component{
         this.validateRecipe(recipe)
     }   
     validateRecipe=(recipe)=>{
-        if(recipe.folder_id=== undefined){
-            this.setState({folderError:'Must create a folder before creating a recipe.'})
+        console.log(this.context.folders.length)
+        if(this.context.folders.length===0){
+            this.setState({folderError:'*Must create a folder before creating a recipe.'})
         }else{
             this.setState({folderError:''})
         }
@@ -154,6 +155,7 @@ class AddRecipe extends React.Component{
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
             <div className='addRecipe' style={style.addRecipeStyle}>
                 <h3><Link to={'/add-recipe'}>Add Recipe Form</Link> </h3>
+                <ValidationError Foldermessage={this.state.folderError}/>
                 <form onSubmit={e=>this.addIngredient(e)}>
                     <fieldset>
                         <legend>Add Each Ingredient Before Submitting </legend><label htmlFor='ingredientName'>Ingredient Name:
@@ -176,9 +178,9 @@ class AddRecipe extends React.Component{
                         <label htmlFor='ingredientUnitOther'> Other Unit:
                         <input type='text' name='ingredientUnitOther'/><br/>
                         <button type='submit'>Enter</button></label><br/>
-                        
                     </fieldset>
                 </form>
+                <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
                 <form onSubmit={e=>this.handleSubmit(e)}>
                     <fieldset>
                         <legend>Recipe </legend>
@@ -194,7 +196,7 @@ class AddRecipe extends React.Component{
                             <input type='text' name='link'/></label><br/>
                             <label htmlFor='createdBy'>Created by:
                             <input type='text' name='createdBy'/></label><br/>
-                            <ValidationError Foldermessage={this.state.folderError}/>
+                            
                             <label htmlFor='folder'>Folder:
                             <select name='folder'>
                                 {this.context.folders.map((folder)=>{
@@ -205,7 +207,7 @@ class AddRecipe extends React.Component{
                             {(this.state.ingredients.length>0)?'Ingredients: ':null}<br/> 
                             {(this.state.ingredients.length>0)?<textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly>
                             </textarea>:null}
-                            <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
+                            
                             <button type='submit'>Submit</button>
                     </fieldset>
                 </form>   
