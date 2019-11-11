@@ -52,8 +52,10 @@ this.state={
   }
   handleUpdateRecipe=(recipe)=>{
     this.setState({
-        recipes:[...this.state.recipes.filter(r=>r.id!==recipe.id),recipe]
+        recipes:[...this.state.recipes.filter(r=>r.id!==recipe.id
+          ),recipe]
     })
+    
   }
   handleUpdateFolder=(folder)=>{
     this.setState({
@@ -73,6 +75,7 @@ this.state={
         });
   }
   render(){
+    console.log('staterecipes:',this.state.recipes)
     let userId;
     (TokenService.getAuthToken()===null)?userId=0:
       userId=TokenService.decodeAuthToken(TokenService.getAuthToken())

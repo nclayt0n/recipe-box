@@ -13,7 +13,6 @@ import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import TokenService from '../../services/token-service'
 import config from '../../config'
-import { thisExpression } from '@babel/types';
 
 class HomePage extends React.Component{
     static contextType=Context;
@@ -63,15 +62,15 @@ class HomePage extends React.Component{
         <div> 
             <Header/>
             <Nav/>
-        <div className='addFolderContainer'>
-            
-        <AddFolder/></div>
-           
+            <div className='addFolderContainer'>
+                <AddFolder/>
+            </div>
             <AddRecipe />
-            <RecipeList />
+            <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>
             <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
             <section className='ingredientsList'>
-            <Link style={{color:'black',textDecoration:'none',cursor:'pointer'}} to={'/ingredients'}>Ingredients</Link></section>
+                <Link style={{color:'black',textDecoration:'none',cursor:'pointer'}} to={'/ingredients'}>Ingredients</Link>
+            </section>
         </div>
         )}
 }

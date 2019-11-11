@@ -8,6 +8,7 @@ import ValidationError from '../../Validation/ValidationError'
 import TokenService from '../../services/token-service'
 import config from '../../config'
 const uuidv4 = require('uuid/v4');
+const xss =require('xss')
 
 class UpdateRecipe extends React.Component{  
      static contextType=Context; 
@@ -30,7 +31,9 @@ class UpdateRecipe extends React.Component{
         }else{
             const results=recipes.filter(recipe=>recipe.id===id);
             const recipe=results[0];
-            const folder = folders.filter(f=>f.id===recipe.folder_id );
+            const folder = folders.filter(f=>{
+                console.log(typeof(recipe.folder_id),recipe.folder_id)
+                return f.id===recipe.folder_id });
             recipe.folderName=folder[0].name; 
             return recipe  
         }
@@ -47,7 +50,7 @@ class UpdateRecipe extends React.Component{
 
     addIngredient=(recipe)=>{
         const ingredient={name:'',quantity:'',unit:''}
-        if(this.state.ingredients.length===0){this.setState({ingredients:[...this.state.ingredients,ingredient]})
+        if(this.state.ingredients.length===0){this.setState({ingredients:[...this.recipe.ingredients,ingredient]})
     }else{
         this.setState({ingredients:[...this.state.ingredients,ingredient]})}
     } 
@@ -61,9 +64,9 @@ class UpdateRecipe extends React.Component{
         let name=e.target.name.value;
         let note=e.target.note.value;
         let link= e.target.link.value;
-        let createdBy=e.target.createdBy.value
+        let created_by=e.target.createdBy.value
         let instructions=e.target.instructions.value
-        let folderId=e.target.folder.value   
+        let folder_id=parseInt(e.target.folder.value )  
         const localTime = moment().format('YYYY-MM-DD');
         let proposedDate = localTime + "T00:00:00.000Z";
         
@@ -71,12 +74,13 @@ class UpdateRecipe extends React.Component{
             let updatedRecipe={
             id:recipe.id,
             name,
-            modified:proposedDate,
-            folderId,
+            date_created:recipe.date_created,
+            date_modified:proposedDate,
+            folder_id,
             ingredients:recipe.ingredients,  
             link,
             instructions,
-            createdBy,
+            created_by,
             note
         }
             this.validateRecipe(updatedRecipe)
@@ -85,12 +89,12 @@ class UpdateRecipe extends React.Component{
             let updatedRecipe={
             id:recipe.id,
             name,
-            modified:proposedDate,
-            folderId,
+            date_modified:proposedDate,
+            folder_id,
             ingredients:[],  
             link,
             instructions,
-            createdBy,
+            created_by,
             note
         }
    
@@ -108,12 +112,13 @@ class UpdateRecipe extends React.Component{
             let updatedRecipe={
                 id:recipe.id,
                 name:name||recipe.name,
+                date_created:recipe.date_created,
                 date_modified:proposedDate,
-                folderId:folderId||recipe.folder_id,
+                folder_id:folder_id||recipe.folder_id,
                 ingredients:ingredients||recipe.ingredients,  
                 link:link||recipe.link,
                 instructions:instructions||recipe.instructions,
-                createdBy:createdBy||recipe.created_by,
+                created_by:created_by||recipe.created_by,
                 note:note||recipe.note
             }
             this.validateRecipe(updatedRecipe)
@@ -151,14 +156,27 @@ class UpdateRecipe extends React.Component{
               'content-type':'application/json',
               'Authorization': `Bearer ${TokenService.getAuthToken()}`,
             },
-            body: JSON.stringify(updatedRecipe)
+            body: JSON.stringify({
+                id:parseInt(this.props.match.params.id),
+                name:updatedRecipe.name,
+                date_created:updatedRecipe.date_created,
+                date_modified:updatedRecipe.proposedDate,
+                folder_id:updatedRecipe.folder_id,
+                ingredients:updatedRecipe.ingredients,
+                link:updatedRecipe.link,
+                instructions:updatedRecipe.instructions,
+                created_by:updatedRecipe.created_by,
+                note:updatedRecipe.note,user_id:TokenService.decodeAuthToken(TokenService.getAuthToken())})
         };
             fetch(url,options)
             .then(this.context.updateRecipe(updatedRecipe))
             .catch(error =>{
                 this.setState({error})
             })
-        this.props.history.push(`/home-page`)
+            console.log('before sending:',updatedRecipe)
+            this.context.updateRecipe(updatedRecipe)
+           
+            this.props.history.push(`/home-page`)
     }
 }
     
@@ -190,6 +208,25 @@ class UpdateRecipe extends React.Component{
         }
     render(){
         let recipe=this.findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
+        if(typeof(recipe.ingredients)==='string'){
+            recipe={    
+               id: recipe.id,
+               name: xss(recipe.name),
+               date_created: recipe.date_created,
+               date_modified: recipe.date_modified,
+               ingredients: JSON.parse(recipe.ingredients),
+               instructions: xss(recipe.instructions),
+               link: xss(recipe.link),
+               created_by: xss(recipe.created_by),
+               note: xss(recipe.note),
+               folder_id: recipe.folder_id,
+               folderName:recipe.folderName,
+               user: recipe.user,
+               }
+               recipe= recipe
+           }else{
+           recipe= recipe
+           }
         const displayedIngredients= this.createIngredientFields(this.state)
         return (<>
          <Header/>
@@ -200,8 +237,10 @@ class UpdateRecipe extends React.Component{
             <form onSubmit={e=>this.handleSubmit(e,recipe)}>
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                 {(this.state.ingredients.length===0)?(null):(displayedIngredients)}
+
                 {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):
                 (<button type='button' onClick={()=>this.addIngredient(recipe)}>Add Another Ingredient</button>)}
+
                 <br/><label htmlFor='name'>Name:</label><br/>
                 <textarea name='name' defaultValue={recipe.name}>
                 </textarea><br/>
@@ -212,7 +251,7 @@ class UpdateRecipe extends React.Component{
                 </textarea><br/>
                 <ValidationError Instructionsmessage={this.state.instructionsError}/>
                 <label htmlFor='createdBy'>Created By:</label><br/>
-                <textarea name='createdBy' defaultValue={recipe.createdBy}>
+                <textarea name='createdBy' defaultValue={recipe.created_by}>
                 </textarea><br/>
                 <label htmlFor='link'>Link:</label><br/>
                 <textarea name='link' defaultValue={recipe.link}>
@@ -223,8 +262,8 @@ class UpdateRecipe extends React.Component{
                 <label htmlFor='folder_name'>Choose a different folder to Move recipe: </label> 
            <br/>
             <select name="folder">
-                <option name='folder' value={recipe.folderId}>{recipe.folderName}</option>
-            {this.context.folders.filter(folder=>folder.id!==recipe.folderId).map((folder)=>{
+                <option name='folder' value={recipe.folder_id}>{recipe.folderName}</option>
+            {this.context.folders.filter(folder=>folder.id!==recipe.folder_id).map((folder)=>{
              return(<option name="folder" key={folder.id}>{folder.name}</option>)
             })}
             </select><br/>

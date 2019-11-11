@@ -67,6 +67,7 @@ class Recipe extends React.Component{
         recipe= recipe
         }
  const ingredients=this.createDisplayedIngredients(recipe.ingredients)
+ console.log(recipe)
         return(<>
          <Header/>
          <Nav/>
