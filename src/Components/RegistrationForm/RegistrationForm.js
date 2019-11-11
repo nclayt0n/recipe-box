@@ -1,7 +1,8 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {withRouter,Link} from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
 import Header from '../Header/Header'
+import ValidationError from '../../Validation/ValidationError'
 class RegistrationForm extends React.Component{
     static defaultProps = {
         onRegistrationSuccess: () => {}
@@ -26,7 +27,7 @@ class RegistrationForm extends React.Component{
           history.push('/login')
         })
         .catch(res=>{
-          console.error({error:res.error})
+          this.setState({error:res.error})
         })
       }
     
@@ -34,6 +35,7 @@ class RegistrationForm extends React.Component{
         const { error } = this.state
         return(<>
         <Header/>
+        <ValidationError Namemessage={this.state.error}/>
             <div className='registrationForm'>
         <form onSubmit={this.handleSubmit} >
         <div role='alert'>
@@ -49,6 +51,7 @@ class RegistrationForm extends React.Component{
                 <input type='password' name='password'/></label><br/>
                 
                 <button type='submit'>Register</button>
+                {(this.state.error==='Email is already in use')?<button type='button'><Link to={'/login'}>Login</Link></button>:null}
             </fieldset>
         </form>
             </div></>
