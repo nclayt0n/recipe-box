@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+.recipe {
+    margin: 10px 15px 15px 75px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.recipeItems {
+    background-image: url('../../images/lavleaves.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+}
+
+h3 {
+    font-size: 26px;
+    margin: 10px;
+}
+
+.recipe ul {
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.562);
+    border: 1px solid black;
+}
+
+.recipe li {
+    letter-spacing: 2px;
+    margin: auto;
+    padding: 10px;
+    text-align: left;
+    list-style: none;
+    /* text-decoration: underline; */
+}

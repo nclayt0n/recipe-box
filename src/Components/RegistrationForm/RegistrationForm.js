@@ -3,6 +3,7 @@ import {withRouter,Link} from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
 import Header from '../Header/Header'
 import ValidationError from '../../Validation/ValidationError'
+import './RegistrationForm.css'
 class RegistrationForm extends React.Component{
     static defaultProps = {
         onRegistrationSuccess: () => {}
@@ -34,12 +35,11 @@ class RegistrationForm extends React.Component{
     render(){
         const { error } = this.state
         return(<>
-        <Header/>
-        <ValidationError Namemessage={this.state.error}/>
+       
             <div className='registrationForm'>
         <form onSubmit={this.handleSubmit} >
         <div role='alert'>
-          {error && <p className='red'>{error}</p>}
+          {error && <p className='red' style={{color:'red',fontWeight:'bold',textAlign:'center',padding:'5px',margin:'10px'}}>{error}</p>}
         </div>
             <fieldset>
                 <legend>Create User Form</legend>
@@ -49,7 +49,7 @@ class RegistrationForm extends React.Component{
                 <input type='text' name='email'/></label><br/>
                 <label htmlFor='password'>Password:
                 <input type='password' name='password'/></label><br/>
-                
+                 {/* <ValidationError Namemessage={this.state.error}/> */}
                 <button type='submit'>Register</button>
                 {(this.state.error==='Email is already in use')?<button type='button'><Link to={'/login'}>Login</Link></button>:null}
             </fieldset>

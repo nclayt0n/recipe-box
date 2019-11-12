@@ -69,7 +69,6 @@ this.state={
         });
   }
   handleDeleteFolder=(folderId)=>{
-    
     this.setState({
             folders: this.state.folders.filter(folder => folder.id !== folderId)
         });
@@ -79,8 +78,8 @@ this.state={
     let userId;
     (TokenService.getAuthToken()===null)?userId=0:
       userId=TokenService.decodeAuthToken(TokenService.getAuthToken())
+
     const contextValue={
-      
       user_id:userId,
       folders:this.state.folders,
       recipes:this.state.recipes,

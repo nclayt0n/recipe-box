@@ -7,13 +7,16 @@ import Nav from '../Nav/Nav'
 import TokenService from '../../services/token-service'
 import xss from 'xss'
 import ValidationError from '../../Validation/ValidationError'
+import recipeStyles from './RecipeStyles'
+import MediaQuery from 'react-responsive'
+import navImage from '../../images/lavleaves.png'
 const uuidv4 = require('uuid/v4');
 
 
 
 class Recipe extends React.Component{
     static contextType=Context;
-    state={error:''}
+    state={error:'',innerWidth:window.innerWidth}
     findFolderandRecipe=(id,folders,recipes)=>{
     const results=recipes.filter(recipe=>recipe.id===parseInt(id));
     const recipe=results[0];
@@ -41,11 +44,11 @@ class Recipe extends React.Component{
 
     createDisplayedIngredients=(ingredients)=>{
         return ingredients.map((ingredient,idx)=>{
-            return<li key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})
+            return<li style={{ letterSpacing: '2 px',margin: 'auto',padding: '15 px',textAlign: 'center',listStyle: 'none'}} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})
         } 
    
-    render(){     
-        
+    render(){
+      
         let recipe=this.findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
          if(typeof(recipe.ingredients)==='string'){
          recipe={    
@@ -67,28 +70,64 @@ class Recipe extends React.Component{
         recipe= recipe
         }
  const ingredients=this.createDisplayedIngredients(recipe.ingredients)
- console.log(recipe)
+
         return(<>
          <Header/>
          <Nav/>
-            <div className='recipe' style={{margin:'auto',display:'flex',flexDirection:'column',width:'60%'}}>
-            <h3>Recipe</h3>
-                <ul style={{margin:'auto', }} >{recipe.name}
-                <li>INSTRUCTIONS: {recipe.instructions}</li>
-                <Link to={'/ingredients'}>INGREDIENTS:</Link> 
-                {ingredients}
-                {(recipe.created_by.length===0)?(null):
-                    (<li>Created By: {recipe.created_by}</li>)}
-                {(recipe.link.length===0)?(null):(
-                    <li>{recipe.link}</li>)}
-                {(recipe.note.length===0)?(null):
-                    (<li>{recipe.note}</li>)}
-                <button><Link to={`/folder/${recipe.folder_id}`}>{recipe.folderName}</Link></button>
-                </ul>
-                <button><Link to={`/update-recipe/${recipe.id}`}>Update Recipe</Link></button>
-                <button onClick={()=>this.props.history.goBack()}>Back</button><br/>
-                <button type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
-                <ValidationError Namemessage={this.state.error}/>
+            <div className='recipe' style={recipeStyles.mobile.recipe}>
+            <MediaQuery maxWidth={750}>
+            <div className='recipeItems' style={recipeStyles.mobile.recipeItems}>
+                    <h3 style={recipeStyles.mobile.h3}>Recipe: {recipe.name}</h3>
+                    <ul style={recipeStyles.mobile.recipeUl}>INSTRUCTIONS: 
+                        <li style={recipeStyles.mobile.recipeLi}>{recipe.instructions}</li></ul>
+                    <ul style={recipeStyles.mobile.recipeUl}>INGREDIENTS:
+                        {ingredients}
+                    </ul>
+                    {(recipe.created_by.length===0)?(null):
+                    (<ul style={recipeStyles.mobile.recipeUl}>Created By: 
+                        <li style={recipeStyles.mobile.recipeLi}>{recipe.created_by}</li>
+                    </ul>)}
+                    {(recipe.link.length===0)?(null):(
+                    <ul style={recipeStyles.mobile.recipeUl}>Link:
+                        <li style={recipeStyles.mobile.recipeLi}>{recipe.link}</li>
+                    </ul>)}
+                    {(recipe.note.length===0)?(null):
+                    (<ul style={recipeStyles.mobile.recipeUl}>Note: 
+                        <li style={recipeStyles.mobile.recipeLi}>{recipe.note}</li>
+                    </ul>)}
+                </div>
+            </MediaQuery>
+            <MediaQuery minWidth={750}>
+                <div className='recipeItems' style={recipeStyles.laptop.recipeItems}>
+                    <h3 style={recipeStyles.laptop.h3}>Recipe: {recipe.name}</h3>
+                    <ul style={recipeStyles.laptop.recipeUl}>INSTRUCTIONS: 
+                        <li style={recipeStyles.laptop.recipeLi}>{recipe.instructions}</li></ul>
+                    <ul style={recipeStyles.laptop.recipeUl}>INGREDIENTS:
+                        {ingredients}
+                    </ul>
+                    {(recipe.created_by.length===0)?(null):
+                    (<ul style={recipeStyles.laptop.recipeUl}>Created By: 
+                        <li style={recipeStyles.laptop.recipeLi}>{recipe.created_by}</li>
+                    </ul>)}
+                    {(recipe.link.length===0)?(null):(
+                    <ul style={recipeStyles.laptop.recipeUl}>Link:
+                        <li style={recipeStyles.laptop.recipeLi}>{recipe.link}</li>
+                    </ul>)}
+                    {(recipe.note.length===0)?(null):
+                    (<ul style={recipeStyles.laptop.recipeUl}>Note: 
+                        <li style={recipeStyles.laptop.recipeLi}>{recipe.note}</li>
+                    </ul>)}
+                </div>
+                </MediaQuery>
+                <div className='buttons'>
+                <button style={recipeStyles.mobile.button}><Link to={`/folder/${recipe.folder_id}`}>Folder:  {recipe.folderName}</Link></button>
+                <button style={recipeStyles.mobile.button}>
+                    <Link to={`/update-recipe/${recipe.id}`}>Update Recipe</Link>
+                </button>
+                <button style={recipeStyles.mobile.button} onClick={()=>this.props.history.goBack()}>Back
+                </button>
+                <button style={recipeStyles.mobile.button} type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                <ValidationError Namemessage={this.state.error}/></div>
             </div></>
         )
     }
