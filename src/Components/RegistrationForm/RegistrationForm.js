@@ -34,7 +34,7 @@ class RegistrationForm extends React.Component{
     render(){
         const { error } = this.state
         return(<>
-        <Header/>
+        {/* <Header/> */}
         <ValidationError Namemessage={this.state.error}/>
             <div className='registrationForm'>
         <form onSubmit={this.handleSubmit} >
