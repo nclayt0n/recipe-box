@@ -31,15 +31,17 @@ const folderListStyles = {
             fontSize: '18px',
             cursor: 'pointer',
             listStyle: 'none',
-            textAlign: 'left',
+            textAlign: 'center',
+
         },
         liA: {
 
             color: 'black',
-            textDecoration: 'none'
+            textDecoration: 'none',
+            margin: 'auto'
         }
     }
-} 
+}
 
 
 export default folderListStyles

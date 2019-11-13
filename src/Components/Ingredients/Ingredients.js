@@ -69,9 +69,11 @@ class Ingredients extends React.Component{
                 {(this.state.allRecipes===true)?
                 (this.state.displayed.map(recipes=>{
                     return recipes.ingredients.map(ingredient=>{
-                        return <form><label><input type='checkbox'/></label><input key={uuidv4()} value={ingredient.name+ingredient.quantity+ingredient.unit}/></form>
-                    })
-                    })):(this.state.displayed.map(recipes=>{
+                        return <form>
+                            <label htmlFor='checkbox'><input name='chekcbox' type='checkbox'/></label><input key={uuidv4()} value={ingredient.name+ingredient.quantity+ingredient.unit}/>
+                        </form>
+                    })})):
+                    (this.state.displayed.map(recipes=>{
                     return recipes.map(recipe=>recipe.ingredients.map(ingredient=>{
                         return <><input key={uuidv4()} type='checkbox'/><label key={uuidv4()}>{ingredient.name}{ingredient.quantity}{ingredient.unit}
                         </label><br/></>
