@@ -38,8 +38,22 @@ const recipeStyles = {
             listStyle: 'none'
             /* text-decoration: underline; */
         },
+        buttons:{
+            display:'flex',
+            border:'1px solid black',
+            width:'fit-content',
+            margin:'auto',
+            flexDirection:'column'
+        },
         button:{
-            width:'20%'
+            width:'fit-content',
+            margin:'auto',
+            marginBottom:'5px'
+        },
+        folderButton:{
+            width:'fit-content',
+            margin:'auto'
+            
         }
     },
     laptop: {
@@ -65,7 +79,8 @@ const recipeStyles = {
         },
         recipeUl: {
             textAlign: 'center',
-            margin: '5px',
+            width:'80%',
+            margin: 'auto',
             padding: '5px',
             backgroundColor: 'rgba(255, 255, 255, 0.562)',
             border: '1px solid black'
@@ -73,11 +88,25 @@ const recipeStyles = {
 
         recipeLi:{
             letterSpacing: '2 px',
+            width:'60%',
             margin: 'auto',
             padding: '10 px',
             textAlign: 'left',
             listStyle: 'none'
             /* text-decoration: underline; */
+        },
+        buttons:{
+            display:'flex',
+            border:'1px solid black',
+            width:'fit-content',
+            margin:'auto'
+        },
+        button:{
+            width:'fit-content'
+        },
+        folderButton:{
+            width:'fit-content',
+
         }
     }
 
