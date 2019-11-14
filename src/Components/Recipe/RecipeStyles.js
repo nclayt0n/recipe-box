@@ -6,7 +6,8 @@ const recipeStyles = {
             margin: '10px 15px 15px 75px',
             display: 'flex',
             flexDirection: 'column',
-            width: '70%'
+            width: '70%',
+            fontSize:'4vw'
         },
 
         recipeItems: {
@@ -19,36 +20,47 @@ const recipeStyles = {
         },
 
         h3: {
-            fontSize: '26px',
-            margin: '10px'
+            margin: 'auto',
+            backgroundColor:'var(--purple)',
+            color:'white',
+            width:'fit-content',
+            textShadow:'1px 1px rgba(138, 100, 163, 0.733)',
         },
         recipeUl: {
             textAlign: 'center',
             margin: '5px',
             padding: '15px',
-            backgroundColor: 'rgba(255, 255, 255, 0.562)',
-            border: '1px solid black'
+            // border: '1px solid black',
+            fontWeight:'bolder',
+            color:'#5E1770'
         },
 
         recipeLi:{
             letterSpacing: '2 px',
             margin: 'auto',
             padding: '15 px',
-            textAlign: 'left',
-            listStyle: 'none'
+            textAlign: 'center',
+            listStyle: 'none',
+            fontWeight:'normal',
+            color:'var(--purple)'
             /* text-decoration: underline; */
         },
         buttons:{
             display:'flex',
-            border:'1px solid black',
             width:'fit-content',
             margin:'auto',
             flexDirection:'column'
         },
-        button:{
+        recipeButton:{
             width:'fit-content',
             margin:'auto',
-            marginBottom:'5px'
+            marginBottom:'5px',
+            fontSize:'3vw',
+            border:'2px solid var(--purple)',
+            backgroundColor:'var(--purple)',
+            padding:'5px',
+            fontWeight:'bolder',
+            color:'white'
         },
         folderButton:{
             width:'fit-content',
@@ -61,7 +73,9 @@ const recipeStyles = {
             margin: 'auto',
             display: 'flex',
             flexDirection: 'column',
-            width: '80%',
+            width: '60%',
+            fontSize:'2vw',
+            
         },
 
         recipeItems: {
@@ -70,20 +84,28 @@ const recipeStyles = {
             backgroundSize: 'cover',
             backgroundColor: 'white',
             padding: '15px',
-            margin: '10px'
+            margin: '10px',
+            
         },
 
         h3: {
             fontSize: '26px',
-            margin: '10px'
+            margin: 'auto auto 10px',
+            backgroundColor:'var(--purple)',
+            color:'white',
+            width:'fit-content',
+            textShadow:'1px 1px rgba(138, 100, 163, 0.733)',
         },
         recipeUl: {
             textAlign: 'center',
-            width:'80%',
-            margin: 'auto',
+            width:'60%',
+            margin: 'auto auto 10px',
             padding: '5px',
-            backgroundColor: 'rgba(255, 255, 255, 0.562)',
-            border: '1px solid black'
+            backgroundColor: 'rgba(255, 255, 255, 0.7)',
+            fontWeight:'bolder',
+            color:'var(--purple)',
+            border:'1px solid var(--purple)',
+            textShadow:'.5px .5px rgba(138, 100, 163, 0.733)',
         },
 
         recipeLi:{
@@ -91,18 +113,26 @@ const recipeStyles = {
             width:'60%',
             margin: 'auto',
             padding: '10 px',
-            textAlign: 'left',
-            listStyle: 'none'
-            /* text-decoration: underline; */
+            textAlign: 'center',
+            listStyle: 'none',
+            textDecoration: 'none',
+            fontWeight:'normal',
+            color:'var(--purple)'
         },
         buttons:{
             display:'flex',
-            border:'1px solid black',
             width:'fit-content',
-            margin:'auto'
+            margin:'auto',
+            
         },
-        button:{
-            width:'fit-content'
+        recipeButton:{
+            width:'fit-content',
+            margin:'5px',
+            fontSize:'1.5vw',
+            backgroundColor:'var(--purple)',
+            padding:'5px',
+            fontWeight:'bolder',
+            color:'white'
         },
         folderButton:{
             width:'fit-content',

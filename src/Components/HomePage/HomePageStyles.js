@@ -1,4 +1,5 @@
 import React from 'react'
+import backgroundImage from '../../images/bluePurpleLeaves.png'
 const hpStyles = {
     homePageStyle: {
         backgroundColor: '#C8923B'
@@ -38,6 +39,7 @@ const hpStyles = {
             textDecoration: 'none',
             listStyle: 'none',
 
+
         },
         ul: {
             padding: '10px',
@@ -66,8 +68,12 @@ const hpStyles = {
     },
     recipeListStyle: {
         div: {
-            border: '2px solid black',
-            width: 'fit-content',
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundRepeat: 'noRepeat',
+            backgroundSize: 'cover',
+            backgroundColor: 'var(--lightBlue)',
+            width: '400px',
+            backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
@@ -82,12 +88,12 @@ const hpStyles = {
         ul: {
             padding: '10px',
             fontSize: '22px',
-            fontWeight: 'bold',
+            fontWeight: 'bolder',
             cursor: 'pointer',
-            color: 'black'
+            color: 'var(--purple)'
         },
         ulA: {
-            color: 'black',
+            color: 'var(--purple)',
             textDecoration: 'none'
         },
         li: {
@@ -95,11 +101,12 @@ const hpStyles = {
             fontSize: '18px',
             cursor: 'pointer',
             listStyle: 'none',
-            textAlign: 'left',
+            textAlign: 'center',
+            fontWeight: 'normal'
         },
         liA: {
 
-            color: 'black',
+            color: 'var(--purple)',
             textDecoration: 'none'
         }
     }

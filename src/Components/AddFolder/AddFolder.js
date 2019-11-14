@@ -67,7 +67,7 @@ class AddFolder extends React.Component{
         <div className='addFolder' style={style.addFolderDivStyle} >
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>
-                    <legend>Add Folder Form</legend>
+                    <legend>ADD FOLDER</legend>
                     <label htmlFor ='folderName'>Folder Name:
                     <input type='text' name='folderName'/></label> 
                      <ValidationError Namemessage={this.state.error}/>

@@ -1,10 +1,15 @@
 import React from 'react'
+import backgroundImage from '../../images/bluePurpleLeaves.png'
 const recipeListStyles = {
     recipeListStyle: {
 
         div: {
-            border: '2px solid black',
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundRepeat: 'noRepeat',
+            backgroundSize: 'cover',
+            backgroundColor: 'var(--brown)',
             width: 'fit-content',
+            backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
@@ -21,10 +26,10 @@ const recipeListStyles = {
             fontSize: '22px',
             fontWeight: 'bold',
             cursor: 'pointer',
-            color: 'black'
+            color: 'var(--purple)'
         },
         ulA: {
-            color: 'black',
+            color: 'var(--purple)',
             textDecoration: 'none'
         },
         li: {
@@ -32,11 +37,11 @@ const recipeListStyles = {
             fontSize: '18px',
             cursor: 'pointer',
             listStyle: 'none',
-            textAlign: 'left',
+            textAlign: 'center',
         },
         liA: {
 
-            color: 'black',
+            color: 'var(--purple)',
             textDecoration: 'none'
         }
     },

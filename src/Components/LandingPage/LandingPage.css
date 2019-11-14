@@ -25,6 +25,13 @@ button {
     background-color: #EAF8E4;
     border: 2px solid var(--purple);
     background-color: white;
+    color: var(--purple);
+    font-weight: bolder;
+}
+
+button a {
+    color: var(--purple);
+    font-weight: bolder;
 }
 
 .landingPageLinkBox {

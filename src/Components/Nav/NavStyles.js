@@ -4,21 +4,21 @@ const navStyles = {
     hidden: {
         main: {
             // margin: 0,
-            width: '100%',
-            height: '70px',
-            backgroundColor: 'var(--blue)',
+            width: 'fit-content',
+            height: '50px',
+            backgroundColor: 'var(--purple)',
             display: 'flex',
             flexWrap: 'wrap',
             zIndex: 1000,
-            // position: 'fixed',
-            // top: '90px'
+            position: 'fixed',
+            top: '50px'
         },
         toggleBtn: {
             margin: 0,
             width: '50px',
             height: '100%',
             backgroundImage: `url(${navImage})`,
-            backgroundColor: 'var(--blue)',
+            backgroundColor: 'var(--purple)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: '40%',
             backgroundPosition: 'center',
@@ -52,8 +52,8 @@ const navStyles = {
             bottom: '0',
             width: '55px',
             padding: '0 5px',
-            height: 'calc(100vh - 175px)',
-            backgroundColor: 'black',
+            height: 'calc(108vh - 175px)',
+            backgroundColor: 'var(--purple)',
             zIndex: 1000,
             transition: 'all 0.3s ease-in-out'
         },
@@ -82,21 +82,21 @@ const navStyles = {
     },
     visible: {
         main: {
-            width: '100%',
-            height: '70px',
-            backgroundColor: 'var(--blue)',
+            width: 'fit-content',
+            height: '50px',
+            backgroundColor: 'var(--purple)',
             display: 'flex',
             flexWrap: 'wrap',
             zIndex: 1000,
-            // position: 'fixed',
-            // top: '90px'
+            position: 'fixed',
+            top: '50px'
         },
         toggleBtn: {
             margin: 0,
             width: '50px',
             height: '100%',
             backgroundImage: `url(${navImage})`,
-            backgroundColor: 'var(--blue)',
+            backgroundColor: 'var(--purple)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: '40%',
             backgroundPosition: 'center',
@@ -130,8 +130,9 @@ const navStyles = {
             bottom: 0,
             width: '175px',
             padding: '0 5px',
-            height: 'calc(103vh - 175px)',
-            backgroundColor: 'black',
+            height: 'calc(108vh - 175px)',
+            // backgroundColor: '#38b6ff',
+            backgroundColor: '#8A64A3',
             zIndex: 1000,
             transition: 'all 0.3s ease-in-out'
 
@@ -147,7 +148,7 @@ const navStyles = {
             padding: '0 10px',
             textDecoration: 'none',
             textTransform: 'uppercase',
-            color: 'var(--blue)',
+            color: 'white',
             fontWeight: 'bolder',
             fontFamily: 'arial',
             fontSize: '16px',

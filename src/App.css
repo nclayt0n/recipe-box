@@ -1,9 +1,13 @@
 :root {
     --gray: #BFBCC0;
     --purple: #5e1770;
+    --darkPurple: #482779;
     --brick: #703217;
     --green: #297017;
     --blue: #175670;
+    --lightBlue: #38b6ff;
+    --brown: #463f3a;
+    --magenta: #cb6ce6;
     background-size: 100%;
     background-color: #5E1770;
 }
@@ -13,5 +17,5 @@
     letter-spacing: 1px;
     text-Decoration: none;
     color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

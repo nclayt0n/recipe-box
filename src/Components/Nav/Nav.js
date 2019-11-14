@@ -26,18 +26,10 @@ class Nav extends React.Component{
         return(<>
         <nav className='nav-main' style={(this.state.clicked===false)?(this.state.visible.main):(this.state.hidden.main)}>
             <button className='btn-toggle-nav' onClick={()=>this.navStyles()} style={(this.state.clicked===false)?(this.state.visible.toggleBtn):(this.state.hidden.toggleBtn)}></button>
-            {/* <ul className='navPageLinks' style={navStyles.mainUl}>
-                <li style={navStyles.mainUlLi}><Link to={'/home-page'}>Home</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/folder-list'}>Folders</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/recipe-list'}>All Recipes</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/ingredients'}>Ingredients</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/add-recipe'}>Add Recipe</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/add-folder'}>Add Folder</Link></li>
-            </ul>  */}
-            <ul className='navAcctLinks' style={(this.state.clicked===false)?(this.state.hidden.mainUl):(this.state.visible.mainUl)}>
+            {/* <ul className='navAcctLinks' style={(this.state.clicked===false)?(this.state.hidden.mainUl):(this.state.visible.mainUl)}>
               
                 <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.mainUlLi):(this.state.visible.mainUlLi)} onClick={this.handleLogoutClick}>Logout</Link>
-            </ul>
+            </ul> */}
 
     </nav>
     <aside className='nav-sidebar' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sidebar)}>
@@ -66,6 +58,8 @@ class Nav extends React.Component{
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/ingredients'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Ingredients</Link>
                 </li>}
+                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)} onClick={this.handleLogoutClick}>Logout</Link></li>
             </ul> </aside></>)
     
 }}

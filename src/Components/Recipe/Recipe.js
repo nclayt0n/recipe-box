@@ -44,7 +44,7 @@ class Recipe extends React.Component{
 
     createDisplayedIngredients=(ingredients)=>{
         return ingredients.map((ingredient,idx)=>{
-            return<li style={{ letterSpacing: '2 px',margin: 'auto',padding: '15 px',textAlign: 'center',listStyle: 'none'}} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})
+            return<li style={recipeStyles.mobile.recipeLi} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})
         } 
    
     render(){
@@ -77,11 +77,11 @@ class Recipe extends React.Component{
             
             <MediaQuery maxWidth={750}>
             <div className='recipe' style={recipeStyles.mobile.recipe}>
-          mobile
             <div className='recipeItems' style={recipeStyles.mobile.recipeItems}>
                     <h3 style={recipeStyles.mobile.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.mobile.recipeUl}>INSTRUCTIONS: 
-                        <li style={recipeStyles.mobile.recipeLi}>{recipe.instructions}</li></ul>
+                        <li style={{letterSpacing: '2 px',width:'80%',margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'normal',color:'var(--purple)'}}>{recipe.instructions}</li>
+                    </ul>
                     <ul style={recipeStyles.mobile.recipeUl}>INGREDIENTS:
                         {ingredients}
                     </ul>
@@ -99,22 +99,22 @@ class Recipe extends React.Component{
                     </ul>)}
                    
                     <div className='buttons' style={recipeStyles.mobile.buttons}>
-                        <button style={recipeStyles.mobile.button}><Link to={`/folder/${recipe.folder_id}`}>{recipe.folderName}</Link></button>
-                        <button style={recipeStyles.mobile.button}>
-                            <Link to={`/update-recipe/${recipe.id}`}>Update Recipe</Link>
+                        <button style={recipeStyles.mobile.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={recipeStyles.mobile.recipeButton}>{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.mobile.recipeButton}>
+                            <Link  to={`/update-recipe/${recipe.id}`}style={recipeStyles.mobile.recipeButton}>Update Recipe</Link>
                         </button>
-                        <button style={recipeStyles.mobile.button} type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                        <button style={recipeStyles.mobile.recipeButton} type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
                     </div>
                 </div>
                 </div>
             </MediaQuery>
             <MediaQuery minWidth={750}>
-            tablet/laptop
             <div className='recipe' style={recipeStyles.laptop.recipe}>
                 <div className='recipeItems' style={recipeStyles.laptop.recipeItems}>
                     <h3 style={recipeStyles.laptop.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.laptop.recipeUl}>INSTRUCTIONS: 
-                        <li style={recipeStyles.laptop.recipeLi}>{recipe.instructions}</li></ul>
+                        <li style={{letterSpacing: '2 px',width:'=fit-content', margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'normal',color:'var(--purple)'}}>{recipe.instructions}</li>
+                    </ul>
                     <ul style={recipeStyles.laptop.recipeUl}>INGREDIENTS:
                         {ingredients}
                     </ul>
@@ -132,11 +132,11 @@ class Recipe extends React.Component{
                     </ul>)}
                     
                     <div className='buttons' style={recipeStyles.laptop.buttons}>
-                        <button style={recipeStyles.laptop.button}><Link to={`/folder/${recipe.folder_id}`}>{recipe.folderName}</Link></button>
-                        <button style={recipeStyles.laptop.button}>
-                            <Link to={`/update-recipe/${recipe.id}`}>Update Recipe</Link>
+                        <button style={recipeStyles.laptop.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'var(--purple',color:'white'}} >{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.laptop.recipeButton}>
+                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'var(--purple',color:'white'}}>Update Recipe</Link>
                         </button>
-                        <button style={recipeStyles.laptop.button} type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                        <button style={recipeStyles.laptop.recipeButton} type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
                     </div>
                 </div>
                  <ValidationError Namemessage={this.state.error}/>
