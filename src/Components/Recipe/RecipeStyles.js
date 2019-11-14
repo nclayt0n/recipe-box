@@ -74,6 +74,7 @@ const recipeStyles = {
             display: 'flex',
             flexDirection: 'column',
             width: '60%',
+            padding:'10px',
             fontSize:'2vw',
             
         },
@@ -89,8 +90,8 @@ const recipeStyles = {
         },
 
         h3: {
-            fontSize: '26px',
-            margin: 'auto auto 10px',
+            fontSize:'2.5vw',
+            margin: 'auto auto 20px',
             backgroundColor:'var(--purple)',
             color:'white',
             width:'fit-content',
@@ -99,9 +100,9 @@ const recipeStyles = {
         recipeUl: {
             textAlign: 'center',
             width:'60%',
-            margin: 'auto auto 10px',
-            padding: '5px',
-            backgroundColor: 'rgba(255, 255, 255, 0.7)',
+            margin: 'auto auto 15px',
+            padding: '15px',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
             fontWeight:'bolder',
             color:'var(--purple)',
             border:'1px solid var(--purple)',

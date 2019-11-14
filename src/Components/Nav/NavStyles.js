@@ -52,7 +52,7 @@ const navStyles = {
             bottom: '0',
             width: '55px',
             padding: '0 5px',
-            height: 'calc(108vh - 175px)',
+            height: 'calc(107.5vh - 175px)',
             backgroundColor: 'var(--purple)',
             zIndex: 1000,
             transition: 'all 0.3s ease-in-out'
@@ -130,7 +130,7 @@ const navStyles = {
             bottom: 0,
             width: '175px',
             padding: '0 5px',
-            height: 'calc(108vh - 175px)',
+            height: 'calc(107vh - 175px)',
             // backgroundColor: '#38b6ff',
             backgroundColor: '#8A64A3',
             zIndex: 1000,
