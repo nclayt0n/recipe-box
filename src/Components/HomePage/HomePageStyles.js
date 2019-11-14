@@ -14,6 +14,12 @@ const hpStyles = {
         marginTop: '0px',
         padding: '20px',
     },
+    addFolderButtons: {
+        width: '100px'
+    },
+    addFolderInput: {
+        flexGrow: '2'
+    },
     addRecipeStyle: {
         border: '2px solid black',
         width: 'fit-content',
@@ -108,7 +114,8 @@ const hpStyles = {
 
             color: 'var(--purple)',
             textDecoration: 'none'
-        }
+        },
+
     }
 
 }

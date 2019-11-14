@@ -60,23 +60,27 @@ class AddFolder extends React.Component{
         }if(this.props.location.pathname==='/add-folder'){
             style=addFStyles
         }
+        console.log(style.addFolderButtons)
         return(
-            <>
-             {(this.props.location.pathname===`/home-page`)?'':<Header/>}
+        <>
+        {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <div className='addFolder' style={style.addFolderDivStyle} >
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>
                     <legend>ADD FOLDER</legend>
                     <label htmlFor ='folderName'>Folder Name:
-                    <input type='text' name='folderName'/></label> 
+                    {(this.props.location.pathname===`/home-page`)?null:<br/>} 
+                    <input type='text' name='folderName' style={style.addFolderInput}/></label> 
+                    {(this.props.location.pathname===`/home-page`)?null:<br/>} 
                      <ValidationError Namemessage={this.state.error}/>
-                    <button type='submit'>Submit
+                    <button type='submit' style={{width:'100px', fontSize: '1vw',}}>Submit
                     </button>
                 </fieldset>
             </form> 
-            {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.push('/home-page')}>Cancel</button>} 
-        </div></>
+            {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.push('/home-page')} style={{width:'100px',margin:'auto', fontSize: '1vw'}}>Cancel</button>} 
+        </div>
+        </>
         )
     }
 }
