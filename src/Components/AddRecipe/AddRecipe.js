@@ -85,7 +85,6 @@ class AddRecipe extends React.Component{
         this.validateRecipe(recipe)
     }   
     validateRecipe=(recipe)=>{
-        console.log(this.context.folders.length)
         if(this.context.folders.length===0){
             this.setState({folderError:'*Must create a folder before creating a recipe.'})
         }else{
@@ -152,7 +151,7 @@ class AddRecipe extends React.Component{
         } 
         return (<>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
-        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav userId={this.context.recipes[0].user.id}/>}
             <div className='addRecipe' style={style.addRecipeStyle}>
                 <h3><Link to={'/add-recipe'}>ADD RECIPE</Link> </h3>
                 <ValidationError Foldermessage={this.state.folderError}/>

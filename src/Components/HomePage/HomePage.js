@@ -61,7 +61,7 @@ class HomePage extends React.Component{
         return(
         <div> 
             <Header/>
-            <Nav/>
+            <Nav userId={this.state.user_id}/>
             <div className='addFolderContainer'>
                 <AddFolder/>
             </div>

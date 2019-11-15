@@ -1,5 +1,5 @@
 import config from '../config'
-
+import TokenService from './token-service'
 const AuthApiService = {
     postLogin(email, password) {
         let options = {
@@ -28,6 +28,21 @@ const AuthApiService = {
             .then(res =>
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json())
+    },
+    deleteUser(userId) {
+        let options = {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify({ 'id': userId }),
+        }
+        return fetch(`${config.API_ENDPOINT}/users/${userId}`, options)
+            .then(res =>
+                (!res.ok) ?
+                res.json().then(e => Promise.reject(e)) : res.json())
     }
+
 }
 export default AuthApiService

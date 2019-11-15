@@ -45,7 +45,7 @@ const recipeStyles = {
             letterSpacing: '2 px',
             margin: 'auto',
             padding: '15 px',
-            width: '60%',
+            width: '70%',
             textAlign: 'center',
             listStyle: 'none',
             fontWeight: 'normal',

@@ -2,6 +2,7 @@ import React from 'react'
 import {Link,withRouter} from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import navStyles from './NavStyles'
+import AuthApiService from '../../services/auth-api-service'
 // import './Nav.css'
 class Nav extends React.Component{
     constructor(){
@@ -10,9 +11,16 @@ class Nav extends React.Component{
         hidden:navStyles.hidden,
         visible:navStyles.visible}
     }
+    handleDeleteAcct=(userId)=>{
+        console.log(userId)
+
+        // this.props.history.push('/landing-page')
+        this.handleLogoutClick()
+        AuthApiService.deleteUser(userId)
+    }
     handleLogoutClick = () => {
         return TokenService.clearAuthToken()
-      }
+    }
     
     navStyles=()=>{
         if(this.state.clicked===false){this.setState({clicked:true})
@@ -23,6 +31,7 @@ class Nav extends React.Component{
         }
     }
     render(){
+        let userId=this.props.userId;
         return(<>
         <nav className='nav-main' style={(this.state.clicked===false)?(this.state.visible.main):(this.state.hidden.main)}>
             <button className='btn-toggle-nav' onClick={()=>this.navStyles()} style={(this.state.clicked===false)?(this.state.visible.toggleBtn):(this.state.hidden.toggleBtn)}></button>
@@ -60,6 +69,9 @@ class Nav extends React.Component{
                 </li>}
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                 <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)} onClick={this.handleLogoutClick}>Logout</Link></li>
+
+                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)} onClick={()=>this.handleDeleteAcct(userId)}>Delete Account</Link></li>
             </ul> </aside></>)
     
 }}

@@ -25,7 +25,7 @@ render(){
     return(
         <>
         {(this.props.location.pathname!==`/home-page`)?<Header/>:''}
-        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav userId={this.context.recipes[0].user.id}/>}
         <div className='RecipeList' style={style.recipeListStyle.div}>
             <ul style={style.recipeListStyle.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.ulA}>RECIPES</Link> 
             {this.createDisplayedRecipes(displayedRecipes,style)}

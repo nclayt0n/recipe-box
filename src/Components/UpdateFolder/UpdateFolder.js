@@ -44,7 +44,7 @@ class UpdateFolder extends React.Component{
     render(){
         return(<>
          <Header/>
-       <Nav/>
+       <Nav userId={this.context.recipes[0].user.id}/>
         <div className='updateFolder'style={{margin:'auto',display:'flex',flexDirection:'column',width:'60%'}}>
             <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>

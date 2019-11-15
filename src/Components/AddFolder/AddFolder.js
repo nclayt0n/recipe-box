@@ -63,7 +63,7 @@ class AddFolder extends React.Component{
         return(
         <>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
-        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav userId={this.context.recipes[0].user.id}/>}
         <div className='addFolder' style={style.addFolderDivStyle} >
             <h3>ADD FOLDER</h3>
             <form onSubmit={(e)=>this.handleSubmit(e)}>
