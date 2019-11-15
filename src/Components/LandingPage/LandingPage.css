@@ -22,11 +22,11 @@
 button {
     margin: 5px;
     padding: 5px;
-    background-color: #EAF8E4;
     border: 2px solid var(--purple);
     background-color: white;
     color: var(--purple);
     font-weight: bolder;
+    font-size: 1.25vw;
 }
 
 button a {

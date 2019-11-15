@@ -1,5 +1,5 @@
 import React from 'react'
-import backgroundImage from '../../images/bluePurpleLeaves.png'
+import backgroundImage from '../../images/purpleWhiteLeaves.png'
 const recipeListStyles = {
     recipeListStyle: {
 
@@ -19,29 +19,31 @@ const recipeListStyles = {
             padding: '50px',
             textDecoration: 'none',
             listStyle: 'none',
+            border: '1px solid white'
+
 
         },
         ul: {
             padding: '10px',
-            fontSize: '22px',
+            fontSize: '2.25vw',
             fontWeight: 'bold',
             cursor: 'pointer',
-            color: 'var(--purple)'
+            color: 'white'
         },
         ulA: {
-            color: 'var(--purple)',
+            color: 'white',
             textDecoration: 'none'
         },
         li: {
             padding: '10px',
-            fontSize: '18px',
+            fontSize: '1.75vw',
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
         },
         liA: {
 
-            color: 'var(--purple)',
+            color: 'white',
             textDecoration: 'none'
         }
     },

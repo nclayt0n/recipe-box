@@ -9,7 +9,6 @@ import xss from 'xss'
 import ValidationError from '../../Validation/ValidationError'
 import recipeStyles from './RecipeStyles'
 import MediaQuery from 'react-responsive'
-import navImage from '../../images/lavleaves.png'
 const uuidv4 = require('uuid/v4');
 
 
@@ -99,9 +98,9 @@ class Recipe extends React.Component{
                     </ul>)}
                    
                     <div className='buttons' style={recipeStyles.mobile.buttons}>
-                        <button style={recipeStyles.mobile.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={recipeStyles.mobile.recipeButton}>{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.mobile.recipeButton}><Link to={`/folder/${recipe.folder_id}`} >{recipe.folderName}</Link></button>
                         <button style={recipeStyles.mobile.recipeButton}>
-                            <Link  to={`/update-recipe/${recipe.id}`}style={recipeStyles.mobile.recipeButton}>Update Recipe</Link>
+                            <Link  to={`/update-recipe/${recipe.id}`}>Update Recipe</Link>
                         </button>
                         <button style={recipeStyles.mobile.recipeButton} type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
                     </div>
@@ -132,9 +131,9 @@ class Recipe extends React.Component{
                     </ul>)}
                     
                     <div className='buttons' style={recipeStyles.laptop.buttons}>
-                        <button style={recipeStyles.laptop.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'var(--purple',color:'white'}} >{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.laptop.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--purple)'}} >{recipe.folderName}</Link></button>
                         <button style={recipeStyles.laptop.recipeButton}>
-                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'var(--purple',color:'white'}}>Update Recipe</Link>
+                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
                         </button>
                         <button style={recipeStyles.laptop.recipeButton} type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
                     </div>

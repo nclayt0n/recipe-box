@@ -1,9 +1,14 @@
 import React from 'react'
+import backgroundImage from '../../images/purpleWhiteLeaves.png'
 const folderListStyles = {
     folderListStyle: {
         div: {
-            border: '2px solid black',
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundRepeat: 'noRepeat',
+            backgroundSize: 'cover',
+            backgroundColor: 'var(--purple)',
             width: 'fit-content',
+            backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
@@ -13,32 +18,37 @@ const folderListStyles = {
             padding: '50px',
             textDecoration: 'none',
             listStyle: 'none',
+            border: '1px solid white'
 
         },
         ul: {
+            textDecoration: 'none',
             padding: '10px',
-            fontSize: '22px',
+            fontSize: '2.25vw',
             fontWeight: 'bold',
             cursor: 'pointer',
-            color: 'black'
         },
         ulA: {
-            color: 'black',
-            textDecoration: 'none'
+            color: 'white',
+            textDecoration: 'underline'
         },
         li: {
             padding: '10px',
-            fontSize: '18px',
+            fontSize: '1.75vw',
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
+            textDecoration: 'none'
 
         },
         liA: {
 
-            color: 'black',
+            color: 'white',
             textDecoration: 'none',
             margin: 'auto'
+        },
+        button: {
+            width: '40%',
         }
     }
 }

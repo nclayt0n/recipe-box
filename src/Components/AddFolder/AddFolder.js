@@ -56,19 +56,19 @@ class AddFolder extends React.Component{
     render(){ 
         let style;
          if(this.props.location.pathname===`/home-page`){
-            style=hpStyles
+            style=hpStyles.addFolder
         }if(this.props.location.pathname==='/add-folder'){
             style=addFStyles
         }
-        console.log(style.addFolderButtons)
         return(
         <>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <div className='addFolder' style={style.addFolderDivStyle} >
+            <h3>ADD FOLDER</h3>
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>
-                    <legend>ADD FOLDER</legend>
+                    
                     <label htmlFor ='folderName'>Folder Name:
                     {(this.props.location.pathname===`/home-page`)?null:<br/>} 
                     <input type='text' name='folderName' style={style.addFolderInput}/></label> 

@@ -3,26 +3,79 @@
 }
 
 .folder {
-    border: 1px solid green;
-    padding: 20px;
-    width: fit-content;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    font-size: 2.5vw;
+    width: 50%;
+}
+
+.folderItems {
+    background-image: url('../../images/purpleLpurpleleaves.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--purple);
+    background-position: center;
+    border: 1px solid #8a64a3;
 }
 
 .folderRecipeList {
     padding: 10px;
-    display: flex;
-    width: fit-content;
+}
+
+.folderRecipeList ul {
+    margin: auto;
+    text-align: center;
+}
+
+.folderRecipeList li {
+    width: 60%;
+    list-style: none;
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+}
+
+.folderRecipeList li a {
+    list-style: none;
+    text-align: center;
+    padding: 0px;
+    color: white;
+    text-shadow: .5px .5px #8a64a3;
+    font-size: 2vw;
 }
 
 .buttonBox {
+    display: flex;
     margin: auto;
     padding: 15px;
     width: fit-content;
 }
 
+.buttonBox button {
+    font-size: 1.25vw;
+}
+
+
+/*width<770*/
+
+.buttonBoxMobile {
+    display: flex;
+    margin: auto;
+    padding: 15px;
+    width: fit-content;
+    flex-direction: column;
+}
+
+.buttonBoxMobile button {
+    font-size: 1.5vw;
+}
+
 h2,
 h3 {
-    color: black;
+    color: white;
     text-align: center;
+    text-shadow: 1px 1px #8a64a3;
+    font-size: 3vw;
 }

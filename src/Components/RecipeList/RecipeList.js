@@ -27,7 +27,7 @@ render(){
         {(this.props.location.pathname!==`/home-page`)?<Header/>:''}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <div className='RecipeList' style={style.recipeListStyle.div}>
-            <ul style={style.recipeListStyle.ul}>RECIPES
+            <ul style={style.recipeListStyle.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.ulA}>RECIPES</Link> 
             {this.createDisplayedRecipes(displayedRecipes,style)}
             </ul> 
            {(this.props.location.pathname===`/home-page`)?null: 
