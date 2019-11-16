@@ -72,7 +72,7 @@ class Recipe extends React.Component{
 
         return(<>
          <Header/>
-         <Nav userId={this.context.recipes[0].user.id}/>
+         <Nav/>
             
             <MediaQuery maxWidth={750}>
             <div className='recipe' style={recipeStyles.mobile.recipe}>

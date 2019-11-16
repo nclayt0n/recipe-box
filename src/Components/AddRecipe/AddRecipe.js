@@ -151,7 +151,7 @@ class AddRecipe extends React.Component{
         } 
         return (<>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
-        {(this.props.location.pathname===`/home-page`)?'':<Nav userId={this.context.recipes[0].user.id}/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
             <div className='addRecipe' style={style.addRecipeStyle}>
                 <h3><Link to={'/add-recipe'}>ADD RECIPE</Link> </h3>
                 <ValidationError Foldermessage={this.state.folderError}/>

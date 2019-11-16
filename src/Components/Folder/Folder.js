@@ -56,7 +56,7 @@ return folderName}
         return(
             <>
                 <Header/>
-                <Nav userId={this.context.recipes[0].user.id}/>
+                <Nav/>
                 <div className='folder'>
                 <div className='folderItems'>
                     <ul className='folderRecipeList' key={uuidv4()}>

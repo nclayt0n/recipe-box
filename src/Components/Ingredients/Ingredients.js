@@ -47,7 +47,7 @@ class Ingredients extends React.Component{
 
         return(<>
         <Header/>
-        <Nav userId={this.context.recipes[0].user.id}/>
+        <Nav/>
         
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)}>
             <legend>Sort Recipes</legend>

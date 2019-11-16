@@ -1,27 +1,46 @@
 import React from 'react'
 import backgroundImage from '../../images/purpleWhiteLeaves.png'
+import addFbackgroundImage from '../../images/purplelavleaves.jpg'
 const hpStyles = {
     homePageStyle: {
         backgroundColor: '#C8923B'
     },
     addFolder: {
         addFolderDivStyle: {
-            border: '2px solid black',
-            width: 'fit-content',
+            backgroundImage: `url(${addFbackgroundImage})`,
+            backgroundRepeat: 'noRepeat',
+            backgroundSize: 'cover',
+            backgroundColor: 'var(--purple)',
+            width: '350px',
+            backgroundPosition: 'top',
+            border: '2px solid var(--darkPurple)',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             margin: 'auto',
-            marginTop: '0px',
+            marginBottom: '20px',
             padding: '20px',
         },
         addFolderButtons: {
-            width: '100px'
+            width: '100px',
+            backgroundColor: 'var(--purple)',
+            color: 'white'
+        },
+        addFolderLabel: {
+            flexGrow: '2',
+            color: 'var(--purple)'
         },
         addFolderInput: {
-            flexGrow: '2'
+            flexGrow: '2',
+            color: 'var(--purple)'
         },
+        h3: {
+            color: 'var(--purple)',
+            textAlign: 'center',
+            textShadow: '1px 1px #8a64a3',
+            fontSize: '3vw',
+        }
     },
 
     addRecipeStyle: {

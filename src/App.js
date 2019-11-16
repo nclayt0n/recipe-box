@@ -21,6 +21,7 @@ import PublicOnlyRoute from './Utils/PublicOnlyRoute'
 import PrivateRoute from './Utils/PrivateRoute'
 import STORE from './STORE/STORE'
 import Context from './Context'
+import Nav from './Components/Nav/Nav'
 import './App.css'
 import TokenService from './services/token-service'
 class App extends React.Component {
@@ -98,7 +99,7 @@ this.state={
           <Route exact path='/' component={LandingPage}/>
           <PublicOnlyRoute path='/login' component={LoginForm}/>
           <PublicOnlyRoute path='/register' component={RegistrationForm}/>
-      
+
           <PrivateRoute path='/home-page' component={HomePage}/>
           <PrivateRoute path='/add-folder' component={AddFolder}/>
           <PrivateRoute path='/add-recipe' component={AddRecipe}/>
@@ -112,6 +113,7 @@ this.state={
           <PrivateRoute path='/update-recipe/:id'
            component={UpdateRecipe}/>
           <PrivateRoute path='/header' component={Header}/>
+          <PrivateRoute path='/nav' component={Nav}/>
           <Route component={NotFound}/>
         </Switch>
       </Context.Provider>

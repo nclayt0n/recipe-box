@@ -63,22 +63,22 @@ class AddFolder extends React.Component{
         return(
         <>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
-        {(this.props.location.pathname===`/home-page`)?'':<Nav userId={this.context.recipes[0].user.id}/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <div className='addFolder' style={style.addFolderDivStyle} >
-            <h3>ADD FOLDER</h3>
+            <h3 style={style.h3}>ADD FOLDER</h3>
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset>
                     
-                    <label htmlFor ='folderName'>Folder Name:
+                    <label htmlFor ='folderName' style={style.addFolderLabel}>Folder Name:
                     {(this.props.location.pathname===`/home-page`)?null:<br/>} 
                     <input type='text' name='folderName' style={style.addFolderInput}/></label> 
                     {(this.props.location.pathname===`/home-page`)?null:<br/>} 
                      <ValidationError Namemessage={this.state.error}/>
-                    <button type='submit' style={{width:'100px', fontSize: '1vw',}}>Submit
+                    <button type='submit' style={style.addFolderButtons}>Submit
                     </button>
                 </fieldset>
             </form> 
-            {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.push('/home-page')} style={{width:'100px',margin:'auto', fontSize: '1vw'}}>Cancel</button>} 
+            {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.push('/home-page')}style={style.addFolderButtons}>Cancel</button>} 
         </div>
         </>
         )

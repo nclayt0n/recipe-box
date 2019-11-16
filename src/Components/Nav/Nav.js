@@ -3,8 +3,10 @@ import {Link,withRouter} from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import navStyles from './NavStyles'
 import AuthApiService from '../../services/auth-api-service'
+import Context from '../../Context'
 // import './Nav.css'
 class Nav extends React.Component{
+    static contextType=Context;
     constructor(){
         super()
         this.state={clicked:false,
@@ -31,7 +33,8 @@ class Nav extends React.Component{
         }
     }
     render(){
-        let userId=this.props.userId;
+        
+        let userId=this.context.user_id;
         return(<>
         <nav className='nav-main' style={(this.state.clicked===false)?(this.state.visible.main):(this.state.hidden.main)}>
             <button className='btn-toggle-nav' onClick={()=>this.navStyles()} style={(this.state.clicked===false)?(this.state.visible.toggleBtn):(this.state.hidden.toggleBtn)}></button>
