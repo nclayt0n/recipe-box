@@ -14,7 +14,6 @@ class Nav extends React.Component{
         visible:navStyles.visible}
     }
     handleDeleteAcct=(userId)=>{
-        console.log(userId)
         this.handleLogoutClick()
         AuthApiService.deleteUser(userId)
     }
