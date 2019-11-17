@@ -85,7 +85,6 @@ class AddRecipe extends React.Component{
         this.validateRecipe(recipe)
     }   
     validateRecipe=(recipe)=>{
-        console.log(this.context.folders.length)
         if(this.context.folders.length===0){
             this.setState({folderError:'*Must create a folder before creating a recipe.'})
         }else{

@@ -32,7 +32,6 @@ class UpdateRecipe extends React.Component{
             const results=recipes.filter(recipe=>recipe.id===id);
             const recipe=results[0];
             const folder = folders.filter(f=>{
-                console.log(typeof(recipe.folder_id),recipe.folder_id)
                 return f.id===recipe.folder_id });
             recipe.folderName=folder[0].name; 
             return recipe  
@@ -173,7 +172,6 @@ class UpdateRecipe extends React.Component{
             .catch(error =>{
                 this.setState({error})
             })
-            console.log('before sending:',updatedRecipe)
             this.context.updateRecipe(updatedRecipe)
            
             this.props.history.push(`/home-page`)
