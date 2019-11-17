@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
 import TokenService from '../../services/token-service'
 import config from '../../config'
+import './UpdateRecipe.css'
 const uuidv4 = require('uuid/v4');
 const xss =require('xss')
 
@@ -180,13 +181,14 @@ class UpdateRecipe extends React.Component{
     
     createIngredientFields=(recipe)=>{
         return recipe.ingredients.map((ingredient,idx)=>
-            <fieldset key={uuidv4()}>Ingredient:<br/>
-                <label key={uuidv4()} htmlFor='ingredient'> Name:
-                <input key={uuidv4()} name={`alteredName${idx}`}  defaultValue={this.state.ingredients[idx].name}/></label><br/>
-                <ValidationError Namemessage={this.state.nameError}/><br/>
-                <label htmlFor='ingredient'>Quantity:
-                <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity}/></label><br/>
-                <label htmlFor='ingredient'>Unit:
+            <fieldset key={uuidv4()}>
+                <h4> Ingredient:</h4>
+                <label key={uuidv4()} htmlFor='ingredient'> Name:<br/>
+                <input key={uuidv4()} name={`alteredName${idx}`}  defaultValue={this.state.ingredients[idx].name}/></label>
+                <ValidationError Namemessage={this.state.nameError}/>
+                <label htmlFor='ingredient'>Quantity:<br/>
+                <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity}/></label>
+                <label htmlFor='ingredient'>Unit:<br/>
                 <select key={uuidv4()} name='ingredientUnit' name={`alteredUnit${idx}`}>
                             <option value={this.state.ingredients[idx].unit}>{this.state.ingredients[idx].unit}</option>
                             <option value='cup'>cup</option>
@@ -199,8 +201,8 @@ class UpdateRecipe extends React.Component{
                             <option value='bundle'>bundle</option>
                             <option value='other'>other</option>
                         </select></label>
-                        <label htmlFor={`ingredientUnitOther${idx}`}> Other Unit:
-                        <input type='text' name={`ingredientUnitOther${idx}`}/><br/></label>
+                        <label htmlFor={`ingredientUnitOther${idx}`}> Other Unit:<br/>
+                        <input type='text' name={`ingredientUnitOther${idx}`}/></label>
                 <button type='button' onClick={()=>this.deleteIngredient(idx)}>Delete</button>
             </fieldset>)
         }
@@ -226,51 +228,54 @@ class UpdateRecipe extends React.Component{
            recipe= recipe
            }
         const displayedIngredients= this.createIngredientFields(this.state)
-        return (<>
-         <Header/>
-         <Nav/>
-            <div className='updateRecipe' style={{margin:'auto',display:'flex',flexDirection:'column',width:'60%'}}>
-            <h3>Recipe</h3> 
-            <button type='button' onClick={()=>this.updateIngredient(recipe)}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
+        return (
+        <>
+        <Header/>
+        <Nav/>
+        <div className='updateRecipe' style={{margin:'auto',display:'flex',flexDirection:'column',width:'60%'}}>
+            <h3 className='updateh3'>Update Recipe</h3> 
+            <button type='button' onClick={()=>this.updateIngredient(recipe)} className='updateButtons'>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
             <form onSubmit={e=>this.handleSubmit(e,recipe)}>
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                 {(this.state.ingredients.length===0)?(null):(displayedIngredients)}
-
                 {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):
-                (<button type='button' onClick={()=>this.addIngredient(recipe)}>Add Another Ingredient</button>)}
-
-                <br/><label htmlFor='name'>Name:</label><br/>
-                <textarea name='name' defaultValue={recipe.name}>
-                </textarea><br/>
-                <ValidationError Namemessage={this.state.nameError}/>
-                <label htmlFor='instructions'>
-                Instructions: </label><br/>
-                <textarea name='instructions' defaultValue={recipe.instructions}>
-                </textarea><br/>
-                <ValidationError Instructionsmessage={this.state.instructionsError}/>
-                <label htmlFor='createdBy'>Created By:</label><br/>
-                <textarea name='createdBy' defaultValue={recipe.created_by}>
-                </textarea><br/>
-                <label htmlFor='link'>Link:</label><br/>
-                <textarea name='link' defaultValue={recipe.link}>
-                </textarea><br/>
-                <label htmlFor='note'>Note:</label><br/>
-                <textarea name='note' defaultValue={recipe.note}>
-                </textarea><br/>
-                <label htmlFor='folder_name'>Choose a different folder to Move recipe: </label> 
-           <br/>
-            <select name="folder">
-                <option name='folder' value={recipe.folder_id}>{recipe.folderName}</option>
-            {this.context.folders.filter(folder=>folder.id!==recipe.folder_id).map((folder)=>{
-             return(<option name="folder" key={folder.id}>{folder.name}</option>)
-            })}
-            </select><br/>
-           
-                <button type='submit'>Update Recipe</button>
-                </form> 
-                
-                <button onClick={()=>this.props.history.goBack()}>Cancel</button>
-            </div></>
+                (<button type='button' onClick={()=>this.addIngredient(recipe)} className='updateButtons'>Add Another Ingredient</button>)}
+                <fieldset>
+                    <label htmlFor='name'>Name:<br/>
+                        <textarea name='name' defaultValue={recipe.name}>
+                        </textarea>
+                    </label>
+                    <ValidationError Namemessage={this.state.nameError}/>
+                    <label htmlFor='instructions'>Instructions:<br/> 
+                        <textarea name='instructions' defaultValue={recipe.instructions}>
+                        </textarea>
+                    </label>
+                    <ValidationError Instructionsmessage={this.state.instructionsError}/>
+                    <label htmlFor='createdBy'>Created By:<br/>
+                        <textarea name='createdBy' defaultValue={recipe.created_by}>
+                        </textarea>
+                    </label>
+                    <label htmlFor='link'>Link:<br/>
+                        <textarea name='link' defaultValue={recipe.link}>
+                        </textarea>
+                    </label>
+                    <label htmlFor='note'>Note:<br/>
+                        <textarea name='note' defaultValue={recipe.note}>
+                        </textarea>
+                    </label>
+                    <label htmlFor='folder_name'>Folder: 
+                        <select name="folder">
+                            <option name='folder' value={recipe.folder_id}>{recipe.folderName}</option>
+                            {this.context.folders.filter(folder=>folder.id!==recipe.folder_id).map((folder)=>{
+                                return(<option name="folder" key={folder.id}>{folder.name}</option>)})}
+                        </select>
+                    </label>
+                </fieldset>
+                <button type='submit' className='updateButtons'>Update</button>
+                <button type='button' onClick={()=>this.props.history.goBack()} className='updateButtons'>Cancel</button>
+            </form> 
+        </div>
+        </>
         )
     }
 }

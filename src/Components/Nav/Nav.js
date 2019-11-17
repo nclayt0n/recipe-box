@@ -2,17 +2,27 @@ import React from 'react'
 import {Link,withRouter} from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import navStyles from './NavStyles'
+import AuthApiService from '../../services/auth-api-service'
+import Context from '../../Context'
 // import './Nav.css'
 class Nav extends React.Component{
+    static contextType=Context;
     constructor(){
         super()
         this.state={clicked:false,
         hidden:navStyles.hidden,
         visible:navStyles.visible}
     }
+    handleDeleteAcct=(userId)=>{
+        console.log(userId)
+
+        // this.props.history.push('/landing-page')
+        this.handleLogoutClick()
+        AuthApiService.deleteUser(userId)
+    }
     handleLogoutClick = () => {
         return TokenService.clearAuthToken()
-      }
+    }
     
     navStyles=()=>{
         if(this.state.clicked===false){this.setState({clicked:true})
@@ -23,22 +33,11 @@ class Nav extends React.Component{
         }
     }
     render(){
+        
+        let userId=this.context.user_id;
         return(<>
         <nav className='nav-main' style={(this.state.clicked===false)?(this.state.visible.main):(this.state.hidden.main)}>
             <button className='btn-toggle-nav' onClick={()=>this.navStyles()} style={(this.state.clicked===false)?(this.state.visible.toggleBtn):(this.state.hidden.toggleBtn)}></button>
-            {/* <ul className='navPageLinks' style={navStyles.mainUl}>
-                <li style={navStyles.mainUlLi}><Link to={'/home-page'}>Home</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/folder-list'}>Folders</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/recipe-list'}>All Recipes</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/ingredients'}>Ingredients</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/add-recipe'}>Add Recipe</Link></li>
-                <li style={navStyles.mainUlLi}><Link to={'/add-folder'}>Add Folder</Link></li>
-            </ul>  */}
-            <ul className='navAcctLinks' style={(this.state.clicked===false)?(this.state.hidden.mainUl):(this.state.visible.mainUl)}>
-              
-                <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.mainUlLi):(this.state.visible.mainUlLi)} onClick={this.handleLogoutClick}>Logout</Link>
-            </ul>
-
     </nav>
     <aside className='nav-sidebar' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sidebar)}>
         <ul className='navPageLinks' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sideBar)}>
@@ -66,6 +65,11 @@ class Nav extends React.Component{
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/ingredients'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Ingredients</Link>
                 </li>}
+                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)} onClick={this.handleLogoutClick}>Logout</Link></li>
+
+                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)} onClick={()=>this.handleDeleteAcct(userId)}>Delete Account</Link></li>
             </ul> </aside></>)
     
 }}

@@ -153,7 +153,7 @@ class AddRecipe extends React.Component{
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
             <div className='addRecipe' style={style.addRecipeStyle}>
-                <h3><Link to={'/add-recipe'}>Add Recipe Form</Link> </h3>
+                <h3><Link to={'/add-recipe'}>ADD RECIPE</Link> </h3>
                 <ValidationError Foldermessage={this.state.folderError}/>
                 <form onSubmit={e=>this.addIngredient(e)}>
                     <fieldset>
@@ -164,14 +164,14 @@ class AddRecipe extends React.Component{
                         <label htmlFor='ingredientUnit'>Ingredient Unit: 
                         <select name='ingredientUnit' >
                             <option value=''></option>
-                            <option value='cup'>Cup</option>
-                            <option value='pinch'>Pinch</option>
-                            <option value='package'>Package</option>
-                            <option value='teaspoon'>Teaspoon</option>
-                            <option value='tablespoon'>Tablespoon</option>
-                            <option value='ounce'>Ounce</option>
-                            <option value='pint'>Pint</option>
-                            <option value='bundle'>Bundle</option>
+                            <option value='cup(s)'>Cup(s)</option>
+                            <option value='pinch(es)'>Pinch(es)</option>
+                            <option value='package(s)'>Package(s)</option>
+                            <option value='teaspoon(s)'>Teaspoon(s)</option>
+                            <option value='tablespoon(s)'>Tablespoon(s)</option>
+                            <option value='ounce(s)'>Ounce(s)</option>
+                            <option value='pint(s)'>Pint(s)</option>
+                            <option value='bundle(s)'>Bundle(s)</option>
                             <option value='other'>Other</option>
                         </select></label>
                         <label htmlFor='ingredientUnitOther'> Other Unit:

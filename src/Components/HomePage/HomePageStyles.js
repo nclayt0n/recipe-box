@@ -1,18 +1,48 @@
 import React from 'react'
+import backgroundImage from '../../images/purpleWhiteLeaves.png'
+import addFbackgroundImage from '../../images/purplelavleaves.jpg'
 const hpStyles = {
     homePageStyle: {
         backgroundColor: '#C8923B'
     },
-    addFolderDivStyle: {
-        border: '2px solid black',
-        width: 'fit-content',
-        textAlign: 'center',
-        display: 'flex',
-        justifyContent: 'center',
-        margin: 'auto',
-        marginTop: '0px',
-        padding: '20px',
+    addFolder: {
+        addFolderDivStyle: {
+            backgroundImage: `url(${addFbackgroundImage})`,
+            backgroundRepeat: 'noRepeat',
+            backgroundSize: 'cover',
+            backgroundColor: 'var(--purple)',
+            width: '350px',
+            backgroundPosition: 'top',
+            border: '2px solid var(--darkPurple)',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            margin: 'auto',
+            marginBottom: '20px',
+            padding: '20px',
+        },
+        addFolderButtons: {
+            width: '100px',
+            backgroundColor: 'var(--purple)',
+            color: 'white'
+        },
+        addFolderLabel: {
+            flexGrow: '2',
+            color: 'var(--purple)'
+        },
+        addFolderInput: {
+            flexGrow: '2',
+            color: 'var(--purple)'
+        },
+        h3: {
+            color: 'var(--purple)',
+            textAlign: 'center',
+            textShadow: '1px 1px #8a64a3',
+            fontSize: '3vw',
+        }
     },
+
     addRecipeStyle: {
         border: '2px solid black',
         width: 'fit-content',
@@ -26,8 +56,12 @@ const hpStyles = {
     },
     folderListStyle: {
         div: {
-            border: '2px solid black',
-            width: 'fit-content',
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundRepeat: 'noRepeat',
+            backgroundSize: 'cover',
+            backgroundColor: 'var(--purple)',
+            width: '400px',
+            backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
@@ -37,36 +71,42 @@ const hpStyles = {
             padding: '50px',
             textDecoration: 'none',
             listStyle: 'none',
-
+            border: '1px solid white'
         },
         ul: {
             padding: '10px',
             fontSize: '22px',
             fontWeight: 'bold',
             cursor: 'pointer',
-            color: 'black'
+            color: 'white'
         },
         ulA: {
-            color: 'black',
-            textDecoration: 'none'
+            color: 'white',
+            textDecoration: 'underline'
         },
         li: {
             padding: '10px',
             fontSize: '18px',
             cursor: 'pointer',
             listStyle: 'none',
-            textAlign: 'left',
+            textAlign: 'center',
         },
         liA: {
 
-            color: 'black',
-            textDecoration: 'none'
+            color: 'white',
+            textDecoration: 'none',
+            margin: 'auto',
+            fontWeight: 'normal'
         }
     },
     recipeListStyle: {
         div: {
-            border: '2px solid black',
-            width: 'fit-content',
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundRepeat: 'noRepeat',
+            backgroundSize: 'cover',
+            backgroundColor: 'var(--purple)',
+            width: '400px',
+            backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
@@ -76,31 +116,35 @@ const hpStyles = {
             padding: '50px',
             textDecoration: 'none',
             listStyle: 'none',
+            border: '1px solid white'
 
         },
         ul: {
+
             padding: '10px',
             fontSize: '22px',
-            fontWeight: 'bold',
+            fontWeight: 'bolder',
             cursor: 'pointer',
-            color: 'black'
+            color: 'white'
         },
         ulA: {
-            color: 'black',
-            textDecoration: 'none'
+            textDecoration: 'underline',
+            color: 'white',
         },
         li: {
             padding: '10px',
             fontSize: '18px',
             cursor: 'pointer',
             listStyle: 'none',
-            textAlign: 'left',
+            textAlign: 'center',
+            fontWeight: 'normal'
         },
         liA: {
 
-            color: 'black',
+            color: 'white',
             textDecoration: 'none'
-        }
+        },
+
     }
 
 }

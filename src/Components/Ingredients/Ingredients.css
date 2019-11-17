@@ -3,7 +3,7 @@
 }
 
 .recipeSort {
-    border: 1px solid var(--green);
+    border: 1px solid var(--lightPurple);
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -18,7 +18,7 @@
 }
 
 .ingredientsList {
-    border: 1px solid var(--green);
+    border: 1px solid var(--lightPurple);
     margin: auto;
     padding: 25px;
     width: fit-content;

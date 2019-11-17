@@ -62,7 +62,7 @@ class HomePage extends React.Component{
         <div> 
             <Header/>
             <Nav/>
-            <div className='addFolderContainer'>
+            <div className='addFolderContainer'style={{height:'fit-content'}}>
                 <AddFolder/>
             </div>
             <AddRecipe />
