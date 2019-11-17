@@ -39,11 +39,9 @@ class Ingredients extends React.Component{
     }}
 
     render(){  
-        // if(this.props!== undefined){
-        //     this.setState({selectedRecipeIds:this.props.history.match.params.id})
-        // }
+    console.log(this.state.displayed)
         let recipeOptions=this.context.recipes.map((recipe)=>{ 
-            return <option value={recipe.id}>{recipe.name}</option>})
+            return <option key={uuidv4()} value={recipe.id}>{recipe.name}</option>})
 
         return(<>
         <Header/>
@@ -59,6 +57,7 @@ class Ingredients extends React.Component{
                 </label><br/>
                 <button type='submit'>Submit</button>
         </form>
+        {(this.state.displayed.length===0)?null:
         <section className='ingredientsList'  key={uuidv4()}>
             <h3 key={uuidv4()}><Link to={'/ingredients'}>Ingredients</Link></h3>
             {(this.state.clicked===false)?(<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
@@ -67,10 +66,9 @@ class Ingredients extends React.Component{
                 {(this.state.displayed===undefined)?
                 (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
                 {(this.state.allRecipes===true)?
-                (this.state.displayed.map(recipes=>{
-                    return recipes.ingredients.map(ingredient=>{
-                        return <form>
-                            <label htmlFor='checkbox'><input name='chekcbox' type='checkbox'/></label><input key={uuidv4()} value={ingredient.name+ingredient.quantity+ingredient.unit}/>
+                (this.state.displayed.map(recipes=>{return recipes.ingredients.map(ingredient=>{
+                        return <form key={uuidv4()}>
+                            <label htmlFor='checkbox'><input key={uuidv4()} readOnly name='chekcbox' type='checkbox'/></label><input key={uuidv4()} value={ingredient.name+ingredient.quantity+ingredient.unit}/>
                         </form>
                     })})):
                     (this.state.displayed.map(recipes=>{
@@ -82,7 +80,7 @@ class Ingredients extends React.Component{
                 )}
 
             </div> 
-        </section></>)
+        </section>}</>)
     }
 }
 export default withRouter(Ingredients)
