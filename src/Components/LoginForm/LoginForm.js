@@ -16,9 +16,8 @@ class LoginForm extends React.Component{
 
 state = { error: null }
   handleLoginSuccess = (token) => {
-  let user_id=TokenService.decodeAuthToken(token)
-this.context.user_id=user_id;
-
+    let user_id=TokenService.decodeAuthToken(token)
+    this.context.user_id=user_id;
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/home-page'
     history.push(destination)
@@ -27,11 +26,8 @@ this.context.user_id=user_id;
   handleSubmitBasicAuth = ev => {
     ev.preventDefault()
     const { email, password } = ev.target
-
- TokenService.saveAuthToken(
-     TokenService.makeBasicAuthToken(email.value,password.value)
- )
-
+    TokenService.saveAuthToken(
+     TokenService.makeBasicAuthToken(email.value,password.value))
     email.value = ''
     password.value = ''
     this.handleLoginSuccess()
@@ -42,7 +38,9 @@ handleSubmitJWTAuth=ev=>{
   const {email,password}=ev.target
   AuthApiService.postLogin(email.value,
     password.value)
+
   .then(res=>{ 
+    console.log('in the then block',res)
     email.value=''
     password.value=''
     TokenService.saveAuthToken(res.authToken)
@@ -50,30 +48,29 @@ handleSubmitJWTAuth=ev=>{
    
   })
   .catch(res=>{
-   
+    console.log('in the catch block',res)
     this.setState({error:res.error})
   })
 }
     render(){
         const { error } = this.state
         return(
-            <div className='loginForm'>
+          <div className='loginForm'>
               <form id='loginForm' onSubmit={this.handleSubmitJWTAuth}>
-              <div role='alert'>
-          {error && <p className='red'>{error}</p>}
-        </div>
-        <fieldset>
-            <legend>Login Form</legend>
-            <label htmlFor='username'>   Email:<br/><input type='text' name='email'/></label><br/>
-            <label htmlFor='password'>Password:
-            <br/><input type='password' name='password'/></label><br/>
-            <button type='submit'>Login</button>
-            <button><Link to='/register' className='landingButtons'>Create New Account</Link></button>
-        </fieldset>
-
-    </form>  
-    <ValidationError Namemessage={error}/>
-            </div>
+                <div role='alert'>
+                {error && <p className='red'>{error}</p>}
+                </div>
+                <fieldset>
+                  <legend>Login Form</legend>
+                  <label htmlFor='username'>   Email:<br/><input type='text' name='email'/></label><br/>
+                  <label htmlFor='password'>Password:
+                  <br/><input type='password' name='password'/></label><br/>
+                  <button type='submit'>Login</button>
+                  <button><Link to='/register' className='landingButtons'>Create New Account</Link></button>
+                </fieldset>
+              </form>  
+              <ValidationError Namemessage={error}/>
+          </div>
         )
     }
 }
