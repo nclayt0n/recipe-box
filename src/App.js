@@ -117,7 +117,6 @@ this.state={
           <Route component={NotFound}/>
         </Switch>
       </Context.Provider>
-      {/* <Footer/> */}
     </div>
   );}
 }

@@ -50,7 +50,6 @@ const recipeStyles = {
             listStyle: 'none',
             fontWeight: 'normal',
             color: 'var(--purple)'
-                /* text-decoration: underline; */
         },
         buttons: {
             display: 'flex',

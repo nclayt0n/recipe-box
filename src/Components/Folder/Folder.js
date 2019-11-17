@@ -72,9 +72,8 @@ return folderName}
                             <Link to={`/update-folder/${this.props.match.params.id}`}>Update Folder</Link>
                         </button><br/>
                         <button type='button' 
-                            onClick={(this.state.error==='')?
-                                ()=>this.setState({error:'To delete, double-click.'}):()=>this.setState({error:''})}
-                            onDoubleClick={()=>this.deleteFolder(id,this.props)}>Delete Folder
+                            onClick={()=>this.deleteFolder(id,this.props)}
+                            >Delete Folder
                         </button><br/>
                     </div>
                     </MediaQuery>
@@ -87,9 +86,7 @@ return folderName}
                             <Link to={`/update-folder/${this.props.match.params.id}`}>Update Folder</Link>
                         </button><br/>
                         <button type='button' 
-                            onClick={(this.state.error==='')?
-                                ()=>this.setState({error:'To delete, double-click.'}):()=>this.setState({error:''})}
-                            onDoubleClick={()=>this.deleteFolder(id,this.props)}>Delete Folder
+                            onClick={()=>this.deleteFolder(id,this.props)}>Delete Folder
                         </button><br/>
                     </div>
                     </MediaQuery>

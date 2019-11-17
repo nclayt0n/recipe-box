@@ -49,7 +49,6 @@ class RegistrationForm extends React.Component{
                 <input type='text' name='email'/></label><br/>
                 <label htmlFor='password'>Password:
                 <input type='password' name='password'/></label><br/>
-                 {/* <ValidationError Namemessage={this.state.error}/> */}
                 <button type='submit'>Register</button>
                 {(this.state.error==='Email is already in use')?<button type='button'><Link to={'/login'}>Login</Link></button>:null}
             </fieldset>

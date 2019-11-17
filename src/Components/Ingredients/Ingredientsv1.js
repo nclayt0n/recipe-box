@@ -97,8 +97,6 @@ class Ingredients extends React.Component{
 
            
         return(<>
-        {/* <Header/>
-        <Nav/> */}
         <form onSubmit={(e)=>this.sortByFolder(e)}>
             <fieldset>
                 <legend>Sort Folders</legend>

@@ -102,7 +102,7 @@ class Recipe extends React.Component{
                         <button style={recipeStyles.mobile.recipeButton}>
                             <Link  to={`/update-recipe/${recipe.id}`}>Update Recipe</Link>
                         </button>
-                        <button style={recipeStyles.mobile.recipeButton} type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                        <button style={recipeStyles.mobile.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
                     </div>
                 </div>
                 </div>
@@ -135,7 +135,7 @@ class Recipe extends React.Component{
                         <button style={recipeStyles.laptop.recipeButton}>
                             <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
                         </button>
-                        <button style={recipeStyles.laptop.recipeButton} type='button' onClick={()=>this.setState({error:'To confirm delete, double click'})} onDoubleClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                        <button style={recipeStyles.laptop.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
                     </div>
                 </div>
                  <ValidationError Namemessage={this.state.error}/>
