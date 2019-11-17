@@ -1,7 +1,7 @@
 .loginForm {
     margin: auto;
     margin-top: 100px;
-    width: 500px;
+    width: 80%;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@
 }
 
 .loginForm input {
-    width: 40%;
+    width: 70%;
     margin: 5px;
     padding: 5px;
     justify-content: center;
@@ -51,4 +51,13 @@
     font-weight: bolder;
     font-size: 16px;
     text-shadow: .5px .5px var(--gray);
+}
+
+@media screen and (min-width:760px) {
+    .loginForm input {
+        width: 40%;
+    }
+    .loginForm {
+        width: 60%;
+    }
 }

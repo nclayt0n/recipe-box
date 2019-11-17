@@ -152,7 +152,7 @@ class AddRecipe extends React.Component{
         return (<>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
-            <div className='addRecipe' style={style.addRecipeStyle}>
+            <div className='addRecipe' style={style.addRecipeStyle.div}>
                 <h3><Link to={'/add-recipe'}>ADD RECIPE</Link> </h3>
                 <ValidationError Foldermessage={this.state.folderError}/>
                 <form onSubmit={e=>this.addIngredient(e)}>
@@ -162,8 +162,8 @@ class AddRecipe extends React.Component{
                         <label htmlFor='ingredientQuantity'>Ingredient Quantity:
                         <input type='text' name='ingredientQuantity'/></label><br/>
                         <label htmlFor='ingredientUnit'>Ingredient Unit: 
-                        <select name='ingredientUnit' >
-                            <option value=''></option>
+                        <select name='ingredientUnit' style={style.addRecipeStyle.select}>
+                            <option value=''>select a unit</option>
                             <option value='cup(s)'>Cup(s)</option>
                             <option value='pinch(es)'>Pinch(es)</option>
                             <option value='package(s)'>Package(s)</option>
