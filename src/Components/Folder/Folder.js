@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav'
 import Header from '../Header/Header'
 import TokenService from '../../services/token-service'
 import ValidationError from '../../Validation/ValidationError'
+import GetRecipeAndFolders from '../../Components/Network/GetRecipesAndFolders'
 import MediaQuery from 'react-responsive'
 const uuidv4 = require('uuid/v4');
 
@@ -50,6 +51,9 @@ return folderName}
     }
 }
     render(){
+        if(this.context.recipes.length===0){
+           return  <GetRecipeAndFolders/>
+        }
         let id=parseInt(this.props.match.params.id)
         let folderName=this.findFolder(id,this.context.folders);
         let recipeList=this.findRecipes(id,this.context.recipes);

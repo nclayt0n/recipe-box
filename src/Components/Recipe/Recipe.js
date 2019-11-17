@@ -9,13 +9,14 @@ import xss from 'xss'
 import ValidationError from '../../Validation/ValidationError'
 import recipeStyles from './RecipeStyles'
 import MediaQuery from 'react-responsive'
+import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
 const uuidv4 = require('uuid/v4');
 
 
 
 class Recipe extends React.Component{
     static contextType=Context;
-    state={error:'',innerWidth:window.innerWidth}
+    state={error:'',recipes:[],folders:[]}
     findFolderandRecipe=(id,folders,recipes)=>{
     const results=recipes.filter(recipe=>recipe.id===parseInt(id));
     const recipe=results[0];
@@ -47,7 +48,9 @@ class Recipe extends React.Component{
         } 
    
     render(){
-      
+        if(this.context.recipes.length===0){
+           return  <GetRecipeAndFolders/>
+        }
         let recipe=this.findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
          if(typeof(recipe.ingredients)==='string'){
          recipe={    

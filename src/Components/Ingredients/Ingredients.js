@@ -5,6 +5,7 @@ import './Ingredients.css'
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
+import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
 const uuidv4 = require('uuid/v4');
 
 class Ingredients extends React.Component{
@@ -29,7 +30,6 @@ class Ingredients extends React.Component{
         }
         let displayed=selectedRecipes.map((recipeId)=>{
             return this.context.recipes.filter(f=>{
-                console.log(f, recipeId)
                 return(parseInt(recipeId)===f.id)})});
                 
         this.setState({selectedRecipeIds:[...selectedRecipes]})
@@ -40,7 +40,9 @@ class Ingredients extends React.Component{
     }}
 
     render(){  
-    console.log(this.state.displayed)
+        if(this.context.recipes.length===0){
+            return  <GetRecipeAndFolders/>
+         }
         let recipeOptions=this.context.recipes.map((recipe)=>{ 
             return <option key={uuidv4()} value={recipe.id}>{recipe.name}</option>})
 

@@ -6,6 +6,7 @@ import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
 import TokenService from '../../services/token-service'
+import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
 import config from '../../config'
 import './UpdateRecipe.css'
 const uuidv4 = require('uuid/v4');
@@ -207,6 +208,9 @@ class UpdateRecipe extends React.Component{
             </fieldset>)
         }
     render(){
+        if(this.context.recipes.length===0){
+           return  <GetRecipeAndFolders/>
+        }
         let recipe=this.findFolderandRecipe(this.props.match.params.id,this.context.folders,this.context.recipes);
         if(typeof(recipe.ingredients)==='string'){
             recipe={    

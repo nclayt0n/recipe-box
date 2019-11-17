@@ -6,6 +6,7 @@ import config from '../../config'
 import TokenService from '../../services/token-service'
 import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
+import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
 const uuidv4 = require('uuid/v4');
 
 class UpdateFolder extends React.Component{
@@ -42,6 +43,9 @@ class UpdateFolder extends React.Component{
             }
     }
     render(){
+        if(this.context.recipes.length===0){
+            return  <GetRecipeAndFolders/>
+         }
         return(<>
          <Header/>
        <Nav/>
