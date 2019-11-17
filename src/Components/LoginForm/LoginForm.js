@@ -40,15 +40,18 @@ handleSubmitJWTAuth=ev=>{
     password.value)
 
   .then(res=>{ 
-    console.log('in the then block',res)
-    email.value=''
-    password.value=''
-    TokenService.saveAuthToken(res.authToken)
-    this.handleLoginSuccess(res.authToken)
+    if (res.error) {
+      this.setState({error:res.error})
+   }
+   else {
+        email.value=''
+       password.value=''
+       TokenService.saveAuthToken(res.authToken)
+       this.handleLoginSuccess(res.authToken)
+   }
    
   })
   .catch(res=>{
-    console.log('in the catch block',res)
     this.setState({error:res.error})
   })
 }
@@ -57,9 +60,6 @@ handleSubmitJWTAuth=ev=>{
         return(
           <div className='loginForm'>
               <form id='loginForm' onSubmit={this.handleSubmitJWTAuth}>
-                <div role='alert'>
-                {error && <p className='red'>{error}</p>}
-                </div>
                 <fieldset>
                   <legend>Login Form</legend>
                   <label htmlFor='username'>   Email:<br/><input type='text' name='email'/></label><br/>

@@ -12,9 +12,7 @@ const AuthApiService = {
         return fetch(`${config.API_ENDPOINT}/auth/login`, options)
             .then(res =>
                 (!res.ok) ?
-                res.json().then(e => Promise.reject(e) && console.log('not succesful')) :
-                res.json()
-            )
+                res.json().then(e => Promise.reject(e)) : res.json())
     },
     postUser(user) {
         let options = {
@@ -39,9 +37,9 @@ const AuthApiService = {
             body: JSON.stringify({ 'id': userId }),
         }
         return fetch(`${config.API_ENDPOINT}/users/${userId}`, options)
-            .then(res =>
-                (!res.ok) ?
-                res.json().then(e => Promise.reject(e)) : res.json())
+            .catch(error => {
+                console.error({ error })
+            })
     }
 
 }

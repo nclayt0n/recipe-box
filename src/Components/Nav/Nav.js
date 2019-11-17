@@ -15,8 +15,6 @@ class Nav extends React.Component{
     }
     handleDeleteAcct=(userId)=>{
         console.log(userId)
-
-        // this.props.history.push('/landing-page')
         this.handleLogoutClick()
         AuthApiService.deleteUser(userId)
     }
