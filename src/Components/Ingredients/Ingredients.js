@@ -29,7 +29,8 @@ class Ingredients extends React.Component{
         }
         let displayed=selectedRecipes.map((recipeId)=>{
             return this.context.recipes.filter(f=>{
-                return(recipeId===f.id)})});
+                console.log(f, recipeId)
+                return(parseInt(recipeId)===f.id)})});
                 
         this.setState({selectedRecipeIds:[...selectedRecipes]})
         if(selectedRecipes.length===0||selectedRecipes[0]==='allR'){ 
@@ -60,16 +61,16 @@ class Ingredients extends React.Component{
         {(this.state.displayed.length===0)?null:
         <section className='ingredientsList'  key={uuidv4()}>
             <h3 key={uuidv4()}><Link to={'/ingredients'}>Ingredients</Link></h3>
-            {(this.state.clicked===false)?(<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
+            {(this.state.clicked===false)?
+            (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
             <ValidationError Ingredientsmessage={this.state.error}/>
            <div key={uuidv4()}>
                 {(this.state.displayed===undefined)?
                 (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
                 {(this.state.allRecipes===true)?
                 (this.state.displayed.map(recipes=>{return recipes.ingredients.map(ingredient=>{
-                        return <form key={uuidv4()}>
-                            <label htmlFor='checkbox'><input key={uuidv4()} readOnly name='chekcbox' type='checkbox'/></label><input key={uuidv4()} value={ingredient.name+ingredient.quantity+ingredient.unit}/>
-                        </form>
+                        return <><input key={uuidv4()} type='checkbox'/><label key={uuidv4()}>{ingredient.name}{ingredient.quantity}{ingredient.unit}
+                        </label><br/></>
                     })})):
                     (this.state.displayed.map(recipes=>{
                     return recipes.map(recipe=>recipe.ingredients.map(ingredient=>{
