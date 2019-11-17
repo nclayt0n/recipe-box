@@ -4,7 +4,7 @@ import TokenService from '../../services/token-service'
 import navStyles from './NavStyles'
 import AuthApiService from '../../services/auth-api-service'
 import Context from '../../Context'
-// import './Nav.css'
+
 class Nav extends React.Component{
     static contextType=Context;
     constructor(){
@@ -23,22 +23,19 @@ class Nav extends React.Component{
     
     navStyles=()=>{
         if(this.state.clicked===false){this.setState({clicked:true})
-    
     }
-        if(this.state.clicked===true){
-            this.setState({clicked:false})
-        }
+        if(this.state.clicked===true){this.setState({clicked:false})}
     }
     render(){
-        
         let userId=this.context.user_id;
-        return(<>
+        return(
+        <>
         <nav className='nav-main' style={(this.state.clicked===false)?(this.state.visible.main):(this.state.hidden.main)}>
             <button className='btn-toggle-nav' onClick={()=>this.navStyles()} style={(this.state.clicked===false)?(this.state.visible.toggleBtn):(this.state.hidden.toggleBtn)}></button>
-    </nav>
-    <aside className='nav-sidebar' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sidebar)}>
-        <ul className='navPageLinks' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sideBar)}>
-        {this.props.location.pathname===`/home-page`?null:
+        </nav>
+        <aside className='nav-sidebar' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sidebar)}>
+            <ul className='navPageLinks' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sideBar)}>
+            {this.props.location.pathname===`/home-page`?null:
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={`/home-page`} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Home</Link>
                 </li>}
@@ -64,10 +61,11 @@ class Nav extends React.Component{
                 </li>}
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                 <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)} onClick={this.handleLogoutClick}>Logout</Link></li>
-
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                 <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)} onClick={()=>this.handleDeleteAcct(userId)}>Delete Account</Link></li>
-            </ul> </aside></>)
+            </ul> 
+        </aside>
+        </>)
     
 }}
 export default withRouter(Nav)

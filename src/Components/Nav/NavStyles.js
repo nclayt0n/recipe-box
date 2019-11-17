@@ -11,11 +11,11 @@ const navStyles = {
             flexWrap: 'wrap',
             zIndex: 1000,
             position: 'fixed',
-            top: '50px'
+            top: '30px'
         },
         toggleBtn: {
             margin: 0,
-            width: '50px',
+            width: '40px',
             height: '100%',
             backgroundImage: `url(${navImage})`,
             backgroundColor: 'var(--purple)',
@@ -49,10 +49,10 @@ const navStyles = {
         sideBar: {
             position: 'fixed',
             left: '0',
-            bottom: '0',
+            top: '80px',
             width: '0',
             padding: '0 5px',
-            height: 'calc(107.5vh - 175px)',
+            height: '0',
             backgroundColor: 'var(--purple)',
             zIndex: 1000,
             transition: 'all 0.3s ease-in-out'
@@ -89,11 +89,11 @@ const navStyles = {
             flexWrap: 'wrap',
             zIndex: 1000,
             position: 'fixed',
-            top: '50px'
+            top: '30px'
         },
         toggleBtn: {
             margin: 0,
-            width: '50px',
+            width: '40px',
             height: '100%',
             backgroundImage: `url(${navImage})`,
             backgroundColor: 'var(--purple)',
@@ -101,7 +101,7 @@ const navStyles = {
             backgroundSize: '40%',
             backgroundPosition: 'center',
             border: 'none',
-            cursor: 'pointer'
+            cursor: 'pointer',
         },
         mainUl: {
             display: 'flex',
@@ -127,10 +127,10 @@ const navStyles = {
             margin: 0,
             position: 'fixed',
             left: 0,
-            bottom: 0,
-            width: '180px',
+            top: '80px',
+            width: 'fit-content',
             padding: '0 5px',
-            height: 'calc(107vh - 175px)',
+            height: '100%',
             backgroundColor: '#8A64A3',
             zIndex: 1000,
             transition: 'all 0.3s ease-in-out'
@@ -152,10 +152,9 @@ const navStyles = {
             fontFamily: 'arial',
             fontSize: '16px',
             whiteSpace: 'nowrap',
-            transition: 'all 0.3s ease-in-out',
+            transition: 'all .3s ease-in-out',
             cursor: 'pointer'
-        }
-
+        },
     }
 }
 

@@ -7,6 +7,7 @@ import TokenService from '../../services/token-service'
 import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
+import './UpdateFolder.css'
 const uuidv4 = require('uuid/v4');
 
 class UpdateFolder extends React.Component{
@@ -49,14 +50,15 @@ class UpdateFolder extends React.Component{
         return(<>
          <Header/>
        <Nav/>
-        <div className='updateFolder'style={{margin:'auto',display:'flex',flexDirection:'column',width:'60%'}}>
-            <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>
+        <div className='updateFolder'>
+        <h3 className='updateh3'>Update Folder: {this.findFolderName()}</h3>
+            <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>    
                 <fieldset>
-                    <legend>Update Folder: {this.findFolderName()}</legend>
-                    <label htmlFor ='updatedName'>Update Name: <br/>
-                    <input type='text' name='updatedName'/></label><br/>
-                    <button type='submit'>Submit
-                    </button><br/><button onClick={()=>this.props.history.goBack()}>Cancel</button>
+                    <label htmlFor ='updatedName'>Update Name:
+                    <input type='text' name='updatedName'/></label>
+                    <button type='submit' className='updateButtons'>Submit
+                    </button>
+                    <button className='updateButtons'onClick={()=>this.props.history.goBack()}>Cancel</button>
                 </fieldset>
             </form>
         </div></>
