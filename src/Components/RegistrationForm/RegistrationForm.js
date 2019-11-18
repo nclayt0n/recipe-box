@@ -3,7 +3,7 @@ import {withRouter,Link} from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
 import Header from '../Header/Header'
 import ValidationError from '../../Validation/ValidationError'
-import './RegistrationForm.css'
+import registrationFormStyles from './RegistrationFormStyles'
 class RegistrationForm extends React.Component{
     static defaultProps = {
         onRegistrationSuccess: () => {}
@@ -33,25 +33,25 @@ class RegistrationForm extends React.Component{
       }
     
     render(){
-        const { error } = this.state
+      const style=registrationFormStyles
+     
         return(<>
-            <div className='registrationForm'>
+            <div className='registrationForm' style={style.registrationForm}>
         <form onSubmit={this.handleSubmit} >
-        <div role='alert'>
-          {error && <p className='red' style={{color:'red',fontWeight:'bold',textAlign:'center',padding:'5px',margin:'10px'}}>{error}</p>}
-        </div>
-            <fieldset>
-                <legend>Create User Form</legend>
-                <label htmlFor='full_name'>Full Name:
-                <input type='text' name='full_name'/></label><br/>
-                <label htmlFor='email'>Email:
-                <input type='text' name='email'/></label><br/>
-                <label htmlFor='password'>Password:
-                <input type='password' name='password'/></label><br/>
-                <button type='submit'>Register</button>
-                {(this.state.error==='Email is already in use')?<button type='button'><Link to={'/login'}>Login</Link></button>:null}
+            <fieldset style={style.registrationFormFieldset}>
+                <legend style={style.registrationFormLegend}>Create User Form</legend>
+                <label htmlFor='full_name' style={style.registrationFormLabel}>Full Name:
+                <input type='text' name='full_name' style={style.registrationFormInput}/></label><br/>
+                <label htmlFor='email' style={style.registrationFormLabel}>Email:
+                <input type='text' name='email' style={style.registrationFormInput}/></label><br/>
+                <label htmlFor='password' style={style.registrationFormLabel}>Password:
+                <input type='password' name='password' style={style.registrationFormInput}/></label><br/>
+                <button type='submit' style={style.registrationFormButtonA}>Register</button>
+                {(this.state.error==='Email is already in use')?<button type='button' style={style.registrationFormButtonA}><Link to={'/login'} style={style.registrationFormButtonA}>Login</Link></button>:null}
             </fieldset>
+            <ValidationError Namemessage={this.state.error}/>
         </form>
+        
             </div></>
         )
     }

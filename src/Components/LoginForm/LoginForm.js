@@ -1,6 +1,7 @@
 import React from 'react'
 import {withRouter,Link} from 'react-router-dom'
-import './LoginForm.css'
+import MediaQuery from 'react-responsive'
+import loginFormStyles from './LoginFormStyles'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 import Context from '../../Context'
@@ -56,21 +57,43 @@ handleSubmitJWTAuth=ev=>{
   })
 }
     render(){
+      const style=loginFormStyles
         const { error } = this.state
-        return(
-          <div className='loginForm'>
-              <form id='loginForm' onSubmit={this.handleSubmitJWTAuth}>
-                <fieldset>
-                  <legend>Login Form</legend>
-                  <label htmlFor='username'>   Email:<br/><input type='text' name='email'/></label><br/>
-                  <label htmlFor='password'>Password:
-                  <br/><input type='password' name='password'/></label><br/>
-                  <button type='submit'>Login</button>
-                  <button><Link to='/register' className='landingButtons'>Create New Account</Link></button>
+        return( <>
+        <MediaQuery maxHeight={759}>
+          <div className='loginForm' style={style.loginForm}>
+              <form id='loginForm' onSubmit={this.handleSubmitJWTAuth} >
+                <fieldset style={style.loginFormFieldset}>
+                  <legend style={style.loginFormLegend}>Login Form</legend>
+               
+                  <label htmlFor='username' style={style.loginFormLabel}>   Email:<br/><input type='text' name='email' style={style.loginFormInput}/></label><br/>
+                  <label htmlFor='password'  style={style.loginFormLabel}>Password:
+                  <br/><input type='password' name='password' style={style.loginFormInput}/></label><br/>
+               
+              
+                  <button type='submit' style={style.loginFormButtonA}>Login</button>
+                  <button style={style.loginFormButtonA}><Link to='/register' style={style.loginFormButtonA}className='landingButtons'>Create New Account</Link></button>
                 </fieldset>
               </form>  
               <ValidationError Namemessage={error}/>
           </div>
+          </MediaQuery>
+          <MediaQuery minHeight={760}>
+          <div className='loginForm' style={style.tablet.loginForm}>
+              <form id='loginForm' onSubmit={this.handleSubmitJWTAuth} >
+                <fieldset style={style.loginFormFieldset}>
+                  <legend style={style.loginFormLegend}>Login Form</legend>
+                  <label htmlFor='username' style={style.loginFormLabel}>   Email:<br/><input type='text' name='email' style={style.tablet.loginFormInput}/></label><br/>
+                  <label htmlFor='password'  style={style.loginFormLabel}>Password:
+                  <br/><input type='password' name='password' style={style.tablet.loginFormInput}/></label><br/>
+                  <button type='submit' style={style.loginFormButtonA}>Login</button>
+                  <button style={style.loginFormButtonA}><Link to='/register' style={style.loginFormButtonA}className='landingButtons'>Create New Account</Link></button>
+                </fieldset>
+              </form>  
+              <ValidationError Namemessage={error}/>
+          </div>
+          </MediaQuery>
+          </>
         )
     }
 }
