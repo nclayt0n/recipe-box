@@ -55,6 +55,15 @@
 
 .buttonBox button {
     font-size: 1.25vw;
+    margin: 5px;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    font-weight: bolder;
+}
+
+.buttonBox button a {
+    color: var(--purple);
+    font-weight: bolder;
 }
 
 .buttonBoxMobile {
@@ -67,6 +76,14 @@
 
 .buttonBoxMobile button {
     font-size: 1.5vw;
+    color: var(--purple);
+    border: 1px solid var(--purple);
+    font-weight: bolder;
+}
+
+.buttonBoxMobile button a {
+    color: var(--purple);
+    font-weight: bolder;
 }
 
 h2,
