@@ -69,9 +69,7 @@ handleSubmitJWTAuth=ev=>{
                   <label htmlFor='username' style={style.loginFormLabel}>   Email:<br/><input type='text' name='email' style={style.loginFormInput}/></label><br/>
                   <label htmlFor='password'  style={style.loginFormLabel}>Password:
                   <br/><input type='password' name='password' style={style.loginFormInput}/></label><br/>
-               
-              
-                  <button type='submit' style={style.loginFormButtonA}>Login</button>
+                  <button type='submit' style={style.loginFormButtonA}>Login</button><br/>
                   <button style={style.loginFormButtonA}><Link to='/register' style={style.loginFormButtonA}className='landingButtons'>Create New Account</Link></button>
                 </fieldset>
               </form>  
@@ -86,7 +84,7 @@ handleSubmitJWTAuth=ev=>{
                   <label htmlFor='username' style={style.loginFormLabel}>   Email:<br/><input type='text' name='email' style={style.tablet.loginFormInput}/></label><br/>
                   <label htmlFor='password'  style={style.loginFormLabel}>Password:
                   <br/><input type='password' name='password' style={style.tablet.loginFormInput}/></label><br/>
-                  <button type='submit' style={style.loginFormButtonA}>Login</button>
+                  <button type='submit' style={style.loginFormButtonA}>Login</button><br/>
                   <button style={style.loginFormButtonA}><Link to='/register' style={style.loginFormButtonA}className='landingButtons'>Create New Account</Link></button>
                 </fieldset>
               </form>  

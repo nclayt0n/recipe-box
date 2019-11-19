@@ -10,6 +10,17 @@ const registrationFormStyles = {
         border: '1px solid var(--gray)',
         flexDirection: 'column',
     },
+    registrationFormLaptop: {
+        margin: 'auto',
+        marginTop: '100px',
+        width: '40%',
+        padding: '20px',
+        display: 'flex',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        border: '1px solid var(--gray)',
+        flexDirection: 'column',
+    },
 
     registrationFormFieldset: {
         textAlign: 'center',
@@ -18,7 +29,20 @@ const registrationFormStyles = {
 
     registrationFormInput: {
         flex: '1',
-        // width: '40%',
+        margin: '10px',
+        padding: '5px',
+        justifyContent: 'center',
+        backgroundColor: 'var(--gray)',
+    },
+    registrationFormInputTablet: {
+        width: '60%',
+        margin: '10px',
+        padding: '5px',
+        justifyContent: 'center',
+        backgroundColor: 'var(--gray)',
+    },
+    registrationFormInputLaptop: {
+        width: '40%',
         margin: '10px',
         padding: '5px',
         justifyContent: 'center',
