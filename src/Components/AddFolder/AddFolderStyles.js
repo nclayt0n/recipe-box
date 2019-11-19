@@ -38,6 +38,9 @@ const addFStyles = {
         textAlign: 'center',
         textShadow: '1px 1px #8a64a3',
         fontSize: '3vw',
+    },
+    addFolderFieldset: {
+        border: 'none'
     }
 
 }

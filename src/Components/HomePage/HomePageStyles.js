@@ -22,6 +22,9 @@ const hpStyles = {
             marginBottom: '20px',
             padding: '20px',
         },
+        addFolderFieldset: {
+            border: 'none'
+        },
         addFolderButtons: {
             width: '100px',
             backgroundColor: 'var(--purple)',

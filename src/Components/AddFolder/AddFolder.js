@@ -67,12 +67,11 @@ class AddFolder extends React.Component{
         <div className='addFolder' style={style.addFolderDivStyle} >
             <h3 style={style.h3}>ADD FOLDER</h3>
             <form onSubmit={(e)=>this.handleSubmit(e)}>
-                <fieldset>
-                    
+                <fieldset style={style.addFolderFieldset}>
                     <label htmlFor ='folderName' style={style.addFolderLabel}>Folder Name:
-                    {(this.props.location.pathname===`/home-page`)?null:<br/>} 
-                    <input type='text' name='folderName' style={style.addFolderInput}/></label> 
-                    {(this.props.location.pathname===`/home-page`)?null:<br/>} 
+                    {(this.props.location.pathname===`/home-page`)?<br/>:null} 
+                    <input type='text' name='folderName' style={style.addFolderInput}/></label>
+                    {(this.props.location.pathname===`/home-page`)?<br/>:null} 
                      <ValidationError Namemessage={this.state.error}/>
                     <button type='submit' style={style.addFolderButtons}>Submit
                     </button>
