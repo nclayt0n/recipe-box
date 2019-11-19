@@ -9,10 +9,11 @@ import MediaQuery from 'react-responsive'
 import Footer from '../Footer/Footer'
 import hpStyles from '../HomePage/HomePageStyles'
 import {Router} from 'react-router-dom'
-import './HomePage.css'
+import HomePageStyles from './HomePageStyles'
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders';
+import Ingredients from '../Ingredients/Ingredients';
 
 class HomePage extends React.Component{
     static contextType=Context;
@@ -26,20 +27,21 @@ class HomePage extends React.Component{
   }
 }
     render(){
-
+        const style=HomePageStyles
         return(
         <div> 
             <GetRecipeAndFolders/>
             <Header/>
             <Nav/>
-            <div className='addFolderContainer'style={{height:'fit-content'}}>
+            <div className='addFolderContainer'style={style.addFolder.container}>
                 <AddFolder/>
             </div>
             <AddRecipe />
             <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>
             <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
-            <section className='ingredientsList'>
-                <Link style={{color:'black',textDecoration:'none',cursor:'pointer'}} to={'/ingredients'}>Ingredients</Link>
+            <section className='ingredientsList' style={style.ingredients.list}>
+                {/* <Link style={{color:'black',textDecoration:'none',cursor:'pointer'}} to={'/ingredients'}>Ingredients</Link> */}
+                <Ingredients/>
             </section>
         </div>
         )}

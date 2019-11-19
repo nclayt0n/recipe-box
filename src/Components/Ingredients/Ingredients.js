@@ -49,12 +49,11 @@ class Ingredients extends React.Component{
             return <option key={uuidv4()} value={recipe.id} style={style.recipeSortOption}>{recipe.name}</option>})
 
         return(<>
-        <Header/>
-        <Nav/>
-        
+        {(this.props.location.pathname===`/home-page`)?'':<Header/>}
+        {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.recipeSort}>
-            <legend style={style.recipeSortLegend}>Recipes</legend>
-                <label htmlFor='recipeSort'> 
+            <legend style={style.recipeSortLegend}>Ingredients Search</legend>
+                <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
                 <select  name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
                 <option key={uuidv4()} value='allR' style={style.recipeSortOption}>All Recipes</option>
                    {recipeOptions}

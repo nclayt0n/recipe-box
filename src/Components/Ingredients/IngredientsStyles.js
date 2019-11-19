@@ -43,6 +43,11 @@ const ingredientsStyles = {
         backgroundPosition: 'center',
         backgroundSize: '100%'
     },
+    recipeSortLabel: {
+        color: 'var(--purple)',
+        textShadow: 'none',
+        fontSize: '1.5vw',
+    },
     recipeSortSelect: {
         padding: '10px',
         margin: '5px',
@@ -53,7 +58,7 @@ const ingredientsStyles = {
         backgroundColor: 'var(--purple)',
         border: '1px solid var(--purple)',
         color: 'white',
-        textShadow: '1px 1px var(--purple)',
+        textShadow: '.5px .5px var(--purple)',
     },
 
     ingredientDisplayFieldset: {
