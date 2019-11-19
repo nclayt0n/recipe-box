@@ -12,7 +12,8 @@ const registrationFormStyles = {
     },
 
     registrationFormFieldset: {
-        display: 'flex',
+        textAlign: 'center',
+        border: 'none'
     },
 
     registrationFormInput: {
