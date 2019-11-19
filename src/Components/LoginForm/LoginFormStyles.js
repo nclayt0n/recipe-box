@@ -12,7 +12,9 @@ const loginFormStyles = {
     },
 
     loginFormFieldset: {
-        display: 'flex',
+        textAlign: 'center',
+        border: 'none'
+
     },
 
     loginFormInput: {
