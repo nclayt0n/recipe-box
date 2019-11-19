@@ -52,8 +52,8 @@ const ingredientsStyles = {
         fontWeight: 'bold',
         backgroundColor: 'var(--purple)',
         border: '1px solid var(--purple)',
+        color: 'white',
         textShadow: '1px 1px var(--purple)',
-
     },
 
     ingredientDisplayFieldset: {

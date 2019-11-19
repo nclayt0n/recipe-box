@@ -47,6 +47,9 @@ const addRStyles = {
             border: '1px solid var(--purple)'
 
         },
+        option: {
+            color: 'var(--purple)',
+        },
         selectLaptop: {
             backgroundColor: 'white',
             color: 'var(--purple)',
