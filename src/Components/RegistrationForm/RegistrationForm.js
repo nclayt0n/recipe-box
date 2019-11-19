@@ -39,14 +39,14 @@ class RegistrationForm extends React.Component{
             <div className='registrationForm' style={style.registrationForm}>
         <form onSubmit={this.handleSubmit} >
             <fieldset style={style.registrationFormFieldset}>
-                <legend style={style.registrationFormLegend}>Create User Form</legend>
-                <label htmlFor='full_name' style={style.registrationFormLabel}>Full Name:
+                <legend style={style.registrationFormLegend}>Create New Account</legend>
+                <label htmlFor='full_name' style={style.registrationFormLabel}>Full Name:<br/>
                 <input type='text' name='full_name' style={style.registrationFormInput}/></label><br/>
-                <label htmlFor='email' style={style.registrationFormLabel}>Email:
+                <label htmlFor='email' style={style.registrationFormLabel}>Email:<br/>
                 <input type='text' name='email' style={style.registrationFormInput}/></label><br/>
-                <label htmlFor='password' style={style.registrationFormLabel}>Password:
+                <label htmlFor='password' style={style.registrationFormLabel}>Password:<br/>
                 <input type='password' name='password' style={style.registrationFormInput}/></label><br/>
-                <button type='submit' style={style.registrationFormButtonA}>Register</button>
+                <button type='submit' style={style.registrationFormButtonA}>Register</button><br/>
                 {(this.state.error==='Email is already in use')?<button type='button' style={style.registrationFormButtonA}><Link to={'/login'} style={style.registrationFormButtonA}>Login</Link></button>:null}
             </fieldset>
             <ValidationError Namemessage={this.state.error}/>

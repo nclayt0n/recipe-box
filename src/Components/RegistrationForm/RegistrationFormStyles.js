@@ -2,7 +2,7 @@ const registrationFormStyles = {
     registrationForm: {
         margin: 'auto',
         marginTop: '100px',
-        width: '500px',
+        width: '80%',
         padding: '20px',
         display: 'flex',
         justifyContent: 'center',
@@ -12,13 +12,14 @@ const registrationFormStyles = {
     },
 
     registrationFormFieldset: {
-        textAlign: 'left',
+        textAlign: 'center',
         border: 'none'
     },
 
     registrationFormInput: {
-        width: '40%',
-        margin: '5px',
+        flex: '1',
+        // width: '40%',
+        margin: '10px',
         padding: '5px',
         justifyContent: 'center',
         backgroundColor: 'var(--gray)',
