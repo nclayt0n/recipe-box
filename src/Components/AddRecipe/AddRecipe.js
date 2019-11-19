@@ -141,12 +141,12 @@ class AddRecipe extends React.Component{
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend>Add Each Ingredient</legend>
                         <label style={style.addRecipeStyle.label}>Ingredient</label><br/>
-                        <label htmlFor='ingredientName' style={style.addRecipeStyle.label}>Name:
+                        <label htmlFor='ingredientName' style={style.addRecipeStyle.label}>Name:<br/>
                         <input type='text' name='ingredientName' style={style.addRecipeStyle.ingredientInput}/>
                         </label><br/>
-                        <label htmlFor='ingredientQuantity' style={style.addRecipeStyle.label}>Quantity:
+                        <label htmlFor='ingredientQuantity' style={style.addRecipeStyle.label}>Quantity:<br/>
                         <input type='text' name='ingredientQuantity' style={style.addRecipeStyle.ingredientInput}/></label><br/>
-                        <label htmlFor='ingredientUnit' style={style.addRecipeStyle.label}>Unit: 
+                        <label htmlFor='ingredientUnit' style={style.addRecipeStyle.label}>Unit: <br/>
                         <select name='ingredientUnit' style={style.addRecipeStyle.select}>
                             <option value=''>select a unit</option>
                             <option value='cup(s)'>Cup(s)</option>
@@ -159,7 +159,7 @@ class AddRecipe extends React.Component{
                             <option value='bundle(s)'>Bundle(s)</option>
                             <option value='other'>Other</option>
                         </select></label><br/>
-                        <label htmlFor='ingredientUnitOther' style={style.addRecipeStyle.label}> Other Unit:
+                        <label htmlFor='ingredientUnitOther' style={style.addRecipeStyle.label}> Other Unit:<br/>
                         <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.ingredientInput}/><br/>
                         <button type='submit' style={style.addRecipeStyle.button}>Enter</button></label><br/>
                     </fieldset>

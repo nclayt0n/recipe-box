@@ -40,6 +40,9 @@ const addRStyles = {
         button: {
             backgroundColor: 'var(--purple)',
             color: 'white'
+        },
+        ingredientInput: {
+            width: '100px'
         }
     },
 
