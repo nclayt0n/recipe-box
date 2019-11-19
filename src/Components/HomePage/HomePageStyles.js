@@ -109,7 +109,7 @@ const hpStyles = {
             backgroundRepeat: 'noRepeat',
             backgroundSize: 'cover',
             backgroundColor: 'var(--purple)',
-            width: '400px',
+            width: 'fit-content',
             backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
@@ -124,7 +124,6 @@ const hpStyles = {
 
         },
         ul: {
-
             padding: '10px',
             fontSize: '22px',
             fontWeight: 'bolder',
@@ -148,6 +147,56 @@ const hpStyles = {
             color: 'white',
             textDecoration: 'none'
         },
+        tablet: {
+            div: {
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundRepeat: 'noRepeat',
+                backgroundSize: 'cover',
+                backgroundColor: 'var(--brown)',
+                width: '30%',
+                backgroundPosition: 'center',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                margin: 'auto',
+                marginTop: '50px',
+                padding: '50px',
+                textDecoration: 'none',
+                listStyle: 'none',
+                border: '1px solid white'
+
+
+            },
+            ulA: {
+                fontSize: '1.75vw',
+                color: 'white',
+                textDecoration: 'none',
+                textShadow: '1px 1px var(--lightPurple)'
+            },
+            li: {
+                padding: '10px',
+                fontSize: '1.5vw',
+                cursor: 'pointer',
+                listStyle: 'none',
+                textAlign: 'center',
+            },
+            liA: {
+
+                color: 'white',
+                textDecoration: 'none',
+                fontSize: '1.5vw'
+            },
+            button: {
+                margin: '10px auto auto ',
+                color: 'var(--purple)',
+                backgroundColor: 'white',
+                fontWeight: 'bold',
+                width: 'fit-content',
+                fontSize: '1.5vw'
+            },
+
+        }
 
     }
 

@@ -5,6 +5,7 @@ import AddRecipe from '../AddRecipe/AddRecipe'
 import FolderList from '../FolderList/FolderList';
 import RecipeList from '../RecipeList/RecipeList'
 import Context from '../../Context'
+import MediaQuery from 'react-responsive'
 import Footer from '../Footer/Footer'
 import hpStyles from '../HomePage/HomePageStyles'
 import {Router} from 'react-router-dom'
