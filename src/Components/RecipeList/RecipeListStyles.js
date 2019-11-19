@@ -25,19 +25,18 @@ const recipeListStyles = {
         },
         ul: {
             padding: '10px',
-
             fontWeight: 'bold',
             cursor: 'pointer',
             color: 'white'
         },
         ulA: {
-            fontSize: '3vw',
+            fontSize: '4.5vw',
             color: 'white',
-            textDecoration: 'none'
+            textDecoration: 'none',
+            textShadow: '1px 1px var(--lightPurple)'
         },
         li: {
             padding: '10px',
-            fontSize: '2.25vw',
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
@@ -46,14 +45,15 @@ const recipeListStyles = {
 
             color: 'white',
             textDecoration: 'none',
-            fontSize: '2.5vw'
+            fontSize: '4vw'
         },
         button: {
             margin: '10px auto auto ',
             color: 'var(--purple)',
             backgroundColor: 'white',
             fontWeight: 'bold',
-            width: 'fit-content'
+            width: 'fit-content',
+            fontSize: '4vw'
         },
         tablet: {
             div: {
@@ -79,7 +79,8 @@ const recipeListStyles = {
             ulA: {
                 fontSize: '1.75vw',
                 color: 'white',
-                textDecoration: 'none'
+                textDecoration: 'none',
+                textShadow: '1px 1px var(--lightPurple)'
             },
             li: {
                 padding: '10px',
@@ -99,7 +100,8 @@ const recipeListStyles = {
                 color: 'var(--purple)',
                 backgroundColor: 'white',
                 fontWeight: 'bold',
-                width: 'fit-content'
+                width: 'fit-content',
+                fontSize: '1.5vw'
             },
 
         }
