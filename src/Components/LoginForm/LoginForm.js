@@ -85,7 +85,7 @@ handleSubmitJWTAuth=ev=>{
                   <label htmlFor='password'  style={style.loginFormLabel}>Password:
                   <br/><input type='password' name='password' style={style.tablet.loginFormInput}/></label><br/>
                   <button type='submit' style={style.loginFormButtonA}>Login</button><br/>
-                  <button style={style.loginFormButtonA}><Link to='/register' style={style.loginFormButtonA}className='landingButtons'>Create New Account</Link></button>
+                  <button style={style.loginFormButtonA}><Link to='/register' style={style.loginFormButtonA}className='landingButtons'>Create Account</Link></button>
                 </fieldset>
               </form>  
               <ValidationError Namemessage={error}/>
