@@ -5,9 +5,13 @@ import Header from '../Header/Header';
 import hpStyles from '../HomePage/HomePageStyles'
 import folderListStyles from './FolderListStyles'
 import Nav from '../Nav/Nav';
+import GetRecipeAndFolders from '../Network/GetRecipesAndFolders';
 class FolderList extends React.Component{
     static contextType=Context;
     render(){
+        if(this.context.folders.length===0){
+            return <GetRecipeAndFolders/>
+        }
         let style;
         if(this.props.location.pathname===`/home-page`){
             style=hpStyles
@@ -27,7 +31,7 @@ class FolderList extends React.Component{
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
                 (<div>
-                    <button style={style.folderListStyle.button}><Link to={'/add-folder'}>Add Folder</Link></button><br/>
+                    <button style={style.folderListStyle.button}><Link to={'/add-folder'} style={style.folderListStyle.buttonA}>Add Folder</Link></button><br/>
                     <button style={style.folderListStyle.button} type='button' onClick={()=>this.props.history.goBack()}>Back</button>
                 </div>)}
             </div></>

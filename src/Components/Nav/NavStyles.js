@@ -15,7 +15,7 @@ const navStyles = {
         },
         toggleBtn: {
             margin: 0,
-            width: '40px',
+            width: '50px',
             height: '100%',
             backgroundImage: `url(${navImage})`,
             backgroundColor: 'var(--purple)',
@@ -93,7 +93,7 @@ const navStyles = {
         },
         toggleBtn: {
             margin: 0,
-            width: '40px',
+            width: '50px',
             height: '100%',
             backgroundImage: `url(${navImage})`,
             backgroundColor: 'var(--purple)',

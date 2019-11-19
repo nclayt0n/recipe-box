@@ -55,6 +55,7 @@ const folderStyles = {
     buttonBoxButton: {
         fontSize: '1.25vw',
         margin: '5px',
+        padding: '5px',
         color: 'var(--purple)',
         border: '1px solid var(--purple)',
         fontWeight: 'bolder'

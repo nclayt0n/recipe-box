@@ -7,7 +7,7 @@ const folderListStyles = {
             backgroundRepeat: 'noRepeat',
             backgroundSize: 'cover',
             backgroundColor: 'var(--purple)',
-            width: 'fit-content',
+            width: '50%',
             backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
@@ -15,7 +15,7 @@ const folderListStyles = {
             justifyContent: 'center',
             margin: 'auto',
             marginTop: '50px',
-            padding: '50px',
+            padding: '10px',
             textDecoration: 'none',
             listStyle: 'none',
             border: '1px solid white'
@@ -23,7 +23,7 @@ const folderListStyles = {
         },
         ul: {
             textDecoration: 'none',
-            padding: '10px',
+            padding: '5px',
             fontSize: '2.25vw',
             fontWeight: 'bold',
             cursor: 'pointer',
@@ -34,7 +34,7 @@ const folderListStyles = {
         },
         li: {
             padding: '10px',
-            fontSize: '1.75vw',
+            fontSize: '2vw',
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
@@ -48,7 +48,12 @@ const folderListStyles = {
             margin: 'auto'
         },
         button: {
-            width: '40%',
+            width: '60%',
+            color: 'var(--purple)',
+            margin: '10px'
+        },
+        buttonA: {
+            color: 'var(--purple)'
         }
     }
 }
