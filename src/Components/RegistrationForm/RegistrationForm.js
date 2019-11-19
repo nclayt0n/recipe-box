@@ -49,7 +49,7 @@ class RegistrationForm extends React.Component{
                 <label htmlFor='password' style={style.registrationFormLabel}>Password:<br/>
                 <input type='password' name='password' style={style.registrationFormInput}/></label><br/>
                 <button type='submit' style={style.registrationFormButtonA}>Register</button><br/>
-                {(this.state.error==='Email is already in use')?<button type='button' style={style.registrationFormButtonA}><Link to={'/login'} style={style.registrationFormButtonA}>Login</Link></button>:null}
+                {(this.state.error==='Email is already in use')?<button type='button' style={style.registrationFormButtonA}><Link to={'/login'} style={style.registrationFormButtonA}>Login</Link></button>:<button style={style.registrationFormButtonA}><Link to={'/'} style={style.registrationFormButtonA}>Cancel</Link></button>}
             </fieldset>
             <ValidationError Namemessage={this.state.error}/>
         </form> 
