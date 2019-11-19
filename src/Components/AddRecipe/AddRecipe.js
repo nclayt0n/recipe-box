@@ -41,7 +41,6 @@ class AddRecipe extends React.Component{
         ingredients:[...this.state.ingredients,{name:e.target.ingredientName.value,quantity,unit:ingredientUnit}]
         })  
         }
-        
     }
 
     handleSubmit=(e)=>{
@@ -134,12 +133,13 @@ class AddRecipe extends React.Component{
         return (<>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
+        <MediaQuery maxWidth={730}>
             <div className='addRecipe' style={style.addRecipeStyle.div}>
                 <h3>ADD RECIPE</h3>
                 <ValidationError Foldermessage={this.state.folderError}/>
                 <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.form}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
-                        <legend>Add Each Ingredient</legend>
+                        <legend style={style.addRecipeStyle.legend}>Add Ingredient</legend>
                         <label style={style.addRecipeStyle.label}>Ingredient</label><br/>
                         <label htmlFor='ingredientName' style={style.addRecipeStyle.label}>Name:<br/>
                         <input type='text' name='ingredientName' style={style.addRecipeStyle.ingredientInput}/>
@@ -167,19 +167,19 @@ class AddRecipe extends React.Component{
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
                 <form onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.form}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
-                        <legend>Recipe </legend>
+                        <legend style={style.addRecipeStyle.legend}>Recipe</legend>
                             <label htmlFor='name' style={style.addRecipeStyle.label} >Name:<br/>
-                            <input type='text' name='name' placeholder='add name'/></label><br/> 
+                            <input type='text' name='name' style={style.addRecipeStyle.input}/></label><br/> 
                             <ValidationError Namemessage={this.state.nameError}/>
                             <label htmlFor='instructions' style={style.addRecipeStyle.label}>Instructions:<br/>
-                            <textarea name='instructions' placeholder='add instructions' style={style.addRecipeStyle.textarea}></textarea></label><br/>
+                            <textarea name='instructions' style={style.addRecipeStyle.textarea}></textarea></label><br/>
                             <ValidationError Instructionsmessage={this.state.instructionsError}/>
                             <label htmlFor='note' style={style.addRecipeStyle.label}>Note:<br/>
-                            <input type='text' name='note'/></label><br/>
+                            <input type='text' name='note' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='link' style={style.addRecipeStyle.label}>Link:<br/>
-                            <input type='text' name='link'/></label><br/>
+                            <input type='text' name='link' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
-                            <input type='text' name='createdBy'/></label><br/>
+                            <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
                             <select name='folder'>
                                 {this.context.folders.map((folder)=>{
@@ -187,16 +187,143 @@ class AddRecipe extends React.Component{
                             </select>
                             </label><br/>
                             
-                            {(this.state.ingredients.length>0)?'Ingredients: ':null}<br/> 
-                            {(this.state.ingredients.length>0)?<><textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
+                            {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.label}>Ingredients: </label>:null}<br/> 
+                            {(this.state.ingredients.length>0)?<><textarea className='ingredientsToDisplay' value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
                             </textarea><br/></>:null}
-                            
-                            <button type='submit' style={style.addRecipeStyle.button}>Submit</button>
+                            <button type='submit' style={style.addRecipeStyle.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.button}>Cancel</button>} 
                     </fieldset>
                 </form>   
-               {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.button}>Cancel</button>} 
+               
             </div>
-            </>
+        </MediaQuery>
+        <MediaQuery minWidth={731} maxWidth={900}>
+            <div className='addRecipe' style={style.addRecipeStyle.div}>
+                <h3>ADD RECIPE</h3>
+                <ValidationError Foldermessage={this.state.folderError}/>
+                <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.form}>
+                    <fieldset style={style.addRecipeStyle.fieldset}>
+                        <legend style={style.addRecipeStyle.legend}>Add Ingredient</legend>
+                        <label style={style.addRecipeStyle.label}>Ingredient</label><br/>
+                        <label htmlFor='ingredientName' style={style.addRecipeStyle.label}>Name:<br/>
+                        <input type='text' name='ingredientName' style={style.addRecipeStyle.ingredientInput}/>
+                        </label><br/>
+                        <label htmlFor='ingredientQuantity' style={style.addRecipeStyle.label}>Quantity:<br/>
+                        <input type='text' name='ingredientQuantity' style={style.addRecipeStyle.ingredientInput}/></label><br/>
+                        <label htmlFor='ingredientUnit' style={style.addRecipeStyle.label}>Unit: <br/>
+                        <select name='ingredientUnit' style={style.addRecipeStyle.select}>
+                            <option value=''>select a unit</option>
+                            <option value='cup(s)'>Cup(s)</option>
+                            <option value='pinch(es)'>Pinch(es)</option>
+                            <option value='package(s)'>Package(s)</option>
+                            <option value='teaspoon(s)'>Teaspoon(s)</option>
+                            <option value='tablespoon(s)'>Tablespoon(s)</option>
+                            <option value='ounce(s)'>Ounce(s)</option>
+                            <option value='pint(s)'>Pint(s)</option>
+                            <option value='bundle(s)'>Bundle(s)</option>
+                            <option value='other'>Other</option>
+                        </select></label><br/>
+                        <label htmlFor='ingredientUnitOther' style={style.addRecipeStyle.label}> Other Unit:<br/>
+                        <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.ingredientInput}/><br/>
+                        <button type='submit' style={style.addRecipeStyle.button}>Enter</button></label><br/>
+                    </fieldset>
+                </form>
+                <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
+                <form onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.form}>
+                    <fieldset style={style.addRecipeStyle.fieldset}>
+                        <legend style={style.addRecipeStyle.legend}>Recipe</legend>
+                            <label htmlFor='name' style={style.addRecipeStyle.label} >Name:<br/>
+                            <input type='text' name='name' style={style.addRecipeStyle.input}/></label><br/> 
+                            <ValidationError Namemessage={this.state.nameError}/>
+                            <label htmlFor='instructions' style={style.addRecipeStyle.label}>Instructions:<br/>
+                            <textarea name='instructions' style={style.addRecipeStyle.textarea}></textarea></label><br/>
+                            <ValidationError Instructionsmessage={this.state.instructionsError}/>
+                            <label htmlFor='note' style={style.addRecipeStyle.label}>Note:<br/>
+                            <input type='text' name='note' style={style.addRecipeStyle.input}/></label><br/>
+                            <label htmlFor='link' style={style.addRecipeStyle.label}>Link:<br/>
+                            <input type='text' name='link' style={style.addRecipeStyle.input}/></label><br/>
+                            <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
+                            <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
+                            <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
+                            <select name='folder' style={style.addRecipeStyle.select}>
+                                {this.context.folders.map((folder)=>{
+                                return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
+                            </select>
+                            </label><br/>
+                            
+                            {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.label}>Ingredients: </label>:null}<br/> 
+                            {(this.state.ingredients.length>0)?<><textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
+                            </textarea><br/></>:null}
+                            <button type='submit' style={style.addRecipeStyle.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.button}>Cancel</button>}
+                    </fieldset>
+                </form>    
+            </div>
+            </MediaQuery>
+        <MediaQuery minWidth={901}>
+            <div className='addRecipe' style={style.addRecipeStyle.divLaptop}>
+                <h3>ADD RECIPE</h3>
+                <div className='laptopViewContainer' style={style.addRecipeStyle.LaptopViewContainer}>
+                <ValidationError Foldermessage={this.state.folderError}/>
+                <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.formLaptop}>
+                    <fieldset style={style.addRecipeStyle.fieldset}>
+                        <legend style={style.addRecipeStyle.legendLaptop}>Add Ingredient</legend>
+                        <label style={style.addRecipeStyle.labelLaptop}>Ingredient</label><br/>
+                        <label htmlFor='ingredientName' style={style.addRecipeStyle.labelLaptop}>Name:<br/>
+                        <input type='text' name='ingredientName' style={style.addRecipeStyle.ingredientInputLaptop}/>
+                        </label><br/>
+                        <label htmlFor='ingredientQuantity' style={style.addRecipeStyle.labelLaptop}>Quantity:<br/>
+                        <input type='text' name='ingredientQuantity' style={style.addRecipeStyle.ingredientInputLaptop}/></label><br/>
+                        <label htmlFor='ingredientUnit' style={style.addRecipeStyle.labelLaptop}>Unit: <br/>
+                        <select name='ingredientUnit' style={style.addRecipeStyle.selectLaptop}>
+                            <option value=''>select a unit</option>
+                            <option value='cup(s)'>Cup(s)</option>
+                            <option value='pinch(es)'>Pinch(es)</option>
+                            <option value='package(s)'>Package(s)</option>
+                            <option value='teaspoon(s)'>Teaspoon(s)</option>
+                            <option value='tablespoon(s)'>Tablespoon(s)</option>
+                            <option value='ounce(s)'>Ounce(s)</option>
+                            <option value='pint(s)'>Pint(s)</option>
+                            <option value='bundle(s)'>Bundle(s)</option>
+                            <option value='other'>Other</option>
+                        </select></label><br/>
+                        <label htmlFor='ingredientUnitOther' style={style.addRecipeStyle.label}> Other Unit:<br/>
+                        <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.ingredientInput}/><br/>
+                        <button type='submit' style={style.addRecipeStyle.button}>Enter</button></label><br/>
+                    </fieldset>
+                </form>
+                <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
+                <form onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.formLaptop}>
+                    <fieldset style={style.addRecipeStyle.fieldset}>
+                        <legend style={style.addRecipeStyle.legend}>Recipe</legend>
+                            <label htmlFor='name' style={style.addRecipeStyle.label} >Name:<br/>
+                            <input type='text' name='name' style={style.addRecipeStyle.input}/></label><br/> 
+                            <ValidationError Namemessage={this.state.nameError}/>
+                            <label htmlFor='instructions' style={style.addRecipeStyle.label}>Instructions:<br/>
+                            <textarea name='instructions' style={style.addRecipeStyle.textarea}></textarea></label><br/>
+                            <ValidationError Instructionsmessage={this.state.instructionsError}/>
+                            <label htmlFor='note' style={style.addRecipeStyle.label}>Note:<br/>
+                            <input type='text' name='note' style={style.addRecipeStyle.input}/></label><br/>
+                            <label htmlFor='link' style={style.addRecipeStyle.label}>Link:<br/>
+                            <input type='text' name='link' style={style.addRecipeStyle.input}/></label><br/>
+                            <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
+                            <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
+                            <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
+                            <select name='folder' style={style.addRecipeStyle.select}>
+                                {this.context.folders.map((folder)=>{
+                                return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
+                            </select>
+                            </label><br/>
+                            
+                            {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.label}>Ingredients: </label>:null}<br/> 
+                            {(this.state.ingredients.length>0)?<><textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
+                            </textarea><br/></>:null}
+                            <button type='submit' style={style.addRecipeStyle.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.button}>Cancel</button>}
+                    </fieldset>
+                </form>   
+              
+               </div>  
+            </div>
+            </MediaQuery>
+        </>
         )
     }
 }
