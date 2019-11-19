@@ -25,7 +25,7 @@ const loginFormStyles = {
         backgroundColor: 'var(--lightPurple)',
         border: '2px solid var(--purple)',
         fontWeight: 'bolder',
-        color: 'black',
+        color: 'white',
         fontSize: '4vw'
     },
 
@@ -68,7 +68,7 @@ const loginFormStyles = {
             backgroundColor: 'var(--lightPurple)',
             border: '2px solid var(--purple)',
             fontWeight: 'bold',
-            color: 'black',
+            color: 'white',
             fontSize: '1.25vw'
         },
         loginForm: {
