@@ -58,7 +58,10 @@ const ingredientsStyles = {
 
     ingredientDisplayFieldset: {
         width: 'fit-content',
-        margin: 'auto'
+        margin: 'auto',
+        padding: '5px',
+        border: '1px solid white',
+        backgroundColor: 'var(--purple)'
     },
     recipeSortOption: {
         fontSize: '1.5vw',
@@ -72,6 +75,17 @@ const ingredientsStyles = {
     ingredientLabel: {
         fontSize: '1.5vw',
         height: '10px',
+        padding: '5px',
+        display: 'flex',
+        color: 'white',
+        textShadow: '1px 1px var(--purple)',
+        fontWeight: 'bold',
+        alignItems: 'center'
+    },
+    ingredientLabelLaptop: {
+        fontSize: '1.5vw',
+        height: '10px',
+        padding: '15px',
         display: 'flex',
         color: 'white',
         textShadow: '1px 1px var(--purple)',

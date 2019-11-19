@@ -137,14 +137,14 @@ class Ingredients extends React.Component{
                 {(this.state.allRecipes===true)?
                 (this.state.displayed.map(recipes=>{return recipes.ingredients.map(ingredient=>{
                         return <>
-                        <label key={uuidv4()}className='ingredient' style={style.ingredientLabel}>
-                            <input key={uuidv4()} type='checkbox' style={style.ingredientCheckbox}/>
+                        <label key={uuidv4()}className='ingredient' style={style.ingredientLabelLaptop}>
+                            <input key={uuidv4()} type='checkbox' style={style.ingredientCheckboxLaptop}/>
                             {ingredient.name} {ingredient.quantity} {ingredient.unit}
                         </label><br/></>
                     })})):
                     (this.state.displayed.map(recipes=>{
                     return recipes.map(recipe=>recipe.ingredients.map(ingredient=>{
-                        return <><label key={uuidv4()} className='ingredient' style={style.ingredientLabel}><input key={uuidv4()} type='checkbox' style={style.ingredientCheckboxLaptop}/>{ingredient.name} {ingredient.quantity} {ingredient.unit}
+                        return <><label key={uuidv4()} className='ingredient' style={style.ingredientLabelLaptop}><input key={uuidv4()} type='checkbox' style={style.ingredientCheckboxLaptop}/>{ingredient.name} {ingredient.quantity} {ingredient.unit}
                         </label><br/></>
                     }))
                     })
