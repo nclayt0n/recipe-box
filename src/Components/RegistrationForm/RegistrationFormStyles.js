@@ -12,7 +12,7 @@ const registrationFormStyles = {
     },
 
     registrationFormFieldset: {
-        textAlign: 'center',
+        textAlign: 'left',
         border: 'none'
     },
 
