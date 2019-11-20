@@ -30,10 +30,10 @@ class Ingredients extends React.Component{
             selectedRecipes.push(e.target.recipeSort[i].value);
             }
         }
-        let displayed=selectedRecipes.map((recipeId)=>{
+        let filtered=selectedRecipes.map((recipeId)=>{
             return this.context.recipes.filter(f=>{
                 return(parseInt(recipeId)===f.id)})});
-        let filtered=displayed.map(recipes=>{
+        let displayed=filtered.map(recipes=>{
           return recipes.map(recipe=>{
             if(typeof(recipe.ingredients)==='string'){
                 recipe.ingredients=JSON.parse(recipe.ingredients)
@@ -47,7 +47,7 @@ class Ingredients extends React.Component{
         if(selectedRecipes.length===0||selectedRecipes[0]==='allR'){ 
             this.setState({displayed:this.context.recipes,allRecipes:true})
         }else{ 
-            this.setState({displayed:filtered})
+            this.setState({displayed:displayed})
     }}
 
     render(){ 
