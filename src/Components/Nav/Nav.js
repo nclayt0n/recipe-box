@@ -39,15 +39,15 @@ class Nav extends React.Component{
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={`/home-page`} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Home</Link>
                 </li>}
-                {this.props.location.pathname==='/recipe-list'?null:
+                {this.props.location.pathname==='/recipe-list'||this.context.recipes.length===0?null:
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/recipe-list'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Recipes</Link>
                 </li>}
-                {this.props.location.pathname==='/folder-list'?null:
+                {this.props.location.pathname==='/folder-list'||this.context.folders.length===0?null:
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/folder-list'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Folders</Link>
                 </li>}
-                {this.props.location.pathname==='/add-recipe'?null:
+                {this.props.location.pathname==='/add-recipe'||this.context.folders.length===0?null:
                  <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/add-recipe'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Add Recipe</Link>
                 </li>}
@@ -55,7 +55,7 @@ class Nav extends React.Component{
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/add-folder'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Add Folder</Link>
                 </li>}
-                {this.props.location.pathname==='/ingredients'?null:
+                {this.props.location.pathname==='/ingredients'||this.context.recipes.length===0?null:
                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/ingredients'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Ingredients</Link>
                 </li>}

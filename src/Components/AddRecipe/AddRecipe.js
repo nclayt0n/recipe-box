@@ -120,11 +120,41 @@ class AddRecipe extends React.Component{
             this.props.history.push('/recipe-list')
         }  
     }
+    getFolder=()=>{
+        console.log('hi')
+        const options = {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+            },
+
+        };
+        Promise.all([
+                fetch(`${config.API_ENDPOINT}/folders`,
+          options)
+            ])
+            .then(([foldersRes]) => {
+                if (!foldersRes.ok)
+                    return foldersRes.json().then(e => Promise.reject(e));
+
+                return Promise.all([foldersRes.json()]);
+            })
+            .then(([folders]) => {
+                if(folders.length===0){
+                    this.setState({folderError:'*Must create a folder before creating a recipe.'})
+                }else{
+                  this.context.addFolders(folders)  
+                }
+                
+                
+            })
+            .catch(error => {
+                console.error({ error });
+            });
+    }
     render(){
         let style;
-        if(this.context.recipes.length===0){
-            return  <GetRecipeAndFolders/>
-         }
         if(this.props.location.pathname===`/home-page`){
             style=hpStyles
         }if(this.props.location.pathname==='/add-recipe'){
@@ -137,8 +167,9 @@ class AddRecipe extends React.Component{
             <div className='addRecipe' style={style.addRecipeStyle.div}>
                 {(this.props.location.pathname===`/home-page`)?
                 <h3><Link to={'/add-recipe'}>ADD RECIPE</Link></h3>:<h3>ADD RECIPE</h3>}
-                <ValidationError Foldermessage={this.state.folderError}/>
+                
                 <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.form}>
+                <ValidationError Foldermessage={this.state.folderError}/>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.legend}>Add Ingredient</legend>
                         <label style={style.addRecipeStyle.label}>Ingredient</label><br/>
@@ -165,10 +196,11 @@ class AddRecipe extends React.Component{
                         <button type='submit' style={style.addRecipeStyle.button}>Enter</button></label><br/>
                     </fieldset>
                 </form>
-                <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
+                
                 <form onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.form}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.legend}>Recipe</legend>
+                        
                             <label htmlFor='name' style={style.addRecipeStyle.label} >Name:<br/>
                             <input type='text' name='name' style={style.addRecipeStyle.input}/></label><br/> 
                             <ValidationError Namemessage={this.state.nameError}/>
@@ -182,12 +214,12 @@ class AddRecipe extends React.Component{
                             <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
                             <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
-                            <select name='folder'>
+                            <select name='folder' onClick={this.context.folders.length===0?()=>this.getFolder():null}>
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
                             </select>
                             </label><br/>
-                            
+                            <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                             {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.label}>Ingredients: </label>:null}<br/> 
                             {(this.state.ingredients.length>0)?<><textarea className='ingredientsToDisplay' value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
                             </textarea><br/></>:null}
@@ -199,10 +231,11 @@ class AddRecipe extends React.Component{
         <MediaQuery minWidth={731} maxWidth={900}>
             <div className='addRecipe' style={style.addRecipeStyle.div}>
                 <h3>ADD RECIPE</h3>
-                <ValidationError Foldermessage={this.state.folderError}/>
+                
                 <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.form}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.legend}>Add Ingredient</legend>
+                        <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
                         <label style={style.addRecipeStyle.label}>Ingredient</label><br/>
                         <label htmlFor='ingredientName' style={style.addRecipeStyle.label}>Name:<br/>
                         <input type='text' name='ingredientName' style={style.addRecipeStyle.ingredientInput}/>
@@ -227,10 +260,12 @@ class AddRecipe extends React.Component{
                         <button type='submit' style={style.addRecipeStyle.button}>Enter</button></label><br/>
                     </fieldset>
                 </form>
-                <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
+                
                 <form onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.form}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.legend}>Recipe</legend>
+                        <ValidationError Foldermessage={this.state.folderError}/>
+                        
                             <label htmlFor='name' style={style.addRecipeStyle.label} >Name:<br/>
                             <input type='text' name='name' style={style.addRecipeStyle.input}/></label><br/> 
                             <ValidationError Namemessage={this.state.nameError}/>
@@ -244,7 +279,7 @@ class AddRecipe extends React.Component{
                             <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
                             <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
-                            <select name='folder' style={style.addRecipeStyle.select}>
+                            <select name='folder' style={style.addRecipeStyle.select} onClick={this.context.folders.length===0?()=>this.getFolder():null}>
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
                             </select>
@@ -260,12 +295,14 @@ class AddRecipe extends React.Component{
             </MediaQuery>
         <MediaQuery minWidth={901}>
             <div className='addRecipe' style={style.addRecipeStyle.divLaptop}>
+            <ValidationError Foldermessage={this.state.folderError}/>
                 <h3>ADD RECIPE</h3>
                 <div className='laptopViewContainer' style={style.addRecipeStyle.LaptopViewContainer}>
-                <ValidationError Foldermessage={this.state.folderError}/>
+               
                 <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.formLaptop}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.legendLaptop}>Add Ingredient</legend>
+                         <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
                         <label style={style.addRecipeStyle.labelLaptop}>Ingredient</label><br/>
                         <label htmlFor='ingredientName' style={style.addRecipeStyle.labelLaptop}>Name:<br/>
                         <input type='text' name='ingredientName' style={style.addRecipeStyle.ingredientInputLaptop}/>
@@ -290,10 +327,11 @@ class AddRecipe extends React.Component{
                         <button type='submit' style={style.addRecipeStyle.button}>Enter</button></label><br/>
                     </fieldset>
                 </form>
-                <ValidationError Ingredientsmessage={this.state.ingredientsError}/><br/>
+               
                 <form onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.formLaptop}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.legend}>Recipe</legend>
+                         
                             <label htmlFor='name' style={style.addRecipeStyle.label} >Name:<br/>
                             <input type='text' name='name' style={style.addRecipeStyle.input}/></label><br/> 
                             <ValidationError Namemessage={this.state.nameError}/>
@@ -307,7 +345,7 @@ class AddRecipe extends React.Component{
                             <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
                             <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
-                            <select name='folder' style={style.addRecipeStyle.select}>
+                            <select name='folder' style={style.addRecipeStyle.select} onClick={this.context.folders.length===0?()=>this.getFolder():null}>
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
                             </select>
