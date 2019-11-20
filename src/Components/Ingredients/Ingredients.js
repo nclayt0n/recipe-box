@@ -33,13 +33,21 @@ class Ingredients extends React.Component{
         let displayed=selectedRecipes.map((recipeId)=>{
             return this.context.recipes.filter(f=>{
                 return(parseInt(recipeId)===f.id)})});
-      
-                
+        let filtered=displayed.map(recipes=>{
+          return recipes.map(recipe=>{
+            if(typeof(recipe.ingredients)==='string'){
+                recipe.ingredients=JSON.parse(recipe.ingredients)
+                return recipe
+            }else{
+                return recipe
+            }
+          })
+        })
         this.setState({selectedRecipeIds:[...selectedRecipes]})
         if(selectedRecipes.length===0||selectedRecipes[0]==='allR'){ 
             this.setState({displayed:this.context.recipes,allRecipes:true})
         }else{ 
-            this.setState({displayed:displayed})
+            this.setState({displayed:filtered})
     }}
 
     render(){ 
@@ -53,7 +61,6 @@ class Ingredients extends React.Component{
             return <option key={uuidv4()} value={recipe.id} style={style.tablet.recipeSortOption}>{recipe.name}</option>})
         let laptopRecipeOptions=this.context.recipes.map((recipe)=>{ 
             return <option key={uuidv4()} value={recipe.id} style={style.laptop.recipeSortOption}>{recipe.name}</option>})
-
         return(<>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
@@ -76,7 +83,7 @@ class Ingredients extends React.Component{
             <ValidationError Ingredientsmessage={this.state.error}/>
             
            <form key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
-                <fieldset style={style.ingredientDisplayFieldset}>
+                <fieldset key={uuidv4()} style={style.ingredientDisplayFieldset}>
                     {(this.state.displayed===undefined)?
                     (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
                 {(this.state.allRecipes===true)?
