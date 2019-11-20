@@ -51,6 +51,50 @@ class Ingredients extends React.Component{
         return(<>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
+        <MediaQuery maxWidth={650}>
+        <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.recipeSort}>
+            <legend style={style.recipeSortLegend}>Ingredients Search</legend>
+                <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
+                <select  name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
+                <option key={uuidv4()} value='allR' style={style.recipeSortOption}>All Recipes</option>
+                   {recipeOptions}
+                </select>
+                </label>
+                <button type='submit' style={style.sortButton}>Submit</button>
+        </form>
+        {(this.state.displayed.length===0)?null:
+        <section className='ingredientsList'  key={uuidv4()} style={style.ingredientsList}>
+            <h3 key={uuidv4()} style={style.H3}>Ingredients</h3>
+            {(this.state.clicked===false)?
+            (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
+            <ValidationError Ingredientsmessage={this.state.error}/>
+            
+           <form key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
+                <fieldset style={style.ingredientDisplayFieldset}>
+                    {(this.state.displayed===undefined)?
+                    (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
+                {(this.state.allRecipes===true)?
+                    (this.state.displayed.map(recipes=>{return recipes.ingredients.map(ingredient=>{
+                        return <>
+                        <label key={uuidv4()}className='ingredient' style={style.ingredientLabel}>
+                            <input key={uuidv4()} type='checkbox' style={style.ingredientCheckbox}/>
+                            {ingredient.name} {ingredient.quantity} {ingredient.unit}
+                        </label><br/></>
+                    })})):
+                    (this.state.displayed.map(recipes=>{return recipes.map(recipe=>recipe.ingredients.map(ingredient=>{
+                        return <>
+                            <label key={uuidv4()} className='ingredient' style={style.ingredientLabel}>
+                                <input key={uuidv4()} type='checkbox' style={style.ingredientCheckbox}/>{ingredient.name} {ingredient.quantity} {ingredient.unit}
+                            </label><br/>
+                            </>
+                    }))})
+                )}
+            </fieldset>
+            </form> 
+        </section>}
+        </MediaQuery>
+
+        <MediaQuery minWidth={651} maxWidth={900}>
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.recipeSort}>
             <legend style={style.recipeSortLegend}>Ingredients Search</legend>
                 <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
@@ -62,13 +106,11 @@ class Ingredients extends React.Component{
                 <button type='submit' style={style.sortButton}>Submit</button>
         </form>
         {(this.state.displayed.length===0)?null:<>
-        <MediaQuery maxWidth={650}>
-        <section className='ingredientsList'  key={uuidv4()} style={style.ingredientsList}>
+        <section className='ingredientsList'  key={uuidv4()} style={style.tablet.ingredientsList}>
             <h3 key={uuidv4()} style={style.H3}>Ingredients</h3>
             {(this.state.clicked===false)?
             (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
             <ValidationError Ingredientsmessage={this.state.error}/>
-            
            <form key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
                 <fieldset style={style.ingredientDisplayFieldset}>
                 {(this.state.displayed===undefined)?
@@ -83,47 +125,30 @@ class Ingredients extends React.Component{
                     })})):
                     (this.state.displayed.map(recipes=>{
                     return recipes.map(recipe=>recipe.ingredients.map(ingredient=>{
-                        return <><label key={uuidv4()} className='ingredient' style={style.ingredientLabel}><input key={uuidv4()} type='checkbox' style={style.ingredientCheckbox}/>{ingredient.name} {ingredient.quantity} {ingredient.unit}
-                        </label><br/></>
-                    }))
-                    })
-                )}
-            </fieldset>
-            </form> 
-        </section>
-        </MediaQuery>
-        <MediaQuery minWidth={651} maxWidth={900}>
-        <section className='ingredientsList'  key={uuidv4()} style={style.ingredientsListTablet}>
-            <h3 key={uuidv4()} style={style.H3}>Ingredients</h3>
-            {(this.state.clicked===false)?
-            (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
-            <ValidationError Ingredientsmessage={this.state.error}/>
-            
-           <form key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
-                <fieldset style={style.ingredientDisplayFieldset}>
-                {(this.state.displayed===undefined)?
-                (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
-                {(this.state.allRecipes===true)?
-                (this.state.displayed.map(recipes=>{return recipes.ingredients.map(ingredient=>{
                         return <>
-                        <label key={uuidv4()}className='ingredient' style={style.ingredientLabel}>
-                            <input key={uuidv4()} type='checkbox' style={style.ingredientCheckbox}/>
-                            {ingredient.name} {ingredient.quantity} {ingredient.unit}
+                        <label key={uuidv4()} className='ingredient' style={style.ingredientLabel}>
+                            <input key={uuidv4()} type='checkbox' style={style.tablet.ingredientCheckbox}/>{ingredient.name} {ingredient.quantity} {ingredient.unit}
                         </label><br/></>
-                    })})):
-                    (this.state.displayed.map(recipes=>{
-                    return recipes.map(recipe=>recipe.ingredients.map(ingredient=>{
-                        return <><label key={uuidv4()} className='ingredient' style={style.ingredientLabel}><input key={uuidv4()} type='checkbox' style={style.ingredientCheckboxTablet}/>{ingredient.name} {ingredient.quantity} {ingredient.unit}
-                        </label><br/></>
-                    }))
-                    })
+                    }))})
                 )}
             </fieldset>
             </form> 
-        </section>
+        </section></>}
         </MediaQuery>
+
         <MediaQuery minWidth={901}>
-        <section className='ingredientsList'  key={uuidv4()} style={style.ingredientsListTablet}>
+        <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.recipeSort}>
+            <legend style={style.recipeSortLegend}>Ingredients Search</legend>
+                <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
+                <select  name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
+                <option key={uuidv4()} value='allR' style={style.recipeSortOption}>All Recipes</option>
+                   {recipeOptions}
+                </select>
+                </label>
+                <button type='submit' style={style.sortButton}>Submit</button>
+        </form>
+        {(this.state.displayed.length===0)?null:<>
+        <section className='ingredientsList'  key={uuidv4()} style={style.tablet.ingredientsList}>
             <h3 key={uuidv4()} style={style.H3}>Ingredients</h3>
             {(this.state.clicked===false)?
             (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
@@ -136,23 +161,27 @@ class Ingredients extends React.Component{
                 {(this.state.allRecipes===true)?
                 (this.state.displayed.map(recipes=>{return recipes.ingredients.map(ingredient=>{
                         return <>
-                        <label key={uuidv4()}className='ingredient' style={style.ingredientLabelLaptop}>
-                            <input key={uuidv4()} type='checkbox' style={style.ingredientCheckboxLaptop}/>
+                        <label key={uuidv4()}className='ingredient' style={style.laptop.ingredientLabel}>
+                            <input key={uuidv4()} type='checkbox' style={style.laptop.ingredientCheckbox}/>
                             {ingredient.name} {ingredient.quantity} {ingredient.unit}
                         </label><br/></>
                     })})):
                     (this.state.displayed.map(recipes=>{
                     return recipes.map(recipe=>recipe.ingredients.map(ingredient=>{
-                        return <><label key={uuidv4()} className='ingredient' style={style.ingredientLabelLaptop}><input key={uuidv4()} type='checkbox' style={style.ingredientCheckboxLaptop}/>{ingredient.name} {ingredient.quantity} {ingredient.unit}
+                        return <>
+                        <label key={uuidv4()} className='ingredient' style={style.laptop.ingredientLabel}>
+                            <input key={uuidv4()} type='checkbox' style={style.laptop.ingredientCheckbox}/>{ingredient.name} {ingredient.quantity} {ingredient.unit}
                         </label><br/></>
-                    }))
-                    })
+                    }))})
                 )}
             </fieldset>
             </form> 
         </section>
+        </>}
         </MediaQuery>
-        </>}</>)
+
+       
+        </>)
     }
 }
 export default withRouter(Ingredients)

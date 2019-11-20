@@ -7,7 +7,8 @@ const hpStyles = {
     },
     addFolder: {
         container: {
-            height: 'fit-content'
+            height: 'fit-content',
+            borderRadius: '5px'
         },
         addFolderDivStyle: {
             backgroundImage: `url(${addFbackgroundImage})`,

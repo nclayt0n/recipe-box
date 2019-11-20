@@ -135,7 +135,8 @@ class AddRecipe extends React.Component{
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <MediaQuery maxWidth={730}>
             <div className='addRecipe' style={style.addRecipeStyle.div}>
-                <h3>ADD RECIPE</h3>
+                {(this.props.location.pathname===`/home-page`)?
+                <h3><Link to={'/add-recipe'}>ADD RECIPE</Link></h3>:<h3>ADD RECIPE</h3>}
                 <ValidationError Foldermessage={this.state.folderError}/>
                 <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.form}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
