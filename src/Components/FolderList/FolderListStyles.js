@@ -1,13 +1,14 @@
 import React from 'react'
-import backgroundImage from '../../images/purpleWhiteLeaves.png'
+import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
 const folderListStyles = {
     folderListStyle: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'noRepeat',
-            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '80%',
             backgroundColor: 'var(--purple)',
-            width: '50%',
+            width: '80%',
             backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
@@ -23,18 +24,18 @@ const folderListStyles = {
         },
         ul: {
             textDecoration: 'none',
-            padding: '5px',
-            fontSize: '2.25vw',
+            padding: '10px',
+            fontSize: '4.5vw',
             fontWeight: 'bold',
             cursor: 'pointer',
         },
         ulA: {
             color: 'white',
-            textDecoration: 'underline'
+            fontSize: '4.5vw',
         },
         li: {
             padding: '10px',
-            fontSize: '2vw',
+            fontSize: '4vw',
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
@@ -45,15 +46,81 @@ const folderListStyles = {
 
             color: 'white',
             textDecoration: 'none',
-            margin: 'auto'
+            margin: 'auto',
+            fontSize: '4vw',
         },
         button: {
-            width: '60%',
+            width: '40%',
             color: 'var(--purple)',
-            margin: '10px'
+            margin: '10px',
+            fontSize: '4vw',
+            fontWeight: 'bold',
         },
         buttonA: {
-            color: 'var(--purple)'
+            color: 'var(--purple)',
+            fontSize: '4vw',
+            fontWeight: 'bold',
+        },
+        tablet: {
+            div: {
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundAttachment: 'fixed',
+                backgroundRepeat: 'repeat-y',
+                backgroundSize: '50%',
+                backgroundColor: 'var(--purple)',
+                width: '50%',
+                backgroundPosition: 'center',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                margin: 'auto',
+                marginTop: '50px',
+                padding: '10px',
+                textDecoration: 'none',
+                listStyle: 'none',
+                border: '1px solid white'
+
+            },
+            ul: {
+                textDecoration: 'none',
+                padding: '10px',
+                fontSize: '1.75vw',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+            },
+            ulA: {
+                color: 'white',
+                fontSize: '1.75vw',
+            },
+            li: {
+                padding: '10px',
+                fontSize: '1.5vw',
+                cursor: 'pointer',
+                listStyle: 'none',
+                textAlign: 'center',
+                textDecoration: 'none'
+
+            },
+            liA: {
+
+                color: 'white',
+                textDecoration: 'none',
+                margin: 'auto',
+                fontSize: '1.5vw',
+            },
+            button: {
+                width: '40%',
+                color: 'var(--purple)',
+                margin: '10px',
+                fontSize: '1.5vw',
+                fontWeight: 'bold',
+            },
+            buttonA: {
+                color: 'var(--purple)',
+                fontSize: '1.5vw',
+                fontWeight: 'bold',
+            },
         }
     }
 }

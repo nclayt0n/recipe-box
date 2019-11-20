@@ -50,7 +50,7 @@ render(){
             </ul> 
            {(this.props.location.pathname===`/home-page`)?null: 
            (<>
-            <button><Link to={'/add-recipe'} style={style.recipeListStyle.tablet.button}>Add Recipe</Link></button>
+            <button style={style.recipeListStyle.tablet.button}><Link to={'/add-recipe'} style={style.recipeListStyle.tablet.button}>Add Recipe</Link></button>
             <button type='button' onClick={()=>this.props.history.goBack()} style={style.recipeListStyle.tablet.button}>Back</button>
             </>)}
         </div>

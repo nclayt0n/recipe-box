@@ -1,13 +1,14 @@
 import React from 'react'
-import backgroundImage from '../../images/purpleWhiteLeaves.png'
+import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
 const recipeListStyles = {
     recipeListStyle: {
 
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'noRepeat',
-            backgroundSize: 'cover',
-            backgroundColor: 'var(--brown)',
+            backgroundAttachment: 'fixed',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '80%',
+            backgroundColor: 'var(--purple)',
             width: '80%',
             backgroundPosition: 'center',
             textAlign: 'center',
@@ -16,7 +17,7 @@ const recipeListStyles = {
             justifyContent: 'center',
             margin: 'auto',
             marginTop: '50px',
-            padding: '50px',
+            padding: '10px',
             textDecoration: 'none',
             listStyle: 'none',
             border: '1px solid white'
@@ -48,19 +49,20 @@ const recipeListStyles = {
             fontSize: '4vw'
         },
         button: {
-            margin: '10px auto auto ',
+            margin: '10px auto 10px ',
             color: 'var(--purple)',
             backgroundColor: 'white',
             fontWeight: 'bold',
-            width: 'fit-content',
+            width: '40%',
             fontSize: '4vw'
         },
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                backgroundRepeat: 'noRepeat',
-                backgroundSize: 'cover',
-                backgroundColor: 'var(--brown)',
+                backgroundAttachment: 'fixed',
+                backgroundRepeat: 'repeat-y',
+                backgroundSize: '50%',
+                backgroundColor: 'var(--purple)',
                 width: '50%',
                 backgroundPosition: 'center',
                 textAlign: 'center',
@@ -69,7 +71,7 @@ const recipeListStyles = {
                 justifyContent: 'center',
                 margin: 'auto',
                 marginTop: '50px',
-                padding: '50px',
+                padding: '10px',
                 textDecoration: 'none',
                 listStyle: 'none',
                 border: '1px solid white'
@@ -96,11 +98,11 @@ const recipeListStyles = {
                 fontSize: '1.5vw'
             },
             button: {
-                margin: '10px auto auto ',
+                margin: '10px auto 10px ',
                 color: 'var(--purple)',
                 backgroundColor: 'white',
                 fontWeight: 'bold',
-                width: 'fit-content',
+                width: '40%',
                 fontSize: '1.5vw'
             },
 

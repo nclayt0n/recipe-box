@@ -1,5 +1,5 @@
 import React from 'react'
-import backgroundImage from '../../images/purpleWhiteLeaves.png'
+import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
 import addFbackgroundImage from '../../images/purplelavleaves.jpg'
 const hpStyles = {
     homePageStyle: {
@@ -8,14 +8,14 @@ const hpStyles = {
     addFolder: {
         container: {
             height: 'fit-content',
-            borderRadius: '5px'
+            borderRadius: '5px',
         },
         addFolderDivStyle: {
             backgroundImage: `url(${addFbackgroundImage})`,
             backgroundRepeat: 'noRepeat',
             backgroundSize: 'cover',
             backgroundColor: 'var(--purple)',
-            width: '350px',
+            width: '80%',
             backgroundPosition: 'top',
             border: '2px solid var(--darkPurple)',
             textAlign: 'center',
@@ -186,10 +186,11 @@ const hpStyles = {
     folderListStyle: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'noRepeat',
-            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '80%',
             backgroundColor: 'var(--purple)',
-            width: '400px',
+            width: '80%',
             backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
@@ -226,15 +227,77 @@ const hpStyles = {
             textDecoration: 'none',
             margin: 'auto',
             fontWeight: 'normal'
+        },
+        tablet: {
+            div: {
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundAttachment: 'fixed',
+                backgroundRepeat: 'repeat-y',
+                backgroundSize: '30%',
+                backgroundColor: 'var(--purple)',
+                width: '30%',
+                backgroundPosition: 'center',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                margin: 'auto',
+                marginTop: '50px',
+                padding: '10px',
+                textDecoration: 'none',
+                listStyle: 'none',
+                border: '1px solid white'
+
+            },
+            ul: {
+                textDecoration: 'none',
+                padding: '10px',
+                fontSize: '1.75vw',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+            },
+            ulA: {
+                color: 'white',
+                fontSize: '1.75vw',
+            },
+            li: {
+                padding: '10px',
+                fontSize: '1.5vw',
+                cursor: 'pointer',
+                listStyle: 'none',
+                textAlign: 'center',
+                textDecoration: 'none'
+
+            },
+            liA: {
+
+                color: 'white',
+                textDecoration: 'none',
+                margin: 'auto',
+                fontSize: '1.5vw',
+            },
+            button: {
+                width: '40%',
+                color: 'var(--purple)',
+                margin: '10px',
+                fontSize: '1.5vw',
+                fontWeight: 'bold',
+            },
+            buttonA: {
+                color: 'var(--purple)',
+                fontSize: '1.5vw',
+                fontWeight: 'bold',
+            },
         }
     },
     recipeListStyle: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'noRepeat',
-            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '80%',
             backgroundColor: 'var(--purple)',
-            width: 'fit-content',
+            width: '80%',
             backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
@@ -275,9 +338,10 @@ const hpStyles = {
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                backgroundRepeat: 'noRepeat',
-                backgroundSize: 'cover',
-                backgroundColor: 'var(--brown)',
+                backgroundAttachment: 'fixed',
+                backgroundRepeat: 'repeat-y',
+                backgroundSize: '30%',
+                backgroundColor: 'var(--purple)',
                 width: '30%',
                 backgroundPosition: 'center',
                 textAlign: 'center',

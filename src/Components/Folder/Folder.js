@@ -68,7 +68,7 @@ return folderName}
                     <h3 style={style.h}>{folderName}</h3>
                         {recipeList}
                     </ul>
-                    <MediaQuery maxWidth={770}>
+                    <MediaQuery maxWidth={750}>
                     <div className='buttonBoxMobile' style={style.buttonBoxMobile}>
                     <button>
                             <Link to={'/add-recipe'} style={style.buttonBoxMobileButtonA}>Add Recipe</Link>
@@ -82,7 +82,7 @@ return folderName}
                         </button><br/>
                     </div>
                     </MediaQuery>
-                    <MediaQuery minWidth={770}>
+                    <MediaQuery minWidth={751}>
                     <div className='buttonBox' style={style.buttonBox}>
                     <button style={style.buttonBoxButton}>
                             <Link to={'/add-recipe'} style={style.buttonBoxButtonA}>Add Recipe</Link>
