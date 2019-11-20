@@ -27,7 +27,7 @@ class FolderList extends React.Component{
             <div className='folderList' style={style.folderListStyle.div}>
                 <ul className='list' style={style.folderListStyle.ul}><Link to={'/folder-list'}style={style.folderListStyle.ulA}>FOLDERS</Link>
                 {folders}
-                    <li style={style.folderListStyle.li}><Link to={'/recipe-list'} style={style.folderListStyle.liA}>All Recipes</Link></li>
+                    {this.context.recipes.length===0?null:<li style={style.folderListStyle.li}><Link to={'/recipe-list'} style={style.folderListStyle.liA}>All Recipes</Link></li>}
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
                 (<div>

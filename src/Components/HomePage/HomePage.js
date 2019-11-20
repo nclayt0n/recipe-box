@@ -36,13 +36,19 @@ class HomePage extends React.Component{
             <div className='addFolderContainer'style={style.addFolder.container}>
                 <AddFolder/>
             </div>
-            <AddRecipe />
-            <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>
-            <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
-            <section className='ingredientsList' style={style.ingredients.list}>
-                {/* <Link style={{color:'black',textDecoration:'none',cursor:'pointer'}} to={'/ingredients'}>Ingredients</Link> */}
+            {this.context.folders.length===0?null:
+            <AddRecipe />}
+            {this.context.recipes.length===0?null:
+            <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>}
+            {this.context.folders.length===0?null:<FolderList folders={this.context.folders} recipes={this.context.recipes}/>}
+            {this.context.folders.length===0?null:
+             <section className='ingredientsList' style={style.ingredients.list}>
                 <Ingredients/>
-            </section>
+            </section>}
+            
+            
+           
+            
         </div>
         )}
 }

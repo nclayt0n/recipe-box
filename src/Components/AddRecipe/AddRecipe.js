@@ -154,6 +154,9 @@ class AddRecipe extends React.Component{
             });
     }
     render(){
+        if(this.context.folders.length===0){
+            return  <GetRecipeAndFolders/>
+         }
         let style;
         if(this.props.location.pathname===`/home-page`){
             style=hpStyles
@@ -161,13 +164,13 @@ class AddRecipe extends React.Component{
             style=addRStyles
         } 
         return (<>
+        
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <MediaQuery maxWidth={730}>
             <div className='addRecipe' style={style.addRecipeStyle.div}>
                 {(this.props.location.pathname===`/home-page`)?
-                <h3><Link to={'/add-recipe'}>ADD RECIPE</Link></h3>:<h3>ADD RECIPE</h3>}
-                
+                <h3><Link to={'/add-recipe'}>ADD RECIPE</Link></h3>:<h3>ADD RECIPE</h3>}   
                 <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.form}>
                 <ValidationError Foldermessage={this.state.folderError}/>
                     <fieldset style={style.addRecipeStyle.fieldset}>
@@ -214,7 +217,7 @@ class AddRecipe extends React.Component{
                             <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
                             <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
-                            <select name='folder' onClick={this.context.folders.length===0?()=>this.getFolder():null}>
+                            <select name='folder' >
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
                             </select>
@@ -279,7 +282,7 @@ class AddRecipe extends React.Component{
                             <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
                             <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
-                            <select name='folder' style={style.addRecipeStyle.select} onClick={this.context.folders.length===0?()=>this.getFolder():null}>
+                            <select name='folder' style={style.addRecipeStyle.select}>
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
                             </select>
@@ -345,7 +348,7 @@ class AddRecipe extends React.Component{
                             <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
                             <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
-                            <select name='folder' style={style.addRecipeStyle.select} onClick={this.context.folders.length===0?()=>this.getFolder():null}>
+                            <select name='folder' style={style.addRecipeStyle.select} >
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
                             </select>

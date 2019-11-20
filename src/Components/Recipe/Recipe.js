@@ -39,7 +39,7 @@ class Recipe extends React.Component{
         .catch(error =>{
             this.setState({error})
         })
-        props.history.push('/recipe-list')
+        props.history.push('/folder-list')
     }
 
     createDisplayedIngredients=(ingredients)=>{
