@@ -47,6 +47,10 @@ class Ingredients extends React.Component{
          }
         let recipeOptions=this.context.recipes.map((recipe)=>{ 
             return <option key={uuidv4()} value={recipe.id} style={style.recipeSortOption}>{recipe.name}</option>})
+        let tabletRecipeOptions=this.context.recipes.map((recipe)=>{ 
+            return <option key={uuidv4()} value={recipe.id} style={style.tablet.recipeSortOption}>{recipe.name}</option>})
+        let laptopRecipeOptions=this.context.recipes.map((recipe)=>{ 
+            return <option key={uuidv4()} value={recipe.id} style={style.laptop.recipeSortOption}>{recipe.name}</option>})
 
         return(<>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
@@ -95,31 +99,31 @@ class Ingredients extends React.Component{
         </MediaQuery>
 
         <MediaQuery minWidth={651} maxWidth={900}>
-        <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.recipeSort}>
-            <legend style={style.recipeSortLegend}>Ingredients Search</legend>
-                <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
-                <select  name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
-                <option key={uuidv4()} value='allR' style={style.recipeSortOption}>All Recipes</option>
-                   {recipeOptions}
+        <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.tablet.recipeSort}>
+            <legend style={style.tablet.recipeSortLegend}>Ingredients Search</legend>
+                <label htmlFor='recipeSort' style={style.tablet.recipeSortLabel}>Recipes<br/>
+                <select  name='recipeSort' multiple size='1' style={style.tablet.recipeSortSelect}>
+                <option key={uuidv4()} value='allR' style={style.tablet.recipeSortOption}>All Recipes</option>
+                   {tabletRecipeOptions}
                 </select>
                 </label>
-                <button type='submit' style={style.sortButton}>Submit</button>
+                <button type='submit' style={style.tablet.sortButton}>Submit</button>
         </form>
         {(this.state.displayed.length===0)?null:<>
         <section className='ingredientsList'  key={uuidv4()} style={style.tablet.ingredientsList}>
-            <h3 key={uuidv4()} style={style.H3}>Ingredients</h3>
+            <h3 key={uuidv4()} style={style.tablet.H3}>Ingredients</h3>
             {(this.state.clicked===false)?
             (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
             <ValidationError Ingredientsmessage={this.state.error}/>
            <form key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
-                <fieldset style={style.ingredientDisplayFieldset}>
+                <fieldset style={style.tablet.ingredientDisplayFieldset}>
                 {(this.state.displayed===undefined)?
                 (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
                 {(this.state.allRecipes===true)?
                 (this.state.displayed.map(recipes=>{return recipes.ingredients.map(ingredient=>{
                         return <>
-                        <label key={uuidv4()}className='ingredient' style={style.ingredientLabel}>
-                            <input key={uuidv4()} type='checkbox' style={style.ingredientCheckbox}/>
+                        <label key={uuidv4()}className='ingredient' style={style.tablet.ingredientLabel}>
+                            <input key={uuidv4()} type='checkbox' style={style.tablet.ingredientCheckbox}/> 
                             {ingredient.name} {ingredient.quantity} {ingredient.unit}
                         </label><br/></>
                     })})):
@@ -137,25 +141,25 @@ class Ingredients extends React.Component{
         </MediaQuery>
 
         <MediaQuery minWidth={901}>
-        <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.recipeSort}>
-            <legend style={style.recipeSortLegend}>Ingredients Search</legend>
-                <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
-                <select  name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
-                <option key={uuidv4()} value='allR' style={style.recipeSortOption}>All Recipes</option>
-                   {recipeOptions}
+        <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.laptop.recipeSort}>
+            <legend style={style.laptop.recipeSortLegend}>Ingredients Search</legend>
+                <label htmlFor='recipeSort' style={style.laptop.recipeSortLabel}>Recipes<br/>
+                <select  name='recipeSort' multiple size='1' style={style.laptop.recipeSortSelect}>
+                <option key={uuidv4()} value='allR' style={style.laptop.recipeSortOption}>All Recipes</option>
+                   {laptopRecipeOptions}
                 </select>
                 </label>
-                <button type='submit' style={style.sortButton}>Submit</button>
+                <button type='submit' style={style.laptop.sortButton}>Submit</button>
         </form>
         {(this.state.displayed.length===0)?null:<>
-        <section className='ingredientsList'  key={uuidv4()} style={style.tablet.ingredientsList}>
-            <h3 key={uuidv4()} style={style.H3}>Ingredients</h3>
+        <section className='ingredientsList'  key={uuidv4()} style={style.laptop.ingredientsList}>
+            <h3 key={uuidv4()} style={style.laptop.H3}>Ingredients</h3>
             {(this.state.clicked===false)?
             (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
             <ValidationError Ingredientsmessage={this.state.error}/>
             
            <form key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
-                <fieldset style={style.ingredientDisplayFieldset}>
+                <fieldset style={style.laptop.ingredientDisplayFieldset}>
                 {(this.state.displayed===undefined)?
                 (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
                 {(this.state.allRecipes===true)?
