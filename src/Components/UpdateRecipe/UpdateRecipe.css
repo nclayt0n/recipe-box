@@ -6,7 +6,7 @@
     border: 1px solid var(--lightPurple);
     display: flex;
     justify-content: center;
-    margin: auto;
+    margin: auto auto 50px;
     width: 80%;
 }
 
@@ -29,6 +29,7 @@
     width: 40%;
     display: flex;
     background-color: var(--lightPurple);
+    border: 1px solid white;
 }
 
 .updateRecipe h4 {
