@@ -22,7 +22,7 @@ class Ingredients extends React.Component{
     }
     sortByRecipe=(e)=>{
         e.preventDefault();
-        let displayed={};
+        
         this.setState({error:'',allRecipes:false})
         let selectedRecipes = [];
         for (let i = 0, l = e.target.recipeSort.length; i < l; i++) {
@@ -30,24 +30,10 @@ class Ingredients extends React.Component{
             selectedRecipes.push(e.target.recipeSort[i].value);
             }
         }
-        let filtered=selectedRecipes.map((recipeId)=>{
+        let displayed=selectedRecipes.map((recipeId)=>{
             return this.context.recipes.filter(f=>{
                 return(parseInt(recipeId)===f.id)})});
-if(typeof(filtered.ingredients)==='string'){
-    displayed={created_by: filtered.created_by,
-                date_created: filtered.date_created,
-                folder_id: filtered.folder_id,
-                id: filtered.id,
-                ingredients: JSON.parse(filtered.ingredients),
-                instructions: filtered.instructions,
-                link: filtered.link,
-                name: filtered.name,
-                note:filtered.note,
-                user: filtered.user}
-}else{
-    displayed=filtered
-}
-        
+      
                 
         this.setState({selectedRecipeIds:[...selectedRecipes]})
         if(selectedRecipes.length===0||selectedRecipes[0]==='allR'){ 
