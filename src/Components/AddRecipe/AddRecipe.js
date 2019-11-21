@@ -200,7 +200,8 @@ class AddRecipe extends React.Component{
                         <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.ingredientInput}/><br/>
                         
                         <button type='submit' style={style.addRecipeStyle.button}>Enter</button></label><br/>
-                        
+                        {(this.state.ingredients.length>0)?<><textarea className='ingredientsToDisplay' value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
+                            </textarea><br/></>:null}
                     </fieldset>
                 </form>
                 
@@ -219,17 +220,17 @@ class AddRecipe extends React.Component{
                             <label htmlFor='link' style={style.addRecipeStyle.label}>Link:<br/>
                             <input type='text' name='link' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
-                            <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
+                            <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>  
+                            {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.label}>Ingredients: </label>:null}
+                            {(this.state.ingredients.length>0)?<><textarea className='ingredientsToDisplay' value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
+                            </textarea><br/></>:null}
+                            <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
                             <select name='folder' style={style.addRecipeStyle.select}>
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id} style={style.addRecipeStyle.option}>{folder.name}</option>)})}
                             </select>
                             </label><br/>
-                            <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
-                            {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.label}>Ingredients: </label>:null}<br/> 
-                            {(this.state.ingredients.length>0)?<><textarea className='ingredientsToDisplay' value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
-                            </textarea><br/></>:null}
                             <button type='submit' style={style.addRecipeStyle.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.button}>Cancel</button>} 
                     </fieldset>
                 </form>   
@@ -275,8 +276,11 @@ class AddRecipe extends React.Component{
                         <legend style={style.addRecipeStyle.tablet.legend}>Recipe</legend>
                         <ValidationError Foldermessage={this.state.folderError}/>
                             <label htmlFor='name' style={style.addRecipeStyle.tablet.label} >Name:<br/>
-                            <input type='text' name='name' style={style.addRecipeStyle.tablet.input}/></label><br/> 
+                            <input type='text' name='name' style={style.addRecipeStyle.tablet.input}/></label>
                             <ValidationError Namemessage={this.state.nameError}/>
+                            {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.tablet.label}>Ingredients: </label>:null}<br/> 
+                            {(this.state.ingredients.length>0)?<><textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.tablet.textarea}>
+                            </textarea><br/></>:null}
                             <label htmlFor='instructions' style={style.addRecipeStyle.tablet.label}>Instructions:<br/>
                             <textarea name='instructions' style={style.addRecipeStyle.tablet.textarea}></textarea></label><br/>
                             <ValidationError Instructionsmessage={this.state.instructionsError}/>
@@ -292,9 +296,7 @@ class AddRecipe extends React.Component{
                                 return(<option name='folder' key={folder.id} value={folder.id} style={style.addRecipeStyle.tablet.option}>{folder.name}</option>)})}
                             </select>
                             </label><br/>
-                            {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.tablet.label}>Ingredients: </label>:null}<br/> 
-                            {(this.state.ingredients.length>0)?<><textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.tablet.textarea}>
-                            </textarea><br/></>:null}
+                            
                             <button type='submit' style={style.addRecipeStyle.tablet.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.tablet.button}>Cancel</button>}
                     </fieldset>
                 </form>    

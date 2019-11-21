@@ -8,6 +8,7 @@ import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
 import './UpdateFolder.css'
+import updateFolderStyles from './UpdateFolderStyles'
 const uuidv4 = require('uuid/v4');
 
 class UpdateFolder extends React.Component{

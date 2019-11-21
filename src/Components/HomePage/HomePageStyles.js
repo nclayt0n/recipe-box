@@ -79,7 +79,8 @@ const hpStyles = {
             color: 'var(--purple)',
             fontWeight: 'bold',
             fontSize: '3vw',
-            border: '1px solid var(--purple)'
+            border: '1px solid var(--purple)',
+            margin: '5px'
 
         },
         option: {
@@ -99,7 +100,8 @@ const hpStyles = {
         label: {
             color: 'var(--purple)',
             fontWeight: 'bold',
-            fontSize: '3vw'
+            fontSize: '3vw',
+
         },
 
         legend: {
@@ -110,7 +112,8 @@ const hpStyles = {
         button: {
             backgroundColor: 'var(--purple)',
             color: 'white',
-            fontSize: '3vw'
+            fontSize: '3vw',
+
         },
         ingredientInput: {
             width: '90%',
@@ -119,6 +122,7 @@ const hpStyles = {
         input: {
             width: '90%',
             color: 'var(--purple)',
+            margin: '5px'
         },
         textarea: {
             minWidth: '90%',
@@ -171,7 +175,8 @@ const hpStyles = {
             label: {
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw'
+                fontSize: '2vw',
+                margin: '5px'
             },
             h3: {
                 color: 'var(--purple)',
@@ -185,7 +190,8 @@ const hpStyles = {
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '2vw'
+                fontSize: '2vw',
+                margin: '5px'
             },
             ingredientInput: {
                 width: '90%',
@@ -194,6 +200,7 @@ const hpStyles = {
             input: {
                 width: '90%',
                 color: 'var(--purple)',
+                margin: '5px'
 
             },
             textarea: {
@@ -227,7 +234,8 @@ const hpStyles = {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '1.5vw'
+                fontSize: '1.5vw',
+                margin: '5px'
 
             },
             option: {
@@ -250,7 +258,7 @@ const hpStyles = {
             legend: {
                 color: 'var(--purple)',
                 fontWeight: 'bolder',
-                fontSize: '1.75vw',
+                fontSize: '1.5vw',
             },
             ingredientInput: {
                 width: '90%',

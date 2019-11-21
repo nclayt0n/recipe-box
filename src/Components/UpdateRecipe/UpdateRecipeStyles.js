@@ -25,7 +25,7 @@ const updateRecipeStyles = {
     fieldset: {
         margin: 'auto auto 15px',
         textAlign: 'center',
-        width: '40%',
+        width: '50%',
         display: 'flex',
         backgroundColor: 'var(--lightPurple)',
         border: '1px solid white',
@@ -73,7 +73,8 @@ const updateRecipeStyles = {
         fontSize: '2vw',
         color: 'var(--purple)',
         margin: '5px',
-        backgroundColor: 'var(--lightPurple)'
+        backgroundColor: 'var(--lightPurple)',
+        padding: '5px'
     },
     label: {
         textTransform: 'uppercase',
@@ -103,7 +104,7 @@ const updateRecipeStyles = {
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
-            width: '50%',
+            width: '60%',
             backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
@@ -115,8 +116,15 @@ const updateRecipeStyles = {
             textDecoration: 'none',
             listStyle: 'none',
             border: '1px solid white'
-
-
+        },
+        fieldset: {
+            margin: 'auto auto 15px',
+            textAlign: 'center',
+            width: '80%',
+            display: 'flex',
+            backgroundColor: 'var(--lightPurple)',
+            border: '1px solid white',
+            flexDirection: 'column',
         },
 
 

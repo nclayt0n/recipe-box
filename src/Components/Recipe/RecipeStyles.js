@@ -1,5 +1,5 @@
 import React from 'react'
-import navImage from '../../images/purpleLpurpleleaves.jpg'
+import backgroundImage from '../../images/purpleLpurpleleaves.jpg'
 const recipeStyles = {
     mobile: {
         recipe: {
@@ -11,10 +11,10 @@ const recipeStyles = {
         },
 
         recipeItems: {
-            backgroundImage: `url(${navImage})`,
+            backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: 'noRepeat',
             backgroundSize: 'cover',
-            backgroundColor: 'white',
+            backgroundColor: 'var(--purple)',
             backgroundPosition: 'center',
             padding: '15px',
             margin: '10px',
@@ -86,10 +86,10 @@ const recipeStyles = {
         },
 
         recipeItems: {
-            backgroundImage: `url(${navImage})`,
+            backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: 'noRepeat',
             backgroundSize: 'cover',
-            backgroundColor: 'white',
+            backgroundColor: 'var(--purple)',
             padding: '15px',
             margin: '10px',
             border: '1px solid var(--lightPurple)'

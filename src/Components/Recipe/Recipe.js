@@ -100,9 +100,9 @@ class Recipe extends React.Component{
                     </ul>)}
                    
                     <div className='buttons' style={recipeStyles.mobile.buttons}>
-                        <button style={recipeStyles.mobile.recipeButton}><Link to={`/folder/${recipe.folder_id}`} >{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.mobile.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>{recipe.folderName}</Link></button>
                         <button style={recipeStyles.mobile.recipeButton}>
-                            <Link  to={`/update-recipe/${recipe.id}`}>Update Recipe</Link>
+                            <Link  to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
                         </button>
                         <button style={recipeStyles.mobile.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
                     </div>

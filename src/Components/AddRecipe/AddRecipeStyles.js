@@ -13,7 +13,7 @@ const addRStyles = {
             backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: 'noRepeat',
             backgroundSize: 'cover',
-            backgroundColor: 'var(--purple)',
+            backgroundColor: 'white',
             backgroundPosition: 'top',
             border: '2px solid var(--purple)',
             fontWeight: 'bold',
@@ -29,7 +29,9 @@ const addRStyles = {
             color: 'var(--purple)',
             fontWeight: 'bold',
             fontSize: '3vw',
-            border: '1px solid var(--purple)'
+            border: '1px solid var(--purple)',
+            margin: '5px',
+            padding: '5px'
 
         },
         option: {
@@ -49,7 +51,8 @@ const addRStyles = {
         label: {
             color: 'var(--purple)',
             fontWeight: 'bold',
-            fontSize: '3vw'
+            fontSize: '3vw',
+
         },
 
         legend: {
@@ -60,7 +63,8 @@ const addRStyles = {
         button: {
             backgroundColor: 'var(--purple)',
             color: 'white',
-            fontSize: '3vw'
+            fontSize: '3vw',
+
         },
         ingredientInput: {
             width: '90%',
@@ -69,6 +73,7 @@ const addRStyles = {
         input: {
             width: '90%',
             color: 'var(--purple)',
+            margin: '5px'
         },
         textarea: {
             minWidth: '90%',
@@ -89,7 +94,7 @@ const addRStyles = {
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundRepeat: 'noRepeat',
                 backgroundSize: 'cover',
-                backgroundColor: 'var(--purple)',
+                backgroundColor: 'white',
                 backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
@@ -101,7 +106,9 @@ const addRStyles = {
                 color: 'var(--purple)',
                 fontWeight: 'bold',
                 fontSize: '2vw',
-                border: '1px solid var(--purple)'
+                border: '1px solid var(--purple)',
+                padding: '5px',
+                margin: '5px'
 
             },
             option: {
@@ -121,7 +128,8 @@ const addRStyles = {
             label: {
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw'
+                fontSize: '2vw',
+                margin: '5px'
             },
             h3: {
                 color: 'var(--purple)',
@@ -135,7 +143,8 @@ const addRStyles = {
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '2vw'
+                fontSize: '2vw',
+                margin: '5px'
             },
             ingredientInput: {
                 width: '90%',
@@ -144,6 +153,7 @@ const addRStyles = {
             input: {
                 width: '90%',
                 color: 'var(--purple)',
+                margin: '5px'
 
             },
             textarea: {
@@ -166,7 +176,7 @@ const addRStyles = {
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundRepeat: 'noRepeat',
                 backgroundSize: 'cover',
-                backgroundColor: 'var(--purple)',
+                backgroundColor: 'white',
                 backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
@@ -177,7 +187,8 @@ const addRStyles = {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '1.5vw'
+                fontSize: '1.5vw',
+                margin: '5px'
 
             },
             option: {

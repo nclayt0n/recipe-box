@@ -5,7 +5,7 @@ const addFStyles = {
         backgroundImage: `url(${addFbackgroundImage})`,
         backgroundRepeat: 'noRepeat',
         backgroundSize: 'cover',
-        backgroundColor: 'var(--purple)',
+        backgroundColor: 'white',
         backgroundPosition: 'top',
         border: '2px solid var(--purple)',
         textAlign: 'center',
