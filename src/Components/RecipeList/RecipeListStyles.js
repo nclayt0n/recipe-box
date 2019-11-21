@@ -5,9 +5,9 @@ const recipeListStyles = {
 
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundAttachment: 'fixed',
+            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
-            backgroundSize: 'fit-content',
+            backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
             width: '80%',
             backgroundPosition: 'center',
@@ -59,9 +59,9 @@ const recipeListStyles = {
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                backgroundAttachment: 'fixed',
+                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
-                backgroundSize: 'fit-content',
+                backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
                 width: '50%',
                 backgroundPosition: 'center',

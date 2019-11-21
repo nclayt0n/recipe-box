@@ -186,9 +186,9 @@ const hpStyles = {
     folderListStyle: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundAttachment: 'fixed',
+            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
-            backgroundSize: '80%',
+            backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
             width: '80%',
             backgroundPosition: 'center',
@@ -231,9 +231,9 @@ const hpStyles = {
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                backgroundAttachment: 'fixed',
+                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
-                backgroundSize: '30%',
+                backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
                 width: '30%',
                 backgroundPosition: 'center',
@@ -293,9 +293,9 @@ const hpStyles = {
     recipeListStyle: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundAttachment: 'fixed',
+            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
-            backgroundSize: '80%',
+            backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
             width: '80%',
             backgroundPosition: 'center',
@@ -338,9 +338,9 @@ const hpStyles = {
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                backgroundAttachment: 'fixed',
+                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
-                backgroundSize: '30%',
+                backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
                 width: '30%',
                 backgroundPosition: 'center',

@@ -28,8 +28,8 @@ const ingredientsStyles = {
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'repeat-y',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-        backgroundSize: '80%'
+        // backgroundAttachment: 'fixed',
+        backgroundSize: '100%'
 
     },
     recipeSortLabel: {
@@ -169,8 +169,8 @@ const ingredientsStyles = {
             backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: 'repeat-y',
             backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
-            backgroundSize: '60%'
+            // backgroundAttachment: 'fixed',
+            backgroundSize: '100%'
         },
 
         ingredientLabel: {
@@ -257,9 +257,9 @@ const ingredientsStyles = {
             backgroundColor: 'var(--lightPurple)',
             backgroundImage: `url(${backgroundImage})`,
             backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
+            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
-            backgroundSize: '50%'
+            backgroundSize: '100%'
 
         },
 

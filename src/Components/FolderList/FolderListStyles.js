@@ -4,9 +4,9 @@ const folderListStyles = {
     folderListStyle: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundAttachment: 'fixed',
+            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
-            backgroundSize: '80%',
+            backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
             width: '80%',
             backgroundPosition: 'center',
@@ -64,9 +64,9 @@ const folderListStyles = {
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                backgroundAttachment: 'fixed',
+                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
-                backgroundSize: '50%',
+                backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
                 width: '50%',
                 backgroundPosition: 'center',

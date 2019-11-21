@@ -40,7 +40,7 @@ class UpdateFolder extends React.Component{
         .catch(error =>{
             this.setState({error})
         })
-    this.props.history.push(`/home-page`)
+    this.props.history.push(`/folder-list`)
             }
     }
     render(){
