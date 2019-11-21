@@ -7,7 +7,7 @@ const updateRecipeStyles = {
         backgroundRepeat: 'repeat-y',
         backgroundSize: '100%',
         backgroundColor: 'var(--purple)',
-        width: '80%',
+        width: '90%',
         backgroundPosition: 'center',
         textAlign: 'center',
         display: 'flex',
@@ -28,7 +28,8 @@ const updateRecipeStyles = {
         width: '40%',
         display: 'flex',
         backgroundColor: 'var(--lightPurple)',
-        border: '1px solid white'
+        border: '1px solid white',
+        flexDirection: 'column',
     },
     h3: {
         color: 'white',
@@ -48,13 +49,14 @@ const updateRecipeStyles = {
     textarea: {
         margin: '5px',
         fontSize: '2vw',
-        padding: '5px',
+        padding: '10px',
         backgroundColor: 'var(--lightPurple)',
         border: '2px solid var(--purple)',
         color: 'var(--purple)',
         fontWeight: 'bolder',
+        minWidth: '200px',
         maxWidth: '250px',
-        maxHeight: '200px'
+        maxHeight: '300px'
     },
     input: {
         margin: '10px',

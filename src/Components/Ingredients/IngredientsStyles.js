@@ -149,7 +149,7 @@ const ingredientsStyles = {
         },
         ingredientDisplayFieldset: {
             width: 'fit-content',
-            margin: 'auto',
+            margin: '5px auto auto',
             padding: '15px',
             border: '1px solid white',
             backgroundColor: 'var(--purple)'

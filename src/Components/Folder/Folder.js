@@ -51,10 +51,11 @@ return folderName}
     }
 }
     render(){
+        
         const style=folderStyles
-        // if(this.context.recipes.length===0){
-        //    return  <GetRecipeAndFolders/>
-        // }
+        if(this.context.folders.length===0){
+           return  <GetRecipeAndFolders/>
+        }
         let id=parseInt(this.props.match.params.id)
         let folderName=this.findFolder(id,this.context.folders);
         let recipeList=this.findRecipes(id,this.context.recipes,style);
