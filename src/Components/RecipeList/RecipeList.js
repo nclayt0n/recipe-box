@@ -31,7 +31,7 @@ render(){
         <>
         {(this.props.location.pathname!==`/home-page`)?<Header/>:''}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
-        <MediaQuery maxWidth={750} className='mobile'>
+        <MediaQuery maxWidth={650} className='mobile'>
         <div className='RecipeList' style={style.recipeListStyle.div}>
             <ul style={style.recipeListStyle.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.ulA}>RECIPES</Link> 
             {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle)}
@@ -43,7 +43,7 @@ render(){
             </>)}
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={751} className='tablet'>
+        <MediaQuery minWidth={651} className='tablet'>
         <div className='RecipeList' style={style.recipeListStyle.tablet.div}>
             <ul style={style.recipeListStyle.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.tablet.ulA}>RECIPES</Link> 
             {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.tablet)}

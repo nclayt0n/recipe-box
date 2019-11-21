@@ -28,7 +28,7 @@ class FolderList extends React.Component{
         return(<>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
-        <MediaQuery maxWidth={750}>
+        <MediaQuery maxWidth={650}>
             <div className='folderList' style={style.folderListStyle.div}>
                 <ul className='list' style={style.folderListStyle.ul}><Link to={'/folder-list'}style={style.folderListStyle.ulA}>FOLDERS</Link>
                 {folders}
@@ -41,7 +41,7 @@ class FolderList extends React.Component{
                 </div>)}
             </div>
             </MediaQuery>
-            <MediaQuery minWidth={751}>
+            <MediaQuery minWidth={651}>
             <div className='folderList' style={style.folderListStyle.tablet.div}>
                 <ul className='list' style={style.folderListStyle.tablet.ul}><Link to={'/folder-list'}style={style.folderListStyle.tablet.ulA}>FOLDERS</Link>
                 {tabletFolders}
