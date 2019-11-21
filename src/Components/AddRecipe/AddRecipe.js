@@ -221,7 +221,7 @@ class AddRecipe extends React.Component{
                             <label htmlFor='createdBy' style={style.addRecipeStyle.label}>Creator:<br/>
                             <input type='text' name='createdBy' style={style.addRecipeStyle.input}/></label><br/>
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
-                            <select name='folder' >
+                            <select name='folder' style={style.addRecipeStyle.select}>
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id} style={style.addRecipeStyle.option}>{folder.name}</option>)})}
                             </select>
