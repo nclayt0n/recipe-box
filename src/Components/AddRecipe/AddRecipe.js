@@ -319,16 +319,16 @@ class AddRecipe extends React.Component{
                         <input type='text' name='ingredientQuantity' style={style.addRecipeStyle.laptop.ingredientInput}/></label><br/>
                         <label htmlFor='ingredientUnit' style={style.addRecipeStyle.laptop.label}>Unit: <br/>
                         <select name='ingredientUnit' style={style.addRecipeStyle.laptop.select}>
-                            <option value=''>select a unit</option>
-                            <option value='cup(s)'>Cup(s)</option>
-                            <option value='pinch(es)'>Pinch(es)</option>
-                            <option value='package(s)'>Package(s)</option>
-                            <option value='teaspoon(s)'>Teaspoon(s)</option>
-                            <option value='tablespoon(s)'>Tablespoon(s)</option>
-                            <option value='ounce(s)'>Ounce(s)</option>
-                            <option value='pint(s)'>Pint(s)</option>
-                            <option value='bundle(s)'>Bundle(s)</option>
-                            <option value='other'>Other</option>
+                            <option value=''style={style.addRecipeStyle.laptop.option}>select a unit</option>
+                            <option value='cup(s)' style={style.addRecipeStyle.laptop.option}>Cup(s)</option>
+                            <option value='pinch(es)' style={style.addRecipeStyle.laptop.option}>Pinch(es)</option>
+                            <option value='package(s)' style={style.addRecipeStyle.laptop.option}>Package(s)</option>
+                            <option value='teaspoon(s)' style={style.addRecipeStyle.laptop.option}>Teaspoon(s)</option>
+                            <option value='tablespoon(s)' style={style.addRecipeStyle.laptop.option}>Tablespoon(s)</option>
+                            <option value='ounce(s)' style={style.addRecipeStyle.laptop.option}>Ounce(s)</option>
+                            <option value='pint(s)' style={style.addRecipeStyle.laptop.option}>Pint(s)</option>
+                            <option value='bundle(s)' style={style.addRecipeStyle.laptop.option}>Bundle(s)</option>
+                            <option value='other' style={style.addRecipeStyle.laptop.option}>Other</option>
                         </select></label><br/>
                         <label htmlFor='ingredientUnitOther' style={style.addRecipeStyle.laptop.label}> Other Unit:<br/>
                         <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.laptop.ingredientInput}/><br/>
