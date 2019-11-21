@@ -1,6 +1,6 @@
 import React from 'react'
 import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
-import addFbackgroundImage from '../../images/purplelavleaves.jpg'
+import backgroundImage2 from '../../images/purplelavleaves.jpg'
 const hpStyles = {
     homePageStyle: {
         backgroundColor: '#C8923B'
@@ -11,7 +11,7 @@ const hpStyles = {
             borderRadius: '5px',
         },
         addFolderDivStyle: {
-            backgroundImage: `url(${addFbackgroundImage})`,
+            backgroundImage: `url(${backgroundImage2})`,
             backgroundRepeat: 'noRepeat',
             backgroundSize: 'cover',
             backgroundColor: 'var(--purple)',
@@ -59,26 +59,7 @@ const hpStyles = {
             margin: 'auto',
             marginTop: '50px',
             padding: '50px',
-            backgroundImage: `url(${addFbackgroundImage})`,
-            backgroundRepeat: 'noRepeat',
-            backgroundSize: 'cover',
-            backgroundColor: 'var(--purple)',
-            backgroundPosition: 'top',
-            border: '2px solid var(--purple)',
-            fontWeight: 'bold',
-            fontSize: '2vw'
-
-        },
-        divLaptop: {
-            width: '60%',
-            textAlign: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            margin: 'auto',
-            marginTop: '50px',
-            padding: '50px',
-            backgroundImage: `url(${addFbackgroundImage})`,
+            backgroundImage: `url(${backgroundImage2})`,
             backgroundRepeat: 'noRepeat',
             backgroundSize: 'cover',
             backgroundColor: 'var(--purple)',
@@ -99,23 +80,8 @@ const hpStyles = {
         option: {
             color: 'var(--purple)',
         },
-        selectLaptop: {
-            backgroundColor: 'white',
-            color: 'var(--purple)',
-            fontWeight: 'bold',
-            fontSize: '1vw'
-
-        },
         form: {
             border: '1px solid var(--purple)',
-            width: 'fit-content',
-            margin: 'auto',
-            padding: '5px'
-
-        },
-        formLaptop: {
-            border: '1px solid var(--purple)',
-            backgroundColor: 'white',
             width: 'fit-content',
             margin: 'auto',
             padding: '5px'
@@ -128,20 +94,10 @@ const hpStyles = {
             color: 'var(--purple)',
             fontWeight: 'bold'
         },
-        labelLaptop: {
-            color: 'var(--purple)',
-            fontSize: '1.5vw',
-            fontWeight: 'bold'
-        },
         legend: {
             color: 'var(--purple)',
             fontWeight: 'bolder',
             fontSize: '2.2vw',
-        },
-        legendLaptop: {
-            color: 'var(--purple)',
-            fontWeight: 'bolder',
-            fontSize: '1.5vw',
         },
         button: {
             backgroundColor: 'var(--purple)',
@@ -151,18 +107,8 @@ const hpStyles = {
             width: '90%',
             color: 'var(--purple)',
         },
-        ingredientInputLaptop: {
-            width: '90%',
-            fontSize: '1vw',
-            color: 'var(--purple)',
-        },
         input: {
             width: '125px',
-            color: 'var(--purple)',
-        },
-        inputLaptop: {
-            width: '90%',
-            fontSize: '1vw',
             color: 'var(--purple)',
         },
         textarea: {
@@ -171,16 +117,76 @@ const hpStyles = {
             maxHeight: '150px',
             color: 'var(--purple)'
         },
-        textareaLaptop: {
-            width: '100%',
-            minWidth: '125px',
-            maxWidth: '125px',
-            maxHeight: '150px',
-            color: 'var(--purple)'
-        },
         LaptopViewContainer: {
             display: 'flex',
             flexDirection: 'row',
+        },
+        laptop: {
+            div: {
+                width: '60%',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                margin: 'auto',
+                marginTop: '50px',
+                padding: '50px',
+                backgroundImage: `url(${backgroundImage2})`,
+                backgroundRepeat: 'noRepeat',
+                backgroundSize: 'cover',
+                backgroundColor: 'var(--purple)',
+                backgroundPosition: 'top',
+                border: '2px solid var(--purple)',
+                fontWeight: 'bold',
+                fontSize: '2vw'
+
+            },
+            select: {
+                backgroundColor: 'white',
+                color: 'var(--purple)',
+                fontWeight: 'bold',
+                fontSize: '1vw'
+
+            },
+            form: {
+                border: '1px solid var(--purple)',
+                backgroundColor: 'white',
+                width: 'fit-content',
+                margin: 'auto',
+                padding: '5px'
+
+            },
+            label: {
+                color: 'var(--purple)',
+                fontSize: '1.5vw',
+                fontWeight: 'bold'
+            },
+            legend: {
+                color: 'var(--purple)',
+                fontWeight: 'bolder',
+                fontSize: '1.5vw',
+            },
+            ingredientInput: {
+                width: '90%',
+                fontSize: '1vw',
+                color: 'var(--purple)',
+            },
+            input: {
+                width: '90%',
+                fontSize: '1vw',
+                color: 'var(--purple)',
+            },
+            textarea: {
+                width: '100%',
+                minWidth: '125px',
+                maxWidth: '125px',
+                maxHeight: '150px',
+                color: 'var(--purple)'
+            },
+            ViewContainer: {
+                display: 'flex',
+                flexDirection: 'row',
+            },
         }
     },
     folderListStyle: {
