@@ -89,7 +89,7 @@ class Folder extends React.Component{
                         {recipeList}
                     </ul>
                     <div className='buttonBoxMobile' style={style.buttonBoxMobile}>
-                    <button>
+                    <button style={style.buttonBoxMobileButton}>
                             <Link to={'/add-recipe'} style={style.buttonBoxMobileButtonA}>Add Recipe</Link>
                         </button><br/>
                         <button type='button' style={style.buttonBoxMobileButton}>

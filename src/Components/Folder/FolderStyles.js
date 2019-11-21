@@ -52,7 +52,7 @@ const folderStyles = {
     },
 
     buttonBoxButton: {
-        fontSize: '1.5vw',
+        fontSize: '2.5vw',
         margin: '5px',
         padding: '5px',
         color: 'var(--purple)',
@@ -74,7 +74,7 @@ const folderStyles = {
     },
 
     buttonBoxMobileButton: {
-        fontSize: '1.5vw',
+        fontSize: '2.5vw',
         color: 'var(--purple)',
         border: '1px solid var(--purple)',
         fontWeight: 'bolder'
@@ -154,26 +154,6 @@ const folderStyles = {
         },
 
         buttonBoxButtonA: {
-            color: 'var(--purple)',
-            fontWeight: 'bolder'
-        },
-
-        buttonBoxMobile: {
-            display: 'flex',
-            margin: 'auto',
-            padding: '15px',
-            width: 'fit-content',
-            flexDirection: 'column'
-        },
-
-        buttonBoxMobileButton: {
-            fontSize: '1.25vw',
-            color: 'var(--purple)',
-            border: '1px solid var(--purple)',
-            fontWeight: 'bolder'
-        },
-
-        buttonBoxMobileButtonA: {
             color: 'var(--purple)',
             fontWeight: 'bolder'
         },
