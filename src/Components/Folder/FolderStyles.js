@@ -1,4 +1,4 @@
-import backgroundImage from '../../images/purpleLpurpleleaves.png'
+import backgroundImage from '../../images/purpleLpurpleleaves.jpg'
 
 const folderStyles = {
     folder: {

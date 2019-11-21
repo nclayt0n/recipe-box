@@ -1,5 +1,5 @@
 import React from 'react'
-import navImage from '../../images/purpleLpurpleleaves.png'
+import navImage from '../../images/purpleLpurpleleaves.jpg'
 const recipeStyles = {
     mobile: {
         recipe: {
