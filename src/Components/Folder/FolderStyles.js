@@ -5,7 +5,7 @@ const folderStyles = {
         margin: 'auto',
         display: 'flex',
         flexDirection: 'column',
-        width: '70%',
+        width: '90%',
         fontSize: '2.5vw',
         width: '50%'
     },

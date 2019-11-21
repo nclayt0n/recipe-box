@@ -3,10 +3,10 @@ import navImage from '../../images/purpleLpurpleleaves.jpg'
 const recipeStyles = {
     mobile: {
         recipe: {
-            margin: '10px 15px 15px 75px',
+            margin: 'auto',
             display: 'flex',
             flexDirection: 'column',
-            width: '70%',
+            width: '90%',
             fontSize: '2.5vw'
         },
 

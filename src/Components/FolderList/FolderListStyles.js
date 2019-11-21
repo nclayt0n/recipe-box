@@ -8,7 +8,7 @@ const folderListStyles = {
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
-            width: '80%',
+            width: '90%',
             backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',

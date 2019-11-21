@@ -54,7 +54,7 @@ const ingredientsStyles = {
     ingredientDisplayFieldset: {
         width: 'fit-content',
         margin: 'auto',
-        border: '1px solid white',
+        border: 'none',
         backgroundColor: 'var(--purple)'
     },
     ingredientsDisplay: {
@@ -151,7 +151,7 @@ const ingredientsStyles = {
             width: 'fit-content',
             margin: '5px auto auto',
             padding: '15px',
-            border: '1px solid white',
+            border: 'none',
             backgroundColor: 'var(--purple)'
         },
         ingredientCheckbox: {
@@ -246,7 +246,7 @@ const ingredientsStyles = {
             width: 'fit-content',
             margin: 'auto',
             padding: '25px',
-            border: '1px solid white',
+            border: 'none',
             backgroundColor: 'var(--purple)'
         },
         ingredientsList: {
