@@ -50,8 +50,9 @@ const hpStyles = {
         }
     },
     addRecipeStyle: {
+
         div: {
-            width: '80%',
+            width: '90%',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
@@ -69,58 +70,65 @@ const hpStyles = {
             fontSize: '2vw'
 
         },
+        h3: {
+            color: 'var(--purple)',
+            fontSize: '3.5vw'
+        },
         select: {
             backgroundColor: 'white',
             color: 'var(--purple)',
             fontWeight: 'bold',
-            fontSize: '2vw',
+            fontSize: '3vw',
             border: '1px solid var(--purple)'
 
         },
         option: {
             color: 'var(--purple)',
+            fontSize: '3vw',
         },
         form: {
             border: '1px solid var(--purple)',
-            width: 'fit-content',
-            margin: 'auto',
-            padding: '5px',
-            backgroundColor: 'white',
+            width: '80%',
+            margin: 'auto auto 10px',
+            padding: '5px'
 
         },
         fieldset: {
-            border: 'none'
+            border: 'none',
         },
         label: {
             color: 'var(--purple)',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            fontSize: '3vw'
         },
+
         legend: {
             color: 'var(--purple)',
             fontWeight: 'bolder',
-            fontSize: '2.2vw',
+            fontSize: '3.5vw',
         },
         button: {
             backgroundColor: 'var(--purple)',
-            color: 'white'
+            color: 'white',
+            fontSize: '3vw'
         },
         ingredientInput: {
             width: '90%',
             color: 'var(--purple)',
         },
         input: {
-            width: '125px',
+            width: '90%',
             color: 'var(--purple)',
         },
         textarea: {
-            minWidth: '125px',
+            minWidth: '90%',
             maxWidth: '125px',
             maxHeight: '150px',
             color: 'var(--purple)'
         },
         tablet: {
             div: {
-                width: '90%',
+                width: '70%',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
@@ -148,13 +156,13 @@ const hpStyles = {
             },
             option: {
                 color: 'var(--purple)',
+                fontSize: '2vw',
             },
             form: {
                 border: '1px solid var(--purple)',
-                width: '80%',
+                width: '60%',
                 margin: 'auto auto 10px',
-                padding: '5px',
-                backgroundColor: 'white',
+                padding: '5px'
 
             },
             fieldset: {
@@ -162,9 +170,13 @@ const hpStyles = {
             },
             label: {
                 color: 'var(--purple)',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
+                fontSize: '2vw'
             },
-
+            h3: {
+                color: 'var(--purple)',
+                fontSize: '2.75vw'
+            },
             legend: {
                 color: 'var(--purple)',
                 fontWeight: 'bolder',
@@ -172,7 +184,8 @@ const hpStyles = {
             },
             button: {
                 backgroundColor: 'var(--purple)',
-                color: 'white'
+                color: 'white',
+                fontSize: '2vw'
             },
             ingredientInput: {
                 width: '90%',
@@ -181,6 +194,7 @@ const hpStyles = {
             input: {
                 width: '90%',
                 color: 'var(--purple)',
+
             },
             textarea: {
                 minWidth: '90%',
@@ -191,7 +205,7 @@ const hpStyles = {
         },
         laptop: {
             div: {
-                width: '60%',
+                width: '70%',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
@@ -213,15 +227,19 @@ const hpStyles = {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '1vw'
+                fontSize: '1.5vw'
 
+            },
+            option: {
+                color: 'var(--purple)',
+                fontSize: '1.5vw',
             },
             form: {
                 border: '1px solid var(--purple)',
                 backgroundColor: 'white',
-                width: 'fit-content',
+                width: '40%',
                 margin: 'auto',
-                padding: '5px'
+                padding: '5px',
 
             },
             label: {
@@ -232,7 +250,7 @@ const hpStyles = {
             legend: {
                 color: 'var(--purple)',
                 fontWeight: 'bolder',
-                fontSize: '1.5vw',
+                fontSize: '1.75vw',
             },
             ingredientInput: {
                 width: '90%',
@@ -244,9 +262,12 @@ const hpStyles = {
                 fontSize: '1vw',
                 color: 'var(--purple)',
             },
+            h3: {
+                color: 'var(--purple)',
+                fontSize: '2.5vw'
+            },
             textarea: {
-                width: '100%',
-                minWidth: '125px',
+                minWidth: '90%',
                 maxWidth: '125px',
                 maxHeight: '150px',
                 color: 'var(--purple)'
@@ -254,6 +275,11 @@ const hpStyles = {
             ViewContainer: {
                 display: 'flex',
                 flexDirection: 'row',
+            },
+            button: {
+                backgroundColor: 'var(--purple)',
+                color: 'white',
+                fontSize: '1.5vw'
             },
         }
     },

@@ -172,7 +172,7 @@ class AddRecipe extends React.Component{
         <MediaQuery maxWidth={750}>
             <div className='addRecipe' style={style.addRecipeStyle.div}>
                 {(this.props.location.pathname===`/home-page`)?
-                <h3><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3>ADD RECIPE</h3>}   
+                <h3 style={style.addRecipeStyle.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.h3}>ADD RECIPE</h3>}   
                 <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.form}>
                 <ValidationError Foldermessage={this.state.folderError}/>
                     <fieldset style={style.addRecipeStyle.fieldset}>
@@ -238,7 +238,7 @@ class AddRecipe extends React.Component{
         <MediaQuery minWidth={751} maxWidth={900}>
             <div className='addRecipe' style={style.addRecipeStyle.tablet.div}>
             {(this.props.location.pathname===`/home-page`)?
-                <h3><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3>ADD RECIPE</h3>}  
+                <h3 style={style.addRecipeStyle.tablet.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.tablet.h3}>ADD RECIPE</h3>}  
                 
                 <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.tablet.form}>
                     <fieldset style={style.addRecipeStyle.tablet.fieldset}>
@@ -304,7 +304,7 @@ class AddRecipe extends React.Component{
             <div className='addRecipe' style={style.addRecipeStyle.laptop.div}>
             <ValidationError Foldermessage={this.state.folderError}/>
             {(this.props.location.pathname===`/home-page`)?
-                <h3><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3>ADD RECIPE</h3>}  
+                <h3 style={style.addRecipeStyle.laptop.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.laptop.h3}>ADD RECIPE</h3>}  
                 <div className='laptopViewContainer' style={style.addRecipeStyle.laptop.ViewContainer}>
                
                 <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.laptop.form}>
@@ -333,7 +333,7 @@ class AddRecipe extends React.Component{
                         <label htmlFor='ingredientUnitOther' style={style.addRecipeStyle.laptop.label}> Other Unit:<br/>
                         <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.laptop.ingredientInput}/><br/>
                         
-                        <button type='submit' style={style.addRecipeStyle.button}>Enter</button></label><br/>
+                        <button type='submit' style={style.addRecipeStyle.laptop.button}>Enter</button></label><br/>
                     </fieldset>
                 </form>
                
@@ -363,7 +363,7 @@ class AddRecipe extends React.Component{
                             {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.laptop.label}>Ingredients: </label>:null}<br/> 
                             {(this.state.ingredients.length>0)?<><textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
                             </textarea><br/></>:null}
-                            <button type='submit' style={style.addRecipeStyle.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.button}>Cancel</button>}
+                            <button type='submit' style={style.addRecipeStyle.laptop.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.laptop.button}>Cancel</button>}
                     </fieldset>
                 </form>   
               
