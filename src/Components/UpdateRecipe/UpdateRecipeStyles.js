@@ -13,8 +13,7 @@ const updateRecipeStyles = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        margin: 'auto',
-        marginTop: '50px',
+        margin: '10px auto 20px',
         padding: '10px',
         textDecoration: 'none',
         listStyle: 'none',
@@ -110,8 +109,7 @@ const updateRecipeStyles = {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            margin: 'auto',
-            marginTop: '50px',
+            margin: '10px auto 20px',
             padding: '10px',
             textDecoration: 'none',
             listStyle: 'none',
@@ -126,8 +124,55 @@ const updateRecipeStyles = {
             border: '1px solid white',
             flexDirection: 'column',
         },
+    },
+    laptop: {
+        div: {
+            backgroundImage: `url(${backgroundImage})`,
+            // backgroundAttachment: 'fixed',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '100%',
+            backgroundColor: 'var(--purple)',
+            width: '90%',
+            backgroundPosition: 'center',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            margin: '10px auto 20px',
+            padding: '10px',
+            textDecoration: 'none',
+            listStyle: 'none',
+            border: '1px solid white'
+        },
+        fieldset: {
+            margin: 'auto auto 15px',
+            textAlign: 'center',
+            width: '20%',
+            backgroundColor: 'var(--lightPurple)',
+            border: '1px solid white',
 
-
+        },
+        recipeBox1: {
+            margin: 'auto',
+            float: 'right'
+        },
+        recipeBox2: {
+            margin: 'auto',
+            float: 'right'
+        },
+        form: {
+            display: 'flex',
+            margin: 'auto'
+        },
+        updateButtons: {
+            display: 'flex',
+            fontSize: '2vw',
+            color: 'var(--purple)',
+            border: '2px solid white',
+            margin: 'auto auto 10px',
+            backgroundColor: ' white',
+            fontWeight: 'bold'
+        },
     }
 
 }

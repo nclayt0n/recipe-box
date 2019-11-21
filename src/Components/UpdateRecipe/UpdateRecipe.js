@@ -99,7 +99,6 @@ class UpdateRecipe extends React.Component{
             created_by,
             note
         }
-   
             this.validateRecipe(updatedRecipe)
         }
         if(this.state.ingredients.length>0){
@@ -208,10 +207,10 @@ class UpdateRecipe extends React.Component{
                 <button type='button' onClick={()=>this.deleteIngredient(idx)}>Delete</button>
             </fieldset>)
         }
-        createTabletIngredientFields=(recipe)=>{
-            return recipe.ingredients.map((ingredient,idx)=>
-                <fieldset key={uuidv4()} style={updateRecipeStyles.tablet.fieldset}>
-                    <h4 style={updateRecipeStyles.h4}> Ingredient:</h4>
+    createTabletIngredientFields=(recipe)=>{
+        return recipe.ingredients.map((ingredient,idx)=>
+            <fieldset key={uuidv4()} style={updateRecipeStyles.tablet.fieldset}>
+                <h4 style={updateRecipeStyles.h4}> Ingredient:</h4>
                     <label key={uuidv4()} htmlFor='ingredient' style={updateRecipeStyles.label} > Name:<br/>
                     <input key={uuidv4()} name={`alteredName${idx}`}  defaultValue={this.state.ingredients[idx].name} style={updateRecipeStyles.input}/></label>
                     <ValidationError Namemessage={this.state.nameError}/>
@@ -219,22 +218,49 @@ class UpdateRecipe extends React.Component{
                     <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity} style={updateRecipeStyles.input}/></label>
                     <label htmlFor='ingredient' style={updateRecipeStyles.label}>Unit:<br/>
                     <select style={updateRecipeStyles.select} key={uuidv4()} name='ingredientUnit' name={`alteredUnit${idx}`}>
-                                <option value={this.state.ingredients[idx].unit} style={updateRecipeStyles.option}>{this.state.ingredients[idx].unit}</option>
-                                <option value='cup' style={updateRecipeStyles.option}>cup</option>
-                                <option value='pinch' style={updateRecipeStyles.option}>pinch</option>
-                                <option value='package' style={updateRecipeStyles.option}>package</option>
-                                <option value='teaspoon' style={updateRecipeStyles.option}>teaspoon</option>
-                                <option value='tablespoon' style={updateRecipeStyles.option}>tablespoon</option>
-                                <option value='ounce' style={updateRecipeStyles.option}>ounce</option>
-                                <option value='pint' style={updateRecipeStyles.option}>pint</option>
-                                <option value='bundle' style={updateRecipeStyles.option}>bundle</option>
-                                <option value='other' style={updateRecipeStyles.option}>other</option>
-                            </select></label>
-                            <label htmlFor={`ingredientUnitOther${idx}`} style={updateRecipeStyles.label}> Other Unit:<br/>
-                            <input type='text' name={`ingredientUnitOther${idx}`} style={updateRecipeStyles.input}/></label>
+                        <option value={this.state.ingredients[idx].unit} style={updateRecipeStyles.option}>{this.state.ingredients[idx].unit}</option>
+                        <option value='cup' style={updateRecipeStyles.option}>cup</option>
+                        <option value='pinch' style={updateRecipeStyles.option}>pinch</option>
+                        <option value='package' style={updateRecipeStyles.option}>package</option>
+                        <option value='teaspoon' style={updateRecipeStyles.option}>teaspoon</option>
+                        <option value='tablespoon' style={updateRecipeStyles.option}>tablespoon</option>
+                        <option value='ounce' style={updateRecipeStyles.option}>ounce</option>
+                        <option value='pint' style={updateRecipeStyles.option}>pint</option>
+                        <option value='bundle' style={updateRecipeStyles.option}>bundle</option>
+                        <option value='other' style={updateRecipeStyles.option}>other</option>
+                    </select></label>
+                    <label htmlFor={`ingredientUnitOther${idx}`} style={updateRecipeStyles.label}> Other Unit:<br/>
+                    <input type='text' name={`ingredientUnitOther${idx}`} style={updateRecipeStyles.input}/></label>
                     <button type='button' onClick={()=>this.deleteIngredient(idx)}>Delete</button>
-                </fieldset>)
-            }
+            </fieldset>)
+        }
+    createLaptopIngredientFields=(recipe)=>{
+        return recipe.ingredients.map((ingredient,idx)=>
+            <fieldset key={uuidv4()} style={updateRecipeStyles.laptop.fieldset}>
+                 <h4 style={updateRecipeStyles.h4}> Ingredient:</h4>
+                    <label key={uuidv4()} htmlFor='ingredient' style={updateRecipeStyles.label} > Name:<br/>
+                    <input key={uuidv4()} name={`alteredName${idx}`}  defaultValue={this.state.ingredients[idx].name} style={updateRecipeStyles.input}/></label>
+                    <ValidationError Namemessage={this.state.nameError}/>
+                    <label htmlFor='ingredient' style={updateRecipeStyles.label}>Quantity:<br/>
+                    <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity} style={updateRecipeStyles.input}/></label>
+                    <label htmlFor='ingredient' style={updateRecipeStyles.label}>Unit:<br/>
+                    <select style={updateRecipeStyles.select} key={uuidv4()} name='ingredientUnit' name={`alteredUnit${idx}`}>
+                        <option value={this.state.ingredients[idx].unit} style={updateRecipeStyles.option}>{this.state.ingredients[idx].unit}</option>
+                        <option value='cup' style={updateRecipeStyles.option}>cup</option>
+                        <option value='pinch' style={updateRecipeStyles.option}>pinch</option>
+                        <option value='package' style={updateRecipeStyles.option}>package</option>
+                        <option value='teaspoon' style={updateRecipeStyles.option}>teaspoon</option>
+                        <option value='tablespoon' style={updateRecipeStyles.option}>tablespoon</option>
+                        <option value='ounce' style={updateRecipeStyles.option}>ounce</option>
+                        <option value='pint' style={updateRecipeStyles.option}>pint</option>
+                        <option value='bundle' style={updateRecipeStyles.option}>bundle</option>
+                        <option value='other' style={updateRecipeStyles.option}>other</option>
+                    </select></label><br/>
+                    <label htmlFor={`ingredientUnitOther${idx}`} style={updateRecipeStyles.label}> Other Unit:<br/>
+                    <input type='text' name={`ingredientUnitOther${idx}`} style={updateRecipeStyles.input}/></label>
+                    <button type='button' onClick={()=>this.deleteIngredient(idx)}>Delete</button>
+            </fieldset>)
+        }
     render(){
         if(this.context.recipes.length===0){
            return  <GetRecipeAndFolders/>
@@ -261,6 +287,7 @@ class UpdateRecipe extends React.Component{
            }
         const displayedIngredients= this.createIngredientFields(this.state);
         const tabletDisplayedIngredients=this.createTabletIngredientFields(this.state);
+        const laptopDisplayedIngredients=this.createLaptopIngredientFields(this.state);
         return (
         <>
         <Header/>
@@ -310,7 +337,7 @@ class UpdateRecipe extends React.Component{
             </form> 
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={751}>
+        <MediaQuery minWidth={751} maxWidth={900}>
         <div className='updateRecipe' style={updateRecipeStyles.tablet.div}>
             <h3 className='updateh3' style={updateRecipeStyles.h3}>Update Recipe</h3> 
             <button type='button' onClick={()=>this.updateIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.updateButtons}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
@@ -352,6 +379,54 @@ class UpdateRecipe extends React.Component{
                 </fieldset>
                 <button type='submit' className='updateButtons' style={updateRecipeStyles.updateButtons}>Update</button>
                 <button type='button' onClick={()=>this.props.history.goBack()} className='updateButtons' style={updateRecipeStyles.updateButtons}>Cancel</button>
+            </form> 
+        </div>
+        </MediaQuery><MediaQuery minWidth={901}>
+        <div className='updateRecipe' style={updateRecipeStyles.laptop.div}>
+            <h3 className='updateh3' style={updateRecipeStyles.h3}>Update Recipe</h3>  
+            <form onSubmit={e=>this.handleSubmit(e,recipe)} style={updateRecipeStyles.laptop.form}>
+            <div className='recipebox1' style={updateRecipeStyles.recipeBox1}>
+                <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
+                {(this.state.ingredients.length===0)?(null):(laptopDisplayedIngredients)}
+                {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):
+                (<button type='button' onClick={()=>this.addIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.laptop.updateButtons}>Add Another Ingredient</button>)}
+                </div>
+                <div className='recipeBox2' style={updateRecipeStyles.laptop.recipeBox2}>
+                <button type='button' onClick={()=>this.updateIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.laptop.updateButtons}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
+                <fieldset style={updateRecipeStyles.laptop.fieldset}>
+                    <label htmlFor='name' style={updateRecipeStyles.label}>Name:<br/>
+                        <textarea name='name' defaultValue={recipe.name} style={updateRecipeStyles.textarea}>
+                        </textarea>
+                    </label>
+                    <ValidationError Namemessage={this.state.nameError}/>
+                    <label htmlFor='instructions' style={updateRecipeStyles.label}>Instructions:<br/> 
+                        <textarea name='instructions' defaultValue={recipe.instructions} style={updateRecipeStyles.textarea}>
+                        </textarea>
+                    </label>
+                    <ValidationError Instructionsmessage={this.state.instructionsError}/>
+                    <label htmlFor='createdBy' style={updateRecipeStyles.label}>Created By:<br/>
+                        <textarea name='createdBy' defaultValue={recipe.created_by} style={updateRecipeStyles.textarea}>
+                        </textarea>
+                    </label>
+                    <label htmlFor='link' style={updateRecipeStyles.label}>Link:<br/>
+                        <textarea name='link' defaultValue={recipe.link} style={updateRecipeStyles.textarea}>
+                        </textarea>
+                    </label>
+                    <label htmlFor='note' style={updateRecipeStyles.label}>Note:<br/>
+                        <textarea name='note' defaultValue={recipe.note} style={updateRecipeStyles.textarea}>
+                        </textarea>
+                    </label>
+                    <label htmlFor='folder_name' style={updateRecipeStyles.label}>Folder: 
+                        <select name="folder" style={updateRecipeStyles.select}>
+                            <option name='folder' value={recipe.folder_id} style={updateRecipeStyles.option}>{recipe.folderName}</option>
+                            {this.context.folders.filter(folder=>folder.id!==recipe.folder_id).map((folder)=>{
+                                return(<option name="folder" key={folder.id} style={updateRecipeStyles.option}>{folder.name}</option>)})}
+                        </select>
+                    </label>
+                    <button type='submit' className='updateButtons' style={updateRecipeStyles.laptop.updateButtons}>Update</button>
+                <button type='button' onClick={()=>this.props.history.goBack()} className='updateButtons' style={updateRecipeStyles.laptop.updateButtons}>Cancel</button>
+                </fieldset>
+                </div>
             </form> 
         </div>
         </MediaQuery>

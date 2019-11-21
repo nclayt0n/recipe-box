@@ -66,7 +66,7 @@ class Ingredients extends React.Component{
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <MediaQuery maxWidth={650}>
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.recipeSort}>
-            <legend style={style.recipeSortLegend}>Ingredients Search</legend>
+            <legend style={style.recipeSortLegend}>Ingredients</legend>
                 <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
                 <select  name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
                 <option key={uuidv4()} value='allR' style={style.recipeSortOption}>All Recipes</option>
@@ -109,7 +109,7 @@ class Ingredients extends React.Component{
 
         <MediaQuery minWidth={651} maxWidth={900}>
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.tablet.recipeSort}>
-            <legend style={style.tablet.recipeSortLegend}>Ingredients Search</legend>
+            <legend style={style.tablet.recipeSortLegend}>Ingredients</legend>
                 <label htmlFor='recipeSort' style={style.tablet.recipeSortLabel}>Recipes<br/>
                 <select  name='recipeSort' multiple size='1' style={style.tablet.recipeSortSelect}>
                 <option key={uuidv4()} value='allR' style={style.tablet.recipeSortOption}>All Recipes</option>
@@ -151,7 +151,7 @@ class Ingredients extends React.Component{
 
         <MediaQuery minWidth={901}>
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.laptop.recipeSort}>
-            <legend style={style.laptop.recipeSortLegend}>Ingredients Search</legend>
+            <legend style={style.laptop.recipeSortLegend}>Ingredients</legend>
                 <label htmlFor='recipeSort' style={style.laptop.recipeSortLabel}>Recipes<br/>
                 <select  name='recipeSort' multiple size='1' style={style.laptop.recipeSortSelect}>
                 <option key={uuidv4()} value='allR' style={style.laptop.recipeSortOption}>All Recipes</option>
