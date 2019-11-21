@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {withRouter,Link} from 'react-router-dom'
 import Context from '../../Context'
 import config from '../../config'
 import hpStyles from '../HomePage/HomePageStyles'
@@ -65,7 +65,9 @@ class AddFolder extends React.Component{
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <div className='addFolder' style={style.addFolderDivStyle} >
-            <h3 style={style.h3}>ADD FOLDER</h3>
+        {(this.props.location.pathname===`/home-page`)?
+        <h3><Link to={'/add-folder'} style={style.h3}>ADD FOLDER</Link></h3>:<h3 style={style.h3}>ADD FOLDER</h3>} 
+
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <fieldset style={style.addFolderFieldset}>
                     <label htmlFor ='folderName' style={style.addFolderLabel}>Folder Name:
