@@ -223,7 +223,7 @@ class AddRecipe extends React.Component{
                             <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
                             <select name='folder' >
                                 {this.context.folders.map((folder)=>{
-                                return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
+                                return(<option name='folder' key={folder.id} value={folder.id} style={style.addRecipeStyle.option}>{folder.name}</option>)})}
                             </select>
                             </label><br/>
                             <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
@@ -289,7 +289,7 @@ class AddRecipe extends React.Component{
                             <label htmlFor='folder' style={style.addRecipeStyle.tablet.label}>Folder:
                             <select name='folder' style={style.addRecipeStyle.tablet.select}>
                                 {this.context.folders.map((folder)=>{
-                                return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
+                                return(<option name='folder' key={folder.id} value={folder.id} style={style.addRecipeStyle.tablet.option}>{folder.name}</option>)})}
                             </select>
                             </label><br/>
                             {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.tablet.label}>Ingredients: </label>:null}<br/> 
@@ -356,7 +356,7 @@ class AddRecipe extends React.Component{
                             <label htmlFor='folder' style={style.addRecipeStyle.laptop.label}>Folder:
                             <select name='folder' style={style.addRecipeStyle.laptop.select} >
                                 {this.context.folders.map((folder)=>{
-                                return(<option name='folder' key={folder.id} value={folder.id}>{folder.name}</option>)})}
+                                return(<option name='folder' key={folder.id} value={folder.id} style={style.addRecipeStyle.laptop.option}>{folder.name}</option>)})}
                             </select>
                             </label><br/>
                             
