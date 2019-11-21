@@ -34,22 +34,32 @@ class Folder extends React.Component{
         props.history.push(`/home-page`)
     }
     findFolder=(id,folders)=>{
-    if(folders.length===0){
-        return null
-    }else{
-const folder = folders.filter(f =>f.id === id );
-let folderName=(folder[0].name) 
-return folderName}
-}
-    findRecipes=(folderId,recipes,style)=>{
-    if(recipes.length===0){
-        return null
-    }else{
-     let recipeList=recipes.filter(r=>r.folder_id===folderId);
-    return recipeList.map(recipe=><>
-        <li key={uuidv4()} style={style.folderRecipeListLi}><Link to={`/recipe/${recipe.id}`} style={style.folderRecipeListLiA}>{recipe.name}</Link></li></>)   
+        if(folders.length===0){
+            return null
+        }else{
+        const folder = folders.filter(f =>f.id === id );
+            let folderName=(folder[0].name) 
+            return folderName
+        }
     }
-}
+    findRecipes=(folderId,recipes,style)=>{
+        if(recipes.length===0){
+            return null
+        }else{
+            let recipeList=recipes.filter(r=>r.folder_id===folderId);
+            return recipeList.map(recipe=><>
+            <li key={uuidv4()} style={style.folderRecipeListLi}><Link to={`/recipe/${recipe.id}`} style={style.folderRecipeListLiA}>{recipe.name}</Link></li></>)   
+        }
+    }
+    findTabletRecipes=(folderId,recipes,style)=>{
+        if(recipes.length===0){
+            return null
+        }else{
+            let recipeList=recipes.filter(r=>r.folder_id===folderId);
+            return recipeList.map(recipe=><>
+            <li key={uuidv4()} style={style.tablet.folderRecipeListLi}><Link to={`/recipe/${recipe.id}`} style={style.tablet.folderRecipeListLiA}>{recipe.name}</Link></li></>)   
+        }
+    }
     render(){
         
         const style=folderStyles
@@ -59,17 +69,25 @@ return folderName}
         let id=parseInt(this.props.match.params.id)
         let folderName=this.findFolder(id,this.context.folders);
         let recipeList=this.findRecipes(id,this.context.recipes,style);
+        console.log(recipeList)
+        const tabletRecipeList=this.findTabletRecipes(id,this.context.recipes,style); 
         return(
             <>
                 <Header/>
                 <Nav/>
-                <div className='folder' style={style.folder}>
+                {/* <div className='folder' style={style.folder}>
+                <div className='folderItems' style={style.folderItems}>
+                    <ul className='folderRecipeList' key={uuidv4()} style={style.folderRecipeList}>
+                    <h3 style={style.h}>{folderName}</h3>
+                        {recipeList}
+                    </ul> */}
+                    <MediaQuery maxWidth={750}>
+                    <div className='folder' style={style.folder}>
                 <div className='folderItems' style={style.folderItems}>
                     <ul className='folderRecipeList' key={uuidv4()} style={style.folderRecipeList}>
                     <h3 style={style.h}>{folderName}</h3>
                         {recipeList}
                     </ul>
-                    <MediaQuery maxWidth={750}>
                     <div className='buttonBoxMobile' style={style.buttonBoxMobile}>
                     <button>
                             <Link to={'/add-recipe'} style={style.buttonBoxMobileButtonA}>Add Recipe</Link>
@@ -82,23 +100,33 @@ return folderName}
                             >Delete Folder
                         </button><br/>
                     </div>
-                    </MediaQuery>
-                    <MediaQuery minWidth={751}>
-                    <div className='buttonBox' style={style.buttonBox}>
-                    <button style={style.buttonBoxButton}>
-                            <Link to={'/add-recipe'} style={style.buttonBoxButtonA}>Add Recipe</Link>
-                        </button><br/>
-                        <button type='button' style={style.buttonBoxButton}>
-                            <Link to={`/update-folder/${this.props.match.params.id}`} style={style.buttonBoxButtonA}>Update Folder</Link>
-                        </button><br/>
-                        <button type='button' 
-                            onClick={()=>this.deleteFolder(id,this.props)} style={style.buttonBoxButton}>Delete Folder
-                        </button><br/>
+                    <ValidationError Namemessage={this.state.error}/><br/>
+                    </div>
                     </div>
                     </MediaQuery>
+                    <MediaQuery minWidth={751}>
+                    <div className='folder' style={style.tablet.folder}>
+                <div className='folderItems' style={style.tablet.folderItems}>
+                    <ul className='folderRecipeList' key={uuidv4()} style={style.tablet.folderRecipeList}>
+                    <h3 style={style.tablet.h}>{folderName}</h3>
+                        {tabletRecipeList}
+                    </ul>
+                    <div className='buttonBox' style={style.tablet.buttonBox}>
+                    <button style={style.tablet.buttonBoxButton}>
+                            <Link to={'/add-recipe'} style={style.tablet.buttonBoxButtonA}>Add Recipe</Link>
+                        </button><br/>
+                        <button type='button' style={style.tablet.buttonBoxButton}>
+                            <Link to={`/update-folder/${this.props.match.params.id}`} style={style.tablet.buttonBoxButtonA}>Update Folder</Link>
+                        </button><br/>
+                        <button type='button' 
+                            onClick={()=>this.deleteFolder(id,this.props)} style={style.tablet.buttonBoxButton}>Delete Folder
+                        </button><br/>
+                    </div> 
                     <ValidationError Namemessage={this.state.error}/><br/>
                     </div>
                 </div>
+                    </MediaQuery>
+                   
                 </>
         )
     }
