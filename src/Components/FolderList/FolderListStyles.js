@@ -55,11 +55,13 @@ const folderListStyles = {
             margin: '10px',
             fontSize: '4vw',
             fontWeight: 'bold',
+            backgroundColor: 'white'
         },
         buttonA: {
             color: 'var(--purple)',
             fontSize: '4vw',
             fontWeight: 'bold',
+            backgroundColor: 'white'
         },
         tablet: {
             div: {
@@ -115,11 +117,13 @@ const folderListStyles = {
                 margin: '10px',
                 fontSize: '1.5vw',
                 fontWeight: 'bold',
+                backgroundColor: 'white'
             },
             buttonA: {
                 color: 'var(--purple)',
                 fontSize: '1.5vw',
                 fontWeight: 'bold',
+                backgroundColor: 'white'
             },
         }
     }
