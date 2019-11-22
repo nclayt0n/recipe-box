@@ -5,10 +5,11 @@ import Header from '../Header/Header'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import Nav from '../Nav/Nav'
+import updateFolderStyles from './UpdateFolderStyles'
 import ValidationError from '../../Validation/ValidationError'
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
-import './UpdateFolder.css'
-import updateFolderStyles from './UpdateFolderStyles'
+import MediaQuery from 'react-responsive'
+
 const uuidv4 = require('uuid/v4');
 
 class UpdateFolder extends React.Component{
@@ -49,20 +50,52 @@ class UpdateFolder extends React.Component{
             return  <GetRecipeAndFolders/>
          }
         return(<>
-         <Header/>
-       <Nav/>
-        <div className='updateFolder'>
-        <h3 className='updateh3'>Update Folder: {this.findFolderName()}</h3>
-            <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>    
-                <fieldset>
-                    <label htmlFor ='updatedName'>Update Name:
-                    <input type='text' name='updatedName'/></label>
-                    <button type='submit' className='updateButtons'>Submit
-                    </button>
-                    <button className='updateButtons'onClick={()=>this.props.history.goBack()}>Cancel</button>
-                </fieldset>
-            </form>
-        </div></>
+        <Header/>
+        <Nav/>
+        <MediaQuery maxWidth={750}>
+        <div className='updateFolder' style={updateFolderStyles.updateFolder}>
+            <h3 className='updateh3' style={updateFolderStyles.updateh3}>Update Folder: {this.findFolderName()}</h3>
+                <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>    
+                    <fieldset style={updateFolderStyles.updateFolderFieldset}>
+                        <label htmlFor ='updatedName' style={updateFolderStyles.updateFolderLabel}>Update Name:
+                            <input type='text' name='updatedName' style={updateFolderStyles.updateFolderInput}/>
+                        </label>
+                        <button type='submit' className='updateButtons' style={updateFolderStyles.button}>Update
+                        </button>
+                        <button className='updateButtons'onClick={()=>this.props.history.goBack()} style={updateFolderStyles.button}>Cancel</button>
+                    </fieldset>
+                </form>
+        </div>
+        </MediaQuery>
+        <MediaQuery minWidth={751} maxWidth={900}>
+        <div className='updateFolder' style={updateFolderStyles.tablet.updateFolder}>
+            <h3 className='updateh3' style={updateFolderStyles.tablet.updateh3}>Update Folder: {this.findFolderName()}</h3>
+                <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>    
+                    <fieldset style={updateFolderStyles.tablet.updateFolderFieldset}>
+                        <label htmlFor ='updatedName' style={updateFolderStyles.tablet.updateFolderLabel}>Update Name:
+                        <input type='text' name='updatedName' style={updateFolderStyles.tablet.updateFolderInput}/></label>
+                        <button type='submit' className='updateButtons' style={updateFolderStyles.tablet.button}>Submit
+                        </button>
+                        <button className='updateButtons'onClick={()=>this.props.history.goBack()} style={updateFolderStyles.tablet.button}>Cancel</button>
+                    </fieldset>
+                </form>
+        </div>
+        </MediaQuery>
+        <MediaQuery minWidth={901}>
+        <div className='updateFolder' style={updateFolderStyles.laptop.updateFolder}>
+            <h3 className='updateh3' style={updateFolderStyles.laptop.updateh3}>Update Folder: {this.findFolderName()}</h3>
+                <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>    
+                    <fieldset style={updateFolderStyles.laptop.updateFolderFieldset}>
+                        <label htmlFor ='updatedName' style={updateFolderStyles.laptop.updateFolderLabel}>Update Name:
+                        <input type='text' name='updatedName' style={updateFolderStyles.laptop.updateFolderInput}/></label>
+                        <button type='submit' className='updateButtons' style={updateFolderStyles.laptop.button}>Submit
+                        </button>
+                        <button className='updateButtons'onClick={()=>this.props.history.goBack()} style={updateFolderStyles.laptop.button}>Cancel</button>
+                    </fieldset>
+                </form>
+        </div>
+        </MediaQuery>
+        </>
         )
     }
 }
