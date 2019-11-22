@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav'
 import ValidationError from '../../Validation/ValidationError'
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
 import MediaQuery from 'react-responsive'
+import hpStyles from '.././HomePage/HomePageStyles'
 const uuidv4 = require('uuid/v4');
 
 class Ingredients extends React.Component{
@@ -51,7 +52,12 @@ class Ingredients extends React.Component{
     }}
 
     render(){ 
-        const style=ingredientsStyles
+        let style;
+        if(this.props.location.pathname===`/home-page`){
+            style=hpStyles.ingredients
+        }if(this.props.location.pathname==='/ingredients'){
+            style=ingredientsStyles
+        }
         if(this.context.recipes.length===0){
             return  <GetRecipeAndFolders/>
          }
@@ -66,7 +72,8 @@ class Ingredients extends React.Component{
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <MediaQuery maxWidth={650}>
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.recipeSort}>
-            <legend style={style.recipeSortLegend}>Ingredients</legend>
+        {(this.props.location.pathname===`/home-page`)?<legend style={style.recipeSortLegend}><Link to={'/ingredients'}style={style.recipeSortLegend}>Ingredients</Link></legend>:<legend style={style.recipeSortLegend}>Ingredients</legend>}
+            
                 <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
                 <select  name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
                 <option key={uuidv4()} value='allR' style={style.recipeSortOption}>All Recipes</option>

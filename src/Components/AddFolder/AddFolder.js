@@ -6,6 +6,7 @@ import hpStyles from '../HomePage/HomePageStyles'
 import addFStyles from './AddFolderStyles'
 import Header from '../Header/Header'
 import Nav from '../Nav/Nav'
+import MediaQuery from 'react-responsive'
 import ValidationError from '../../Validation/ValidationError'
 import TokenService from '../../services/token-service'
 
@@ -24,7 +25,6 @@ class AddFolder extends React.Component{
             this.setState({error:'Name Must contain at least 3 characters'})
         }
         if(folderName.length>=3){
-
             const url=`${config.API_ENDPOINT}/folders`;
             const options={
                 method:'POST',
@@ -64,23 +64,42 @@ class AddFolder extends React.Component{
         <>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
-        <div className='addFolder' style={style.addFolderDivStyle} >
+        <MediaQuery maxWidth={650}>
+            <div className='addFolder' style={style.addFolderDivStyle} >
         {(this.props.location.pathname===`/home-page`)?
-        <h3><Link to={'/add-folder'} style={style.h3}>ADD FOLDER</Link></h3>:<h3 style={style.h3}>ADD FOLDER</h3>} 
-
-            <form onSubmit={(e)=>this.handleSubmit(e)}>
-                <fieldset style={style.addFolderFieldset}>
-                    <label htmlFor ='folderName' style={style.addFolderLabel}>Folder Name:
-                    {(this.props.location.pathname===`/home-page`)?<br/>:null} 
-                    <input type='text' name='folderName' style={style.addFolderInput}/></label>
-                    {(this.props.location.pathname===`/home-page`)?<br/>:null} 
-                     <ValidationError Namemessage={this.state.error}/>
-                    <button type='submit' style={style.addFolderButtons}>Submit
-                    </button>
-                </fieldset>
-            </form> 
-            {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.push('/home-page')}style={style.addFolderButtons}>Cancel</button>} 
+            <h3><Link to={'/add-folder'} style={style.h3}>ADD FOLDER</Link></h3>:<h3 style={style.h3}>ADD FOLDER</h3>} 
+                <form onSubmit={(e)=>this.handleSubmit(e)}>
+                    <fieldset style={style.addFolderFieldset}>
+                        <label htmlFor ='folderName' style={style.addFolderLabel}>Folder Name:
+                        {(this.props.location.pathname===`/home-page`)?<br/>:null} 
+                        <input type='text' name='folderName' style={style.addFolderInput}/></label>
+                        {(this.props.location.pathname===`/home-page`)?<br/>:null} 
+                        <ValidationError Namemessage={this.state.error}/>
+                        <button type='submit' style={style.addFolderButtons}>Submit
+                        </button>
+                    </fieldset>
+                </form> 
+                {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.push('/home-page')}style={style.addFolderButtons}>Cancel</button>} 
+            </div>
+        </MediaQuery>
+        <MediaQuery minWidth={651}>
+            <div className='addFolder' style={style.tablet.addFolderDivStyle}>
+            {(this.props.location.pathname===`/home-page`)?
+            <h3><Link to={'/add-folder'} style={style.tablet.h3}>ADD FOLDER</Link></h3>:<h3 style={style.tablet.h3}>ADD FOLDER</h3>} 
+                <form onSubmit={(e)=>this.handleSubmit(e)}>
+                    <fieldset style={style.addFolderFieldset}>
+                        <label htmlFor ='folderName' style={style.tablet.addFolderLabel}>Folder Name:
+                        {(this.props.location.pathname===`/home-page`)?<br/>:null} 
+                        <input type='text' name='folderName' style={style.tablet.addFolderInput}/></label>
+                        {(this.props.location.pathname===`/home-page`)?<br/>:null} 
+                        <ValidationError Namemessage={this.state.error}/>
+                        <button type='submit' style={style.tablet.addFolderButtons}>Submit
+                        </button>
+                    </fieldset>
+                </form> 
+            {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.push('/home-page')}style={style.tablet.addFolderButtons}>Cancel</button>} 
         </div>
+        </MediaQuery>
         </>
         )
     }

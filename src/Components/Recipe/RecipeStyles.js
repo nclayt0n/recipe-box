@@ -74,21 +74,21 @@ const recipeStyles = {
 
         }
     },
-    laptop: {
+    tablet: {
         recipe: {
             margin: 'auto',
             display: 'flex',
             flexDirection: 'column',
-            width: '60%',
+            width: '70%',
             padding: '10px',
-            fontSize: '2vw',
+            fontSize: '1.75vw',
 
         },
 
         recipeItems: {
             backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: 'noRepeat',
-            backgroundSize: 'cover',
+            backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
             padding: '15px',
             margin: '10px',
@@ -97,7 +97,83 @@ const recipeStyles = {
         },
 
         h3: {
-            fontSize: '2.5vw',
+            fontSize: '2vw',
+            margin: 'auto auto 20px',
+            backgroundColor: 'var(--purple)',
+            color: 'white',
+            width: 'fit-content',
+            textShadow: '1px 1px rgba(138, 100, 163, 0.733)',
+            textTransform: 'uppercase'
+        },
+        recipeUl: {
+            textAlign: 'center',
+            width: '60%',
+            margin: 'auto auto 15px',
+            padding: '15px',
+            backgroundColor: 'var(--lightPurple)',
+            fontWeight: 'bolder',
+            color: 'var(--purple)',
+            // border: '1px solid var(--purple)',
+            textShadow: '.5px .5px rgba(138, 100, 163, 0.733)',
+        },
+
+        recipeLi: {
+            letterSpacing: '2px',
+            width: '80%',
+            margin: 'auto',
+            padding: '10px',
+            textAlign: 'center',
+            listStyle: 'none',
+            textDecoration: 'none',
+            fontWeight: 'normal',
+            color: 'var(--purple)'
+        },
+        buttons: {
+            display: 'flex',
+            width: 'fit-content',
+            margin: 'auto',
+            fontSize: '1.75vw',
+
+        },
+        recipeButton: {
+            width: 'fit-content',
+            margin: '5px',
+            backgroundColor: 'white',
+            padding: '5px',
+            fontWeight: 'bolder',
+            color: 'var(--purple)',
+            border: '2px solid var(--purple)'
+        },
+        folderButton: {
+            width: 'fit-content',
+            fontSize: '1.75vw',
+
+        }
+    },
+    laptop: {
+        recipe: {
+            margin: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            width: '50%',
+            padding: '10px',
+            fontSize: '1vw',
+
+        },
+
+        recipeItems: {
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundRepeat: 'noRepeat',
+            backgroundSize: '100%',
+            backgroundColor: 'var(--purple)',
+            padding: '15px',
+            margin: '10px',
+            border: '1px solid var(--lightPurple)'
+
+        },
+
+        h3: {
+            fontSize: '1.25vw',
             margin: 'auto auto 20px',
             backgroundColor: 'var(--purple)',
             color: 'white',
@@ -121,7 +197,7 @@ const recipeStyles = {
             letterSpacing: '2 px',
             width: '60%',
             margin: 'auto',
-            padding: '10 px',
+            padding: '10px',
             textAlign: 'center',
             listStyle: 'none',
             textDecoration: 'none',
@@ -137,7 +213,7 @@ const recipeStyles = {
         recipeButton: {
             width: 'fit-content',
             margin: '5px',
-            fontSize: '1.5vw',
+            fontSize: '1vw',
             backgroundColor: 'white',
             padding: '5px',
             fontWeight: 'bolder',

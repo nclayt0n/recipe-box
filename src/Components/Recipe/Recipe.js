@@ -109,7 +109,41 @@ class Recipe extends React.Component{
                 </div>
                 </div>
             </MediaQuery>
-            <MediaQuery minWidth={751}>
+            <MediaQuery minWidth={751} maxWidth={900}>
+            <div className='recipe' style={recipeStyles.tablet.recipe}>
+                <div className='recipeItems' style={recipeStyles.tablet.recipeItems}>
+                    <h3 style={recipeStyles.tablet.h3}>Recipe: {recipe.name}</h3>
+                    <ul style={recipeStyles.tablet.recipeUl}>INSTRUCTIONS: 
+                        <li style={{letterSpacing: '2 px',width:'=fit-content', margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'normal',color:'var(--purple)'}}>{recipe.instructions}</li>
+                    </ul>
+                    <ul style={recipeStyles.tablet.recipeUl}>INGREDIENTS:
+                        {ingredients}
+                    </ul>
+                    {(recipe.created_by.length===0)?(null):
+                    (<ul style={recipeStyles.tablet.recipeUl}>Created By: 
+                        <li style={recipeStyles.tablet.recipeLi}>{recipe.created_by}</li>
+                    </ul>)}
+                    {(recipe.link.length===0)?(null):(
+                    <ul style={recipeStyles.tablet.recipeUl}>Link:
+                        <li style={recipeStyles.tablet.recipeLi}>{recipe.link}</li>
+                    </ul>)}
+                    {(recipe.note.length===0)?(null):
+                    (<ul style={recipeStyles.tablet.recipeUl}>Note: 
+                        <li style={recipeStyles.tablet.recipeLi}>{recipe.note}</li>
+                    </ul>)}
+                    
+                    <div className='buttons' style={recipeStyles.tablet.buttons}>
+                        <button style={recipeStyles.tablet.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--purple)'}} >{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.tablet.recipeButton}>
+                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
+                        </button>
+                        <button style={recipeStyles.tablet.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                    </div>
+                </div>
+                 <ValidationError Namemessage={this.state.error}/>
+            </div>
+            </MediaQuery>
+            <MediaQuery minWidth={901}>
             <div className='recipe' style={recipeStyles.laptop.recipe}>
                 <div className='recipeItems' style={recipeStyles.laptop.recipeItems}>
                     <h3 style={recipeStyles.laptop.h3}>Recipe: {recipe.name}</h3>
@@ -143,7 +177,6 @@ class Recipe extends React.Component{
                  <ValidationError Namemessage={this.state.error}/>
             </div>
             </MediaQuery>
-            
             </>
         )
     }
