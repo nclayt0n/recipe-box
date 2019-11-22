@@ -18,8 +18,6 @@ const updateRecipeStyles = {
         textDecoration: 'none',
         listStyle: 'none',
         border: '1px solid white'
-
-
     },
     fieldset: {
         margin: 'auto auto 15px',
@@ -38,12 +36,13 @@ const updateRecipeStyles = {
         textTransform: 'uppercase'
     },
     h4: {
-        fontSize: '2.25vw',
+        fontSize: '2vw',
         width: '100%',
         fontWeight: 'bolder',
         color: 'var(--purple)',
         textDecoration: 'underline',
-        textShadow: '1px 1px var(--lightPurple)'
+        textShadow: '1px 1px var(--lightPurple)',
+        margin: 'auto auto 10px'
     },
     textarea: {
         margin: '5px',
@@ -82,6 +81,11 @@ const updateRecipeStyles = {
         color: 'var(--purple)',
         fontWeight: 'bolder'
     },
+    option: {
+        margin: 'auto',
+        fontSize: '1vw',
+        backgroundColor: 'var(--lightPurple)',
+    },
     updateButtons: {
         display: 'flex',
         fontSize: '2vw',
@@ -91,11 +95,7 @@ const updateRecipeStyles = {
         backgroundColor: ' white',
         fontWeight: 'bold'
     },
-    option: {
-        margin: 'auto',
-        fontSize: '1vw',
-        backgroundColor: 'var(--lightPurple)',
-    },
+
     tablet: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
@@ -115,6 +115,13 @@ const updateRecipeStyles = {
             listStyle: 'none',
             border: '1px solid white'
         },
+        h3: {
+            color: 'white',
+            textAlign: 'center',
+            textShadow: '1px 1px #8a64a3',
+            fontSize: '3.25vw',
+            textTransform: 'uppercase'
+        },
         fieldset: {
             margin: 'auto auto 15px',
             textAlign: 'center',
@@ -132,7 +139,7 @@ const updateRecipeStyles = {
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
-            width: '90%',
+            width: '60%',
             backgroundPosition: 'center',
             textAlign: 'center',
             display: 'flex',
@@ -144,32 +151,92 @@ const updateRecipeStyles = {
             listStyle: 'none',
             border: '1px solid white'
         },
+        h3: {
+            color: 'white',
+            textAlign: 'center',
+            textShadow: '1px 1px #8a64a3',
+            fontSize: '2vw',
+            textTransform: 'uppercase',
+            margin: '20px auto'
+        },
+        h4: {
+            fontSize: '1.5vw',
+            width: '100%',
+            fontWeight: 'bolder',
+            color: 'var(--purple)',
+            textDecoration: 'underline',
+            textShadow: '1px 1px var(--lightPurple)',
+            margin: 'auto auto 10px'
+        },
         fieldset: {
             margin: 'auto auto 15px',
             textAlign: 'center',
             width: '20%',
             backgroundColor: 'var(--lightPurple)',
             border: '1px solid white',
+            padding: '20px'
 
         },
+        textarea: {
+            margin: '5px',
+            fontSize: '1vw',
+            padding: '10px',
+            backgroundColor: 'var(--lightPurple)',
+            border: '2px solid var(--purple)',
+            color: 'var(--purple)',
+            fontWeight: 'bolder',
+            minWidth: '200px',
+            maxWidth: '250px',
+            maxHeight: '300px'
+        },
         recipeBox1: {
-            margin: 'auto',
-            float: 'right'
+            flex: '1',
+            margin: '0'
         },
         recipeBox2: {
-            margin: 'auto',
-            float: 'right'
+            flex: '1',
+            margin: '0'
         },
         form: {
             display: 'flex',
             margin: 'auto'
         },
+        input: {
+            margin: '5px',
+            fontSize: '1vw',
+            padding: '5px',
+            backgroundColor: 'var(--lightPurple',
+            border: '2px solid var(--purple',
+            fontWeight: 'bold',
+            color: 'var(--purple',
+            width: '200px'
+        },
+        select: {
+            margin: 'auto',
+            border: '2px solid var(--purple)',
+            fontSize: '1vw',
+            color: 'var(--purple)',
+            margin: '5px',
+            backgroundColor: 'var(--lightPurple)',
+            padding: '5px'
+        },
+        label: {
+            textTransform: 'uppercase',
+            fontSize: '1vw',
+            color: 'var(--purple)',
+            fontWeight: 'bolder'
+        },
+        option: {
+            margin: 'auto',
+            fontSize: '1vw',
+            backgroundColor: 'var(--lightPurple)',
+        },
         updateButtons: {
             display: 'flex',
-            fontSize: '2vw',
+            fontSize: '1vw',
             color: 'var(--purple)',
             border: '2px solid white',
-            margin: 'auto auto 10px',
+            margin: '5px auto 10px',
             backgroundColor: ' white',
             fontWeight: 'bold'
         },
