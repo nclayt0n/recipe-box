@@ -64,21 +64,23 @@ const addRStyles = {
             backgroundColor: 'var(--purple)',
             color: 'white',
             fontSize: '3vw',
-
-        },
-        ingredientInput: {
-            width: '90%',
-            color: 'var(--purple)',
-        },
-        input: {
-            width: '90%',
-            color: 'var(--purple)',
             margin: '5px'
         },
+        ingredientInput: {
+            width: '70%',
+            color: 'var(--purple)',
+            fontSize: '2.5vw'
+        },
+        input: {
+            width: '70%',
+            color: 'var(--purple)',
+            margin: '5px',
+            fontSize: '2.5vw'
+        },
         textarea: {
-            minWidth: '90%',
+            minWidth: '70%',
             maxWidth: '125px',
-            maxHeight: '150px',
+            maxHeight: '250px',
             color: 'var(--purple)'
         },
         tablet: {

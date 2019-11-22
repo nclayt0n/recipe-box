@@ -103,9 +103,9 @@ const hpStyles = {
             margin: 'auto',
             marginTop: '50px',
             padding: '50px',
-            backgroundImage: `url(${backgroundImage2})`,
-            backgroundRepeat: 'noRepeat',
-            backgroundSize: 'cover',
+            // backgroundImage: `url(${backgroundImage2})`,
+            // backgroundRepeat: 'no-repeat',
+            // backgroundSize: '110%',
             backgroundColor: 'white',
             backgroundPosition: 'top',
             border: '2px solid var(--purple)',
@@ -115,7 +115,8 @@ const hpStyles = {
         },
         h3: {
             color: 'var(--purple)',
-            fontSize: '3.5vw'
+            fontSize: '3.5vw',
+            margin: '5px'
         },
         select: {
             backgroundColor: 'white',
@@ -157,21 +158,24 @@ const hpStyles = {
             backgroundColor: 'var(--purple)',
             color: 'white',
             fontSize: '3vw',
+            margin: '5px'
 
         },
         ingredientInput: {
-            width: '90%',
+            width: '70%',
             color: 'var(--purple)',
+            fontSize: '2.5vw'
         },
         input: {
-            width: '90%',
+            width: '70%',
             color: 'var(--purple)',
-            margin: '5px'
+            margin: '5px',
+            fontSize: '2.5vw'
         },
         textarea: {
-            minWidth: '90%',
+            minWidth: '70%',
             maxWidth: '125px',
-            maxHeight: '150px',
+            maxHeight: '250px',
             color: 'var(--purple)'
         },
         tablet: {

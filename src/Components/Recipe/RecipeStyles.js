@@ -7,7 +7,7 @@ const recipeStyles = {
             display: 'flex',
             flexDirection: 'column',
             width: '90%',
-            fontSize: '2.5vw'
+            fontSize: '3vw'
         },
 
         recipeItems: {
@@ -23,7 +23,7 @@ const recipeStyles = {
         },
 
         h3: {
-            fontSize: '3.5vw',
+            fontSize: '3.25vw',
             margin: 'auto',
             backgroundColor: 'var(--purple)',
             color: 'white',
@@ -39,10 +39,11 @@ const recipeStyles = {
             fontWeight: 'bolder',
             color: 'var(--purple)',
             backgroundColor: 'var(--lightPurple)',
+            fontSize: '3vw'
         },
 
         recipeLi: {
-            letterSpacing: '2 px',
+            letterSpacing: '1px',
             margin: 'auto',
             padding: '15 px',
             width: '70%',
@@ -59,9 +60,8 @@ const recipeStyles = {
         },
         recipeButton: {
             width: 'fit-content',
-            margin: 'auto',
-            marginBottom: '5px',
-            fontSize: '2vw',
+            margin: '5px auto 5px',
+            fontSize: '2.5vw',
             border: '2px solid var(--lightPurple)',
             backgroundColor: 'white',
             padding: '5px',
