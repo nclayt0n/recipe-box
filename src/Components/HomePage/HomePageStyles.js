@@ -62,18 +62,19 @@ const hpStyles = {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                width: '40%',
+                width: '60%',
                 margin: '20px auto ',
                 fontSize: '1.5vw',
                 padding: '50px',
             },
             addFolderLabel: {
-                fontSize: '1.25vw',
-                color: 'var(--purple)'
+                fontSize: '1.75vw',
+                color: 'var(--purple)',
+                fontWeight: 'bold'
             },
             addFolderInput: {
-                width: '50%',
-                fontSize: '1.25vw',
+                width: '30%',
+                fontSize: '1.75vw',
                 margin: '5px auto',
 
             },
@@ -82,7 +83,7 @@ const hpStyles = {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
                 margin: 'auto',
-                fontSize: '1.25vw',
+                fontSize: '1.75vw',
             },
             h3: {
                 color: 'var(--purple)',
@@ -93,7 +94,6 @@ const hpStyles = {
         }
     },
     addRecipeStyle: {
-
         div: {
             width: '90%',
             textAlign: 'center',
@@ -111,7 +111,6 @@ const hpStyles = {
             border: '2px solid var(--purple)',
             fontWeight: 'bold',
             fontSize: '2vw'
-
         },
         h3: {
             color: 'var(--purple)',
@@ -180,7 +179,7 @@ const hpStyles = {
         },
         tablet: {
             div: {
-                width: '70%',
+                width: '60%',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
@@ -342,6 +341,9 @@ const hpStyles = {
         }
     },
     folderListStyle: {
+        container: {
+
+        },
         div: {
             backgroundImage: `url(${backgroundImage})`,
             // backgroundAttachment: 'fixed',
@@ -393,7 +395,7 @@ const hpStyles = {
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
-                width: '30%',
+                width: '45%',
                 backgroundPosition: 'center',
                 textAlign: 'center',
                 display: 'flex',
@@ -598,7 +600,7 @@ const hpStyles = {
             border: '1px solid var(--purple)',
             color: 'white',
             textShadow: '.5px .5px var(--purple)',
-            padding: '5px'
+
         },
 
         ingredientDisplayFieldset: {
