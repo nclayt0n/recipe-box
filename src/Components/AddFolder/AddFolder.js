@@ -69,7 +69,7 @@ class AddFolder extends React.Component{
         <>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
-        <MediaQuery maxWidth={750}>
+        <MediaQuery maxWidth={650}>
             <div className='addFolder' style={style.addFolderDivStyle} >
         {(this.props.location.pathname===`/home-page`)&& this.context.folders.length>=1?
             <h3><Link to={'/add-folder'} style={style.h3}>ADD FOLDER</Link></h3>:<h3 style={style.h3}>ADD FOLDER</h3>} 
@@ -87,7 +87,7 @@ class AddFolder extends React.Component{
                 {(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.push('/home-page')}style={style.addFolderButtons}>Cancel</button>} 
             </div>
         </MediaQuery>
-        <MediaQuery minWidth={751} maxWidth={950}>
+        <MediaQuery minWidth={651} maxWidth={950}>
             <div className='addFolder' style={style.tablet.addFolderDivStyle}>
             {(this.props.location.pathname===`/home-page`)&& this.context.folders.length>=1?
             <h3><Link to={'/add-folder'} style={style.tablet.h3}>ADD FOLDER</Link></h3>:<h3 style={style.tablet.h3}>ADD FOLDER</h3>} 
@@ -112,9 +112,8 @@ class AddFolder extends React.Component{
                 <form onSubmit={(e)=>this.handleSubmit(e)}>
                     <fieldset style={style.addFolderFieldset}>
                         <label htmlFor ='folderName' style={style.laptop.addFolderLabel}>Folder Name:<br/>
-                        {(this.props.location.pathname===`/home-page`)?<br/>:null} 
                         <input type='text' name='folderName' style={style.laptop.addFolderInput}/></label>
-                        {(this.props.location.pathname===`/home-page`)?null:<br/>}
+                        <br/>
                         <ValidationError Namemessage={this.state.error}/>
                         <button type='submit' style={style.laptop.addFolderButtons}>Submit
                         </button>

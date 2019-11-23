@@ -296,7 +296,7 @@ class UpdateRecipe extends React.Component{
         <>
         <Header/>
         <Nav/>
-        <MediaQuery maxWidth={750}>
+        <MediaQuery maxWidth={650}>
         <div className='updateRecipe' style={updateRecipeStyles.div}>
             <h3 className='updateh3' style={updateRecipeStyles.h3}>Update Recipe</h3> 
             <button type='button' onClick={()=>this.updateIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.updateButtons}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
@@ -341,7 +341,7 @@ class UpdateRecipe extends React.Component{
             </form> 
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={751} maxWidth={900}>
+        <MediaQuery minWidth={651} maxWidth={900}>
         <div className='updateRecipe' style={updateRecipeStyles.tablet.div}>
             <h3 className='updateh3' style={updateRecipeStyles.tablet.h3}>Update Recipe</h3> 
             <button type='button' onClick={()=>this.updateIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.updateButtons}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 

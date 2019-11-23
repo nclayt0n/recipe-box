@@ -41,7 +41,7 @@ class FolderList extends React.Component{
                 </div>)}
             </div>
             </MediaQuery>
-            <MediaQuery minWidth={651}>
+            <MediaQuery minWidth={651} maxWidth={950}>
             <div className='folderList' style={style.folderListStyle.tablet.div}>
                 <ul className='list' style={style.folderListStyle.tablet.ul}><Link to={'/folder-list'}style={style.folderListStyle.tablet.ulA}>FOLDERS</Link>
                 {tabletFolders}
@@ -51,6 +51,19 @@ class FolderList extends React.Component{
                 (<div>
                     <button style={style.folderListStyle.tablet.button}><Link to={'/add-folder'} style={style.folderListStyle.tablet.buttonA}>Add Folder</Link></button><br/>
                     <button style={style.folderListStyle.tablet.button} type='button' onClick={()=>this.props.history.goBack()}>Back</button>
+                </div>)}
+            </div>
+            </MediaQuery>
+            <MediaQuery minWidth={951}>
+            <div className='folderList' style={style.folderListStyle.laptop.div}>
+                <ul className='list' style={style.folderListStyle.laptop.ul}><Link to={'/folder-list'}style={style.folderListStyle.laptop.ulA}>FOLDERS</Link>
+                {tabletFolders}
+                    {this.context.recipes.length===0?null:<li style={style.folderListStyle.laptop.li}><Link to={'/recipe-list'} style={style.folderListStyle.laptop.liA}>All Recipes</Link></li>}
+                </ul>
+                {(this.props.location.pathname===`/home-page`)?null: 
+                (<div>
+                    <button style={style.folderListStyle.laptop.button}><Link to={'/add-folder'} style={style.folderListStyle.laptop.buttonA}>Add Folder</Link></button><br/>
+                    <button style={style.folderListStyle.laptop.button} type='button' onClick={()=>this.props.history.goBack()}>Back</button>
                 </div>)}
             </div>
             </MediaQuery>

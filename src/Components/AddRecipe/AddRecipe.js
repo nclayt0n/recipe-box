@@ -169,7 +169,7 @@ class AddRecipe extends React.Component{
         
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
-        <MediaQuery maxWidth={750}>
+        <MediaQuery maxWidth={650}>
             <div className='addRecipe' style={style.addRecipeStyle.div}>
                 {(this.props.location.pathname===`/home-page`)?
                 <h3 style={style.addRecipeStyle.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.h3}>ADD RECIPE</h3>}   
@@ -236,7 +236,7 @@ class AddRecipe extends React.Component{
                 </form>   
             </div>
         </MediaQuery>
-        <MediaQuery minWidth={751} maxWidth={900}>
+        <MediaQuery minWidth={651} maxWidth={900}>
             <div className='addRecipe' style={style.addRecipeStyle.tablet.div}>
             {(this.props.location.pathname===`/home-page`)?
                 <h3 style={style.addRecipeStyle.tablet.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.tablet.h3}>ADD RECIPE</h3>}  

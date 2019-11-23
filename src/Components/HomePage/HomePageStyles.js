@@ -2,8 +2,30 @@ import React from 'react'
 import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
 import backgroundImage2 from '../../images/purplelavleaves.jpg'
 const hpStyles = {
+    mainContainer: {
+        border: '1px solid yellow',
+        display: 'flex',
+        width: '90%',
+        margin: 'auto',
+        padding: '10px'
+    },
+    addLaptopContainer: {
+        width: 'fit-content',
+        border: '1px solid yellow',
+        padding: '10px',
+        flex: '3',
+        margin: '0 50px 0 0'
+    },
+    listLaptopContainer: {
+        width: 'fit-content',
+        border: '1px solid yellow',
+        padding: '10px',
+        flex: '1',
+        margin: '0 0 0 50px'
+    },
     homePageStyle: {
-        backgroundColor: '#C8923B'
+        backgroundColor: '#C8923B',
+
     },
     addFolder: {
         container: {
@@ -29,7 +51,9 @@ const hpStyles = {
             border: 'none'
         },
         addFolderButtons: {
-            width: '100px',
+            width: 'fit-content',
+            padding: '5px',
+            fontWeight: 'bold',
             backgroundColor: 'var(--purple)',
             color: 'white',
             fontSize: '3vw'
@@ -62,33 +86,35 @@ const hpStyles = {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 width: '60%',
-                margin: '50px auto ',
-                fontSize: '1.5vw',
+                margin: '50px auto 50px',
+                fontSize: '2vw',
                 padding: '50px',
             },
             addFolderLabel: {
-                fontSize: '1.75vw',
+                fontSize: '2vw',
                 color: 'var(--purple)',
                 fontWeight: 'bold'
             },
             addFolderInput: {
                 width: '30%',
-                fontSize: '1.75vw',
+                fontSize: '2vw',
                 margin: '5px auto',
 
             },
             addFolderButtons: {
-                width: '100px',
+                width: 'fit-content',
+                padding: '5px',
+                fontWeight: 'bold',
                 backgroundColor: 'var(--purple)',
                 color: 'white',
                 margin: 'auto',
-                fontSize: '1.75vw',
+                fontSize: '2vw',
             },
             h3: {
                 color: 'var(--purple)',
                 textAlign: 'center',
                 textShadow: '1px 1px #8a64a3',
-                fontSize: '2vw',
+                fontSize: '2.25vw',
             },
         },
         laptop: {
@@ -103,8 +129,8 @@ const hpStyles = {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                width: '50%',
-                margin: '50px auto ',
+                width: '100%',
+                margin: '0 0 50px',
                 padding: '40px',
             },
             addFolderLabel: {
@@ -118,7 +144,8 @@ const hpStyles = {
 
             },
             addFolderButtons: {
-                width: '100px',
+                width: 'fit-content',
+                fontWeight: 'bold',
                 backgroundColor: 'var(--purple)',
                 color: 'white',
                 margin: 'auto',
@@ -195,7 +222,9 @@ const hpStyles = {
         button: {
             backgroundColor: 'var(--purple)',
             color: 'white',
+            fontWeight: 'bold',
             fontSize: '3vw',
+            padding: '5px',
             margin: '5px'
 
         },
@@ -223,8 +252,7 @@ const hpStyles = {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                margin: 'auto',
-                marginTop: '50px',
+                margin: '50px auto 50px',
                 padding: '50px',
                 backgroundImage: `url(${backgroundImage2})`,
                 backgroundRepeat: 'noRepeat',
@@ -268,17 +296,19 @@ const hpStyles = {
             },
             h3: {
                 color: 'var(--purple)',
-                fontSize: '2.75vw'
+                fontSize: '2.25vw'
             },
             legend: {
                 color: 'var(--purple)',
                 fontWeight: 'bolder',
-                fontSize: '2.2vw',
+                fontSize: '2.25vw',
             },
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
+                fontWeight: 'bold',
                 fontSize: '2vw',
+                padding: '5px',
                 margin: '5px'
             },
             ingredientInput: {
@@ -300,13 +330,12 @@ const hpStyles = {
         },
         laptop: {
             div: {
-                width: '70%',
+                width: '100%',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                margin: 'auto',
-                marginTop: '50px',
+                margin: '0',
                 padding: '50px',
                 backgroundImage: `url(${backgroundImage2})`,
                 backgroundRepeat: 'noRepeat',
@@ -375,7 +404,9 @@ const hpStyles = {
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '1.25vw'
+                fontSize: '1.25vw',
+                padding: '5px',
+                fontWeight: 'bold',
             },
         }
     },
@@ -440,8 +471,7 @@ const hpStyles = {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                margin: 'auto',
-                marginTop: '50px',
+                margin: '50px auto 50px',
                 padding: '10px',
                 textDecoration: 'none',
                 listStyle: 'none',
@@ -451,17 +481,17 @@ const hpStyles = {
             ul: {
                 textDecoration: 'none',
                 padding: '10px',
-                fontSize: '1.75vw',
+                fontSize: '2.25vw',
                 fontWeight: 'bold',
                 cursor: 'pointer',
             },
             ulA: {
                 color: 'white',
-                fontSize: '1.75vw',
+                fontSize: '2.25vw',
             },
             li: {
                 padding: '10px',
-                fontSize: '1.5vw',
+                fontSize: '2vw',
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
@@ -473,19 +503,85 @@ const hpStyles = {
                 color: 'white',
                 textDecoration: 'none',
                 margin: 'auto',
-                fontSize: '1.5vw',
+                fontSize: '2vw',
             },
             button: {
                 width: '40%',
                 color: 'var(--purple)',
                 margin: '10px',
-                fontSize: '1.5vw',
+                fontSize: '2vw',
                 fontWeight: 'bold',
+                padding: '5px',
             },
             buttonA: {
                 color: 'var(--purple)',
-                fontSize: '1.5vw',
+                fontSize: '2vw',
+                padding: '5px',
                 fontWeight: 'bold',
+
+            },
+        },
+        laptop: {
+            div: {
+                backgroundImage: `url(${backgroundImage})`,
+                // backgroundAttachment: 'fixed',
+                backgroundRepeat: 'repeat-y',
+                backgroundSize: '100%',
+                backgroundColor: 'var(--purple)',
+                width: '100%',
+                backgroundPosition: 'center',
+                textAlign: 'center',
+                display: 'flex',
+                margin: '0 0 50px',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                padding: '10px',
+                textDecoration: 'none',
+                listStyle: 'none',
+                border: '1px solid white'
+
+            },
+            ul: {
+                textDecoration: 'none',
+                padding: '10px',
+                fontSize: '2.25vw',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+            },
+            ulA: {
+                color: 'white',
+                fontSize: '2.25vw',
+            },
+            li: {
+                padding: '10px',
+                fontSize: '2vw',
+                cursor: 'pointer',
+                listStyle: 'none',
+                textAlign: 'center',
+                textDecoration: 'none'
+
+            },
+            liA: {
+
+                color: 'white',
+                textDecoration: 'none',
+                margin: 'auto',
+                fontSize: '2vw',
+            },
+            button: {
+                width: '40%',
+                color: 'var(--purple)',
+                margin: '10px',
+                fontSize: '2vw',
+                fontWeight: 'bold',
+                padding: '5px',
+            },
+            buttonA: {
+                color: 'var(--purple)',
+                fontSize: '2vw',
+                padding: '5px',
+                fontWeight: 'bold',
+
             },
         }
     },
@@ -546,9 +642,59 @@ const hpStyles = {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                margin: 'auto',
-                marginTop: '50px',
+                margin: '50px auto 50px',
                 padding: '50px',
+                textDecoration: 'none',
+                listStyle: 'none',
+                border: '1px solid white'
+
+
+            },
+            ulA: {
+                fontSize: '2.25vw',
+                color: 'white',
+                textDecoration: 'none',
+                textShadow: '1px 1px var(--lightPurple)'
+            },
+            li: {
+                padding: '10px',
+                fontSize: '2vw',
+                cursor: 'pointer',
+                listStyle: 'none',
+                textAlign: 'center',
+            },
+            liA: {
+
+                color: 'white',
+                textDecoration: 'none',
+                fontSize: '2vw'
+            },
+            button: {
+                margin: '10px auto auto ',
+                color: 'var(--purple)',
+                backgroundColor: 'white',
+                fontWeight: 'bold',
+                padding: '5px',
+                width: 'fit-content',
+                fontSize: '2vw'
+            },
+
+        },
+        laptop: {
+            div: {
+                backgroundImage: `url(${backgroundImage})`,
+                // backgroundAttachment: 'fixed',
+                backgroundRepeat: 'repeat-y',
+                backgroundSize: '100%',
+                backgroundColor: 'var(--purple)',
+                width: '100%',
+                backgroundPosition: 'center',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                margin: '0',
+                padding: '10px',
                 textDecoration: 'none',
                 listStyle: 'none',
                 border: '1px solid white'
@@ -575,11 +721,11 @@ const hpStyles = {
                 fontSize: '1.5vw'
             },
             button: {
-                margin: '10px auto auto ',
+                margin: '10px auto 10px ',
                 color: 'var(--purple)',
                 backgroundColor: 'white',
                 fontWeight: 'bold',
-                width: 'fit-content',
+                width: '40%',
                 fontSize: '1.5vw'
             },
 
@@ -611,7 +757,7 @@ const hpStyles = {
 
         ingredientsList: {
             border: '1px solid white',
-            margin: '20px auto 50px',
+            margin: '50px auto 50px',
             padding: '20px',
             width: '80%',
             backgroundColor: 'var(--purple)',
@@ -692,7 +838,7 @@ const hpStyles = {
         },
         tablet: {
             H3: {
-                fontSize: '3.25vw',
+                fontSize: '2.25vw',
                 color: 'white',
                 textShadow: '1px 1px var(--purple)',
                 fontWeight: 'bold',
@@ -704,7 +850,7 @@ const hpStyles = {
                 flexDirection: 'column',
                 textAlign: 'center',
                 width: '60%',
-                margin: '50px auto 25px',
+                margin: '50px auto 10px',
                 padding: '15px',
                 backgroundColor: 'white',
                 textShadow: '1px 1px var(--purple)',
@@ -722,7 +868,7 @@ const hpStyles = {
                 textShadow: '.5px .5px var(--purple)',
             },
             recipeSortLegend: {
-                fontSize: '2.5vw',
+                fontSize: '2vw',
                 color: 'var(--purple)',
                 fontWeight: 'bolder',
                 textShadow: '1px 1px white',
@@ -767,7 +913,7 @@ const hpStyles = {
             },
 
             ingredientLabel: {
-                fontSize: '3vw',
+                fontSize: '2vw',
                 height: '10px',
                 padding: '15px',
                 display: 'flex',
@@ -784,7 +930,7 @@ const hpStyles = {
                 padding: '5px',
                 fontSize: '2vw',
                 margin: 'auto',
-                width: '50%'
+                width: 'fit-content'
             },
         },
         laptop: {
@@ -884,7 +1030,8 @@ const hpStyles = {
                 margin: 'auto',
                 width: '50%'
             },
-        }
+        },
+
     }
 
 }

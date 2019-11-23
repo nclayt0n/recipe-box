@@ -76,7 +76,7 @@ class Recipe extends React.Component{
          <Header/>
          <Nav/>
             
-            <MediaQuery maxWidth={750}>
+            <MediaQuery maxWidth={650}>
             <div className='recipe' style={recipeStyles.mobile.recipe}>
             <div className='recipeItems' style={recipeStyles.mobile.recipeItems}>
                     <h3 style={recipeStyles.mobile.h3}>Recipe: {recipe.name}</h3>
@@ -109,7 +109,7 @@ class Recipe extends React.Component{
                 </div>
                 </div>
             </MediaQuery>
-            <MediaQuery minWidth={751} maxWidth={900}>
+            <MediaQuery minWidth={651} maxWidth={900}>
             <div className='recipe' style={recipeStyles.tablet.recipe}>
                 <div className='recipeItems' style={recipeStyles.tablet.recipeItems}>
                     <h3 style={recipeStyles.tablet.h3}>Recipe: {recipe.name}</h3>

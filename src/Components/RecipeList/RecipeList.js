@@ -43,7 +43,7 @@ render(){
             </>)}
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={651} className='tablet'>
+        <MediaQuery minWidth={651} maxWidth={950} className='tablet'>
         <div className='RecipeList' style={style.recipeListStyle.tablet.div}>
             <ul style={style.recipeListStyle.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.tablet.ulA}>RECIPES</Link> 
             {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.tablet)}
@@ -52,6 +52,18 @@ render(){
            (<>
             <button style={style.recipeListStyle.tablet.button}><Link to={'/add-recipe'} style={style.recipeListStyle.tablet.button}>Add Recipe</Link></button>
             <button type='button' onClick={()=>this.props.history.goBack()} style={style.recipeListStyle.tablet.button}>Back</button>
+            </>)}
+        </div>
+        </MediaQuery>
+        <MediaQuery minWidth={951} className='tablet'>
+        <div className='RecipeList' style={style.recipeListStyle.laptop.div}>
+            <ul style={style.recipeListStyle.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.laptop.ulA}>RECIPES</Link> 
+            {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.laptop)}
+            </ul> 
+           {(this.props.location.pathname===`/home-page`)?null: 
+           (<>
+            <button style={style.recipeListStyle.laptop.button}><Link to={'/add-recipe'} style={style.recipeListStyle.laptop.button}>Add Recipe</Link></button>
+            <button type='button' onClick={()=>this.props.history.goBack()} style={style.recipeListStyle.laptop.button}>Back</button>
             </>)}
         </div>
         </MediaQuery>
