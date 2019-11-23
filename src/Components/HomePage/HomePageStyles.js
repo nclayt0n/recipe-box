@@ -22,8 +22,7 @@ const hpStyles = {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            margin: 'auto',
-            marginBottom: '50px',
+            margin: '30px auto 50px',
             padding: '20px',
         },
         addFolderFieldset: {
@@ -63,7 +62,7 @@ const hpStyles = {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 width: '60%',
-                margin: '20px auto ',
+                margin: '50px auto ',
                 fontSize: '1.5vw',
                 padding: '50px',
             },
@@ -90,6 +89,46 @@ const hpStyles = {
                 textAlign: 'center',
                 textShadow: '1px 1px #8a64a3',
                 fontSize: '2vw',
+            },
+        },
+        laptop: {
+            addFolderDivStyle: {
+                backgroundImage: `url(${backgroundImage2})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '100%',
+                backgroundColor: 'white',
+                backgroundPosition: 'top',
+                border: '2px solid var(--purple)',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                width: '50%',
+                margin: '50px auto ',
+                padding: '40px',
+            },
+            addFolderLabel: {
+                fontSize: '1.25vw',
+                color: 'var(--purple)'
+            },
+            addFolderInput: {
+                width: '40%',
+                fontSize: '1.25vw',
+                margin: '5px auto',
+
+            },
+            addFolderButtons: {
+                width: '100px',
+                backgroundColor: 'var(--purple)',
+                color: 'white',
+                margin: 'auto',
+                fontSize: '1.25vw',
+            },
+            h3: {
+                color: 'var(--purple)',
+                textAlign: 'center',
+                textShadow: '1px 1px #8a64a3',
+                fontSize: '1.75vw',
             },
         }
     },
@@ -276,20 +315,20 @@ const hpStyles = {
                 backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw'
+                fontSize: '1.25vw'
 
             },
             select: {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '1.5vw',
+                fontSize: '1.25vw',
                 margin: '5px'
 
             },
             option: {
                 color: 'var(--purple)',
-                fontSize: '1.5vw',
+                fontSize: '1.25vw',
             },
             form: {
                 border: '1px solid var(--purple)',
@@ -301,17 +340,17 @@ const hpStyles = {
             },
             label: {
                 color: 'var(--purple)',
-                fontSize: '1.5vw',
+                fontSize: '1.25vw',
                 fontWeight: 'bold'
             },
             legend: {
                 color: 'var(--purple)',
                 fontWeight: 'bolder',
-                fontSize: '1.5vw',
+                fontSize: '1.25vw',
             },
             ingredientInput: {
                 width: '90%',
-                fontSize: '1vw',
+                fontSize: '1.25vw',
                 color: 'var(--purple)',
             },
             input: {
@@ -321,7 +360,7 @@ const hpStyles = {
             },
             h3: {
                 color: 'var(--purple)',
-                fontSize: '2.5vw'
+                fontSize: '1.75vw'
             },
             textarea: {
                 minWidth: '90%',
@@ -336,7 +375,7 @@ const hpStyles = {
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '1.5vw'
+                fontSize: '1.25vw'
             },
         }
     },
@@ -501,7 +540,7 @@ const hpStyles = {
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
-                width: '30%',
+                width: '45%',
                 backgroundPosition: 'center',
                 textAlign: 'center',
                 display: 'flex',
@@ -549,7 +588,7 @@ const hpStyles = {
     },
     ingredients: {
         container: {
-
+            marginBottom: '100px'
         },
         recipeSort: {
             border: '1px solid var(--lightPurple)',
@@ -557,7 +596,7 @@ const hpStyles = {
             flexDirection: 'column',
             textAlign: 'center',
             width: '90%',
-            margin: '10px auto 25px',
+            margin: '50px auto 10px',
             padding: '15px',
             backgroundColor: 'white',
             textShadow: '1px 1px var(--purple)',
@@ -572,7 +611,7 @@ const hpStyles = {
 
         ingredientsList: {
             border: '1px solid white',
-            margin: '50px auto 50px',
+            margin: '20px auto 50px',
             padding: '20px',
             width: '80%',
             backgroundColor: 'var(--purple)',
@@ -640,7 +679,9 @@ const hpStyles = {
             color: 'white',
             fontWeight: 'bold',
             padding: '5px',
-            fontSize: '2.75vw'
+            fontSize: '2.75vw',
+            margin: 'auto',
+            width: '50%'
         },
         H3: {
             fontSize: '3.25vw',
@@ -663,7 +704,7 @@ const hpStyles = {
                 flexDirection: 'column',
                 textAlign: 'center',
                 width: '60%',
-                margin: '10px auto 25px',
+                margin: '50px auto 25px',
                 padding: '15px',
                 backgroundColor: 'white',
                 textShadow: '1px 1px var(--purple)',
@@ -714,7 +755,7 @@ const hpStyles = {
             },
             ingredientsList: {
                 border: '1px solid white',
-                margin: 'auto',
+                margin: '50px auto 50px',
                 padding: '20px',
                 width: '60%',
                 backgroundColor: 'var(--purple)',
@@ -741,7 +782,9 @@ const hpStyles = {
                 color: 'white',
                 fontWeight: 'bold',
                 padding: '5px',
-                fontSize: '2vw'
+                fontSize: '2vw',
+                margin: 'auto',
+                width: '50%'
             },
         },
         laptop: {
@@ -803,7 +846,7 @@ const hpStyles = {
             },
             ingredientsList: {
                 border: '1px solid white',
-                margin: 'auto',
+                margin: '50px auto 50px',
                 padding: '20px',
                 width: '50%',
                 backgroundColor: 'var(--purple)',
@@ -837,7 +880,9 @@ const hpStyles = {
                 color: 'white',
                 fontWeight: 'bold',
                 padding: '5px',
-                fontSize: '1vw'
+                fontSize: '1vw',
+                margin: 'auto',
+                width: '50%'
             },
         }
     }

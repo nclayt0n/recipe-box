@@ -182,20 +182,20 @@ const addRStyles = {
                 backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw'
+                fontSize: '1.25vw'
 
             },
             select: {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '1.5vw',
+                fontSize: '1.25vw',
                 margin: '5px'
 
             },
             option: {
                 color: 'var(--purple)',
-                fontSize: '1.5vw',
+                fontSize: '1.25vw',
             },
             form: {
                 border: '1px solid var(--purple)',
@@ -207,27 +207,27 @@ const addRStyles = {
             },
             label: {
                 color: 'var(--purple)',
-                fontSize: '1.5vw',
+                fontSize: '1.25vw',
                 fontWeight: 'bold'
             },
             legend: {
                 color: 'var(--purple)',
                 fontWeight: 'bolder',
-                fontSize: '1.5vw',
+                fontSize: '1.25vw',
             },
             ingredientInput: {
                 width: '90%',
-                fontSize: '1vw',
+                fontSize: '1.25vw',
                 color: 'var(--purple)',
             },
             input: {
                 width: '90%',
-                fontSize: '1vw',
+                fontSize: '1.25vw',
                 color: 'var(--purple)',
             },
             h3: {
                 color: 'var(--purple)',
-                fontSize: '2.5vw'
+                fontSize: '1.75vw'
             },
             textarea: {
                 minWidth: '90%',
@@ -242,7 +242,7 @@ const addRStyles = {
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '1.5vw'
+                fontSize: '1.25vw'
             },
         }
     },

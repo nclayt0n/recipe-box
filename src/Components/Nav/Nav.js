@@ -52,7 +52,7 @@ class Nav extends React.Component{
                     <Link to={'/add-recipe'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Add Recipe</Link>
                 </li>}
                 {this.props.location.pathname==='/add-folder'?null:
-                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <li style={(this.state.clicked===false)||this.context.recipes.length===0?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/add-folder'} style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLiA):(this.state.visible.sideBarUlLiA)}>Add Folder</Link>
                 </li>}
                 {this.props.location.pathname==='/ingredients'||this.context.recipes.length===0?null:

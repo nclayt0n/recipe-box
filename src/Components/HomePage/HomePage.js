@@ -13,18 +13,19 @@ import Nav from '../Nav/Nav';
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders';
 import Ingredients from '../Ingredients/Ingredients';
 import folderListStyles from '../FolderList/FolderListStyles';
+import Footer from '../Footer/Footer';
 
 class HomePage extends React.Component{
     static contextType=Context;
     constructor(){
         super()
     this.state={
-    folders:[],
-    recipes:[],
-    user_id:Number,
-    error:''
-  }
-}
+        folders:[],
+        recipes:[],
+        user_id:Number,
+        error:''
+        }
+    }
     render(){
         const style=HomePageStyles
         return(
@@ -45,21 +46,23 @@ class HomePage extends React.Component{
                 <section className='ingredientsContainer' style={style.ingredients.container}>
                     <Ingredients/>
                 </section>}
+                <Footer/>
             </MediaQuery>
             <MediaQuery minWidth={651} maxWidth={900}>
                 <section className='addFolderContainer'style={style.addFolder.container}>
                     <AddFolder/>
                 </section>
                 {this.context.folders.length===0?null:
+                    <section>
+                        <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
+                    </section>}
+                {this.context.folders.length===0?null:
                 <AddRecipe />}
                 {this.context.recipes.length===0?null:
                     <section className='recipelistContainer'>
                         <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>
                     </section>}
-                {this.context.folders.length===0?null:
-                    <section>
-                        <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
-                    </section>}
+                
                 {this.context.folders.length===0?null:
                     <section className='ingredientsContainer' style={style.ingredients.container}>
                         <Ingredients/>
