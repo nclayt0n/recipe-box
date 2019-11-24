@@ -23,6 +23,7 @@ const addFStyles = {
     },
     addFolderInput: {
         width: '70%',
+
         fontSize: '2.5vw',
         margin: '5px auto',
 

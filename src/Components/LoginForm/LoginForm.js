@@ -60,7 +60,7 @@ handleSubmitJWTAuth=ev=>{
       const style=loginFormStyles
         const { error } = this.state
         return( <>
-        <MediaQuery maxHeight={759}>
+        <MediaQuery maxWidth={700}>
           <div className='loginForm' style={style.loginForm}>
               <form id='loginForm' onSubmit={this.handleSubmitJWTAuth} >
                 <fieldset style={style.loginFormFieldset}>
@@ -76,7 +76,7 @@ handleSubmitJWTAuth=ev=>{
               <ValidationError Namemessage={error}/>
           </div>
           </MediaQuery>
-          <MediaQuery minHeight={760}>
+          <MediaQuery minWidth={701}>
           <div className='loginForm' style={style.tablet.loginForm}>
               <form id='loginForm' onSubmit={this.handleSubmitJWTAuth} >
                 <fieldset style={style.loginFormFieldset}>

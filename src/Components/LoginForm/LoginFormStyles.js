@@ -1,7 +1,7 @@
 const loginFormStyles = {
     loginForm: {
         margin: 'auto',
-        marginTop: '100px',
+        marginTop: '50px',
         width: '80%',
         padding: '20px',
         display: 'flex',
@@ -40,7 +40,7 @@ const loginFormStyles = {
     loginFormLegend: {
         textAlign: 'center',
         margin: 'auto',
-        margin: '10px',
+        margin: '5px',
         padding: '10px',
         color: 'var(--purple)',
         fontWeight: 'bolder',
@@ -81,7 +81,7 @@ const loginFormStyles = {
             backgroundColor: 'white',
             border: '1px solid var(--lightPurple)',
             flexDirection: 'column',
-        }
+        },
     },
 }
 export default loginFormStyles
