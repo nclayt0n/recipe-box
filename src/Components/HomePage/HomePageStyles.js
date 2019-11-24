@@ -6,13 +6,18 @@ const hpStyles = {
         display: 'flex',
         width: '100%',
         margin: 'auto',
-        padding: '0'
+        padding: '10'
     },
     addLaptopContainer: {
-        width: '100%',
+        width: 'fit-content',
         padding: '0',
         flex: '2',
-        margin: '10px'
+        margin: '10px',
+        // backgroundImage: `url(${backgroundImage2})`,
+        // backgroundRepeat: 'no-repeat',
+        // backgroundSize: '100%',
+        // backgroundPosition: 'top',
+        // backgroundColor: 'white'
     },
     listLaptopContainer: {
         width: '100%',
@@ -72,7 +77,7 @@ const hpStyles = {
         h3: {
             color: 'var(--purple)',
             textAlign: 'center',
-            textShadow: '1px 1px #8a64a3',
+            textShadow: '1px 1px var(--darkPurple)',
             fontSize: '3vw',
         },
         tablet: {
@@ -115,25 +120,25 @@ const hpStyles = {
             h3: {
                 color: 'var(--purple)',
                 textAlign: 'center',
-                textShadow: '1px 1px #8a64a3',
+                textShadow: '1px 1px var(--darkPurple)',
                 fontSize: '2.25vw',
             },
         },
         laptop: {
             addFolderDivStyle: {
-                backgroundImage: `url(${backgroundImage2})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: '100%',
+                // backgroundImage: `url(${backgroundImage2})`,
+                // backgroundRepeat: 'no-repeat',
+                // backgroundSize: '100%',
                 backgroundColor: 'white',
-                backgroundPosition: 'top',
-                border: '2px solid var(--purple)',
+                // backgroundPosition: 'top',
+                border: '5px solid var(--darkPurple)',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                width: '70%',
-                margin: '20px auto 50px',
-                padding: '10px',
+                width: '80%',
+                margin: '30px auto 30px',
+                padding: '5px',
             },
             addFolderLabel: {
                 fontSize: '1.25vw',
@@ -152,12 +157,13 @@ const hpStyles = {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
                 margin: 'auto',
+                padding: '5px',
                 fontSize: '1.25vw',
             },
             h3: {
                 color: 'var(--purple)',
                 textAlign: 'center',
-                textShadow: '1px 1px #8a64a3',
+                textShadow: '1px 1px var(--darkPurple)',
                 fontSize: '1.75vw',
             },
         }
@@ -218,7 +224,7 @@ const hpStyles = {
         },
 
         legend: {
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             fontWeight: 'bolder',
             fontSize: '3.5vw',
         },
@@ -302,7 +308,7 @@ const hpStyles = {
                 fontSize: '2.25vw'
             },
             legend: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontWeight: 'bolder',
                 fontSize: '2.25vw',
             },
@@ -338,17 +344,16 @@ const hpStyles = {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                margin: '0',
+                margin: '20px auto 20px',
                 padding: '10px',
                 // backgroundImage: `url(${backgroundImage2})`,
                 // backgroundRepeat: 'noRepeat',
                 // backgroundSize: 'cover',
                 // backgroundPosition: 'top',
                 backgroundColor: 'white',
-                border: '2px solid var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '1.25vw'
-
+                fontSize: '1.25vw',
+                border: '5px solid var(--darkPurple)'
             },
             select: {
                 backgroundColor: 'white',
@@ -380,7 +385,7 @@ const hpStyles = {
 
             },
             legend: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontWeight: 'bolder',
                 fontSize: '1.5vw',
             },
@@ -399,7 +404,7 @@ const hpStyles = {
             h3: {
                 color: 'var(--purple)',
                 fontSize: '1.75vw',
-                textShadow: '1px 1px #8a64a3',
+                textShadow: '1px 1px var(--darkPurple)',
                 margin: '5px'
             },
             textarea: {
