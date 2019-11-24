@@ -230,6 +230,7 @@ const addRStyles = {
                 fontSize: '1.75vw'
             },
             textarea: {
+                fontSize: '1.25vw',
                 minWidth: '90%',
                 maxWidth: '125px',
                 maxHeight: '150px',

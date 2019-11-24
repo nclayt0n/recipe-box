@@ -1,10 +1,8 @@
-import React from 'react'
 import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
 const folderListStyles = {
     folderListStyle: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
@@ -66,7 +64,6 @@ const folderListStyles = {
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
@@ -129,7 +126,6 @@ const folderListStyles = {
         laptop: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',

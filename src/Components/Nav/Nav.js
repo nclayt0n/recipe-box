@@ -114,32 +114,32 @@ class Nav extends React.Component{
         <aside className='nav-sidebar' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sidebar)}>
             <ul className='navPageLinks' style={(this.state.clicked===false)?(this.state.hidden.sideBar):(this.state.visible.sideBar)}>
             {this.props.location.pathname===`/home-page`?null:
-                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <li style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLi):(this.state.visible.laptop.sideBarUlLi)}>
                     <Link to={`/home-page`} style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLiA):(this.state.visible.laptop.sideBarUlLiA)}>Home</Link>
                 </li>}
                 {this.props.location.pathname==='/recipe-list'||this.context.recipes.length===0?null:
-                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <li style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLi):(this.state.visible.laptop.sideBarUlLi)}>
                     <Link to={'/recipe-list'} style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLiA):(this.state.visible.laptop.sideBarUlLiA)}>Recipes</Link>
                 </li>}
                 {this.props.location.pathname==='/folder-list'||this.context.folders.length===0?null:
-                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <li style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLi):(this.state.visible.laptop.sideBarUlLi)}>
                     <Link to={'/folder-list'} style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLiA):(this.state.visible.laptop.sideBarUlLiA)}>Folders</Link>
                 </li>}
                 {this.props.location.pathname==='/add-recipe'||this.context.folders.length===0?null:
-                 <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                 <li style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLi):(this.state.visible.laptop.sideBarUlLi)}>
                     <Link to={'/add-recipe'} style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLiA):(this.state.visible.laptop.sideBarUlLiA)}>Add Recipe</Link>
                 </li>}
                 {this.props.location.pathname==='/add-folder'?null:
-                <li style={(this.state.clicked===false)||this.context.recipes.length===0?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <li style={(this.state.clicked===false)||this.context.recipes.length===0?(this.state.hidden.laptop.sideBarUlLi):(this.state.visible.laptop.sideBarUlLi)}>
                     <Link to={'/add-folder'} style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLiA):(this.state.visible.laptop.sideBarUlLiA)}>Add Folder</Link>
                 </li>}
                 {this.props.location.pathname==='/ingredients'||this.context.recipes.length===0?null:
-                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <li style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
                     <Link to={'/ingredients'} style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLiA):(this.state.visible.laptop.sideBarUlLiA)}>Ingredients</Link>
                 </li>}
-                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <li style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLi):(this.state.visible.laptop.sideBarUlLi)}>
                 <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLiA):(this.state.visible.laptop.sideBarUlLiA)} onClick={this.handleLogoutClick}>Logout</Link></li>
-                <li style={(this.state.clicked===false)?(this.state.hidden.sideBarUlLi):(this.state.visible.sideBarUlLi)}>
+                <li style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLi):(this.state.visible.laptop.sideBarUlLi)}>
                 <Link to='/' style={(this.state.clicked===false)?(this.state.hidden.laptop.sideBarUlLiA):(this.state.visible.laptop.sideBarUlLiA)} onClick={()=>this.handleDeleteAcct(userId)}>Delete Account</Link></li>
             </ul> 
         </aside>

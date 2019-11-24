@@ -72,6 +72,10 @@ class AddRecipe extends React.Component{
         if(recipe.name.length<3){
             this.setState({nameError: '*Required & Must be atleast 3 characters'
         }) 
+        }
+        if(recipe.name.length>15){
+            this.setState({nameError: '*15 characters max'
+        }) 
         }else{this.setState({nameError:''})}
         if(recipe.ingredients.length<1){
             this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'})
@@ -128,7 +132,6 @@ class AddRecipe extends React.Component{
         }  
     }
     getFolder=()=>{
-        console.log('hi')
         const options = {
             method: 'GET',
             headers: {
@@ -158,7 +161,6 @@ class AddRecipe extends React.Component{
             });
     }
     render(){
-        console.log(this.state)
         if(this.context.folders.length===0){
             return  <GetRecipeAndFolders/>
          }
@@ -235,7 +237,7 @@ class AddRecipe extends React.Component{
                                 return(<option name='folder' key={folder.id} value={folder.id} style={style.addRecipeStyle.option}>{folder.name}</option>)})}
                             </select>
                             </label><br/>
-                            <button type='submit' style={style.addRecipeStyle.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.button}>Cancel</button>} 
+                            <button type='submit' style={style.addRecipeStyle.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button type='button' onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.button}>Cancel</button>} 
                     </fieldset>
                 </form>   
             </div>
@@ -301,7 +303,7 @@ class AddRecipe extends React.Component{
                             </select>
                             </label><br/>
                             
-                            <button type='submit' style={style.addRecipeStyle.tablet.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.tablet.button}>Cancel</button>}
+                            <button type='submit' style={style.addRecipeStyle.tablet.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button type='button' onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.tablet.button}>Cancel</button>}
                     </fieldset>
                 </form>    
             </div>
@@ -370,7 +372,7 @@ class AddRecipe extends React.Component{
                             {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.laptop.label}>Ingredients: </label>:null}<br/> 
                             {(this.state.ingredients.length>0)?<><textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.laptop.textarea}>
                             </textarea><br/></>:null}
-                            <button type='submit' style={style.addRecipeStyle.laptop.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.laptop.button}>Cancel</button>}
+                            <button type='submit' style={style.addRecipeStyle.laptop.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button type='button' onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.laptop.button}>Cancel</button>}
                     </fieldset>
                 </form>   
               

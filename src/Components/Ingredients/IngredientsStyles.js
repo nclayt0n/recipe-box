@@ -1,4 +1,4 @@
-import backgroundImage from '../../images/purpleWhiteLeaves.png'
+import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
 const ingredientsStyles = {
     recipeSort: {
         border: '1px solid var(--lightPurple)',
@@ -28,7 +28,6 @@ const ingredientsStyles = {
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'repeat-y',
         backgroundPosition: 'center',
-        // backgroundAttachment: 'fixed',
         backgroundSize: '100%'
 
     },
@@ -258,7 +257,6 @@ const ingredientsStyles = {
             backgroundColor: 'var(--purple)',
             backgroundImage: `url(${backgroundImage})`,
             backgroundPosition: 'center',
-            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%'
 

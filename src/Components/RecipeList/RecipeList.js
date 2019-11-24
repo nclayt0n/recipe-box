@@ -57,7 +57,7 @@ render(){
         </MediaQuery>
         <MediaQuery minWidth={951} className='tablet'>
         <div className='RecipeList' style={style.recipeListStyle.laptop.div}>
-            <ul style={style.recipeListStyle.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.laptop.ulA}>RECIPES</Link> 
+            <ul style={style.recipeListStyle.laptop.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.laptop.ulA}>RECIPES</Link> 
             {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.laptop)}
             </ul> 
            {(this.props.location.pathname===`/home-page`)?null: 

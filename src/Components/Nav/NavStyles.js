@@ -3,7 +3,6 @@ import navImage from './NavImage/Hamburger_icon.png'
 const navStyles = {
     hidden: {
         main: {
-            // margin: 0,
             width: 'fit-content',
             height: '50px',
             backgroundColor: 'var(--purple)',
@@ -308,6 +307,7 @@ const navStyles = {
                 transition: 'all .3s ease-in-out',
                 cursor: 'pointer'
             },
+            sideBarUlLi: { lineHeight: '90px', listStyle: 'none' },
         }
 
     }

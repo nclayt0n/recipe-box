@@ -138,7 +138,7 @@ const hpStyles = {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                width: '80%',
+                width: '70%',
                 margin: '30px auto 30px',
                 padding: '5px',
             },
@@ -401,7 +401,7 @@ const hpStyles = {
             input: {
                 width: '90%',
                 border: '2px solid var(--purple)',
-                fontSize: '1vw',
+                fontSize: '1.25vw',
                 color: 'var(--purple)',
             },
             h3: {
@@ -710,24 +710,34 @@ const hpStyles = {
 
 
             },
-            ulA: {
-                fontSize: '1.75vw',
-                color: 'white',
+            ul: {
                 textDecoration: 'none',
-                textShadow: '1px 1px var(--lightPurple)'
+                padding: '10px',
+                fontSize: '1.75vw',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+
+            },
+            ulA: {
+                color: 'white',
+                fontSize: '1.75vw',
+                textShadow: '1px 1px #8a64a3',
             },
             li: {
                 padding: '10px',
-                fontSize: '1.5vw',
+                fontSize: '1vw',
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
+                textDecoration: 'none'
+
             },
             liA: {
 
                 color: 'white',
                 textDecoration: 'none',
-                fontSize: '1.5vw'
+                margin: 'auto',
+                fontSize: '1vw',
             },
             button: {
                 margin: '10px auto 10px ',

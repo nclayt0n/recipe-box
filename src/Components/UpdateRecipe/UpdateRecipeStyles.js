@@ -3,7 +3,6 @@ const updateRecipeStyles = {
 
     div: {
         backgroundImage: `url(${backgroundImage})`,
-        // backgroundAttachment: 'fixed',
         backgroundRepeat: 'repeat-y',
         backgroundSize: '100%',
         backgroundColor: 'var(--purple)',
@@ -100,7 +99,6 @@ const updateRecipeStyles = {
     tablet: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
@@ -136,7 +134,6 @@ const updateRecipeStyles = {
     laptop: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',

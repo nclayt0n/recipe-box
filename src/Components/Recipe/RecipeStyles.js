@@ -113,7 +113,6 @@ const recipeStyles = {
             backgroundColor: 'var(--lightPurple)',
             fontWeight: 'bolder',
             color: 'var(--purple)',
-            // border: '1px solid var(--purple)',
             textShadow: '.5px .5px rgba(138, 100, 163, 0.733)',
         },
 
@@ -189,7 +188,6 @@ const recipeStyles = {
             backgroundColor: 'var(--lightPurple)',
             fontWeight: 'bolder',
             color: 'var(--purple)',
-            // border: '1px solid var(--purple)',
             textShadow: '.5px .5px rgba(138, 100, 163, 0.733)',
         },
 

@@ -43,7 +43,6 @@ class Folder extends React.Component{
         }
     }
     findRecipes=(folderId,recipes,style)=>{
-        console.log(folderId)
         if(recipes.length===0){
             return null
         }else{

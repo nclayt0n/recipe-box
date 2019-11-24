@@ -5,7 +5,6 @@ const recipeListStyles = {
 
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
@@ -110,7 +109,6 @@ const recipeListStyles = {
         laptop: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
@@ -126,9 +124,16 @@ const recipeListStyles = {
                 textDecoration: 'none',
                 listStyle: 'none',
                 border: '1px solid white'
-
+            },
+            ul: {
+                textDecoration: 'none',
+                padding: '10px',
+                fontSize: '1.75vw',
+                fontWeight: 'bold',
+                cursor: 'pointer',
 
             },
+
             ulA: {
                 fontSize: '1.75vw',
                 color: 'white',
