@@ -342,7 +342,7 @@ const hpStyles = {
         },
         laptop: {
             div: {
-                width: '80%',
+                width: '100%',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
@@ -375,7 +375,7 @@ const hpStyles = {
             form: {
                 border: '4px solid var(--purple)',
                 backgroundColor: 'white',
-                width: '40%',
+                width: '45%',
                 height: 'fit-content',
                 margin: ' auto',
                 padding: '5px',

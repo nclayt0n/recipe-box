@@ -13,7 +13,7 @@ const addFStyles = {
         flexDirection: 'column',
         justifyContent: 'center',
         width: '70%',
-        margin: '50px auto ',
+        margin: '50px auto',
         fontSize: '2vw',
         padding: '50px',
     },

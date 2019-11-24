@@ -43,6 +43,7 @@ class Folder extends React.Component{
         }
     }
     findRecipes=(folderId,recipes,style)=>{
+        console.log(folderId)
         if(recipes.length===0){
             return null
         }else{
@@ -75,58 +76,48 @@ class Folder extends React.Component{
             <>
                 <Header/>
                 <Nav/>
-                {/* <div className='folder' style={style.folder}>
-                <div className='folderItems' style={style.folderItems}>
-                    <ul className='folderRecipeList' key={uuidv4()} style={style.folderRecipeList}>
-                    <h3 style={style.h}>{folderName}</h3>
-                        {recipeList}
-                    </ul> */}
-                    <MediaQuery maxWidth={650}>
+                <MediaQuery maxWidth={650}>
                     <div className='folder' style={style.folder}>
-                <div className='folderItems' style={style.folderItems}>
-                    <ul className='folderRecipeList' key={uuidv4()} style={style.folderRecipeList}>
-                    <h3 style={style.h}>{folderName}</h3>
-                        {recipeList}
-                    </ul>
-                    <div className='buttonBoxMobile' style={style.buttonBoxMobile}>
-                    <button style={style.buttonBoxMobileButton}>
-                            <Link to={'/add-recipe'} style={style.buttonBoxMobileButtonA}>Add Recipe</Link>
-                        </button><br/>
-                        <button type='button' style={style.buttonBoxMobileButton}>
-                            <Link to={`/update-folder/${this.props.match.params.id}`} style={style.buttonBoxMobileButtonA}>Update Folder</Link>
-                        </button><br/>
-                        <button type='button' 
-                            onClick={()=>this.deleteFolder(id,this.props)} style={style.buttonBoxMobileButton}
-                            >Delete Folder
-                        </button><br/>
+                        <div className='folderItems' style={style.folderItems}>
+                            <ul className='folderRecipeList' key={uuidv4()} style={style.folderRecipeList}>
+                                <h3 style={style.h}>{folderName}</h3>
+                                    {recipeList}
+                            </ul>
+                            <div className='buttonBoxMobile' style={style.buttonBoxMobile}>
+                                <button style={style.buttonBoxMobileButton}>
+                                    <Link to={'/add-recipe'} style={style.buttonBoxMobileButtonA}>Add Recipe</Link>
+                                </button><br/>
+                                <button type='button' style={style.buttonBoxMobileButton}>
+                                    <Link to={`/update-folder/${this.props.match.params.id}`} style={style.buttonBoxMobileButtonA}>Update Folder</Link>
+                                </button><br/>
+                                <button type='button' onClick={()=> this.deleteFolder(id,this.props)} style={style.buttonBoxMobileButton}> Delete Folder
+                                </button><br/>
+                            </div>
+                            <ValidationError Namemessage={this.state.error}/><br/>
+                        </div>
                     </div>
-                    <ValidationError Namemessage={this.state.error}/><br/>
-                    </div>
-                    </div>
-                    </MediaQuery>
-                    <MediaQuery minWidth={651}>
+                </MediaQuery>
+                <MediaQuery minWidth={651}>
                     <div className='folder' style={style.tablet.folder}>
-                <div className='folderItems' style={style.tablet.folderItems}>
-                    <ul className='folderRecipeList' key={uuidv4()} style={style.tablet.folderRecipeList}>
-                    <h3 style={style.tablet.h}>{folderName}</h3>
-                        {tabletRecipeList}
-                    </ul>
-                    <div className='buttonBox' style={style.tablet.buttonBox}>
-                    <button style={style.tablet.buttonBoxButton}>
-                            <Link to={'/add-recipe'} style={style.tablet.buttonBoxButtonA}>Add Recipe</Link>
-                        </button><br/>
-                        <button type='button' style={style.tablet.buttonBoxButton}>
-                            <Link to={`/update-folder/${this.props.match.params.id}`} style={style.tablet.buttonBoxButtonA}>Update Folder</Link>
-                        </button><br/>
-                        <button type='button' 
-                            onClick={()=>this.deleteFolder(id,this.props)} style={style.tablet.buttonBoxButton}>Delete Folder
-                        </button><br/>
-                    </div> 
-                    <ValidationError Namemessage={this.state.error}/><br/>
+                        <div className='folderItems' style={style.tablet.folderItems}>
+                            <ul className='folderRecipeList' key={uuidv4()} style={style.tablet.folderRecipeList}>
+                                <h3 style={style.tablet.h}>{folderName}</h3>
+                                {tabletRecipeList}
+                            </ul>
+                            <div className='buttonBox' style={style.tablet.buttonBox}>
+                                <button style={style.tablet.buttonBoxButton}>
+                                    <Link to={'/add-recipe'} style={style.tablet.buttonBoxButtonA}>Add Recipe</Link>
+                                </button><br/>
+                                <button type='button' style={style.tablet.buttonBoxButton}>
+                                    <Link to={`/update-folder/${parseInt(this.props.match.params.id)}`} style={style.tablet.buttonBoxButtonA}>Update Folder</Link>
+                                </button><br/>
+                                <button type='button' onClick={()=> this.deleteFolder(id,this.props)} style={style.tablet.buttonBoxButton}> Delete Folder
+                                </button><br/>
+                            </div> 
+                            <ValidationError Namemessage={this.state.error}/><br/>
+                        </div>
                     </div>
-                </div>
-                    </MediaQuery>
-                   
+                </MediaQuery>
                 </>
         )
     }

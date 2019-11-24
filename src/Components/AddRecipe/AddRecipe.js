@@ -240,7 +240,7 @@ class AddRecipe extends React.Component{
                 </form>   
             </div>
         </MediaQuery>
-        <MediaQuery minWidth={651} maxWidth={900}>
+        <MediaQuery minWidth={651} maxWidth={951}>
             <div className='addRecipe' style={style.addRecipeStyle.tablet.div}>
             {(this.props.location.pathname===`/home-page`)?
                 <h3 style={style.addRecipeStyle.tablet.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.tablet.h3}>ADD RECIPE</h3>}  
@@ -306,7 +306,7 @@ class AddRecipe extends React.Component{
                 </form>    
             </div>
             </MediaQuery>
-        <MediaQuery minWidth={901}>
+        <MediaQuery minWidth={951}>
             <div className='addRecipe' style={style.addRecipeStyle.laptop.div}>
             <ValidationError Foldermessage={this.state.folderError}/>
             {(this.props.location.pathname===`/home-page`)?

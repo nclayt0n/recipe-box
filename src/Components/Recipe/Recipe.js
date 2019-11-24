@@ -24,22 +24,22 @@ class Recipe extends React.Component{
     recipe.folderName=folder[0].name;
     return recipe;
 }
-    deleteRecipe=(id,props)=>{
-        const url=`${config.API_ENDPOINT}/recipe/${id}`;
+    deleteRecipe=(recipe,props)=>{
+        const url=`${config.API_ENDPOINT}/recipe/${recipe.id}`;
         const options={
             method:'DELETE',
             headers:{
           'content-type':'application/json',
           'Authorization': `Bearer ${TokenService.getAuthToken()}`,
         },
-        body: JSON.stringify({'id':id})
+        body: JSON.stringify({'id':recipe.id})
     };
         fetch(url,options)
-        .then(this.context.deleteRecipe(id,props))
+        .then(this.context.deleteRecipe(recipe.id,props))
         .catch(error =>{
             this.setState({error})
         })
-        props.history.push('/recipe-list')
+        props.history.push(`/folder/${recipe.folder_id}`)
     }
 
     createDisplayedIngredients=(ingredients)=>{
@@ -71,7 +71,7 @@ class Recipe extends React.Component{
         }else{
         recipe= recipe
         }
- const ingredients=this.createDisplayedIngredients(recipe.ingredients)
+    const ingredients= this.createDisplayedIngredients(recipe.ingredients)
         return(<>
          <Header/>
          <Nav/>
@@ -104,12 +104,12 @@ class Recipe extends React.Component{
                         <button style={recipeStyles.mobile.recipeButton}>
                             <Link  to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
                         </button>
-                        <button style={recipeStyles.mobile.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                        <button style={recipeStyles.mobile.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe,this.props)}>Delete Recipe</button>
                     </div>
                 </div>
                 </div>
             </MediaQuery>
-            <MediaQuery minWidth={651} maxWidth={900}>
+            <MediaQuery minWidth={651} maxWidth={950}>
             <div className='recipe' style={recipeStyles.tablet.recipe}>
                 <div className='recipeItems' style={recipeStyles.tablet.recipeItems}>
                     <h3 style={recipeStyles.tablet.h3}>Recipe: {recipe.name}</h3>
@@ -137,13 +137,13 @@ class Recipe extends React.Component{
                         <button style={recipeStyles.tablet.recipeButton}>
                             <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
                         </button>
-                        <button style={recipeStyles.tablet.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                        <button style={recipeStyles.tablet.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe,this.props)}>Delete Recipe</button>
                     </div>
                 </div>
                  <ValidationError Namemessage={this.state.error}/>
             </div>
             </MediaQuery>
-            <MediaQuery minWidth={901}>
+            <MediaQuery minWidth={951}>
             <div className='recipe' style={recipeStyles.laptop.recipe}>
                 <div className='recipeItems' style={recipeStyles.laptop.recipeItems}>
                     <h3 style={recipeStyles.laptop.h3}>Recipe: {recipe.name}</h3>
@@ -171,7 +171,7 @@ class Recipe extends React.Component{
                         <button style={recipeStyles.laptop.recipeButton}>
                             <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
                         </button>
-                        <button style={recipeStyles.laptop.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe.id,this.props)}>Delete Recipe</button>
+                        <button style={recipeStyles.laptop.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe,this.props)}>Delete Recipe</button>
                     </div>
                 </div>
                  <ValidationError Namemessage={this.state.error}/>

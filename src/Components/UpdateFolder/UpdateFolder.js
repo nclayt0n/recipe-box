@@ -46,7 +46,7 @@ class UpdateFolder extends React.Component{
             }
     }
     render(){
-        if(this.context.recipes.length===0){
+        if(this.context.folders.length===0){
             return  <GetRecipeAndFolders/>
          }
         return(<>
@@ -67,7 +67,7 @@ class UpdateFolder extends React.Component{
                 </form>
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={651} maxWidth={900}>
+        <MediaQuery minWidth={651} maxWidth={950}>
         <div className='updateFolder' style={updateFolderStyles.tablet.updateFolder}>
             <h3 className='updateh3' style={updateFolderStyles.tablet.updateh3}>Update Folder: {this.findFolderName()}</h3>
                 <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>    
@@ -81,7 +81,7 @@ class UpdateFolder extends React.Component{
                 </form>
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={901}>
+        <MediaQuery minWidth={951}>
         <div className='updateFolder' style={updateFolderStyles.laptop.updateFolder}>
             <h3 className='updateh3' style={updateFolderStyles.laptop.updateh3}>Update Folder: {this.findFolderName()}</h3>
                 <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>    
