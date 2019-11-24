@@ -80,7 +80,7 @@ class HomePage extends React.Component{
                 <section className='addLaptopContainer' style={style.addLaptopContainer}>
                     <AddFolder/>
                     {this.context.folders.length===0?null:<AddRecipe />} 
-                </section>}
+                </section>
                
                 {this.context.folders.length===0?null:
                     <section className='listLaptopContainer' style={style.listLaptopContainer}>
