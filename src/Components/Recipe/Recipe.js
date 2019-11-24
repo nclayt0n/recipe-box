@@ -67,10 +67,7 @@ class Recipe extends React.Component{
             folderName:recipe.folderName,
             user: recipe.user,
             }
-            recipe= recipe
-        }else{
-        recipe= recipe
-        }
+         }
     const ingredients= this.createDisplayedIngredients(recipe.ingredients)
         return(<>
          <Header/>
@@ -81,7 +78,7 @@ class Recipe extends React.Component{
             <div className='recipeItems' style={recipeStyles.mobile.recipeItems}>
                     <h3 style={recipeStyles.mobile.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.mobile.recipeUl}>INSTRUCTIONS: 
-                        <li style={{letterSpacing: '2 px',width:'80%',margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'normal',color:'var(--purple)'}}>{recipe.instructions}</li>
+                        <li style={{letterSpacing: '2 px',width:'80%',margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'bold',color:'var(--darkPurple)'}}>{recipe.instructions}</li>
                     </ul>
                     <ul style={recipeStyles.mobile.recipeUl}>INGREDIENTS:
                         {ingredients}
@@ -100,9 +97,9 @@ class Recipe extends React.Component{
                     </ul>)}
                    
                     <div className='buttons' style={recipeStyles.mobile.buttons}>
-                        <button style={recipeStyles.mobile.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.mobile.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}}>{recipe.folderName}</Link></button>
                         <button style={recipeStyles.mobile.recipeButton}>
-                            <Link  to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
+                            <Link  to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}}>Update Recipe</Link>
                         </button>
                         <button style={recipeStyles.mobile.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe,this.props)}>Delete Recipe</button>
                     </div>
@@ -114,7 +111,7 @@ class Recipe extends React.Component{
                 <div className='recipeItems' style={recipeStyles.tablet.recipeItems}>
                     <h3 style={recipeStyles.tablet.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.tablet.recipeUl}>INSTRUCTIONS: 
-                        <li style={{letterSpacing: '2 px',width:'=fit-content', margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'normal',color:'var(--purple)'}}>{recipe.instructions}</li>
+                        <li style={{letterSpacing: '2 px',width:'=fit-content', margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'bold',color:'var(--darkPurple)'}}>{recipe.instructions}</li>
                     </ul>
                     <ul style={recipeStyles.tablet.recipeUl}>INGREDIENTS:
                         {ingredients}
@@ -133,9 +130,9 @@ class Recipe extends React.Component{
                     </ul>)}
                     
                     <div className='buttons' style={recipeStyles.tablet.buttons}>
-                        <button style={recipeStyles.tablet.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--purple)'}} >{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.tablet.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}} >{recipe.folderName}</Link></button>
                         <button style={recipeStyles.tablet.recipeButton}>
-                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
+                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}}>Update Recipe</Link>
                         </button>
                         <button style={recipeStyles.tablet.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe,this.props)}>Delete Recipe</button>
                     </div>
@@ -148,7 +145,7 @@ class Recipe extends React.Component{
                 <div className='recipeItems' style={recipeStyles.laptop.recipeItems}>
                     <h3 style={recipeStyles.laptop.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.laptop.recipeUl}>INSTRUCTIONS: 
-                        <li style={{letterSpacing: '2 px',width:'=fit-content', margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'normal',color:'var(--purple)'}}>{recipe.instructions}</li>
+                        <li style={{letterSpacing: '2 px',width:'=fit-content', margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'bold',color:'var(--darkPurple)'}}>{recipe.instructions}</li>
                     </ul>
                     <ul style={recipeStyles.laptop.recipeUl}>INGREDIENTS:
                         {ingredients}
@@ -167,9 +164,9 @@ class Recipe extends React.Component{
                     </ul>)}
                     
                     <div className='buttons' style={recipeStyles.laptop.buttons}>
-                        <button style={recipeStyles.laptop.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--purple)'}} >{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.laptop.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}} >{recipe.folderName}</Link></button>
                         <button style={recipeStyles.laptop.recipeButton}>
-                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--purple)'}}>Update Recipe</Link>
+                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}}>Update Recipe</Link>
                         </button>
                         <button style={recipeStyles.laptop.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe,this.props)}>Delete Recipe</button>
                     </div>

@@ -60,7 +60,6 @@ const registrationFormStyles = {
     registrationFormLegend: {
         textAlign: 'center',
         margin: 'auto',
-        margin: '10px',
         padding: '10px',
         color: 'var(--purple)',
         fontWeight: 'bolder',

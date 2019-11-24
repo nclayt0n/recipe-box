@@ -190,7 +190,7 @@ class UpdateRecipe extends React.Component{
                 <label htmlFor='ingredient' style={updateRecipeStyles.label}>Quantity:<br/>
                 <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity} style={updateRecipeStyles.input}/></label>
                 <label htmlFor='ingredient' style={updateRecipeStyles.label}>Unit:<br/>
-                <select style={updateRecipeStyles.select} key={uuidv4()} name='ingredientUnit' name={`alteredUnit${idx}`}>
+                <select style={updateRecipeStyles.select} key={uuidv4()} name={`alteredUnit${idx}`}>
                             <option value={this.state.ingredients[idx].unit} style={updateRecipeStyles.option}>{this.state.ingredients[idx].unit}</option>
                             <option value='cup' style={updateRecipeStyles.option}>cup</option>
                             <option value='pinch' style={updateRecipeStyles.option}>pinch</option>
@@ -217,7 +217,7 @@ class UpdateRecipe extends React.Component{
                     <label htmlFor='ingredient' style={updateRecipeStyles.label}>Quantity:<br/>
                     <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity} style={updateRecipeStyles.input}/></label>
                     <label htmlFor='ingredient' style={updateRecipeStyles.label}>Unit:<br/>
-                    <select style={updateRecipeStyles.select} key={uuidv4()} name='ingredientUnit' name={`alteredUnit${idx}`}>
+                    <select style={updateRecipeStyles.select} key={uuidv4()} name={`alteredUnit${idx}`}>
                         <option value={this.state.ingredients[idx].unit} style={updateRecipeStyles.option}>{this.state.ingredients[idx].unit}</option>
                         <option value='cup' style={updateRecipeStyles.option}>cup</option>
                         <option value='pinch' style={updateRecipeStyles.option}>pinch</option>
@@ -246,7 +246,7 @@ class UpdateRecipe extends React.Component{
                         <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity} style={updateRecipeStyles.laptop.input}/>
                     </label>
                     <label htmlFor='ingredient' style={updateRecipeStyles.laptop.label}>Unit:<br/>
-                    <select style={updateRecipeStyles.laptop.select} key={uuidv4()} name='ingredientUnit' name={`alteredUnit${idx}`}>
+                    <select style={updateRecipeStyles.laptop.select} key={uuidv4()} name={`alteredUnit${idx}`}>
                         <option value={this.state.ingredients[idx].unit} style={updateRecipeStyles.laptop.option}>{this.state.ingredients[idx].unit}</option>
                         <option value='cup' style={updateRecipeStyles.laptop.option}>cup</option>
                         <option value='pinch' style={updateRecipeStyles.laptop.option}>pinch</option>

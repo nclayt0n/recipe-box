@@ -1,4 +1,3 @@
-import React from 'react'
 import backgroundImage from '../../images/purpleLpurpleleaves.jpg'
 const recipeStyles = {
     mobile: {
@@ -7,7 +6,7 @@ const recipeStyles = {
             display: 'flex',
             flexDirection: 'column',
             width: '90%',
-            fontSize: '3vw'
+            fontSize: '3vw',
         },
 
         recipeItems: {
@@ -37,9 +36,9 @@ const recipeStyles = {
             padding: '10px',
             width: '80%',
             fontWeight: 'bolder',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             backgroundColor: 'var(--lightPurple)',
-            fontSize: '3vw'
+            fontSize: '3vw',
         },
 
         recipeLi: {
@@ -49,8 +48,8 @@ const recipeStyles = {
             width: '70%',
             textAlign: 'center',
             listStyle: 'none',
-            fontWeight: 'normal',
-            color: 'var(--purple)'
+            fontWeight: 'bold',
+            color: 'var(--darkPurple)'
         },
         buttons: {
             display: 'flex',
@@ -66,7 +65,7 @@ const recipeStyles = {
             backgroundColor: 'white',
             padding: '5px',
             fontWeight: 'bolder',
-            color: 'var(--purple)'
+            color: 'var(--darkPurple)'
         },
         folderButton: {
             width: 'fit-content',
@@ -112,7 +111,7 @@ const recipeStyles = {
             padding: '15px',
             backgroundColor: 'var(--lightPurple)',
             fontWeight: 'bolder',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             textShadow: '.5px .5px rgba(138, 100, 163, 0.733)',
         },
 
@@ -124,8 +123,8 @@ const recipeStyles = {
             textAlign: 'center',
             listStyle: 'none',
             textDecoration: 'none',
-            fontWeight: 'normal',
-            color: 'var(--purple)'
+            fontWeight: 'bold',
+            color: 'var(--darkPurple)'
         },
         buttons: {
             display: 'flex',
@@ -187,7 +186,7 @@ const recipeStyles = {
             padding: '15px',
             backgroundColor: 'var(--lightPurple)',
             fontWeight: 'bolder',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             textShadow: '.5px .5px rgba(138, 100, 163, 0.733)',
         },
 
@@ -199,8 +198,8 @@ const recipeStyles = {
             textAlign: 'center',
             listStyle: 'none',
             textDecoration: 'none',
-            fontWeight: 'normal',
-            color: 'var(--purple)'
+            fontWeight: 'bold',
+            color: 'var(--darkPurple)'
         },
         buttons: {
             display: 'flex',
@@ -215,8 +214,8 @@ const recipeStyles = {
             backgroundColor: 'white',
             padding: '5px',
             fontWeight: 'bolder',
-            color: 'var(--purple)',
-            border: '2px solid var(--purple)'
+            color: 'var(--darkPurple)',
+            border: '2px solid var(--darkPurple)'
         },
         folderButton: {
             width: 'fit-content',

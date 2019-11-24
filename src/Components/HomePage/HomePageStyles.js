@@ -1,4 +1,3 @@
-import React from 'react'
 import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
 import backgroundImage2 from '../../images/purplelavleaves.jpg'
 const hpStyles = {
@@ -13,11 +12,6 @@ const hpStyles = {
         padding: '0',
         flex: '2',
         margin: '10px',
-        // backgroundImage: `url(${backgroundImage2})`,
-        // backgroundRepeat: 'no-repeat',
-        // backgroundSize: '100%',
-        // backgroundPosition: 'top',
-        // backgroundColor: 'white'
     },
     listLaptopContainer: {
         width: '100%',
@@ -69,7 +63,8 @@ const hpStyles = {
         },
         addFolderLabel: {
             fontSize: '3.5vw',
-            color: 'var(--purple)'
+            color: 'var(--purple)',
+            fontWeight: 'bold'
         },
         addFolderInput: {
             fontSize: '3.5vw',
@@ -130,11 +125,7 @@ const hpStyles = {
         },
         laptop: {
             addFolderDivStyle: {
-                // backgroundImage: `url(${backgroundImage2})`,
-                // backgroundRepeat: 'no-repeat',
-                // backgroundSize: '100%',
                 backgroundColor: 'white',
-                // backgroundPosition: 'top',
                 border: '5px solid var(--darkPurple)',
                 textAlign: 'center',
                 display: 'flex',
@@ -183,9 +174,6 @@ const hpStyles = {
             margin: 'auto',
             marginTop: '50px',
             padding: '50px',
-            // backgroundImage: `url(${backgroundImage2})`,
-            // backgroundRepeat: 'no-repeat',
-            // backgroundSize: '110%',
             backgroundColor: 'white',
             backgroundPosition: 'top',
             border: '2px solid var(--purple)',
@@ -246,19 +234,21 @@ const hpStyles = {
         ingredientInput: {
             width: '70%',
             color: 'var(--purple)',
-            fontSize: '3.5vw'
+            fontSize: '3.5vw',
+            border: '1px solid var(--purple)',
         },
         input: {
             width: '70%',
             color: 'var(--purple)',
-            margin: '5px',
-            fontSize: '3.5vw'
+            fontSize: '3.5vw',
+            border: '1px solid var(--purple)',
         },
         textarea: {
             minWidth: '70%',
             maxWidth: '125px',
             maxHeight: '250px',
-            color: 'var(--purple)'
+            color: 'var(--purple)',
+            border: '1px solid var(--purple)',
         },
         tablet: {
             div: {
@@ -302,6 +292,8 @@ const hpStyles = {
             },
             fieldset: {
                 border: 'none',
+                margin: 'auto',
+                padding: '0'
             },
             label: {
                 color: 'var(--purple)',
@@ -329,18 +321,21 @@ const hpStyles = {
             ingredientInput: {
                 width: '90%',
                 color: 'var(--purple)',
+                border: '1px solid var(--purple)',
             },
             input: {
                 width: '90%',
                 color: 'var(--purple)',
-                margin: '5px'
+                margin: '5px',
+                border: '1px solid var(--purple)',
 
             },
             textarea: {
                 minWidth: '90%',
                 maxWidth: '125px',
                 maxHeight: '150px',
-                color: 'var(--purple)'
+                color: 'var(--purple)',
+                border: '1px solid var(--purple)',
             },
         },
         laptop: {
@@ -352,10 +347,6 @@ const hpStyles = {
                 justifyContent: 'center',
                 margin: '20px auto 20px',
                 padding: '10px',
-                // backgroundImage: `url(${backgroundImage2})`,
-                // backgroundRepeat: 'noRepeat',
-                // backgroundSize: 'cover',
-                // backgroundPosition: 'top',
                 backgroundColor: 'white',
                 fontWeight: 'bold',
                 fontSize: '1.25vw',
@@ -440,7 +431,6 @@ const hpStyles = {
         },
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
@@ -486,7 +476,6 @@ const hpStyles = {
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
@@ -549,7 +538,6 @@ const hpStyles = {
         laptop: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
@@ -600,7 +588,6 @@ const hpStyles = {
     recipeListStyle: {
         div: {
             backgroundImage: `url(${backgroundImage})`,
-            // backgroundAttachment: 'fixed',
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
@@ -646,7 +633,6 @@ const hpStyles = {
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
@@ -705,7 +691,6 @@ const hpStyles = {
         laptop: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
-                // backgroundAttachment: 'fixed',
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
@@ -764,305 +749,6 @@ const hpStyles = {
         }
 
     },
-    ingredients: {
-
-        recipeSort: {
-            border: '1px solid var(--lightPurple)',
-            display: 'flex',
-            flexDirection: 'column',
-            textAlign: 'center',
-            width: '80%',
-            margin: '50px auto 10px',
-            padding: '15px',
-            backgroundColor: 'white',
-            textShadow: '1px 1px var(--purple)',
-        },
-        recipeSortLegend: {
-            fontSize: '4vw',
-            color: 'var(--purple)',
-            fontWeight: 'bolder',
-            textShadow: '1px 1px white',
-            textTransform: 'uppercase'
-        },
-
-        ingredientsList: {
-            border: '1px solid white',
-            margin: '50px auto 50px',
-            padding: '20px',
-            width: '80%',
-            backgroundColor: 'var(--purple)',
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'repeat-y',
-            backgroundPosition: 'center',
-            // backgroundAttachment: 'fixed',
-            backgroundSize: '100%'
-
-        },
-        recipeSortLabel: {
-            color: 'var(--purple)',
-            textShadow: 'none',
-            fontSize: '3.5vw',
-            marginTop: '5PX'
-        },
-        recipeSortSelect: {
-            padding: '10px',
-            margin: '5px',
-            width: 'fit-content',
-            height: '50px',
-            fontSize: '3.5vw',
-            fontWeight: 'bold',
-            backgroundColor: 'var(--purple)',
-            border: '1px solid var(--purple)',
-            color: 'white',
-            textShadow: '.5px .5px var(--purple)',
-
-        },
-
-        ingredientDisplayFieldset: {
-            width: 'fit-content',
-            margin: 'auto',
-            border: 'none',
-            backgroundColor: 'var(--purple)'
-        },
-        ingredientsDisplay: {
-            padding: '5px'
-        },
-        recipeSortOption: {
-            fontSize: '3.5vw',
-            padding: '1px',
-            color: 'white'
-
-        },
-        ingredientLabel: {
-            fontSize: '3.5vw',
-            height: '10px',
-            padding: '5px',
-            display: 'flex',
-            color: 'white',
-            textShadow: '1px 1px var(--purple)',
-            fontWeight: 'bold',
-            alignItems: 'center'
-        },
-        ingredientCheckbox: {
-            height: '10px',
-            padding: '5px',
-            margin: '0',
-            border: '1px solid var(--purple)'
-
-        },
-        sortButton: {
-            backgroundColor: 'var(--purple)',
-            color: 'white',
-            fontWeight: 'bold',
-            padding: '5px',
-            fontSize: '3.5vw',
-            margin: 'auto',
-            width: '50%'
-        },
-        H3: {
-            fontSize: '4vw',
-            color: 'white',
-            textShadow: '1px 1px var(--purple)',
-            fontWeight: 'bold',
-            textTransform: 'uppercase',
-        },
-        tablet: {
-            H3: {
-                fontSize: '2.25vw',
-                color: 'white',
-                textShadow: '1px 1px var(--purple)',
-                fontWeight: 'bold',
-                textTransform: 'uppercase',
-            },
-            recipeSort: {
-                border: '1px solid var(--lightPurple)',
-                display: 'flex',
-                flexDirection: 'column',
-                textAlign: 'center',
-                width: '60%',
-                margin: '50px auto 10px',
-                padding: '15px',
-                backgroundColor: 'white',
-                textShadow: '1px 1px var(--purple)',
-            },
-            recipeSortSelect: {
-                padding: '10px',
-                margin: '5px',
-                width: '30%',
-                height: '60px',
-                fontSize: '2vw',
-                fontWeight: 'bold',
-                backgroundColor: 'var(--purple)',
-                border: '1px solid var(--purple)',
-                color: 'white',
-                textShadow: '.5px .5px var(--purple)',
-            },
-            recipeSortLegend: {
-                fontSize: '2vw',
-                color: 'var(--purple)',
-                fontWeight: 'bolder',
-                textShadow: '1px 1px white',
-                textTransform: 'uppercase'
-            },
-            recipeSortLabel: {
-                color: 'var(--purple)',
-                textShadow: 'none',
-                fontSize: '2vw',
-                marginTop: '5PX'
-            },
-            recipeSortOption: {
-                fontSize: '2vw',
-                padding: '1px',
-                color: 'white'
-
-            },
-            ingredientDisplayFieldset: {
-                width: 'fit-content',
-                margin: '5px auto auto',
-                padding: '15px',
-                border: 'none',
-                backgroundColor: 'var(--purple)'
-            },
-            ingredientCheckbox: {
-                height: '15px',
-                margin: '0',
-                border: '1px solid var(--purple)'
-
-            },
-            ingredientsList: {
-                border: '1px solid white',
-                margin: '50px auto 50px',
-                padding: '20px',
-                width: '60%',
-                backgroundColor: 'var(--purple)',
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundRepeat: 'repeat-y',
-                backgroundPosition: 'center',
-                // backgroundAttachment: 'fixed',
-                backgroundSize: '100%'
-            },
-
-            ingredientLabel: {
-                fontSize: '2vw',
-                height: '10px',
-                padding: '15px',
-                display: 'flex',
-                color: 'white',
-                textShadow: '1px 1px var(--purple)',
-                fontWeight: 'bold',
-                alignItems: 'center'
-            },
-
-            sortButton: {
-                backgroundColor: 'var(--purple)',
-                color: 'white',
-                fontWeight: 'bold',
-                padding: '5px',
-                fontSize: '2vw',
-                margin: 'auto',
-                width: 'fit-content'
-            },
-        },
-        laptop: {
-            H3: {
-                fontSize: '1.75vw',
-                color: 'white',
-                textShadow: '1px 1px var(--purple)',
-                fontWeight: 'bold',
-                textTransform: 'uppercase',
-            },
-            recipeSort: {
-                border: '1px solid var(--lightPurple)',
-                display: 'flex',
-                flexDirection: 'column',
-                textAlign: 'center',
-                width: '100%',
-                margin: '0 0 20px 0',
-                padding: '15px',
-                backgroundColor: 'white',
-                textShadow: '1px 1px var(--purple)',
-            },
-            recipeSortSelect: {
-                padding: '10px',
-                margin: '5px',
-                width: 'fit-content',
-                height: '70px',
-                fontSize: '1vw',
-                fontWeight: 'bold',
-                backgroundColor: 'var(--purple)',
-                border: '1px solid var(--purple)',
-                color: 'white',
-                textShadow: '.5px .5px var(--purple)',
-            },
-            recipeSortLegend: {
-                fontSize: '2vw',
-                color: 'var(--purple)',
-                fontWeight: 'bolder',
-                textShadow: '1px 1px white',
-                textTransform: 'uppercase'
-            },
-            recipeSortLabel: {
-                color: 'var(--purple)',
-                textShadow: 'none',
-                fontSize: '1.5vw',
-                marginTop: '5PX'
-            },
-            recipeSortOption: {
-                fontSize: '1vw',
-                padding: '1px',
-                color: 'white'
-
-            },
-            ingredientDisplayFieldset: {
-                width: 'fit-content',
-                margin: 'auto',
-                padding: '25px',
-                border: 'none',
-                backgroundColor: 'var(--purple)'
-            },
-            ingredientsList: {
-                border: '1px solid white',
-                margin: 'auto',
-                padding: '20px',
-                width: '100%',
-                backgroundColor: 'var(--purple)',
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundPosition: 'center',
-                // backgroundAttachment: 'fixed',
-                backgroundRepeat: 'repeat-y',
-                backgroundSize: '100%'
-
-            },
-
-            ingredientCheckbox: {
-                height: '20px',
-                padding: '5px',
-                margin: '0',
-                border: '1px solid var(--purple)'
-
-            },
-            ingredientLabel: {
-                fontSize: '1.5vw',
-                height: '15px',
-                padding: '15px',
-                display: 'flex',
-                color: 'white',
-                textShadow: '1px 1px var(--purple)',
-                fontWeight: 'bold',
-                alignItems: 'center'
-            },
-            sortButton: {
-                backgroundColor: 'var(--purple)',
-                color: 'white',
-                fontWeight: 'bold',
-                padding: '5px',
-                fontSize: '1vw',
-                margin: 'auto',
-                width: '50%'
-            },
-        },
-
-    }
 
 }
 

@@ -9,7 +9,7 @@ const updateFolderStyles = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        margin: 'auto',
+        margin: '50px auto',
         width: '90%'
     },
 
@@ -32,33 +32,35 @@ const updateFolderStyles = {
         fontSize: '2vw',
         padding: '5px',
         backgroundColor: 'var(--lightPurple)',
-        border: '2.5px solid var(--purple)',
+        border: '2.5px solid var(--darkPurple)',
         fontWeight: 'bold',
-        color: 'var(--purple)'
+        color: 'var(--darkPurple)'
     },
 
     updateFolderLabel: {
         textTransform: 'uppercase',
         fontSize: '3vw',
-        color: 'var(--purple)',
+        color: 'var(--darkPurple)',
         fontWeight: 'bolder'
     },
 
     button: {
         backgroundColor: 'white',
-        color: 'var(--purple)',
+        color: 'var(--darkPurple)',
         display: 'flex',
         fontSize: '2.5vw',
         border: '2px solid white',
-        margin: 'auto auto 5px'
+        margin: 'auto auto 5px',
+        fontWeight: 'bolder'
     },
 
     updateButtons: {
         display: 'flex',
         fontSize: '2vw',
-        color: 'var(--purple)',
+        color: 'var(--darkPurple)',
         border: '2px solid white',
-        margin: 'auto auto 5px'
+        margin: 'auto auto 5px',
+        fontWeight: 'bolder'
     },
     tablet: {
         updateFolder: {
@@ -70,7 +72,7 @@ const updateFolderStyles = {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            margin: 'auto',
+            margin: '50px auto',
             width: '50%'
         },
         updateh3: {
@@ -92,30 +94,32 @@ const updateFolderStyles = {
             fontSize: '1.5vw',
             padding: '5px',
             backgroundColor: 'var(--lightPurple)',
-            border: '2px solid var(--purple)',
+            border: '2px solid var(--darkPurple)',
             fontWeight: 'bold',
-            color: 'var(--purple)'
+            color: 'var(--darkPurple)'
         },
         updateFolderLabel: {
             textTransform: 'uppercase',
             fontSize: '1.5vw',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             fontWeight: 'bolder'
         },
         button: {
             backgroundColor: 'white',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             display: 'flex',
             fontSize: '1.5vw',
             border: '2px solid white',
-            margin: 'auto auto 5px'
+            margin: 'auto auto 5px',
+            fontWeight: 'bolder'
         },
         updateButtons: {
             display: 'flex',
             fontSize: '2vw',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             border: '2px solid white',
-            margin: 'auto auto 5px'
+            margin: 'auto auto 5px',
+            fontWeight: 'bolder'
         },
     },
     laptop: {
@@ -128,7 +132,7 @@ const updateFolderStyles = {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            margin: 'auto',
+            margin: '50px auto',
             width: '30%'
         },
         updateh3: {
@@ -150,30 +154,32 @@ const updateFolderStyles = {
             fontSize: '1vw',
             padding: '5px',
             backgroundColor: 'var(--lightPurple)',
-            border: '2px solid var(--purple)',
+            border: '2px solid var(--darkPurple)',
             fontWeight: 'bold',
-            color: 'var(--purple)'
+            color: 'var(--darkPurple)'
         },
         updateFolderLabel: {
             textTransform: 'uppercase',
             fontSize: '1vw',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             fontWeight: 'bolder'
         },
         button: {
             backgroundColor: 'white',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             display: 'flex',
             fontSize: '1vw',
             border: '2px solid white',
-            margin: 'auto auto 5px'
+            margin: 'auto auto 5px',
+            fontWeight: 'bolder'
         },
         updateButtons: {
             display: 'flex',
             fontSize: '2vw',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             border: '2px solid white',
-            margin: 'auto auto 5px'
+            margin: 'auto auto 5px',
+            fontWeight: 'bolder'
         },
     }
 }

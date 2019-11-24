@@ -1,4 +1,3 @@
-import React from 'react'
 import navImage from './NavImage/Hamburger_icon.png'
 const navStyles = {
     hidden: {

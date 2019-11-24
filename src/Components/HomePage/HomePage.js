@@ -11,7 +11,6 @@ import HomePageStyles from './HomePageStyles'
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders';
-import Ingredients from '../Ingredients/Ingredients';
 import folderListStyles from '../FolderList/FolderListStyles';
 import Footer from '../Footer/Footer';
 
@@ -42,10 +41,6 @@ class HomePage extends React.Component{
                 <AddRecipe />}
                 {this.context.recipes.length===0?null:
                 <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>}
-                {this.context.folders.length===0?null:
-                <section className='ingredientsContainer' style={style.ingredientsContainer}>
-                    <Ingredients/>
-                </section>}
             </MediaQuery>
             <MediaQuery minWidth={651} maxWidth={950}>
                 <section className='addFolderContainer'style={style.addFolder.container}>
@@ -61,11 +56,6 @@ class HomePage extends React.Component{
                     <section className='recipelistContainer'>
                         <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>
                     </section>}
-                
-                {this.context.folders.length===0?null:
-                    <section className='ingredientsContainer' style={style.ingredientsContainer}>
-                        <Ingredients/>
-                    </section>}
             </MediaQuery>
             <MediaQuery minWidth={951}>
             <div className='mainContainer' style={style.mainContainer}>
@@ -76,12 +66,10 @@ class HomePage extends React.Component{
                                 <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
                             </section>}
                     </section>}
-
                 <section className='addLaptopContainer' style={style.addLaptopContainer}>
                     <AddFolder/>
                     {this.context.folders.length===0?null:<AddRecipe />} 
                 </section>
-               
                 {this.context.folders.length===0?null:
                     <section className='listLaptopContainer' style={style.listLaptopContainer}>
                         {this.context.recipes.length===0?null:
@@ -90,7 +78,6 @@ class HomePage extends React.Component{
                             </section>}
                     </section>} 
             </div>
-                
             </MediaQuery>
         </>
         )}

@@ -16,7 +16,8 @@ const updateRecipeStyles = {
         padding: '10px',
         textDecoration: 'none',
         listStyle: 'none',
-        border: '1px solid white'
+        border: '1px solid white',
+        fontWeight: 'bold'
     },
     fieldset: {
         margin: 'auto auto 15px',
@@ -48,8 +49,8 @@ const updateRecipeStyles = {
         fontSize: '2vw',
         padding: '10px',
         backgroundColor: 'var(--lightPurple)',
-        border: '2px solid var(--purple)',
-        color: 'var(--purple)',
+        border: '2px solid var(--darkPurple)',
+        color: 'var(--darkPurple)',
         fontWeight: 'bolder',
         minWidth: '200px',
         maxWidth: '250px',
@@ -60,16 +61,16 @@ const updateRecipeStyles = {
         fontSize: '2vw',
         padding: '5px',
         backgroundColor: 'var(--lightPurple',
-        border: '2px solid var(--purple',
+        border: '2px solid var(--darkPurple',
         fontWeight: 'bold',
-        color: 'var(--purple',
+        color: 'var(--darkPurple)',
     },
     select: {
         margin: 'auto',
-        border: '2px solid var(--purple)',
+        fontWeight: 'bold',
+        border: '2px solid var(--darkPurple)',
         fontSize: '2vw',
-        color: 'var(--purple)',
-        margin: '5px',
+        color: 'var(--darkPurple)',
         backgroundColor: 'var(--lightPurple)',
         padding: '5px'
     },
@@ -77,7 +78,7 @@ const updateRecipeStyles = {
         textTransform: 'uppercase',
         margin: '5px',
         fontSize: '2.25vw',
-        color: 'var(--purple)',
+        color: 'var(--darkPurple)',
         fontWeight: 'bolder'
     },
     option: {
@@ -88,7 +89,7 @@ const updateRecipeStyles = {
     updateButtons: {
         display: 'flex',
         fontSize: '2vw',
-        color: 'var(--purple)',
+        color: 'var(--darkPurple)',
         border: '2px solid white',
         margin: 'auto auto 5px',
         backgroundColor: ' white',
@@ -101,7 +102,7 @@ const updateRecipeStyles = {
             backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
-            backgroundColor: 'var(--purple)',
+            backgroundColor: 'var(--darkPurple)',
             width: '60%',
             backgroundPosition: 'center',
             textAlign: 'center',
@@ -161,7 +162,7 @@ const updateRecipeStyles = {
             fontSize: '1.5vw',
             width: '100%',
             fontWeight: 'bolder',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             textDecoration: 'underline',
             textShadow: '1px 1px var(--lightPurple)',
             margin: 'auto auto 10px'
@@ -180,8 +181,8 @@ const updateRecipeStyles = {
             fontSize: '1vw',
             padding: '10px',
             backgroundColor: 'var(--lightPurple)',
-            border: '2px solid var(--purple)',
-            color: 'var(--purple)',
+            border: '2px solid var(--darkPurple)',
+            color: 'var(--darkPurple)',
             fontWeight: 'bolder',
             minWidth: '200px',
             maxWidth: '250px',
@@ -204,24 +205,23 @@ const updateRecipeStyles = {
             fontSize: '1vw',
             padding: '5px',
             backgroundColor: 'var(--lightPurple',
-            border: '2px solid var(--purple',
+            border: '2px solid var(--darkPurple',
             fontWeight: 'bold',
-            color: 'var(--purple',
+            color: 'var(--darkPurple',
             width: '200px'
         },
         select: {
             margin: 'auto',
-            border: '2px solid var(--purple)',
+            border: '2px solid var(--darkPurple)',
             fontSize: '1vw',
-            color: 'var(--purple)',
-            margin: '5px',
+            color: 'var(--darkPurple)',
             backgroundColor: 'var(--lightPurple)',
             padding: '5px'
         },
         label: {
             textTransform: 'uppercase',
             fontSize: '1vw',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             fontWeight: 'bolder'
         },
         option: {
@@ -232,7 +232,7 @@ const updateRecipeStyles = {
         updateButtons: {
             display: 'flex',
             fontSize: '1vw',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             border: '2px solid white',
             margin: '5px auto 10px',
             backgroundColor: ' white',
