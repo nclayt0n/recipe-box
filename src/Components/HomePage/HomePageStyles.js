@@ -60,6 +60,7 @@ const hpStyles = {
         addFolderButtons: {
             width: 'fit-content',
             padding: '5px',
+            margin: '5px',
             fontWeight: 'bold',
             backgroundColor: 'var(--purple)',
             color: 'white',
@@ -67,18 +68,19 @@ const hpStyles = {
 
         },
         addFolderLabel: {
-            flexGrow: '2',
+            fontSize: '3.5vw',
             color: 'var(--purple)'
         },
         addFolderInput: {
-            flexGrow: '2',
+            fontSize: '3.5vw',
             color: 'var(--purple)'
         },
         h3: {
             color: 'var(--purple)',
             textAlign: 'center',
-            textShadow: '1px 1px var(--darkPurple)',
-            fontSize: '3vw',
+            fontWeight: 'bolder',
+            textShadow: '.5px .5px var(--darkPurple)',
+            fontSize: '4vw',
         },
         tablet: {
             addFolderDivStyle: {
@@ -189,7 +191,8 @@ const hpStyles = {
         },
         h3: {
             color: 'var(--purple)',
-            fontSize: '3.5vw',
+            textShadow: '.5px .5px var(--darkPurple)',
+            fontSize: '4vw',
             margin: '5px'
         },
         select: {
@@ -219,7 +222,7 @@ const hpStyles = {
         label: {
             color: 'var(--purple)',
             fontWeight: 'bold',
-            fontSize: '3vw',
+            fontSize: '3.25vw',
 
         },
 
@@ -452,7 +455,7 @@ const hpStyles = {
         },
         ul: {
             padding: '10px',
-            fontSize: '22px',
+            fontSize: '4vw',
             fontWeight: 'bold',
             cursor: 'pointer',
             color: 'white'
@@ -463,7 +466,7 @@ const hpStyles = {
         },
         li: {
             padding: '10px',
-            fontSize: '18px',
+            fontSize: '3.5vw',
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
@@ -473,6 +476,7 @@ const hpStyles = {
             color: 'white',
             textDecoration: 'none',
             margin: 'auto',
+            fontSize: '3.5vw',
             fontWeight: 'normal'
         },
         tablet: {

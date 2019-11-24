@@ -117,8 +117,14 @@ class AddRecipe extends React.Component{
         })
         if(this.props.location.pathname==='/home-page'){
             this.props.history.push('/home-page')
+            document.getElementById('ingredientForm').reset();
+            document.getElementById('recipeForm').reset();
+            this.setState({ingredients:[]})
         }else{
             this.props.history.push('/recipe-list')
+            document.getElementById('ingredientForm').reset();
+            document.getElementById('recipeForm').reset();
+            this.setState({ingredients:[]})
         }  
     }
     getFolder=()=>{
@@ -129,7 +135,6 @@ class AddRecipe extends React.Component{
                 'content-type': 'application/json',
                 'Authorization': `Bearer ${TokenService.getAuthToken()}`,
             },
-
         };
         Promise.all([
                 fetch(`${config.API_ENDPOINT}/folders`,
@@ -146,9 +151,7 @@ class AddRecipe extends React.Component{
                     this.setState({folderError:'*Must create a folder before creating a recipe.'})
                 }else{
                   this.context.addFolders(folders)  
-                }
-                
-                
+                }  
             })
             .catch(error => {
                 console.error({ error });
@@ -173,7 +176,7 @@ class AddRecipe extends React.Component{
             <div className='addRecipe' style={style.addRecipeStyle.div}>
                 {(this.props.location.pathname===`/home-page`)?
                 <h3 style={style.addRecipeStyle.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.h3}>ADD RECIPE</h3>}   
-                <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.form}>
+                <form id='ingredientForm' onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.form}>
                 <ValidationError Foldermessage={this.state.folderError}/>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.legend}>Add Ingredient</legend>
@@ -205,7 +208,7 @@ class AddRecipe extends React.Component{
                     </fieldset>
                 </form>
                 
-                <form onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.form}>
+                <form id='recipeForm' onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.form}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.legend}>Recipe</legend>
                         
@@ -241,7 +244,7 @@ class AddRecipe extends React.Component{
             {(this.props.location.pathname===`/home-page`)?
                 <h3 style={style.addRecipeStyle.tablet.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.tablet.h3}>ADD RECIPE</h3>}  
                 
-                <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.tablet.form}>
+                <form id='ingredientForm' onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.tablet.form}>
                     <fieldset style={style.addRecipeStyle.tablet.fieldset}>
                         <legend style={style.addRecipeStyle.tablet.legend}>Add Ingredient</legend>
                         <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
@@ -271,7 +274,7 @@ class AddRecipe extends React.Component{
                     </fieldset>
                 </form>
                 
-                <form onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.tablet.form}>
+                <form id='recipeForm' onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.tablet.form}>
                     <fieldset style={style.addRecipeStyle.tablet.fieldset}>
                         <legend style={style.addRecipeStyle.tablet.legend}>Recipe</legend>
                         <ValidationError Foldermessage={this.state.folderError}/>
@@ -309,7 +312,7 @@ class AddRecipe extends React.Component{
                 <h3 style={style.addRecipeStyle.laptop.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.laptop.h3}>ADD RECIPE</h3>}  
                 <div className='laptopViewContainer' style={style.addRecipeStyle.laptop.ViewContainer}>
                
-                <form onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.laptop.form}>
+                <form id='ingredientForm' onSubmit={e=>this.addIngredient(e)} style={style.addRecipeStyle.laptop.form}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.laptop.legend}>Add Ingredient</legend>
                          <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
@@ -339,7 +342,7 @@ class AddRecipe extends React.Component{
                     </fieldset>
                 </form>
                
-                <form onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.laptop.form}>
+                <form id='recipeForm' onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.laptop.form}>
                     <fieldset style={style.addRecipeStyle.fieldset}>
                         <legend style={style.addRecipeStyle.laptop.legend}>Recipe</legend>
                          
