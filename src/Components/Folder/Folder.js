@@ -32,7 +32,6 @@ class Folder extends React.Component{
             this.setState({error})
         })
         props.history.push(`/home-page`)
-        window.location.reload(true);
     }
     findFolder=(id,folders)=>{
         if(folders.length===0){

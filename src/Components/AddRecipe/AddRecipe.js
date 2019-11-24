@@ -200,9 +200,10 @@ class AddRecipe extends React.Component{
                             <option value='other'style={style.addRecipeStyle.option}>Other</option>
                         </select></label><br/>
                         <label htmlFor='ingredientUnitOther' style={style.addRecipeStyle.label}> Other Unit:<br/>
-                        <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.ingredientInput}/><br/>
+                        <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.ingredientInput}/>
+                        </label><br/>
                         
-                        <button type='submit' style={style.addRecipeStyle.button}>Enter</button></label><br/>
+                        <button type='submit' style={style.addRecipeStyle.button}>Enter</button><br/>
                         {(this.state.ingredients.length>0)?<><textarea className='ingredientsToDisplay' value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
                             </textarea><br/></>:null}
                     </fieldset>
@@ -268,9 +269,9 @@ class AddRecipe extends React.Component{
                             <option value='other' style={style.addRecipeStyle.tablet.option}>Other</option>
                         </select></label><br/>
                         <label htmlFor='ingredientUnitOther' style={style.addRecipeStyle.tablet.label}> Other Unit:<br/>
-                        <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.tablet.ingredientInput}/><br/>
-                        
-                        <button type='submit' style={style.addRecipeStyle.tablet.button}>Enter</button></label><br/>
+                            <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.tablet.ingredientInput}/>
+                        </label><br/>
+                        <button type='submit' style={style.addRecipeStyle.tablet.button}>Enter</button><br/>
                     </fieldset>
                 </form>
                 
@@ -336,9 +337,10 @@ class AddRecipe extends React.Component{
                             <option value='other' style={style.addRecipeStyle.laptop.option}>Other</option>
                         </select></label><br/>
                         <label htmlFor='ingredientUnitOther' style={style.addRecipeStyle.laptop.label}> Other Unit:<br/>
-                        <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.laptop.ingredientInput}/><br/>
+                        <input type='text' name='ingredientUnitOther' style={style.addRecipeStyle.laptop.ingredientInput}/>
+                        </label><br/>
                         
-                        <button type='submit' style={style.addRecipeStyle.laptop.button}>Enter</button></label><br/>
+                        <button type='submit' style={style.addRecipeStyle.laptop.button}>Enter</button><br/>
                     </fieldset>
                 </form>
                

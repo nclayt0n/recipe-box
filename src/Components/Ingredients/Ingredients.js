@@ -71,16 +71,15 @@ class Ingredients extends React.Component{
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
         {(this.props.location.pathname===`/home-page`)?'':<Nav/>}
         <MediaQuery maxWidth={650}>
-        <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.recipeSort}>
+        <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} action='#ingredientsDisplay' style={style.recipeSort}>
         {(this.props.location.pathname===`/home-page`)?<legend style={style.recipeSortLegend}><Link to={'/ingredients'}style={style.recipeSortLegend}>Ingredients</Link></legend>:<legend style={style.recipeSortLegend}>Ingredients</legend>}
-            
                 <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
                 <select  name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
                 <option key={uuidv4()} value='allR' style={style.recipeSortOption}>All Recipes</option>
                    {recipeOptions}
                 </select>
                 </label>
-                <button type='submit' style={style.sortButton}>Submit</button>
+                <button type='submit' style={style.sortButton} >Submit</button>
         </form>
         {(this.state.displayed.length===0)?null:
         <section className='ingredientsList'  key={uuidv4()} style={style.ingredientsList}>
@@ -89,7 +88,7 @@ class Ingredients extends React.Component{
             (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
             <ValidationError Ingredientsmessage={this.state.error}/>
             
-           <form key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
+           <form id='ingredientsDisplay' key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
                 <fieldset key={uuidv4()} style={style.ingredientDisplayFieldset}>
                     {(this.state.displayed===undefined)?
                     (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
@@ -146,7 +145,7 @@ class Ingredients extends React.Component{
                     (this.state.displayed.map(recipes=>{
                     return recipes.map(recipe=>recipe.ingredients.map(ingredient=>{
                         return <>
-                        <label key={uuidv4()} className='ingredient' style={style.ingredientLabel}>
+                        <label key={uuidv4()} className='ingredient' style={style.tablet.ingredientLabel}>
                             <input key={uuidv4()} type='checkbox' style={style.tablet.ingredientCheckbox}/>{ingredient.name} {ingredient.quantity} {ingredient.unit}
                         </label><br/></>
                     }))})

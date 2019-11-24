@@ -42,7 +42,7 @@ const navStyles = {
             textDecoration: 'none',
             color: 'white',
             fontFamily: 'arial',
-            fontSize: '16px',
+            fontSize: '4.25vw',
             cursor: 'pointer'
 
         },
@@ -74,11 +74,89 @@ const navStyles = {
             textTransform: 'uppercase',
             color: 'white',
             fontFamily: 'arial',
-            fontSize: '16px',
+            fontSize: '4.25vw',
             whiteSpace: 'nowrap',
             transition: 'all 0.3s ease-in-out',
             cursor: 'pointer'
-        }
+        },
+        tablet: {
+            toggleBtn: {
+                margin: 0,
+                width: '60px',
+                height: '100%',
+                backgroundImage: `url(${navImage})`,
+                backgroundColor: 'var(--purple)',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '40%',
+                backgroundPosition: 'center',
+                border: 'none',
+                cursor: 'pointer'
+            },
+            mainUlLiA: {
+                display: 'block',
+                height: '100%',
+                padding: '0 15px',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                color: 'white',
+                fontFamily: 'arial',
+                fontSize: '2.25vw',
+                cursor: 'pointer'
+
+            },
+            sideBarUlLiA: {
+                display: 'none',
+                height: '60px',
+                padding: '0 10px',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                color: 'white',
+                fontFamily: 'arial',
+                fontSize: '2.25vw',
+                whiteSpace: 'nowrap',
+                transition: 'all 0.3s ease-in-out',
+                cursor: 'pointer'
+            }
+        },
+        laptop: {
+            toggleBtn: {
+                margin: 0,
+                width: '70px',
+                height: '100%',
+                backgroundImage: `url(${navImage})`,
+                backgroundColor: 'var(--purple)',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '40%',
+                backgroundPosition: 'center',
+                border: 'none',
+                cursor: 'pointer'
+            },
+            mainUlLiA: {
+                display: 'block',
+                height: '100%',
+                padding: '0 15px',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                color: 'white',
+                fontFamily: 'arial',
+                fontSize: '1.75vw',
+                cursor: 'pointer'
+
+            },
+            sideBarUlLiA: {
+                display: 'none',
+                height: '60px',
+                padding: '0 10px',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                color: 'white',
+                fontFamily: 'arial',
+                fontSize: '1.75vw',
+                whiteSpace: 'nowrap',
+                transition: 'all 0.3s ease-in-out',
+                cursor: 'pointer'
+            }
+        },
     },
     visible: {
         main: {
@@ -120,7 +198,7 @@ const navStyles = {
             textDecoration: 'none',
             color: '#111',
             fontFamily: 'arial',
-            fontSize: '16px',
+            fontSize: '4.25vw',
             cursor: 'pointer'
         },
         sideBar: {
@@ -150,12 +228,92 @@ const navStyles = {
             color: 'white',
             fontWeight: 'bolder',
             fontFamily: 'arial',
-            fontSize: '16px',
+            fontSize: '4.25vw',
             whiteSpace: 'nowrap',
             transition: 'all .3s ease-in-out',
             cursor: 'pointer'
         },
+        tablet: {
+            toggleBtn: {
+                margin: 0,
+                width: '60px',
+                height: '100%',
+                backgroundImage: `url(${navImage})`,
+                backgroundColor: 'var(--purple)',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '40%',
+                backgroundPosition: 'center',
+                border: 'none',
+                cursor: 'pointer'
+            },
+            mainUlLiA: {
+                display: 'block',
+                height: '100%',
+                padding: '0 10px',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                color: '#111',
+                fontFamily: 'arial',
+                fontSize: '2.25vw',
+                cursor: 'pointer'
+            },
+            sideBarUlLiA: {
+                height: '60px',
+                padding: '0 10px',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                color: 'white',
+                fontWeight: 'bolder',
+                fontFamily: 'arial',
+                fontSize: '2.25vw',
+                whiteSpace: 'nowrap',
+                transition: 'all .3s ease-in-out',
+                cursor: 'pointer'
+            },
+        },
+        laptop: {
+            toggleBtn: {
+                margin: 0,
+                width: '70px',
+                height: '100%',
+                backgroundImage: `url(${navImage})`,
+                backgroundColor: 'var(--purple)',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '40%',
+                backgroundPosition: 'center',
+                border: 'none',
+                cursor: 'pointer'
+            },
+            mainUlLiA: {
+                display: 'block',
+                height: '100%',
+                padding: '0 10px',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                color: '#111',
+                fontFamily: 'arial',
+                fontSize: '1.75vw',
+                cursor: 'pointer'
+            },
+            sideBarUlLiA: {
+                height: '60px',
+                padding: '0 10px',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                color: 'white',
+                fontWeight: 'bolder',
+                fontFamily: 'arial',
+                fontSize: '1.75vw',
+                whiteSpace: 'nowrap',
+                transition: 'all .3s ease-in-out',
+                cursor: 'pointer'
+            },
+        }
+
     }
+
+
+
 }
 
 

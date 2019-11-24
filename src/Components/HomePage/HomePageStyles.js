@@ -243,13 +243,13 @@ const hpStyles = {
         ingredientInput: {
             width: '70%',
             color: 'var(--purple)',
-            fontSize: '2.5vw'
+            fontSize: '3.5vw'
         },
         input: {
             width: '70%',
             color: 'var(--purple)',
             margin: '5px',
-            fontSize: '2.5vw'
+            fontSize: '3.5vw'
         },
         textarea: {
             minWidth: '70%',
@@ -615,7 +615,7 @@ const hpStyles = {
         },
         ul: {
             padding: '10px',
-            fontSize: '22px',
+            fontSize: '4vw',
             fontWeight: 'bolder',
             cursor: 'pointer',
             color: 'white'
@@ -626,7 +626,7 @@ const hpStyles = {
         },
         li: {
             padding: '10px',
-            fontSize: '18px',
+            fontSize: '3.5vw',
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
@@ -754,7 +754,7 @@ const hpStyles = {
             textShadow: '1px 1px var(--purple)',
         },
         recipeSortLegend: {
-            fontSize: '3.25vw',
+            fontSize: '4vw',
             color: 'var(--purple)',
             fontWeight: 'bolder',
             textShadow: '1px 1px white',
@@ -777,15 +777,15 @@ const hpStyles = {
         recipeSortLabel: {
             color: 'var(--purple)',
             textShadow: 'none',
-            fontSize: '3vw',
+            fontSize: '3.5vw',
             marginTop: '5PX'
         },
         recipeSortSelect: {
             padding: '10px',
             margin: '5px',
             width: 'fit-content',
-            height: '20%',
-            fontSize: '3vw',
+            height: '50px',
+            fontSize: '3.5vw',
             fontWeight: 'bold',
             backgroundColor: 'var(--purple)',
             border: '1px solid var(--purple)',
@@ -804,13 +804,13 @@ const hpStyles = {
             padding: '5px'
         },
         recipeSortOption: {
-            fontSize: '3vw',
+            fontSize: '3.5vw',
             padding: '1px',
             color: 'white'
 
         },
         ingredientLabel: {
-            fontSize: '3vw',
+            fontSize: '3.5vw',
             height: '10px',
             padding: '5px',
             display: 'flex',
@@ -831,12 +831,12 @@ const hpStyles = {
             color: 'white',
             fontWeight: 'bold',
             padding: '5px',
-            fontSize: '2.75vw',
+            fontSize: '3.5vw',
             margin: 'auto',
             width: '50%'
         },
         H3: {
-            fontSize: '3.25vw',
+            fontSize: '4vw',
             color: 'white',
             textShadow: '1px 1px var(--purple)',
             fontWeight: 'bold',
@@ -865,7 +865,7 @@ const hpStyles = {
                 padding: '10px',
                 margin: '5px',
                 width: '30%',
-                height: '40%',
+                height: '60px',
                 fontSize: '2vw',
                 fontWeight: 'bold',
                 backgroundColor: 'var(--purple)',
