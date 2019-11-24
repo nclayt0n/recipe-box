@@ -360,10 +360,10 @@ class AddRecipe extends React.Component{
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id} style={style.addRecipeStyle.laptop.option}>{folder.name}</option>)})}
                             </select>
-                            </label><br/>
+                            </label>
                             
                             {(this.state.ingredients.length>0)?<label htmlFor='ingredientsToDisplay' style={style.addRecipeStyle.laptop.label}>Ingredients: </label>:null}<br/> 
-                            {(this.state.ingredients.length>0)?<><textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
+                            {(this.state.ingredients.length>0)?<><textarea value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.laptop.textarea}>
                             </textarea><br/></>:null}
                             <button type='submit' style={style.addRecipeStyle.laptop.button}>Submit</button><br/>{(this.props.location.pathname===`/home-page`)?null:<button onClick={()=>this.props.history.goBack()} style={style.addRecipeStyle.laptop.button}>Cancel</button>}
                     </fieldset>

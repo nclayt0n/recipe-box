@@ -169,7 +169,6 @@ const ingredientsStyles = {
             backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: 'repeat-y',
             backgroundPosition: 'center',
-            // backgroundAttachment: 'fixed',
             backgroundSize: '100%'
         },
 
@@ -189,7 +188,9 @@ const ingredientsStyles = {
             color: 'white',
             fontWeight: 'bold',
             padding: '5px',
-            fontSize: '2vw'
+            fontSize: '2vw',
+            margin: 'auto',
+            width: '40%'
         },
     },
     laptop: {
@@ -285,7 +286,9 @@ const ingredientsStyles = {
             color: 'white',
             fontWeight: 'bold',
             padding: '5px',
-            fontSize: '1vw'
+            fontSize: '1vw',
+            margin: 'auto',
+            width: '40%'
         },
     }
 }

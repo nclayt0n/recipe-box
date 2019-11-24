@@ -43,7 +43,7 @@ class HomePage extends React.Component{
                 {this.context.recipes.length===0?null:
                 <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>}
                 {this.context.folders.length===0?null:
-                <section className='ingredientsContainer' style={style.ingredients.container}>
+                <section className='ingredientsContainer' style={style.ingredientsContainer}>
                     <Ingredients/>
                 </section>}
             </MediaQuery>
@@ -63,33 +63,34 @@ class HomePage extends React.Component{
                     </section>}
                 
                 {this.context.folders.length===0?null:
-                    <section className='ingredientsContainer' style={style.ingredients.container}>
+                    <section className='ingredientsContainer' style={style.ingredientsContainer}>
                         <Ingredients/>
                     </section>}
             </MediaQuery>
             <MediaQuery minWidth={901}>
             <div className='mainContainer' style={style.mainContainer}>
+            {this.context.folders.length===0?null:
+                    <section className='listLaptopContainer' style={style.listLaptopContainer}>
+                        {this.context.folders.length===0?null:
+                            <section className='folderListContainer' style={style.folderListStyle.container}>
+                                <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
+                            </section>}
+                    </section>}
+                    
                 <section className='addLaptopContainer' style={style.addLaptopContainer}>
-                <AddFolder/>
-                {this.context.folders.length===0?null:
-                <AddRecipe />} 
+                    <AddFolder/>
+                    {this.context.folders.length===0?null:<AddRecipe />} 
                 </section>
                
-                <section className='listLaptopContainer' style={style.listLaptopContainer}>
-                    {this.context.folders.length===0?null:
-                    <section className='folderListContainer' style={style.folderListStyle.container}>
-                        <FolderList folders={this.context.folders} recipes={this.context.recipes}/>
-                    </section>}
-                    {this.context.recipes.length===0?null:
-                    <section className='recipeListContainer'>
-                        <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>
-                    </section>}
-                </section>
-            </div>
                 {this.context.folders.length===0?null:
-                    <section className='ingredientsContainer' style={style.ingredients.container}>
-                    <Ingredients/>
-                </section>}
+                    <section className='listLaptopContainer' style={style.listLaptopContainer}>
+                        {this.context.recipes.length===0?null:
+                            <section className='recipeListContainer'>
+                                <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>
+                            </section>}
+                    </section>} 
+            </div>
+                
             </MediaQuery>
         </>
         )}
