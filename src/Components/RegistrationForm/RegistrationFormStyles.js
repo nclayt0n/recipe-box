@@ -1,7 +1,7 @@
 const registrationFormStyles = {
     registrationForm: {
         margin: 'auto',
-        marginTop: '100px',
+        marginTop: '50px',
         width: '80%',
         padding: '20px',
         display: 'flex',
