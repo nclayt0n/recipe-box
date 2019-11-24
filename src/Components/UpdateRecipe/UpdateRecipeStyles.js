@@ -93,7 +93,8 @@ const updateRecipeStyles = {
         border: '2px solid white',
         margin: 'auto auto 5px',
         backgroundColor: ' white',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        cursor: 'pointer'
     },
 
     tablet: {
@@ -238,7 +239,8 @@ const updateRecipeStyles = {
             border: '2px solid white',
             margin: '5px auto 10px',
             backgroundColor: ' white',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            cursor: 'pointer'
         },
     }
 

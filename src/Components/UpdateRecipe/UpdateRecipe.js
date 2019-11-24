@@ -394,8 +394,9 @@ class UpdateRecipe extends React.Component{
                 {(this.state.ingredients.length===0)?
                 (<form style={updateRecipeStyles.laptop.form}>
                     <fieldset style={updateRecipeStyles.laptop.fieldset}>
-                        <label htmlFor='ingredientsDisplay' style={updateRecipeStyles.laptop.label}>Ingredients:<br/> 
-                            <textarea name='ingredientsDisplay' defaultValue={recipe.ingredients.map(ingredient=>` ${ingredient.name} ${ingredient.quantity} ${ingredient.unit} `)} style=  {updateRecipeStyles.laptop.textarea}>
+                        <label htmlFor='ingredientsDisplay' style={updateRecipeStyles.laptop.label}>Ingredients:
+                        <br/> 
+                            <textarea name='ingredientsDisplay' readOnly defaultValue={recipe.ingredients.map(ingredient=>` ${ingredient.name} ${ingredient.quantity} ${ingredient.unit} `)} style=  {updateRecipeStyles.laptop.textarea}>
                             </textarea>
                         </label>
                     </fieldset>

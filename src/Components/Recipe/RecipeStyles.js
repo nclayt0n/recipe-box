@@ -3,7 +3,7 @@ import backgroundImage from '../../images/purpleLpurpleleaves.jpg'
 const recipeStyles = {
     mobile: {
         recipe: {
-            margin: 'auto',
+            margin: '50px auto',
             display: 'flex',
             flexDirection: 'column',
             width: '90%',
@@ -76,7 +76,7 @@ const recipeStyles = {
     },
     tablet: {
         recipe: {
-            margin: 'auto',
+            margin: '50px auto',
             display: 'flex',
             flexDirection: 'column',
             width: '70%',
@@ -152,7 +152,7 @@ const recipeStyles = {
     },
     laptop: {
         recipe: {
-            margin: 'auto',
+            margin: '50px auto',
             display: 'flex',
             flexDirection: 'column',
             width: '50%',
