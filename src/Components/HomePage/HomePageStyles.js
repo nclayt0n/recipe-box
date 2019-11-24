@@ -427,6 +427,7 @@ const hpStyles = {
                 fontSize: '1.25vw',
                 padding: '5px',
                 fontWeight: 'bold',
+                margin: '5px auto'
             },
         }
     },
