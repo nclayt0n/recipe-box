@@ -1,4 +1,3 @@
-import React from 'react'
 import backgroundImage from '../../images/purplelavleaves.jpg'
 const addFStyles = {
     addFolderDivStyle: {
@@ -15,7 +14,7 @@ const addFStyles = {
         width: '70%',
         margin: '50px auto',
         fontSize: '2vw',
-        padding: '50px',
+        padding: '20px',
     },
     addFolderLabel: {
         fontSize: '3vw',

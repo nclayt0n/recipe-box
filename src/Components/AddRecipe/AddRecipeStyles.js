@@ -40,13 +40,15 @@ const addRStyles = {
         },
         form: {
             border: '2px solid var(--purple)',
-            width: '80%',
+            width: '85%',
             margin: 'auto auto 10px',
             padding: '5px'
 
         },
         fieldset: {
             border: 'none',
+            padding: '0',
+            margin: 'auto'
         },
         label: {
             color: 'var(--purple)',
@@ -69,19 +71,22 @@ const addRStyles = {
         ingredientInput: {
             width: '70%',
             color: 'var(--purple)',
-            fontSize: '2.5vw'
+            fontSize: '2.5vw',
+            border: '1px solid var(--purple)',
         },
         input: {
-            width: '70%',
+            width: '65%',
             color: 'var(--purple)',
             margin: '5px',
-            fontSize: '2.5vw'
+            fontSize: '2.5vw',
+            border: '1px solid var(--purple)',
         },
         textarea: {
-            minWidth: '70%',
+            minWidth: '65%',
             maxWidth: '125px',
             maxHeight: '250px',
-            color: 'var(--purple)'
+            color: 'var(--purple)',
+            border: '1px solid var(--purple)',
         },
         tablet: {
             div: {

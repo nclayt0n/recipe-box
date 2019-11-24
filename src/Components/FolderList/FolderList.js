@@ -39,7 +39,7 @@ class FolderList extends React.Component{
                         <div className='folderListDiv' style={{maxHeight:'175px',overflow:'auto'}}>
                             {folders}
                         </div>:
-                        {folders}}
+                        folders}
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
                     (<div>
@@ -57,7 +57,7 @@ class FolderList extends React.Component{
                         <div className='folderListDiv' style={{maxHeight:'175px',overflow:'auto'}}>
                             {tabletFolders}
                         </div>:
-                        {tabletFolders}}
+                        tabletFolders}
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
                     (<div>
@@ -75,7 +75,7 @@ class FolderList extends React.Component{
                         <div className='folderListDiv' style={{maxHeight:'575px',overflow:'auto'}}>
                             {laptopFolders}
                         </div>:
-                        {laptopFolders}}
+                        laptopFolders}
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
                     (<div>

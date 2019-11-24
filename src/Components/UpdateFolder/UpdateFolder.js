@@ -10,8 +10,6 @@ import ValidationError from '../../Validation/ValidationError'
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
 import MediaQuery from 'react-responsive'
 
-const uuidv4 = require('uuid/v4');
-
 class UpdateFolder extends React.Component{
     static contextType=Context;
     constructor(){
@@ -26,7 +24,7 @@ class UpdateFolder extends React.Component{
     handleSubmit=(e)=>{
         e.preventDefault();
         const updatedName=(e.target.updatedName.value)
-        if(updatedName.length===0){this.setState({nameError:'New name must be 3 characters, or cancel to go back.'})
+        if(updatedName.length===0){this.setState({nameError:'*New name must be 3 characters, or cancel to go back.'})
     }else{
         const url=`${config.API_ENDPOINT}/folder/${this.props.match.params.id}`;
         const options={
@@ -60,6 +58,7 @@ class UpdateFolder extends React.Component{
                         <label htmlFor ='updatedName' style={updateFolderStyles.updateFolderLabel}>Update Name:
                             <input type='text' name='updatedName' style={updateFolderStyles.updateFolderInput}/>
                         </label>
+                        <ValidationError nameMessage={this.state.nameError}/>
                         <button type='submit' className='updateButtons' style={updateFolderStyles.button}>Update
                         </button>
                         <button className='updateButtons'onClick={()=>this.props.history.goBack()} style={updateFolderStyles.button}>Cancel</button>
@@ -74,6 +73,7 @@ class UpdateFolder extends React.Component{
                     <fieldset style={updateFolderStyles.tablet.updateFolderFieldset}>
                         <label htmlFor ='updatedName' style={updateFolderStyles.tablet.updateFolderLabel}>Update Name:
                         <input type='text' name='updatedName' style={updateFolderStyles.tablet.updateFolderInput}/></label>
+                        <ValidationError nameMessage={this.state.nameError}/>
                         <button type='submit' className='updateButtons' style={updateFolderStyles.tablet.button}>Submit
                         </button>
                         <button className='updateButtons'onClick={()=>this.props.history.goBack()} style={updateFolderStyles.tablet.button}>Cancel</button>
@@ -88,6 +88,7 @@ class UpdateFolder extends React.Component{
                     <fieldset style={updateFolderStyles.laptop.updateFolderFieldset}>
                         <label htmlFor ='updatedName' style={updateFolderStyles.laptop.updateFolderLabel}>Update Name:
                         <input type='text' name='updatedName' style={updateFolderStyles.laptop.updateFolderInput}/></label>
+                        <ValidationError nameMessage={this.state.nameError}/>
                         <button type='submit' className='updateButtons' style={updateFolderStyles.laptop.button}>Submit
                         </button>
                         <button className='updateButtons'onClick={()=>this.props.history.goBack()} style={updateFolderStyles.laptop.button}>Cancel</button>

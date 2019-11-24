@@ -19,10 +19,6 @@ const hpStyles = {
         flex: '1',
         margin: '10px'
     },
-    ingredientsContainer: {
-        margin: '20px',
-        flex: '1'
-    },
     homePageStyle: {
         backgroundColor: '#C8923B',
 
@@ -46,7 +42,7 @@ const hpStyles = {
             flexDirection: 'column',
             justifyContent: 'center',
             margin: '30px auto 50px',
-            padding: '20px',
+            padding: '5px',
         },
         addFolderFieldset: {
             border: 'none'
@@ -171,8 +167,7 @@ const hpStyles = {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            margin: 'auto',
-            marginTop: '50px',
+            margin: '50px auto',
             padding: '50px',
             backgroundColor: 'white',
             backgroundPosition: 'top',
@@ -202,9 +197,9 @@ const hpStyles = {
         },
         form: {
             border: '1px solid var(--purple)',
-            width: '80%',
+            width: '85%',
             margin: 'auto auto 10px',
-            padding: '5px'
+            padding: '0'
 
         },
         fieldset: {

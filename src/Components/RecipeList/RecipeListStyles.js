@@ -1,4 +1,3 @@
-import React from 'react'
 import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
 const recipeListStyles = {
     recipeListStyle: {
@@ -14,8 +13,7 @@ const recipeListStyles = {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            margin: 'auto',
-            marginTop: '50px',
+            margin: '50px auto 50px',
             padding: '10px',
             textDecoration: 'none',
             listStyle: 'none',
@@ -127,8 +125,7 @@ const recipeListStyles = {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                margin: 'auto',
-                marginTop: '50px',
+                margin: '50px auto 50px',
                 padding: '10px',
                 textDecoration: 'none',
                 listStyle: 'none',

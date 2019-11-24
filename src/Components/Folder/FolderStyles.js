@@ -2,7 +2,7 @@ import backgroundImage from '../../images/purpleLpurpleleaves.jpg'
 
 const folderStyles = {
     folder: {
-        margin: '50px auto',
+        margin: '50px auto 50px',
         display: 'flex',
         flexDirection: 'column',
         width: '80%',

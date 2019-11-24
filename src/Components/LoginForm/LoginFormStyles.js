@@ -40,7 +40,6 @@ const loginFormStyles = {
     loginFormLegend: {
         textAlign: 'center',
         margin: 'auto',
-        margin: '5px',
         padding: '10px',
         color: 'var(--purple)',
         fontWeight: 'bolder',

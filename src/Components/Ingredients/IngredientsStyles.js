@@ -91,6 +91,7 @@ const ingredientsStyles = {
     },
     H3: {
         fontSize: '3.25vw',
+        textAlign: 'center',
         color: 'white',
         textShadow: '1px 1px var(--purple)',
         fontWeight: 'bold',
@@ -103,6 +104,7 @@ const ingredientsStyles = {
             textShadow: '1px 1px var(--purple)',
             fontWeight: 'bold',
             textTransform: 'uppercase',
+            textAlign: 'center',
         },
         recipeSort: {
             border: '1px solid var(--lightPurple)',
@@ -199,6 +201,7 @@ const ingredientsStyles = {
             textShadow: '1px 1px var(--purple)',
             fontWeight: 'bold',
             textTransform: 'uppercase',
+            textAlign: 'center',
         },
         recipeSort: {
             border: '1px solid var(--lightPurple)',

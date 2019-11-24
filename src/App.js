@@ -3,7 +3,6 @@ import {Switch,Route} from 'react-router-dom'
 import HomePage from './Components/HomePage/HomePage'
 import Header from './Components/Header/Header'
 import LoginForm from './Components/LoginForm/LoginForm'
-import Footer from './Components/Footer/Footer';
 import RegistrationForm from './Components/RegistrationForm/RegistrationForm';
 import LandingPage from './Components/LandingPage/LandingPage';
 import AddFolder from './Components/AddFolder/AddFolder';

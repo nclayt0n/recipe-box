@@ -1,18 +1,15 @@
 import React from 'react'
-import {withRouter,Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import AddFolder from '../AddFolder/AddFolder'
 import AddRecipe from '../AddRecipe/AddRecipe'
 import FolderList from '../FolderList/FolderList';
 import RecipeList from '../RecipeList/RecipeList'
 import Context from '../../Context'
 import MediaQuery from 'react-responsive'
-import hpStyles from '../HomePage/HomePageStyles'
 import HomePageStyles from './HomePageStyles'
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders';
-import folderListStyles from '../FolderList/FolderListStyles';
-import Footer from '../Footer/Footer';
 
 class HomePage extends React.Component{
     static contextType=Context;

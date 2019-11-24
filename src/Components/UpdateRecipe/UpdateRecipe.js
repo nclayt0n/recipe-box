@@ -44,8 +44,6 @@ class UpdateRecipe extends React.Component{
      updateIngredient=(recipe)=>{
         if(typeof(recipe.ingredients)==='string'){
          recipe.ingredients=JSON.parse(recipe.ingredients)
-        }else{
-          recipe.ingredients =recipe.ingredients
         }
         this.setState({ingredients:recipe.ingredients})
     }
@@ -285,9 +283,6 @@ class UpdateRecipe extends React.Component{
                folderName:recipe.folderName,
                user: recipe.user,
                }
-               recipe= recipe
-           }else{
-           recipe= recipe
            }
         const displayedIngredients= this.createIngredientFields(this.state);
         const tabletDisplayedIngredients=this.createTabletIngredientFields(this.state);
