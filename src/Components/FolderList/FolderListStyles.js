@@ -61,6 +61,7 @@ const folderListStyles = {
             fontWeight: 'bold',
             backgroundColor: 'white'
         },
+
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,

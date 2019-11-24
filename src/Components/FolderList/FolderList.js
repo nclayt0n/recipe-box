@@ -35,7 +35,11 @@ class FolderList extends React.Component{
             <div className='folderList' style={style.folderListStyle.div}>
                 <ul className='list' style={style.folderListStyle.ul}>
                     <Link to={'/folder-list'}style={style.folderListStyle.ulA}>FOLDERS</Link>
-                    {folders}
+                    {(this.props.location.pathname===`/home-page`)?
+                        <div className='folderListDiv' style={{maxHeight:'175px',overflow:'auto'}}>
+                            {folders}
+                        </div>:
+                        {folders}}
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
                     (<div>
@@ -49,7 +53,11 @@ class FolderList extends React.Component{
             <MediaQuery minWidth={651} maxWidth={950}>
             <div className='folderList' style={style.folderListStyle.tablet.div}>
                 <ul className='list' style={style.folderListStyle.tablet.ul}><Link to={'/folder-list'}style={style.folderListStyle.tablet.ulA}>FOLDERS</Link>
-                    {tabletFolders}
+                     {(this.props.location.pathname===`/home-page`)?
+                        <div className='folderListDiv' style={{maxHeight:'175px',overflow:'auto'}}>
+                            {tabletFolders}
+                        </div>:
+                        {tabletFolders}}
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
                     (<div>
@@ -63,7 +71,11 @@ class FolderList extends React.Component{
             <MediaQuery minWidth={951}>
             <div className='folderList' style={style.folderListStyle.laptop.div}>
                 <ul className='list' style={style.folderListStyle.laptop.ul}><Link to={'/folder-list'}style={style.folderListStyle.laptop.ulA}>FOLDERS</Link>
-                    {laptopFolders}
+                {(this.props.location.pathname===`/home-page`)?
+                        <div className='folderListDiv' style={{maxHeight:'575px',overflow:'auto'}}>
+                            {laptopFolders}
+                        </div>:
+                        {laptopFolders}}
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
                     (<div>

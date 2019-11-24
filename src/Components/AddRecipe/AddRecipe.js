@@ -37,10 +37,12 @@ class AddRecipe extends React.Component{
         (e.target.ingredientUnit.value==='other')? ingredientUnit=e.target.ingredientUnitOther.value:ingredientUnit=e.target.ingredientUnit.value;
         if(e.target.ingredientName.value.length<3){
             this.setState({ingredientError:'*Must be at least 3 characters'})
+            document.getElementById('ingredientForm').reset();
         }else{
           this.setState({
         ingredients:[...this.state.ingredients,{name:e.target.ingredientName.value,quantity,unit:ingredientUnit}],ingredientError:''
         })  
+        document.getElementById('ingredientForm').reset();
         }
     }
 

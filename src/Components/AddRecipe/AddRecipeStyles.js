@@ -39,7 +39,7 @@ const addRStyles = {
             fontSize: '3vw',
         },
         form: {
-            border: '1px solid var(--purple)',
+            border: '2px solid var(--purple)',
             width: '80%',
             margin: 'auto auto 10px',
             padding: '5px'
@@ -118,7 +118,7 @@ const addRStyles = {
                 fontSize: '2vw',
             },
             form: {
-                border: '1px solid var(--purple)',
+                border: '2px solid var(--purple)',
                 width: '60%',
                 margin: 'auto auto 10px',
                 padding: '5px'
@@ -151,18 +151,21 @@ const addRStyles = {
             ingredientInput: {
                 width: '90%',
                 color: 'var(--purple)',
+                border: '1px solid var(--purple)',
             },
             input: {
                 width: '90%',
                 color: 'var(--purple)',
-                margin: '5px'
+                margin: '5px',
+                border: '1px solid var(--purple)',
 
             },
             textarea: {
                 minWidth: '90%',
                 maxWidth: '125px',
                 maxHeight: '150px',
-                color: 'var(--purple)'
+                color: 'var(--purple)',
+                border: '1px solid var(--purple)',
             },
         },
         laptop: {
@@ -190,7 +193,8 @@ const addRStyles = {
                 color: 'var(--purple)',
                 fontWeight: 'bold',
                 fontSize: '1.25vw',
-                margin: '5px'
+                margin: '5px',
+                border: '1px solid var(--purple)',
 
             },
             option: {
@@ -198,7 +202,7 @@ const addRStyles = {
                 fontSize: '1.25vw',
             },
             form: {
-                border: '1px solid var(--purple)',
+                border: '2px solid var(--purple)',
                 backgroundColor: 'white',
                 width: '40%',
                 margin: 'auto',
@@ -219,11 +223,13 @@ const addRStyles = {
                 width: '90%',
                 fontSize: '1.25vw',
                 color: 'var(--purple)',
+                border: '1px solid var(--purple)',
             },
             input: {
                 width: '90%',
                 fontSize: '1.25vw',
                 color: 'var(--purple)',
+                border: '1px solid var(--purple)',
             },
             h3: {
                 color: 'var(--purple)',
@@ -234,7 +240,8 @@ const addRStyles = {
                 minWidth: '90%',
                 maxWidth: '125px',
                 maxHeight: '150px',
-                color: 'var(--purple)'
+                color: 'var(--purple)',
+                border: '1px solid var(--purple)',
             },
             ViewContainer: {
                 display: 'flex',
@@ -243,7 +250,8 @@ const addRStyles = {
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '1.25vw'
+                fontSize: '1.25vw',
+                margin: '5px'
             },
         }
     },

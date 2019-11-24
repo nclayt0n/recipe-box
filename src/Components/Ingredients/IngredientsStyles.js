@@ -41,7 +41,7 @@ const ingredientsStyles = {
         padding: '10px',
         margin: '5px',
         width: 'fit-content',
-        height: '20%',
+        height: '50px',
         fontSize: '3vw',
         fontWeight: 'bold',
         backgroundColor: 'var(--purple)',
@@ -98,7 +98,7 @@ const ingredientsStyles = {
     },
     tablet: {
         H3: {
-            fontSize: '3.25vw',
+            fontSize: '2.5vw',
             color: 'white',
             textShadow: '1px 1px var(--purple)',
             fontWeight: 'bold',
@@ -119,7 +119,7 @@ const ingredientsStyles = {
             padding: '10px',
             margin: '5px',
             width: '30%',
-            height: '40%',
+            height: '50px',
             fontSize: '2vw',
             fontWeight: 'bold',
             backgroundColor: 'var(--purple)',
@@ -172,7 +172,7 @@ const ingredientsStyles = {
         },
 
         ingredientLabel: {
-            fontSize: '3vw',
+            fontSize: '2vw',
             height: '10px',
             padding: '15px',
             display: 'flex',
@@ -253,7 +253,7 @@ const ingredientsStyles = {
             border: '1px solid white',
             margin: 'auto',
             padding: '20px',
-            width: '50%',
+            width: '40%',
             backgroundColor: 'var(--purple)',
             backgroundImage: `url(${backgroundImage})`,
             backgroundPosition: 'center',

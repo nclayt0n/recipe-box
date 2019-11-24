@@ -73,7 +73,8 @@ const hpStyles = {
         },
         addFolderInput: {
             fontSize: '3.5vw',
-            color: 'var(--purple)'
+            color: 'var(--purple)',
+            border: '1px solid var(--purple)',
         },
         h3: {
             color: 'var(--purple)',
@@ -108,6 +109,7 @@ const hpStyles = {
                 width: '30%',
                 fontSize: '2vw',
                 margin: '5px auto',
+                border: '1px solid var(--purple)',
 
             },
             addFolderButtons: {
@@ -151,6 +153,7 @@ const hpStyles = {
                 width: '40%',
                 fontSize: '1.25vw',
                 margin: '5px auto',
+                border: '2px solid var(--purple)',
 
             },
             addFolderButtons: {
@@ -617,13 +620,13 @@ const hpStyles = {
         ul: {
             padding: '10px',
             fontSize: '4vw',
-            fontWeight: 'bolder',
+            fontWeight: 'bold',
             cursor: 'pointer',
             color: 'white'
         },
         ulA: {
-            textDecoration: 'underline',
             color: 'white',
+            textDecoration: 'underline'
         },
         li: {
             padding: '10px',
@@ -631,12 +634,14 @@ const hpStyles = {
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
-            fontWeight: 'normal'
         },
         liA: {
 
             color: 'white',
-            textDecoration: 'none'
+            textDecoration: 'none',
+            margin: 'auto',
+            fontSize: '3.5vw',
+            fontWeight: 'normal'
         },
         tablet: {
             div: {
@@ -659,11 +664,16 @@ const hpStyles = {
 
 
             },
-            ulA: {
-                fontSize: '2.25vw',
-                color: 'white',
+            ul: {
                 textDecoration: 'none',
-                textShadow: '1px 1px var(--lightPurple)'
+                padding: '10px',
+                fontSize: '2.25vw',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+            },
+            ulA: {
+                color: 'white',
+                fontSize: '2.25vw',
             },
             li: {
                 padding: '10px',
@@ -671,12 +681,15 @@ const hpStyles = {
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
+                textDecoration: 'none'
+
             },
             liA: {
 
                 color: 'white',
                 textDecoration: 'none',
-                fontSize: '2vw'
+                margin: 'auto',
+                fontSize: '2vw',
             },
             button: {
                 margin: '10px auto auto ',

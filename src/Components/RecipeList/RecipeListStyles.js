@@ -77,11 +77,17 @@ const recipeListStyles = {
 
 
             },
-            ulA: {
-                fontSize: '1.75vw',
-                color: 'white',
+            ul: {
                 textDecoration: 'none',
-                textShadow: '1px 1px var(--lightPurple)'
+                padding: '10px',
+                fontSize: '1.75vw',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                margin: 'auto'
+            },
+            ulA: {
+                color: 'white',
+                fontSize: '1.75vw',
             },
             li: {
                 padding: '10px',
@@ -89,12 +95,15 @@ const recipeListStyles = {
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
+                textDecoration: 'none'
+
             },
             liA: {
 
                 color: 'white',
                 textDecoration: 'none',
-                fontSize: '1.5vw'
+                margin: 'auto',
+                fontSize: '1.5vw',
             },
             button: {
                 margin: '10px auto 10px ',

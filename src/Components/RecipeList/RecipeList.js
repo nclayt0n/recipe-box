@@ -34,7 +34,10 @@ render(){
         <MediaQuery maxWidth={650} className='mobile'>
         <div className='RecipeList' style={style.recipeListStyle.div}>
             <ul style={style.recipeListStyle.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.ulA}>RECIPES</Link> 
-            {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle)}
+            {(this.props.location.pathname===`/home-page`)?
+                        (<div className='recipeListDiv' style={{maxHeight:'175px',overflow:'auto'}}>
+            {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle)}</div>):
+            this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle)}
             </ul> 
            {(this.props.location.pathname===`/home-page`)?null: 
            (<>
@@ -45,8 +48,11 @@ render(){
         </MediaQuery>
         <MediaQuery minWidth={651} maxWidth={950} className='tablet'>
         <div className='RecipeList' style={style.recipeListStyle.tablet.div}>
-            <ul style={style.recipeListStyle.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.tablet.ulA}>RECIPES</Link> 
-            {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.tablet)}
+            <ul style={style.recipeListStyle.tablet.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.tablet.ulA}>RECIPES</Link> 
+            {(this.props.location.pathname===`/home-page`)?
+                        (<div className='recipeListDiv' style={{maxHeight:'175px',overflow:'auto'}}>
+            {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.tablet)}</div>):
+            this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.tablet)}
             </ul> 
            {(this.props.location.pathname===`/home-page`)?null: 
            (<>
@@ -57,8 +63,12 @@ render(){
         </MediaQuery>
         <MediaQuery minWidth={951} className='tablet'>
         <div className='RecipeList' style={style.recipeListStyle.laptop.div}>
-            <ul style={style.recipeListStyle.laptop.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.laptop.ulA}>RECIPES</Link> 
-            {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.laptop)}
+            <ul style={style.recipeListStyle.laptop.ul}>
+            <Link to={'/recipe-list'} style={style.recipeListStyle.laptop.ulA}>RECIPES</Link> 
+            {(this.props.location.pathname===`/home-page`)?
+                        (<div className='recipeListDiv' style={{maxHeight:'575px',overflow:'auto'}}>
+            {this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.laptop)}</div>):
+            this.createDisplayedRecipes(displayedRecipes,style.recipeListStyle.laptop)}
             </ul> 
            {(this.props.location.pathname===`/home-page`)?null: 
            (<>
