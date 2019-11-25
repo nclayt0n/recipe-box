@@ -26,7 +26,7 @@ const loginFormStyles = {
         border: '2px solid var(--purple)',
         fontWeight: 'bolder',
         color: 'white',
-        fontSize: '4vw'
+        fontSize: '3.5vw'
     },
 
     loginFormLabel: {
