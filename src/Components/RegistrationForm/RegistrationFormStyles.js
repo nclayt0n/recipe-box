@@ -28,21 +28,21 @@ const registrationFormStyles = {
     },
 
     registrationFormInput: {
-        flex: '1',
+        width: '75%',
         margin: '10px',
         padding: '5px',
         justifyContent: 'center',
         backgroundColor: 'var(--gray)',
     },
     registrationFormInputTablet: {
-        width: '60%',
+        width: '70%',
         margin: '10px',
         padding: '5px',
         justifyContent: 'center',
         backgroundColor: 'var(--gray)',
     },
     registrationFormInputLaptop: {
-        width: '40%',
+        width: '55%',
         margin: '10px',
         padding: '5px',
         justifyContent: 'center',

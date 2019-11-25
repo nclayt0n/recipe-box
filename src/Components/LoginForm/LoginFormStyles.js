@@ -18,7 +18,7 @@ const loginFormStyles = {
     },
 
     loginFormInput: {
-        width: '100%',
+        width: '75%',
         margin: '5px',
         padding: '5px',
         justifyContent: 'center',
@@ -26,7 +26,7 @@ const loginFormStyles = {
         border: '2px solid var(--purple)',
         fontWeight: 'bolder',
         color: 'white',
-        fontSize: '3.5vw'
+        fontSize: '2.5vw'
     },
 
     loginFormLabel: {
