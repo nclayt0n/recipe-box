@@ -4,7 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### `Live Link`
 https://nrclayton-recipe-box.now.sh/
 ### `API`
-https://nc-recipebox.herokuapp.com/api
 Repo: https://github.com/nclayt0n/recipe-box-api
 ### `Summary`
 Recipe Box is an app you can use to build Recipes within specific folders. Once you've created an account and logged in, You will be prompted to create a Folder. Once you've created a folder you will have access to add a Recipe, add another folder, recipe list, folderlist, and an ingredients page. 
