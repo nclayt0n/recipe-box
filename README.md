@@ -11,6 +11,10 @@ The ingredients page sorts the ingredients by recipes selected. So say are going
 You can update recipes and folders as needed. 
 ### `Screenshots`
 ![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/landingscreen.png "App Landing Page")
+![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/laptopHome.png "App Home Page")
+![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/folderList.png "App Folder List Page")
+![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/ingredients.png "App Ingredients Page")
+![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/RecipeList.png "App Recipe List Page")![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/recipe.png "App Recipe Page")
 ### `Technologies`
 Technologies used within this project include;
 Front-End: React, Html, CSS
