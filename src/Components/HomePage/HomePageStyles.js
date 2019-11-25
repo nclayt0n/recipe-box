@@ -129,7 +129,7 @@ const hpStyles = {
                 justifyContent: 'center',
                 width: '70%',
                 margin: '30px auto 30px',
-                padding: '5px',
+                padding: '15px',
             },
             addFolderLabel: {
                 fontSize: '1.25vw',
@@ -157,6 +157,7 @@ const hpStyles = {
                 textAlign: 'center',
                 textShadow: '1px 1px var(--darkPurple)',
                 fontSize: '1.75vw',
+                margin: '10px'
             },
         }
     },
