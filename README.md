@@ -14,7 +14,8 @@ You can update recipes and folders as needed.
 ![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/laptopHome.png "App Home Page")
 ![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/folderList.png "App Folder List Page")
 ![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/ingredients.png "App Ingredients Page")
-![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/RecipeList.png "App Recipe List Page")![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/recipe.png "App Recipe Page")
+![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/RecipeList.png "App Recipe List Page")
+![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/recipeWithNav.png "App Recipe Page")
 ### `Technologies`
 Technologies used within this project include;
 Front-End: React, Html, CSS
