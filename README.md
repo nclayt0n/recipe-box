@@ -10,7 +10,7 @@ Recipe Box is an app you can use to build Recipes within specific folders. Once 
 The ingredients page sorts the ingredients by recipes selected. So say are going shopping and need to look up what all you will need, you can sort and view ingredients for specific recipes on that page. The checks on that page are not saved yet, so on refresh, or page redirect the checks are not saved.
 You can update recipes and folders as needed. 
 ### `Screenshots`
-
+(https://nclayt0n.github.io/recipe-box/src/images/landingscreen.png "App Landing Page")
 ### `Technologies`
 Technologies used within this project include;
 Front-End: React, Html, CSS
