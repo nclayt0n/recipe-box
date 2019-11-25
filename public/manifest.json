@@ -1,5 +1,6 @@
 {
-    "name": "Recipe Box",
+    "short_name": "Recipe Box",
+    "name": "Recipe Box App",
     "icons": [{
             "src": "\/android-icon-36x36.png",
             "sizes": "36x36",
