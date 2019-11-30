@@ -1,8 +1,49 @@
 import backgroundImage from './LandingImage/mainPurple.png'
 const landingPageStyles = {
+    descriptionBox: {
+        width: '90%',
+        margin: '50px auto 50px',
+        padding: '10px',
+        backgroundColor: 'var(--medPurple)'
+    },
+    RecipeBoxSpan: {
+        fontSize: '28px',
+        color: 'white',
+        textShadow: '.25px .25px var(--darkPurple)',
+        letterSpacing: '1.5px',
+        fontWeight: 'bolder',
+        textAlign: 'center',
+        margin: '0',
+        textDecoration: 'underline',
+        lineHeight: '30px',
+    },
+
+    description: {
+        padding: '10px',
+        width: '95%',
+        margin: 'auto',
+        color: 'white',
+        textShadow: '.25px .5px var(--darkPurple)',
+        letterSpacing: '1px',
+        fontSize: '20px',
+        fontWeight: 'bold',
+        lineHeight: '30px',
+    },
+    descriptionStart: {
+        width: '95%',
+        margin: '10px auto',
+        color: 'white',
+        textShadow: '.25px .5px var(--darkPurple)',
+        letterSpacing: '1px',
+        fontSize: '22px',
+        lineHeight: '28px',
+        textAlign: 'center',
+        fontWeight: 'bolder'
+    },
     landingPage: {
         display: 'flex',
-        height: '550px',
+        height: '375px',
+        margin: '50px auto auto',
         backgroundImage: `url(${backgroundImage})`,
         backgroundPosition: 'center',
         backgroundSize: '430px',
@@ -44,6 +85,91 @@ const landingPageStyles = {
         fontWeight: 'bolder',
         fontFamily: 'Helvetica,sans-serif',
     },
+    tablet: {
+        descriptionBox: {
+            width: '75%',
+            margin: '50px auto 50px',
+            padding: '5px',
+            backgroundColor: 'var(--medPurple)'
+        },
+        RecipeBoxSpan: {
+            fontSize: '28px',
+            color: 'white',
+            textShadow: '.25px .25px var(--darkPurple)',
+            letterSpacing: '1.5px',
+            fontWeight: 'bolder',
+            textAlign: 'center',
+            margin: '0',
+            textDecoration: 'underline',
+            lineHeight: '30px',
+        },
+
+        description: {
+            padding: '10px',
+            width: '95%',
+            margin: 'auto',
+            color: 'white',
+            textShadow: '.25px .5px var(--darkPurple)',
+            letterSpacing: '1px',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            lineHeight: '30px',
+        },
+        descriptionStart: {
+            width: '95%',
+            margin: '10px auto',
+            color: 'white',
+            textShadow: '.25px .5px var(--darkPurple)',
+            letterSpacing: '1px',
+            fontSize: '22px',
+            lineHeight: '28px',
+            textAlign: 'center',
+            fontWeight: 'bolder'
+        },
+    },
+    laptop: {
+        descriptionBox: {
+            width: '45%',
+            margin: '50px auto 50px',
+            padding: '15px',
+            backgroundColor: 'var(--medPurple)'
+        },
+        RecipeBoxSpan: {
+            fontSize: '28px',
+            color: 'white',
+            textShadow: '.25px .25px var(--darkPurple)',
+            letterSpacing: '1.5px',
+            fontWeight: 'bolder',
+            textAlign: 'center',
+            margin: '0',
+            textDecoration: 'underline',
+            lineHeight: '34px',
+        },
+
+        description: {
+            padding: '10px',
+            width: '95%',
+            margin: 'auto',
+            color: 'white',
+            textShadow: '.25px .5px var(--darkPurple)',
+            letterSpacing: '1px',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            lineHeight: '30px',
+        },
+        descriptionStart: {
+            width: '95%',
+            margin: '10px auto',
+            color: 'white',
+            textShadow: '.25px .5px var(--darkPurple)',
+            letterSpacing: '1px',
+            fontSize: '22px',
+            lineHeight: '28px',
+            textAlign: 'center',
+            fontWeight: 'bolder'
+
+        },
+    }
 
 }
 export default landingPageStyles
