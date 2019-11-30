@@ -18,7 +18,7 @@ const loginFormStyles = {
     },
 
     loginFormInput: {
-        width: '75%',
+        width: '95%',
         margin: '5px',
         padding: '5px',
         justifyContent: 'center',
@@ -26,14 +26,14 @@ const loginFormStyles = {
         border: '2px solid var(--purple)',
         fontWeight: 'bolder',
         color: 'white',
-        fontSize: '2.5vw'
+        fontSize: '14px'
     },
 
     loginFormLabel: {
         textAlign: 'center',
         color: 'var(--purple)',
         fontWeight: 'bolder',
-        fontSize: '18px',
+        fontSize: '16px',
         textShadow: '.5px 1px var(--gray)',
     },
 
@@ -43,7 +43,7 @@ const loginFormStyles = {
         padding: '10px',
         color: 'var(--purple)',
         fontWeight: 'bolder',
-        fontSize: '26px',
+        fontSize: '24px',
         textShadow: '1px 1px var(--gray)',
     },
 
@@ -60,7 +60,7 @@ const loginFormStyles = {
 
     tablet: {
         loginFormInput: {
-            width: '50%',
+            width: '70%',
             margin: '5px',
             padding: '5px',
             justifyContent: 'center',
@@ -68,10 +68,10 @@ const loginFormStyles = {
             border: '2px solid var(--purple)',
             fontWeight: 'bold',
             color: 'white',
-            fontSize: '1.25vw'
+            fontSize: '14px'
         },
         loginForm: {
-            width: '50%',
+            width: '400px',
             margin: 'auto',
             marginTop: '100px',
             padding: '20px',

@@ -6,6 +6,7 @@ import MediaQuery from 'react-responsive'
 class LandingPage extends React.Component{
     render(){ 
         let style=landingPageStyles
+        const description='allows you to create Recipes and store them in different Folders. It makes for an easier experience, by keeping all your meals, menus, and memories safe and organized in one place.'
         
         return(<> 
         
@@ -21,20 +22,19 @@ class LandingPage extends React.Component{
             
             <MediaQuery maxWidth={650}>
             <section className='appDescription' style={style.descriptionBox}>
-            <p style={style.description}><span id='RecipeBoxSpan' style={style.RecipeBoxSpan}>Recipe Box</span> allows you to create Recipes and store them in different Folders. Gives an easier experience, by keeping all your meals, menus, and memories safe and organized in one place.  </p>
+            <p style={style.description}><span id='RecipeBoxSpan' style={style.RecipeBoxSpan}>Recipe Box</span> {description} </p>
             <p style={style.descriptionStart}>To get started Create an Account, or Login.</p> 
             </section>
             </MediaQuery>
             <MediaQuery minWidth={651} maxWidth={1000}>
             <section className='appDescription' style={style.tablet.descriptionBox}>
-            <p style={style.tablet.description}><span id='RecipeBoxSpan' style={style.tablet.RecipeBoxSpan}>Recipe Box</span> allows you to create Recipes and store them in different Folders. Gives an easier experience, by keeping all your meals, menus, and memories safe and organized in one place. </p>
+            <p style={style.tablet.description}><span id='RecipeBoxSpan' style={style.tablet.RecipeBoxSpan}>Recipe Box</span> {description}</p>
             <p style={style.tablet.descriptionStart}>To get started Create an Account, or Login.</p> 
             </section>
             </MediaQuery>
             <MediaQuery minWidth={1001}>
             <section className='appDescription' style={style.laptop.descriptionBox}>
-            <p style={style.laptop.description}><span id='RecipeBoxSpan' style={style.laptop.RecipeBoxSpan}>Recipe Box</span> allows you to create Recipes and store them in different Folders. Gives an easier experience, by keeping all your meals, menus, and memories safe and organized in one place. </p>
-            <br/>
+            <p style={style.laptop.description}><span id='RecipeBoxSpan' style={style.laptop.RecipeBoxSpan}>Recipe Box</span> {description}</p>
             <p style={style.laptop.descriptionStart}>To get started Create a new Account, or Login.</p> </section>
             </MediaQuery>
        </>
