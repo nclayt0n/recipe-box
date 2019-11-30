@@ -77,10 +77,10 @@ class AddFolder extends React.Component{
                 <form id='addFolderForm' onSubmit={(e)=>this.handleSubmit(e)}>
                     <fieldset style={style.addFolderFieldset}>
                         <label htmlFor ='folderName' style={style.addFolderLabel}>Folder Name:
-                        {(this.props.location.pathname===`/home-page`)?<br/>:null} 
+                        <br/>
                             <input type='text' name='folderName' style={style.addFolderInput}/>
                         </label>
-                        {(this.props.location.pathname===`/home-page`)?<br/>:null} 
+                       <br/>
                         <ValidationError Namemessage={this.state.error}/>
                         <button type='submit' style={style.addFolderButtons}>Submit
                         </button>
@@ -95,9 +95,9 @@ class AddFolder extends React.Component{
                 <form  id='addFolderForm' onSubmit={(e)=>this.handleSubmit(e)}>
                     <fieldset style={style.addFolderFieldset}>
                         <label htmlFor ='folderName' style={style.tablet.addFolderLabel}>Folder Name:
-                        {(this.props.location.pathname===`/home-page`)?<br/>:null} 
+                        <br/>
                             <input type='text' name='folderName' style={style.tablet.addFolderInput}/></label>
-                        {(this.props.location.pathname===`/home-page`)?<br/>:null} 
+                        <br/>
                         <ValidationError Namemessage={this.state.error}/>
                         <button type='submit' style={style.tablet.addFolderButtons}>Submit
                         </button>
