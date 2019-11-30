@@ -54,16 +54,16 @@ const hpStyles = {
             fontWeight: 'bold',
             backgroundColor: 'var(--purple)',
             color: 'white',
-            fontSize: '3vw'
+            fontSize: '16px'
 
         },
         addFolderLabel: {
-            fontSize: '3.5vw',
+            fontSize: '16px',
             color: 'var(--purple)',
             fontWeight: 'bold'
         },
         addFolderInput: {
-            fontSize: '3.5vw',
+            fontSize: '14px',
             color: 'var(--purple)',
             border: '1px solid var(--purple)',
         },
@@ -72,7 +72,8 @@ const hpStyles = {
             textAlign: 'center',
             fontWeight: 'bolder',
             textShadow: '.5px .5px var(--darkPurple)',
-            fontSize: '4vw',
+            fontSize: '18px',
+            margin: '20px auto 5px'
         },
         tablet: {
             addFolderDivStyle: {
@@ -88,17 +89,16 @@ const hpStyles = {
                 justifyContent: 'center',
                 width: '60%',
                 margin: '50px auto 50px',
-                fontSize: '2vw',
-                padding: '50px',
+                padding: '15px',
             },
             addFolderLabel: {
-                fontSize: '2vw',
+                fontSize: '16px',
                 color: 'var(--purple)',
                 fontWeight: 'bold'
             },
             addFolderInput: {
                 width: '30%',
-                fontSize: '2vw',
+                fontSize: '14px',
                 margin: '5px auto',
                 border: '1px solid var(--purple)',
 
@@ -110,13 +110,14 @@ const hpStyles = {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
                 margin: 'auto',
-                fontSize: '2vw',
+                fontSize: '16px',
             },
             h3: {
                 color: 'var(--purple)',
                 textAlign: 'center',
                 textShadow: '1px 1px var(--darkPurple)',
-                fontSize: '2.25vw',
+                fontSize: '18px',
+                margin: '20px auto 10px'
             },
         },
         laptop: {
@@ -132,13 +133,14 @@ const hpStyles = {
                 padding: '15px',
             },
             addFolderLabel: {
-                fontSize: '1.25vw',
+                fontSize: '18px',
                 color: 'var(--purple)',
                 fontWeight: 'bold'
             },
             addFolderInput: {
-                width: '40%',
-                fontSize: '1.25vw',
+                width: '60%',
+                fontSize: '16px',
+                padding: '5px',
                 margin: '5px auto',
                 border: '2px solid var(--purple)',
 
@@ -150,13 +152,13 @@ const hpStyles = {
                 color: 'white',
                 margin: 'auto',
                 padding: '5px',
-                fontSize: '1.25vw',
+                fontSize: '18px',
             },
             h3: {
                 color: 'var(--purple)',
                 textAlign: 'center',
                 textShadow: '1px 1px var(--darkPurple)',
-                fontSize: '1.75vw',
+                fontSize: '20px',
                 margin: '10px'
             },
         }
