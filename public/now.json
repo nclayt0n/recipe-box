@@ -2,7 +2,9 @@
     "version": 2,
     "alias": "nrclayton-recipe-box",
     "name": "recipe-box",
-    "routes": [{
+    "routes": [
+        { "handle": "filesystem" },
+        {
             "src": "^/static/(.*)",
             "dest": "/static/$1"
         },
