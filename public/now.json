@@ -10,5 +10,11 @@
             "src": ".*",
             "dest": "/index.html"
         }
-    ]
+    ],
+    "build": {
+        "env": {
+            "REACT_APP_API_ENDPOINT": "https://nc-recipebox.herokuapp.com/api",
+            "REACT_APP_API_TOKEN": "4b20f552-f377-11e9-bdae-2a2ae2dbcce4"
+        }
+    }
 }

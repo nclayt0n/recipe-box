@@ -2,6 +2,7 @@ import config from '../config'
 import TokenService from './token-service'
 const AuthApiService = {
     postLogin(email, password) {
+        console.log(config.API_ENDPOINT)
         let options = {
             method: 'POST',
             headers: {
