@@ -87,8 +87,7 @@ class Folder extends React.Component{
                 <MediaQuery maxWidth={650}>
                     <div className='folder' style={style.folder}>
                         <div className='folderItems' style={style.folderItems}>
-                            <ul className='folderRecipeList' key={uuidv4()} style={style.folderRecipeList}>
-                                <h3 style={style.h}>{folderName}</h3>
+                            <ul className='folderRecipeList' key={uuidv4()} style={style.folderRecipeList}>{folderName}
                                     {recipeList}
                             </ul>
                             <div className='buttonBoxMobile' style={style.buttonBoxMobile}>
@@ -108,8 +107,7 @@ class Folder extends React.Component{
                 <MediaQuery minWidth={651} maxWidth={950}>
                     <div className='folder' style={style.tablet.folder}>
                         <div className='folderItems' style={style.tablet.folderItems}>
-                            <ul className='folderRecipeList' key={uuidv4()} style={style.tablet.folderRecipeList}>
-                                <h3 style={style.tablet.h}>{folderName}</h3>
+                            <ul className='folderRecipeList' key={uuidv4()} style={style.tablet.folderRecipeList}>{folderName}
                                 {tabletRecipeList}
                             </ul>
                             <div className='buttonBox' style={style.tablet.buttonBox}>
@@ -129,8 +127,7 @@ class Folder extends React.Component{
                 <MediaQuery minWidth={951}>
                     <div className='folder' style={style.laptop.folder}>
                         <div className='folderItems' style={style.laptop.folderItems}>
-                            <ul className='folderRecipeList' key={uuidv4()} style={style.laptop.folderRecipeList}>
-                                <h3 style={style.laptop.h}>{folderName}</h3>
+                            <ul className='folderRecipeList' key={uuidv4()} style={style.laptop.folderRecipeList}>{folderName}
                                 {laptopRecipeList}
                             </ul>
                             <div className='buttonBox' style={style.laptop.buttonBox}>

@@ -16,26 +16,23 @@ const addRStyles = {
             backgroundPosition: 'top',
             border: '2px solid var(--purple)',
             fontWeight: 'bold',
-            fontSize: '2vw'
-
         },
         h3: {
             color: 'var(--purple)',
-            fontSize: '3.5vw'
+            fontSize: '18px'
         },
         select: {
             backgroundColor: 'white',
             color: 'var(--purple)',
             fontWeight: 'bold',
-            fontSize: '3vw',
+            fontSize: '14px',
             border: '1px solid var(--purple)',
             margin: '5px',
-            padding: '5px'
 
         },
         option: {
             color: 'var(--purple)',
-            fontSize: '3vw',
+            fontSize: '14px',
         },
         form: {
             border: '2px solid var(--purple)',
@@ -52,36 +49,37 @@ const addRStyles = {
         label: {
             color: 'var(--purple)',
             fontWeight: 'bold',
-            fontSize: '3vw',
+            fontSize: '14px',
 
         },
 
         legend: {
             color: 'var(--purple)',
             fontWeight: 'bolder',
-            fontSize: '3.5vw',
+            fontSize: '16px',
         },
         button: {
             backgroundColor: 'var(--purple)',
             color: 'white',
-            fontSize: '3vw',
+            fontSize: '14px',
             margin: '5px'
         },
         ingredientInput: {
             width: '70%',
             color: 'var(--purple)',
-            fontSize: '2.5vw',
+            fontSize: '14px',
             border: '1px solid var(--purple)',
         },
         input: {
             width: '65%',
             color: 'var(--purple)',
             margin: '5px',
-            fontSize: '2.5vw',
+            fontSize: '14px',
             border: '1px solid var(--purple)',
         },
         textarea: {
-            minWidth: '65%',
+            minWidth: '75%',
+            minHeight: '75px',
             maxWidth: '125px',
             maxHeight: '250px',
             color: 'var(--purple)',
@@ -103,22 +101,19 @@ const addRStyles = {
                 backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw'
-
             },
             select: {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw',
+                fontSize: '14px',
                 border: '1px solid var(--purple)',
-                padding: '5px',
                 margin: '5px'
 
             },
             option: {
                 color: 'var(--purple)',
-                fontSize: '2vw',
+                fontSize: '14px',
             },
             form: {
                 border: '2px solid var(--purple)',
@@ -133,22 +128,22 @@ const addRStyles = {
             label: {
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw',
+                fontSize: '16px',
                 margin: '5px'
             },
             h3: {
                 color: 'var(--purple)',
-                fontSize: '2.75vw'
+                fontSize: '18px'
             },
             legend: {
                 color: 'var(--purple)',
                 fontWeight: 'bolder',
-                fontSize: '2.2vw',
+                fontSize: '16px',
             },
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '2vw',
+                fontSize: '14px',
                 margin: '5px'
             },
             ingredientInput: {
@@ -165,6 +160,7 @@ const addRStyles = {
             },
             textarea: {
                 minWidth: '90%',
+                minHeight: '75px',
                 maxWidth: '125px',
                 maxHeight: '150px',
                 color: 'var(--purple)',
@@ -173,7 +169,7 @@ const addRStyles = {
         },
         laptop: {
             div: {
-                width: '70%',
+                width: '60%',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
@@ -187,21 +183,19 @@ const addRStyles = {
                 backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '1.25vw'
-
             },
             select: {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '1.25vw',
-                margin: '5px',
+                fontSize: '14px',
                 border: '1px solid var(--purple)',
+                margin: '5px'
 
             },
             option: {
                 color: 'var(--purple)',
-                fontSize: '1.25vw',
+                fontSize: '14px',
             },
             form: {
                 border: '2px solid var(--purple)',
@@ -209,37 +203,42 @@ const addRStyles = {
                 width: '40%',
                 margin: 'auto',
                 padding: '5px',
-
             },
             label: {
                 color: 'var(--purple)',
-                fontSize: '1.25vw',
-                fontWeight: 'bold'
+                fontSize: '14px',
+                fontWeight: 'bold',
+                padding: '5px',
             },
             legend: {
                 color: 'var(--purple)',
                 fontWeight: 'bolder',
-                fontSize: '1.25vw',
+                fontSize: '16px',
+                margin: ' 10px auto'
             },
             ingredientInput: {
-                width: '90%',
-                fontSize: '1.25vw',
+                width: '50%',
+                fontSize: '14px',
                 color: 'var(--purple)',
                 border: '1px solid var(--purple)',
+                margin: '5px'
             },
             input: {
-                width: '90%',
-                fontSize: '1.25vw',
+                width: '60%',
+                fontSize: '14px',
                 color: 'var(--purple)',
                 border: '1px solid var(--purple)',
+                margin: '5px'
+
             },
             h3: {
                 color: 'var(--purple)',
-                fontSize: '1.75vw'
+                fontSize: '18px'
             },
             textarea: {
-                fontSize: '1.25vw',
-                minWidth: '90%',
+                fontSize: '14px',
+                minWidth: '75%',
+                minHeight: '75px',
                 maxWidth: '125px',
                 maxHeight: '150px',
                 color: 'var(--purple)',
@@ -252,7 +251,7 @@ const addRStyles = {
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '1.25vw',
+                fontSize: '14px',
                 margin: '5px'
             },
         }

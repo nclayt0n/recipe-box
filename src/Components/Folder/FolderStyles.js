@@ -11,7 +11,7 @@ const folderStyles = {
 
     folderItems: {
         backgroundImage: `url(${backgroundImage})`,
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'repeat-y',
         backgroundSize: '100%',
         backgroundColor: 'var(--purple)',
         backgroundPosition: 'center',
@@ -19,12 +19,18 @@ const folderStyles = {
     },
 
     folderRecipeList: {
-        padding: '10px'
+        padding: '10px',
+        color: 'white',
+        textShadow: '1px 1px var(--darkPurple)',
+        fontSize: '20px',
+        textAlign: 'center',
+        fontWeight: 'bolder'
     },
 
     folderRecipeListUl: {
         margin: 'auto',
-        textAlign: 'center'
+        textAlign: 'center',
+
     },
 
     folderRecipeListLi: {
@@ -32,7 +38,8 @@ const folderStyles = {
         listStyle: 'none',
         padding: '5px',
         margin: 'auto',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'normal'
     },
 
     folderRecipeListLiA: {
@@ -41,7 +48,7 @@ const folderStyles = {
         padding: '0px',
         color: 'white',
         textShadow: '.5px .5px #8a64a3',
-        fontSize: '3vw'
+        fontSize: '16px'
     },
 
     buttonBox: {
@@ -50,21 +57,6 @@ const folderStyles = {
         padding: '15px',
         width: 'fit-content'
     },
-
-    buttonBoxButton: {
-        fontSize: '2.5vw',
-        margin: '5px',
-        padding: '5px',
-        color: 'var(--purple)',
-        border: '1px solid var(--purple)',
-        fontWeight: 'bolder'
-    },
-
-    buttonBoxButtonA: {
-        color: 'var(--purple)',
-        fontWeight: 'bolder'
-    },
-
     buttonBoxMobile: {
         display: 'flex',
         margin: 'auto',
@@ -74,22 +66,16 @@ const folderStyles = {
     },
 
     buttonBoxMobileButton: {
-        fontSize: '2.5vw',
+        fontSize: '14px',
         color: 'var(--purple)',
         border: '1px solid var(--purple)',
-        fontWeight: 'bolder'
+        fontWeight: 'bold'
     },
 
     buttonBoxMobileButtonA: {
         color: 'var(--purple)',
-        fontWeight: 'bolder'
-    },
-
-    h: {
-        color: 'white',
-        textAlign: 'center',
-        textShadow: '1px 1px #8a64a3',
-        fontSize: '3.25vw'
+        fontWeight: 'bolder',
+        fontSize: '14px'
     },
     tablet: {
         folder: {
@@ -103,7 +89,8 @@ const folderStyles = {
             listStyle: 'none',
             padding: '5px',
             margin: 'auto',
-            textAlign: 'center'
+            textAlign: 'center',
+            fontWeight: 'normal'
         },
         folderRecipeListLiA: {
             listStyle: 'none',
@@ -111,17 +98,12 @@ const folderStyles = {
             padding: '0px',
             color: 'white',
             textShadow: '.5px .5px #8a64a3',
-            fontSize: '2vw'
+            fontSize: '16px'
         },
-        h: {
-            color: 'white',
-            textAlign: 'center',
-            textShadow: '1px 1px #8a64a3',
-            fontSize: '2.25vw'
-        },
+
         folderItems: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'no-repeat',
+            backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
             backgroundPosition: 'center',
@@ -129,7 +111,12 @@ const folderStyles = {
         },
 
         folderRecipeList: {
-            padding: '10px'
+            padding: '10px',
+            color: 'white',
+            textShadow: '1px 1px var(--darkPurple)',
+            fontSize: '18px',
+            textAlign: 'center',
+            fontWeight: 'bolder'
         },
 
         folderRecipeListUl: {
@@ -145,7 +132,7 @@ const folderStyles = {
         },
 
         buttonBoxButton: {
-            fontSize: '2vw',
+            fontSize: '14px',
             margin: '5px',
             padding: '5px',
             color: 'var(--purple)',
@@ -170,7 +157,8 @@ const folderStyles = {
             listStyle: 'none',
             padding: '5px',
             margin: 'auto',
-            textAlign: 'center'
+            textAlign: 'center',
+            fontWeight: 'normal'
         },
         folderRecipeListLiA: {
             listStyle: 'none',
@@ -178,17 +166,11 @@ const folderStyles = {
             padding: '0px',
             color: 'white',
             textShadow: '.5px .5px #8a64a3',
-            fontSize: '1vw'
-        },
-        h: {
-            color: 'white',
-            textAlign: 'center',
-            textShadow: '1px 1px #8a64a3',
-            fontSize: '1.5vw'
+            fontSize: '18px'
         },
         folderItems: {
             backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'no-repeat',
+            backgroundRepeat: 'repeat-y',
             backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
             backgroundPosition: 'center',
@@ -196,7 +178,12 @@ const folderStyles = {
         },
 
         folderRecipeList: {
-            padding: '10px'
+            padding: '10px',
+            color: 'white',
+            textShadow: '1px 1px var(--darkPurple)',
+            fontSize: '24px',
+            textAlign: 'center',
+            fontWeight: 'bolder'
         },
 
         folderRecipeListUl: {
@@ -212,7 +199,7 @@ const folderStyles = {
         },
 
         buttonBoxButton: {
-            fontSize: '1vw',
+            fontSize: '16px',
             margin: '5px',
             padding: '5px',
             color: 'var(--purple)',

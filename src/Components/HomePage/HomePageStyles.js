@@ -171,32 +171,29 @@ const hpStyles = {
             flexDirection: 'column',
             justifyContent: 'center',
             margin: '50px auto',
-            padding: '50px',
+            padding: '30px',
             backgroundColor: 'white',
             backgroundPosition: 'top',
             border: '2px solid var(--purple)',
             fontWeight: 'bold',
-            fontSize: '2vw'
         },
         h3: {
             color: 'var(--purple)',
-            textShadow: '.5px .5px var(--darkPurple)',
-            fontSize: '4vw',
-            margin: '5px'
+            textShadow: '.5px .25px var(--darkPurple)',
+            fontSize: '18px',
+            margin: '10px auto'
         },
         select: {
             backgroundColor: 'white',
             color: 'var(--purple)',
             fontWeight: 'bold',
-            fontSize: '3vw',
+            fontSize: '14px',
             border: '1px solid var(--purple)',
-            margin: '5px',
-            padding: '5px'
-
+            margin: '5px'
         },
         option: {
             color: 'var(--purple)',
-            fontSize: '3vw',
+            fontSize: '14px',
         },
         form: {
             border: '1px solid var(--purple)',
@@ -211,20 +208,21 @@ const hpStyles = {
         label: {
             color: 'var(--purple)',
             fontWeight: 'bold',
-            fontSize: '3.25vw',
+            fontSize: '14px',
 
         },
 
         legend: {
-            color: 'var(--darkPurple)',
+            color: 'var(--purple)',
             fontWeight: 'bolder',
-            fontSize: '3.5vw',
+            fontSize: '16px',
+            textShadow: '.5px .25px var(--purple)',
         },
         button: {
             backgroundColor: 'var(--purple)',
             color: 'white',
             fontWeight: 'bold',
-            fontSize: '3vw',
+            fontSize: '16px',
             padding: '5px',
             margin: '5px'
 
@@ -232,18 +230,19 @@ const hpStyles = {
         ingredientInput: {
             width: '70%',
             color: 'var(--purple)',
-            fontSize: '3.5vw',
+            fontSize: '14px',
             border: '1px solid var(--purple)',
         },
         input: {
             width: '70%',
             color: 'var(--purple)',
-            fontSize: '3.5vw',
+            fontSize: '14px',
             border: '1px solid var(--purple)',
         },
         textarea: {
             minWidth: '70%',
             maxWidth: '125px',
+            minHeight: '75px',
             maxHeight: '250px',
             color: 'var(--purple)',
             border: '1px solid var(--purple)',

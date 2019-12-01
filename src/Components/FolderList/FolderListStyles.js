@@ -22,17 +22,18 @@ const folderListStyles = {
         ul: {
             textDecoration: 'none',
             padding: '10px',
-            fontSize: '4.5vw',
+            fontSize: '22px',
             fontWeight: 'bold',
             cursor: 'pointer',
         },
         ulA: {
             color: 'white',
-            fontSize: '4.5vw',
+            fontSize: '22px',
+            textDecoration: 'underline'
         },
         li: {
             padding: '10px',
-            fontSize: '4vw',
+            fontSize: '18px',
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
@@ -40,23 +41,22 @@ const folderListStyles = {
 
         },
         liA: {
-
             color: 'white',
             textDecoration: 'none',
             margin: 'auto',
-            fontSize: '4vw',
+            fontSize: '18px',
         },
         button: {
             width: '40%',
             color: 'var(--purple)',
             margin: '10px',
-            fontSize: '4vw',
+            fontSize: '18px',
             fontWeight: 'bold',
             backgroundColor: 'white'
         },
         buttonA: {
             color: 'var(--purple)',
-            fontSize: '4vw',
+            fontSize: '18px',
             fontWeight: 'bold',
             backgroundColor: 'white'
         },
@@ -83,17 +83,18 @@ const folderListStyles = {
             ul: {
                 textDecoration: 'none',
                 padding: '10px',
-                fontSize: '1.75vw',
+                fontSize: '22px',
                 fontWeight: 'bold',
                 cursor: 'pointer',
             },
             ulA: {
                 color: 'white',
-                fontSize: '1.75vw',
+                fontSize: '22px',
+                textDecoration: 'underline'
             },
             li: {
                 padding: '10px',
-                fontSize: '1.5vw',
+                fontSize: '18px',
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
@@ -105,19 +106,19 @@ const folderListStyles = {
                 color: 'white',
                 textDecoration: 'none',
                 margin: 'auto',
-                fontSize: '1.5vw',
+                fontSize: '18px',
             },
             button: {
                 width: '40%',
                 color: 'var(--purple)',
                 margin: '10px',
-                fontSize: '1.5vw',
+                fontSize: '18px',
                 fontWeight: 'bold',
                 backgroundColor: 'white'
             },
             buttonA: {
                 color: 'var(--purple)',
-                fontSize: '1.5vw',
+                fontSize: '18px',
                 fontWeight: 'bold',
                 backgroundColor: 'white'
             },
@@ -144,17 +145,18 @@ const folderListStyles = {
             ul: {
                 textDecoration: 'none',
                 padding: '10px',
-                fontSize: '1.75vw',
+                fontSize: '22px',
                 fontWeight: 'bold',
                 cursor: 'pointer',
             },
             ulA: {
                 color: 'white',
-                fontSize: '1.75vw',
+                fontSize: '22px',
+                textDecoration: 'underline'
             },
             li: {
                 padding: '10px',
-                fontSize: '1.5vw',
+                fontSize: '18px',
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
@@ -166,19 +168,19 @@ const folderListStyles = {
                 color: 'white',
                 textDecoration: 'none',
                 margin: 'auto',
-                fontSize: '1.5vw',
+                fontSize: '18px',
             },
             button: {
                 width: '40%',
                 color: 'var(--purple)',
                 margin: '10px',
-                fontSize: '1.5vw',
+                fontSize: '18px',
                 fontWeight: 'bold',
                 backgroundColor: 'white'
             },
             buttonA: {
                 color: 'var(--purple)',
-                fontSize: '1.5vw',
+                fontSize: '18px',
                 fontWeight: 'bold',
                 backgroundColor: 'white'
             },
