@@ -18,7 +18,7 @@ const loginFormStyles = {
     },
 
     loginFormInput: {
-        width: '95%',
+        width: '85%',
         margin: '5px',
         padding: '5px',
         justifyContent: 'center',
