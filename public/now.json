@@ -2,13 +2,15 @@
     "version": 2,
     "alias": "nrclayton-recipe-box",
     "name": "recipe-box",
+    "builds": [{ "src": "package.json", "use": "@now/static-build" }],
     "routes": [{
             "src": "^/static/(.*)",
             "dest": "/static/$1"
         },
-        {
-            "src": ".*",
-            "dest": "/index.html"
-        }
+        { "src": "^/(.*)", "dest": "/index.html" },
+        { "src": "^/favicon.ico", "dest": "/favicon.ico" },
+        { "src": "^/asset-manifest.json", "dest": "/asset-manifest.json" },
+        { "src": "^/manifest.json", "dest": "/manifest.json" }
+
     ]
 }
