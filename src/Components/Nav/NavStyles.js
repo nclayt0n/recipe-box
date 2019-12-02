@@ -40,7 +40,7 @@ const navStyles = {
             textDecoration: 'none',
             color: 'white',
             fontFamily: 'arial',
-            fontSize: '4.25vw',
+            fontSize: '16px',
             cursor: 'pointer'
 
         },
@@ -72,7 +72,7 @@ const navStyles = {
             textTransform: 'uppercase',
             color: 'white',
             fontFamily: 'arial',
-            fontSize: '4.25vw',
+            fontSize: '12px',
             whiteSpace: 'nowrap',
             transition: 'all 0.3s ease-in-out',
             cursor: 'pointer'
@@ -98,7 +98,7 @@ const navStyles = {
                 textDecoration: 'none',
                 color: 'white',
                 fontFamily: 'arial',
-                fontSize: '2.25vw',
+                fontSize: '16px',
                 cursor: 'pointer'
 
             },
@@ -110,7 +110,7 @@ const navStyles = {
                 textTransform: 'uppercase',
                 color: 'white',
                 fontFamily: 'arial',
-                fontSize: '2.25vw',
+                fontSize: '16px',
                 whiteSpace: 'nowrap',
                 transition: 'all 0.3s ease-in-out',
                 cursor: 'pointer'
@@ -137,7 +137,7 @@ const navStyles = {
                 textDecoration: 'none',
                 color: 'white',
                 fontFamily: 'arial',
-                fontSize: '1.75vw',
+                fontSize: '16px',
                 cursor: 'pointer'
 
             },
@@ -149,7 +149,7 @@ const navStyles = {
                 textTransform: 'uppercase',
                 color: 'white',
                 fontFamily: 'arial',
-                fontSize: '1.75vw',
+                fontSize: '16px',
                 whiteSpace: 'nowrap',
                 transition: 'all 0.3s ease-in-out',
                 cursor: 'pointer'
@@ -196,7 +196,7 @@ const navStyles = {
             textDecoration: 'none',
             color: '#111',
             fontFamily: 'arial',
-            fontSize: '4.25vw',
+            fontSize: '16px',
             cursor: 'pointer'
         },
         sideBar: {
@@ -226,7 +226,7 @@ const navStyles = {
             color: 'white',
             fontWeight: 'bolder',
             fontFamily: 'arial',
-            fontSize: '4.25vw',
+            fontSize: '20px',
             whiteSpace: 'nowrap',
             transition: 'all .3s ease-in-out',
             cursor: 'pointer'
@@ -252,7 +252,7 @@ const navStyles = {
                 textDecoration: 'none',
                 color: '#111',
                 fontFamily: 'arial',
-                fontSize: '2.25vw',
+                fontSize: '16px',
                 cursor: 'pointer'
             },
             sideBarUlLiA: {
@@ -263,7 +263,7 @@ const navStyles = {
                 color: 'white',
                 fontWeight: 'bolder',
                 fontFamily: 'arial',
-                fontSize: '2.25vw',
+                fontSize: '20px',
                 whiteSpace: 'nowrap',
                 transition: 'all .3s ease-in-out',
                 cursor: 'pointer'
@@ -290,7 +290,7 @@ const navStyles = {
                 textDecoration: 'none',
                 color: '#111',
                 fontFamily: 'arial',
-                fontSize: '1.75vw',
+                fontSize: '22px',
                 cursor: 'pointer'
             },
             sideBarUlLiA: {
@@ -301,7 +301,7 @@ const navStyles = {
                 color: 'white',
                 fontWeight: 'bolder',
                 fontFamily: 'arial',
-                fontSize: '1.75vw',
+                fontSize: '22px',
                 whiteSpace: 'nowrap',
                 transition: 'all .3s ease-in-out',
                 cursor: 'pointer'

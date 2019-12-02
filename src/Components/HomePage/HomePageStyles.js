@@ -357,7 +357,7 @@ const hpStyles = {
                 fontSize: '16px',
                 margin: '5px',
                 border: '2px solid var(--purple)',
-                width: '65%',
+                width: '55%',
             },
             option: {
                 color: 'var(--purple)',
@@ -367,7 +367,7 @@ const hpStyles = {
             form: {
                 border: '4px solid var(--purple)',
                 backgroundColor: 'white',
-                width: '45%',
+                width: '40%',
                 height: 'fit-content',
                 margin: ' auto',
                 padding: '5px',
@@ -375,7 +375,7 @@ const hpStyles = {
             },
             label: {
                 color: 'var(--purple)',
-                fontSize: '1.25vw',
+                fontSize: '18px',
                 fontWeight: 'bold',
 
             },
@@ -383,19 +383,19 @@ const hpStyles = {
                 color: 'var(--purple)',
                 textShadow: '.25px .25px var(--darkPuple)',
                 fontWeight: 'bolder',
-                fontSize: '24px',
+                fontSize: '20px',
             },
             ingredientInput: {
-                width: '90%',
-                fontSize: '1.25vw',
+                width: '50%',
+                fontSize: '18px',
                 color: 'var(--purple)',
                 border: '2px solid var(--purple)',
             },
             input: {
-                width: '65%',
+                width: '55%',
                 color: 'var(--purple)',
-                fontSize: '14px',
-                border: '1px solid var(--purple)',
+                fontSize: '18px',
+                border: '2px solid var(--purple)',
             },
             h3: {
                 color: 'var(--purple)',
@@ -417,7 +417,7 @@ const hpStyles = {
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '1.25vw',
+                fontSize: '18px',
                 padding: '5px',
                 fontWeight: 'bold',
                 margin: '5px auto'
