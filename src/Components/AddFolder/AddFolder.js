@@ -24,8 +24,10 @@ class AddFolder extends React.Component{
         const folderName=(e.target.folderName.value)
         if(folderName.length<3){
             this.setState({error:'Name Must contain at least 3 characters'})
+        }if(folderName.length>20){
+            this.setState({error:'Name Must no more than 20 characters'})
         }
-        if(folderName.length>=3){
+        if(folderName.length>=3&&folderName.length<=20){
             const url=`${config.API_ENDPOINT}/folders`;
             const options={
                 method:'POST',

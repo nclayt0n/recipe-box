@@ -129,7 +129,7 @@ const folderListStyles = {
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
-                width: '50%',
+                width: '30%',
                 backgroundPosition: 'center',
                 textAlign: 'center',
                 display: 'flex',
@@ -164,7 +164,7 @@ const folderListStyles = {
 
             },
             liA: {
-
+                backgroundColor: 'var(--purple)',
                 color: 'white',
                 textDecoration: 'none',
                 margin: 'auto',

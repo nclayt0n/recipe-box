@@ -54,7 +54,7 @@ const hpStyles = {
             fontWeight: 'bold',
             backgroundColor: 'var(--purple)',
             color: 'white',
-            fontSize: '16px'
+            fontSize: '14px'
 
         },
         addFolderLabel: {
@@ -72,7 +72,7 @@ const hpStyles = {
             textAlign: 'center',
             fontWeight: 'bolder',
             textShadow: '.5px .5px var(--darkPurple)',
-            fontSize: '18px',
+            fontSize: '20px',
             margin: '20px auto 5px'
         },
         tablet: {
@@ -115,9 +115,9 @@ const hpStyles = {
             h3: {
                 color: 'var(--purple)',
                 textAlign: 'center',
-                textShadow: '1px 1px var(--darkPurple)',
-                fontSize: '18px',
-                margin: '20px auto 10px'
+                textShadow: '.25px .25px var(--darkPurple)',
+                fontSize: '20px',
+                margin: '10px auto 10px'
             },
         },
         laptop: {
@@ -157,8 +157,8 @@ const hpStyles = {
             h3: {
                 color: 'var(--purple)',
                 textAlign: 'center',
-                textShadow: '1px 1px var(--darkPurple)',
-                fontSize: '20px',
+                textShadow: '.25px .25px var(--darkPurple)',
+                fontSize: '26px',
                 margin: '10px'
             },
         }
@@ -381,7 +381,7 @@ const hpStyles = {
             legend: {
                 color: 'var(--darkPurple)',
                 fontWeight: 'bolder',
-                fontSize: '1.5vw',
+                fontSize: '24px',
             },
             ingredientInput: {
                 width: '90%',
@@ -397,8 +397,8 @@ const hpStyles = {
             },
             h3: {
                 color: 'var(--purple)',
-                fontSize: '1.75vw',
-                textShadow: '1px 1px var(--darkPurple)',
+                fontSize: '26px',
+                textShadow: '.25px .25px var(--darkPurple)',
                 margin: '5px'
             },
             textarea: {
@@ -423,6 +423,151 @@ const hpStyles = {
         }
     },
     folderListStyle: {
+        div: {
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '100%',
+            backgroundColor: 'var(--purple)',
+            width: '80%',
+            backgroundPosition: 'center',
+            textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            margin: 'auto',
+            marginTop: '50px',
+            padding: '10px',
+            textDecoration: 'none',
+            listStyle: 'none',
+            border: '1px solid white'
+        },
+        ul: {
+            padding: '10px',
+            fontSize: '22px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            color: 'white'
+        },
+        ulA: {
+            color: 'white',
+            fontSize: '22px',
+            textDecoration: 'underline'
+        },
+        li: {
+            padding: '10px',
+            fontSize: '18px',
+            cursor: 'pointer',
+            listStyle: 'none',
+            textAlign: 'center',
+            textDecoration: 'none'
+        },
+        liA: {
+            backgroundColor: 'var(--purple)',
+            color: 'white',
+            textDecoration: 'none',
+            margin: 'auto',
+            fontSize: '18px',
+            fontWeight: 'normal'
+        },
+        tablet: {
+            div: {
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundRepeat: 'repeat-y',
+                backgroundSize: '100%',
+                backgroundColor: 'var(--purple)',
+                width: '45%',
+                backgroundPosition: 'center',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                margin: '50px auto 50px',
+                padding: '10px',
+                textDecoration: 'none',
+                listStyle: 'none',
+                border: '1px solid white'
+
+            },
+            ul: {
+                textDecoration: 'none',
+                padding: '10px',
+                fontSize: '22px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+            },
+            ulA: {
+                color: 'white',
+                fontSize: '22px',
+            },
+            li: {
+                padding: '10px',
+                fontSize: '18px',
+                cursor: 'pointer',
+                listStyle: 'none',
+                textAlign: 'center',
+                textDecoration: 'none'
+
+            },
+            liA: {
+                backgroundColor: 'var(--purple)',
+                color: 'white',
+                textDecoration: 'none',
+                margin: 'auto',
+                fontSize: '18px',
+            },
+        },
+        laptop: {
+            div: {
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundRepeat: 'repeat-y',
+                backgroundSize: '100%',
+                backgroundColor: 'var(--purple)',
+                width: '100%',
+                backgroundPosition: 'center',
+                textAlign: 'center',
+                display: 'flex',
+                margin: '20px auto 20px',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                padding: '10px',
+                textDecoration: 'none',
+                listStyle: 'none',
+                border: '1px solid white'
+
+            },
+            ul: {
+                textDecoration: 'none',
+                padding: '10px',
+                fontSize: '26px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+
+            },
+            ulA: {
+                color: 'white',
+                fontSize: '26px',
+                textShadow: '1px 1px #8a64a3',
+            },
+            li: {
+                padding: '10px',
+                fontSize: '22px',
+                cursor: 'pointer',
+                listStyle: 'none',
+                textAlign: 'center',
+                textDecoration: 'none',
+                fontWeight: 'normal'
+
+            },
+            liA: {
+                backgroundColor: 'var(--purple)',
+                color: 'white',
+                textDecoration: 'none',
+                margin: 'auto',
+                fontSize: '22px',
+            },
+        }
+    },
+    recipeListStyle: {
         container: {
 
         },
@@ -439,192 +584,37 @@ const hpStyles = {
             justifyContent: 'center',
             margin: 'auto',
             marginTop: '50px',
-            padding: '50px',
+            padding: '10px',
             textDecoration: 'none',
             listStyle: 'none',
             border: '1px solid white'
         },
         ul: {
             padding: '10px',
-            fontSize: '4vw',
+            fontSize: '22px',
             fontWeight: 'bold',
             cursor: 'pointer',
             color: 'white'
         },
         ulA: {
             color: 'white',
+            fontSize: '22px',
             textDecoration: 'underline'
         },
         li: {
             padding: '10px',
-            fontSize: '3.5vw',
+            fontSize: '18px',
             cursor: 'pointer',
             listStyle: 'none',
             textAlign: 'center',
+            textDecoration: 'none'
         },
         liA: {
-
-            color: 'white',
-            textDecoration: 'none',
-            margin: 'auto',
-            fontSize: '3.5vw',
-            fontWeight: 'normal'
-        },
-        tablet: {
-            div: {
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundRepeat: 'repeat-y',
-                backgroundSize: '100%',
-                backgroundColor: 'var(--purple)',
-                width: '45%',
-                backgroundPosition: 'center',
-                textAlign: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                margin: '50px auto 50px',
-                padding: '10px',
-                textDecoration: 'none',
-                listStyle: 'none',
-                border: '1px solid white'
-
-            },
-            ul: {
-                textDecoration: 'none',
-                padding: '10px',
-                fontSize: '2.25vw',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-            },
-            ulA: {
-                color: 'white',
-                fontSize: '2.25vw',
-            },
-            li: {
-                padding: '10px',
-                fontSize: '2vw',
-                cursor: 'pointer',
-                listStyle: 'none',
-                textAlign: 'center',
-                textDecoration: 'none'
-
-            },
-            liA: {
-
-                color: 'white',
-                textDecoration: 'none',
-                margin: 'auto',
-                fontSize: '2vw',
-            },
-            button: {
-                width: '40%',
-                color: 'var(--purple)',
-                margin: '10px',
-                fontSize: '2vw',
-                fontWeight: 'bold',
-                padding: '5px',
-            },
-            buttonA: {
-                color: 'var(--purple)',
-                fontSize: '2vw',
-                padding: '5px',
-                fontWeight: 'bold',
-
-            },
-        },
-        laptop: {
-            div: {
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundRepeat: 'repeat-y',
-                backgroundSize: '100%',
-                backgroundColor: 'var(--purple)',
-                width: '100%',
-                backgroundPosition: 'center',
-                textAlign: 'center',
-                display: 'flex',
-                margin: '20px auto 20px',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                padding: '10px',
-                textDecoration: 'none',
-                listStyle: 'none',
-                border: '1px solid white'
-
-            },
-            ul: {
-                textDecoration: 'none',
-                padding: '10px',
-                fontSize: '1.75vw',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-
-            },
-            ulA: {
-                color: 'white',
-                fontSize: '1.75vw',
-                textShadow: '1px 1px #8a64a3',
-            },
-            li: {
-                padding: '10px',
-                fontSize: '1vw',
-                cursor: 'pointer',
-                listStyle: 'none',
-                textAlign: 'center',
-                textDecoration: 'none'
-
-            },
-            liA: {
-
-                color: 'white',
-                textDecoration: 'none',
-                margin: 'auto',
-                fontSize: '1vw',
-            },
-        }
-    },
-    recipeListStyle: {
-        div: {
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'repeat-y',
-            backgroundSize: '100%',
             backgroundColor: 'var(--purple)',
-            width: '80%',
-            backgroundPosition: 'center',
-            textAlign: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            margin: '50px auto 50px',
-            padding: '50px',
-            textDecoration: 'none',
-            listStyle: 'none',
-            border: '1px solid white'
-
-        },
-        ul: {
-            padding: '10px',
-            fontSize: '4vw',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            color: 'white'
-        },
-        ulA: {
-            color: 'white',
-            textDecoration: 'underline'
-        },
-        li: {
-            padding: '10px',
-            fontSize: '3.5vw',
-            cursor: 'pointer',
-            listStyle: 'none',
-            textAlign: 'center',
-        },
-        liA: {
-
             color: 'white',
             textDecoration: 'none',
             margin: 'auto',
-            fontSize: '3.5vw',
+            fontSize: '18px',
             fontWeight: 'normal'
         },
         tablet: {
@@ -640,27 +630,26 @@ const hpStyles = {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 margin: '50px auto 50px',
-                padding: '50px',
+                padding: '10px',
                 textDecoration: 'none',
                 listStyle: 'none',
                 border: '1px solid white'
-
 
             },
             ul: {
                 textDecoration: 'none',
                 padding: '10px',
-                fontSize: '2.25vw',
+                fontSize: '22px',
                 fontWeight: 'bold',
                 cursor: 'pointer',
             },
             ulA: {
                 color: 'white',
-                fontSize: '2.25vw',
+                fontSize: '22px',
             },
             li: {
                 padding: '10px',
-                fontSize: '2vw',
+                fontSize: '18px',
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
@@ -668,22 +657,12 @@ const hpStyles = {
 
             },
             liA: {
-
+                backgroundColor: 'var(--purple)',
                 color: 'white',
                 textDecoration: 'none',
                 margin: 'auto',
-                fontSize: '2vw',
+                fontSize: '18px',
             },
-            button: {
-                margin: '10px auto auto ',
-                color: 'var(--purple)',
-                backgroundColor: 'white',
-                fontWeight: 'bold',
-                padding: '5px',
-                width: 'fit-content',
-                fontSize: '2vw'
-            },
-
         },
         laptop: {
             div: {
@@ -695,56 +674,46 @@ const hpStyles = {
                 backgroundPosition: 'center',
                 textAlign: 'center',
                 display: 'flex',
+                margin: '20px auto 20px',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                margin: '20px auto 20px',
                 padding: '10px',
                 textDecoration: 'none',
                 listStyle: 'none',
                 border: '1px solid white'
 
-
             },
             ul: {
                 textDecoration: 'none',
                 padding: '10px',
-                fontSize: '1.75vw',
+                fontSize: '26px',
                 fontWeight: 'bold',
                 cursor: 'pointer',
 
             },
             ulA: {
                 color: 'white',
-                fontSize: '1.75vw',
+                fontSize: '26px',
                 textShadow: '1px 1px #8a64a3',
             },
             li: {
                 padding: '10px',
-                fontSize: '1vw',
+                fontSize: '22px',
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
-                textDecoration: 'none'
+                textDecoration: 'none',
+                fontWeight: 'normal'
 
             },
             liA: {
-
+                backgroundColor: 'var(--purple)',
                 color: 'white',
                 textDecoration: 'none',
                 margin: 'auto',
-                fontSize: '1vw',
+                fontSize: '22px',
             },
-            button: {
-                margin: '10px auto 10px ',
-                color: 'var(--purple)',
-                backgroundColor: 'white',
-                fontWeight: 'bold',
-                width: '40%',
-                fontSize: '1.5vw'
-            },
-
         }
-
     },
 
 }
