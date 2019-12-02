@@ -80,12 +80,12 @@ handleSubmitJWTAuth=ev=>{
           <div className='loginForm' style={style.tablet.loginForm}>
               <form id='loginForm' onSubmit={this.handleSubmitJWTAuth} >
                 <fieldset style={style.loginFormFieldset}>
-                  <legend style={style.loginFormLegend}>Login Form</legend>
-                  <label htmlFor='username' style={style.loginFormLabel}>   Email:<br/><input type='text' name='email' style={style.tablet.loginFormInput}/></label><br/>
-                  <label htmlFor='password'  style={style.loginFormLabel}>Password:
+                  <legend style={style.tablet.loginFormLegend}>Login Form</legend>
+                  <label htmlFor='username' style={style.tablet.loginFormLabel}>   Email:<br/><input type='text' name='email' style={style.tablet.loginFormInput}/></label><br/>
+                  <label htmlFor='password'  style={style.tablet.loginFormLabel}>Password:
                   <br/><input type='password' name='password' style={style.tablet.loginFormInput}/></label><br/>
-                  <button type='submit' style={style.loginFormButtonA}>Login</button><br/>
-                  <button style={style.loginFormButtonA}><Link to='/register' style={style.loginFormButtonA}className='landingButtons'>Create Account</Link></button>
+                  <button type='submit' style={style.tablet.loginFormButtonA}>Login</button><br/>
+                  <button style={style.tablet.loginFormButtonA}><Link to='/register' style={style.tablet.loginFormButtonA}className='landingButtons'>Create Account</Link></button>
                 </fieldset>
               </form>  
               <ValidationError Namemessage={error}/>
