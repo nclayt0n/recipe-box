@@ -106,7 +106,7 @@ class Recipe extends React.Component{
                 </div>
                 </div>
             </MediaQuery>
-            <MediaQuery minWidth={651} maxWidth={950}>
+            <MediaQuery minWidth={651} maxWidth={1050}>
             <div className='recipe' style={recipeStyles.tablet.recipe}>
                 <div className='recipeItems' style={recipeStyles.tablet.recipeItems}>
                     <h3 style={recipeStyles.tablet.h3}>Recipe: {recipe.name}</h3>
@@ -140,7 +140,7 @@ class Recipe extends React.Component{
                  <ValidationError Namemessage={this.state.error}/>
             </div>
             </MediaQuery>
-            <MediaQuery minWidth={951}>
+            <MediaQuery minWidth={1051}>
             <div className='recipe' style={recipeStyles.laptop.recipe}>
                 <div className='recipeItems' style={recipeStyles.laptop.recipeItems}>
                     <h3 style={recipeStyles.laptop.h3}>Recipe: {recipe.name}</h3>

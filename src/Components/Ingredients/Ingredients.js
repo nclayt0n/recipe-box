@@ -113,7 +113,7 @@ class Ingredients extends React.Component{
         </section>}
         </MediaQuery>
 
-        <MediaQuery minWidth={651} maxWidth={950}>
+        <MediaQuery minWidth={651} maxWidth={1050}>
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.tablet.recipeSort}>
             <legend style={style.tablet.recipeSortLegend}>Ingredients</legend>
                 <label htmlFor='recipeSort' style={style.tablet.recipeSortLabel}>Recipes<br/>
@@ -155,7 +155,7 @@ class Ingredients extends React.Component{
         </section></>}
         </MediaQuery>
 
-        <MediaQuery minWidth={951}>
+        <MediaQuery minWidth={1051}>
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.laptop.recipeSort}>
             <legend style={style.laptop.recipeSortLegend}>Ingredients</legend>
                 <label htmlFor='recipeSort' style={style.laptop.recipeSortLabel}>Recipes<br/>

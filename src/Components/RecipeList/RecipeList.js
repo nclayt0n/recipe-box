@@ -46,7 +46,7 @@ render(){
             </>)}
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={651} maxWidth={950} className='tablet'>
+        <MediaQuery minWidth={651} maxWidth={1050} className='tablet'>
         <div className='RecipeList' style={style.recipeListStyle.tablet.div}>
             <ul style={style.recipeListStyle.tablet.ul}><Link to={'/recipe-list'} style={style.recipeListStyle.tablet.ulA}>RECIPES</Link> 
             {(this.props.location.pathname===`/home-page`)?
@@ -61,7 +61,7 @@ render(){
             </>)}
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={951} className='tablet'>
+        <MediaQuery minWidth={1051} className='tablet'>
         <div className='RecipeList' style={style.recipeListStyle.laptop.div}>
             <ul style={style.recipeListStyle.laptop.ul}>
             <Link to={'/recipe-list'} style={style.recipeListStyle.laptop.ulA}>RECIPES</Link> 

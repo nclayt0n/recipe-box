@@ -39,7 +39,7 @@ class AddRecipe extends React.Component{
             this.setState({ingredientError:'*Must be at least 3 characters'})
             document.getElementById('ingredientForm').reset();
         }else{
-          this.setState({
+          this.setState({ingredientsError:'',
         ingredients:[...this.state.ingredients,{name:e.target.ingredientName.value,quantity,unit:ingredientUnit}],ingredientError:''
         })  
         document.getElementById('ingredientForm').reset();
@@ -72,12 +72,10 @@ class AddRecipe extends React.Component{
             this.setState({folderError:''})
         }
         if(recipe.name.length<3){
-            this.setState({nameError: '*Required & Must be atleast 3 characters'
-        }) 
+            this.setState({nameError: '*Required & Must be atleast 3 characters'}) 
         }
         if(recipe.name.length>15){
-            this.setState({nameError: '*15 characters max'
-        }) 
+            this.setState({nameError: '*15 characters max'}) 
         }else{this.setState({nameError:''})}
         if(recipe.ingredients.length<1){
             this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'})
@@ -87,7 +85,8 @@ class AddRecipe extends React.Component{
             this.setState({instructionsError:'*Required & Must add instruction'})
         }
         else{this.setState({instructionsError:''})}
-        if(recipe.name.length===0 || recipe.ingredients.length===0 || recipe.instructions.length ===0 || recipe.folder_id===undefined){return null}else{
+        console.log(recipe.name.length)
+        if(recipe.name.length>15||recipe.name.length===0 || recipe.ingredients.length===0 || recipe.instructions.length===0 || recipe.folder_id===undefined){return null}else{
         this.callApi(recipe)
     }
 }
@@ -186,7 +185,7 @@ class AddRecipe extends React.Component{
                         <legend style={style.addRecipeStyle.legend}>Add Ingredient</legend>
                         <label htmlFor='ingredientName' style={style.addRecipeStyle.label}>Name:<br/>
                         <input type='text' name='ingredientName' style={style.addRecipeStyle.ingredientInput}/>
-                        </label><br/>
+                        </label>
                         <ValidationError Ingredientmessage={this.state.ingredientError}/><br/>
                         <label htmlFor='ingredientQuantity' style={style.addRecipeStyle.label}>Quantity:<br/>
                         <input type='text' name='ingredientQuantity' style={style.addRecipeStyle.ingredientInput}/></label><br/>
@@ -244,7 +243,7 @@ class AddRecipe extends React.Component{
                 </form>   
             </div>
         </MediaQuery>
-        <MediaQuery minWidth={651} maxWidth={951}>
+        <MediaQuery minWidth={651} maxWidth={1051}>
             <div className='addRecipe' style={style.addRecipeStyle.tablet.div}>
             {(this.props.location.pathname===`/home-page`)?
                 <h3 style={style.addRecipeStyle.tablet.h3}><Link to={'/add-recipe'} style={{color:'var(--purple)'}}>ADD RECIPE</Link></h3>:<h3 style={style.addRecipeStyle.tablet.h3}>ADD RECIPE</h3>}  
@@ -310,7 +309,7 @@ class AddRecipe extends React.Component{
                 </form>    
             </div>
             </MediaQuery>
-        <MediaQuery minWidth={951}>
+        <MediaQuery minWidth={1051}>
             <div className='addRecipe' style={style.addRecipeStyle.laptop.div}>
             <ValidationError Foldermessage={this.state.folderError}/>
             {(this.props.location.pathname===`/home-page`)?

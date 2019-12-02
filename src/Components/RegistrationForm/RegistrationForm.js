@@ -55,7 +55,7 @@ class RegistrationForm extends React.Component{
         </form> 
       </div>
       </MediaQuery>
-      <MediaQuery minWidth={741} maxWidth={949}>
+      <MediaQuery minWidth={741} maxWidth={1049}>
       <div className='registrationForm' style={style.registrationFormLaptop}>
         <form onSubmit={this.handleSubmit} >
             <fieldset style={style.registrationFormFieldset}>
@@ -73,7 +73,7 @@ class RegistrationForm extends React.Component{
         </form> 
       </div>
       </MediaQuery>
-      <MediaQuery minWidth={950}>
+      <MediaQuery minWidth={1050}>
       <div className='registrationForm' style={style.registrationFormLaptop}>
         <form onSubmit={this.handleSubmit} >
             <fieldset style={style.registrationFormFieldset}>

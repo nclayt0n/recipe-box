@@ -66,7 +66,7 @@ class UpdateFolder extends React.Component{
                 </form>
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={651} maxWidth={950}>
+        <MediaQuery minWidth={651} maxWidth={1050}>
         <div className='updateFolder' style={updateFolderStyles.tablet.updateFolder}>
             <h3 className='updateh3' style={updateFolderStyles.tablet.updateh3}>Update Folder: {this.findFolderName()}</h3>
                 <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>    
@@ -81,7 +81,7 @@ class UpdateFolder extends React.Component{
                 </form>
         </div>
         </MediaQuery>
-        <MediaQuery minWidth={951}>
+        <MediaQuery minWidth={1051}>
         <div className='updateFolder' style={updateFolderStyles.laptop.updateFolder}>
             <h3 className='updateh3' style={updateFolderStyles.laptop.updateh3}>Update Folder: {this.findFolderName()}</h3>
                 <form action='PATCH'  onSubmit={(e)=>this.handleSubmit(e)}>    

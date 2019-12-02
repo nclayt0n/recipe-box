@@ -50,7 +50,7 @@ class FolderList extends React.Component{
                     </div>)}
             </div>
             </MediaQuery>
-            <MediaQuery minWidth={651} maxWidth={950}>
+            <MediaQuery minWidth={651} maxWidth={1050}>
             <div className='folderList' style={style.folderListStyle.tablet.div}>
                 <ul className='list' style={style.folderListStyle.tablet.ul}><Link to={'/folder-list'}style={style.folderListStyle.tablet.ulA}>FOLDERS</Link>
                      {(this.props.location.pathname===`/home-page`)?
@@ -68,7 +68,7 @@ class FolderList extends React.Component{
                     </div>)}
             </div>
             </MediaQuery>
-            <MediaQuery minWidth={951}>
+            <MediaQuery minWidth={1051}>
             <div className='folderList' style={style.folderListStyle.laptop.div}>
                 <ul className='list' style={style.folderListStyle.laptop.ul}><Link to={'/folder-list'}style={style.folderListStyle.laptop.ulA}>FOLDERS</Link>
                 {(this.props.location.pathname===`/home-page`)?

@@ -21,7 +21,7 @@ img {
     background-color: var(--purple);
 }
 
-@media screen and (min-width:950px) {
+@media screen and (min-width:1050px) {
     .header {
         height: 130px;
         display: flex;

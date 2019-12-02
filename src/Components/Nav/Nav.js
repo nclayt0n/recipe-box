@@ -69,7 +69,7 @@ class Nav extends React.Component{
         </aside>
         </MediaQuery>
 
-        <MediaQuery minWidth={651} maxWidth={950}>
+        <MediaQuery minWidth={651} maxWidth={1050}>
         <nav className='nav-main' style={(this.state.clicked===false)?(this.state.visible.main):(this.state.hidden.main)}>
             <button className='btn-toggle-nav' onClick={()=>this.navStyles()} style={(this.state.clicked===false)?(this.state.visible.tablet.toggleBtn):(this.state.hidden.tablet.toggleBtn)}></button>
         </nav>
@@ -107,7 +107,7 @@ class Nav extends React.Component{
         </aside>
         </MediaQuery>
 
-        <MediaQuery minWidth={951}>
+        <MediaQuery minWidth={1051}>
         <nav className='nav-main' style={(this.state.clicked===false)?(this.state.visible.main):(this.state.hidden.main)}>
             <button className='btn-toggle-nav' onClick={()=>this.navStyles()} style={(this.state.clicked===false)?(this.state.visible.laptop.toggleBtn):(this.state.hidden.laptop.toggleBtn)}></button>
         </nav>

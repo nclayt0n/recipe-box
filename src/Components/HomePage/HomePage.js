@@ -39,7 +39,7 @@ class HomePage extends React.Component{
                 {this.context.recipes.length===0?null:
                 <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>}
             </MediaQuery>
-            <MediaQuery minWidth={651} maxWidth={950}>
+            <MediaQuery minWidth={651} maxWidth={1050}>
                 <section className='addFolderContainer'style={style.addFolder.container}>
                     <AddFolder/>
                 </section>
@@ -54,7 +54,7 @@ class HomePage extends React.Component{
                         <RecipeList folders={this.context.folders} recipes={this.context.recipes}/>
                     </section>}
             </MediaQuery>
-            <MediaQuery minWidth={951}>
+            <MediaQuery minWidth={1051}>
             <div className='mainContainer' style={style.mainContainer}>
             {this.context.folders.length===0?null:
                     <section className='listLaptopContainer' style={style.listLaptopContainer}>

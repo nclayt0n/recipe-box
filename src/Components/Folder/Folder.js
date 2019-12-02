@@ -104,7 +104,7 @@ class Folder extends React.Component{
                         </div>
                     </div>
                 </MediaQuery>
-                <MediaQuery minWidth={651} maxWidth={950}>
+                <MediaQuery minWidth={651} maxWidth={1050}>
                     <div className='folder' style={style.tablet.folder}>
                         <div className='folderItems' style={style.tablet.folderItems}>
                             <ul className='folderRecipeList' key={uuidv4()} style={style.tablet.folderRecipeList}>{folderName}
@@ -124,7 +124,7 @@ class Folder extends React.Component{
                         </div>
                     </div>
                 </MediaQuery>
-                <MediaQuery minWidth={951}>
+                <MediaQuery minWidth={1051}>
                     <div className='folder' style={style.laptop.folder}>
                         <div className='folderItems' style={style.laptop.folderItems}>
                             <ul className='folderRecipeList' key={uuidv4()} style={style.laptop.folderRecipeList}>{folderName}

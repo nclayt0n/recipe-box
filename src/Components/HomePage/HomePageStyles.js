@@ -196,7 +196,7 @@ const hpStyles = {
             fontSize: '14px',
         },
         form: {
-            border: '1px solid var(--purple)',
+            border: '2px solid var(--purple)',
             width: '85%',
             margin: 'auto auto 10px',
             padding: '0'
@@ -204,6 +204,8 @@ const hpStyles = {
         },
         fieldset: {
             border: 'none',
+            padding: '0',
+            margin: 'auto'
         },
         label: {
             color: 'var(--purple)',
@@ -221,9 +223,7 @@ const hpStyles = {
         button: {
             backgroundColor: 'var(--purple)',
             color: 'white',
-            fontWeight: 'bold',
-            fontSize: '16px',
-            padding: '5px',
+            fontSize: '14px',
             margin: '5px'
 
         },
@@ -234,13 +234,13 @@ const hpStyles = {
             border: '1px solid var(--purple)',
         },
         input: {
-            width: '70%',
+            width: '65%',
             color: 'var(--purple)',
             fontSize: '14px',
             border: '1px solid var(--purple)',
         },
         textarea: {
-            minWidth: '70%',
+            minWidth: '75%',
             maxWidth: '125px',
             minHeight: '75px',
             maxHeight: '250px',
@@ -249,7 +249,7 @@ const hpStyles = {
         },
         tablet: {
             div: {
-                width: '60%',
+                width: '70%',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
@@ -263,14 +263,13 @@ const hpStyles = {
                 backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw'
 
             },
             select: {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw',
+                fontSize: '14px',
                 border: '1px solid var(--purple)',
                 padding: '5px',
                 margin: '5px'
@@ -278,10 +277,10 @@ const hpStyles = {
             },
             option: {
                 color: 'var(--purple)',
-                fontSize: '2vw',
+                fontSize: '14px',
             },
             form: {
-                border: '1px solid var(--purple)',
+                border: '2px solid var(--purple)',
                 width: '60%',
                 margin: 'auto auto 10px',
                 padding: '5px'
@@ -295,43 +294,45 @@ const hpStyles = {
             label: {
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '2vw',
+                fontSize: '16px',
                 margin: '5px'
             },
             h3: {
                 color: 'var(--purple)',
-                fontSize: '2.25vw'
+                fontSize: '18px'
             },
             legend: {
                 color: 'var(--darkPurple)',
                 fontWeight: 'bolder',
-                fontSize: '2.25vw',
+                fontSize: '16px',
             },
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontWeight: 'bold',
-                fontSize: '2vw',
-                padding: '5px',
+                fontSize: '14px',
                 margin: '5px'
             },
             ingredientInput: {
-                width: '90%',
+                width: '60%',
                 color: 'var(--purple)',
+                fontSize: '16px',
                 border: '1px solid var(--purple)',
             },
             input: {
-                width: '90%',
+                width: '70%',
                 color: 'var(--purple)',
                 margin: '5px',
+                fontSize: '16px',
                 border: '1px solid var(--purple)',
 
             },
             textarea: {
                 minWidth: '90%',
                 maxWidth: '125px',
+                minHeight: '75px',
                 maxHeight: '150px',
                 color: 'var(--purple)',
+                fontSize: '16px',
                 border: '1px solid var(--purple)',
             },
         },
@@ -346,21 +347,21 @@ const hpStyles = {
                 padding: '10px',
                 backgroundColor: 'white',
                 fontWeight: 'bold',
-                fontSize: '1.25vw',
+                fontSize: '16px',
                 border: '5px solid var(--darkPurple)'
             },
             select: {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '1.25vw',
+                fontSize: '16px',
                 margin: '5px',
                 border: '2px solid var(--purple)',
-
+                width: '65%',
             },
             option: {
                 color: 'var(--purple)',
-                fontSize: '1.25vw',
+                fontSize: '16px',
                 border: '2px solid var(--purple)',
             },
             form: {
@@ -379,7 +380,8 @@ const hpStyles = {
 
             },
             legend: {
-                color: 'var(--darkPurple)',
+                color: 'var(--purple)',
+                textShadow: '.25px .25px var(--darkPuple)',
                 fontWeight: 'bolder',
                 fontSize: '24px',
             },
@@ -390,10 +392,10 @@ const hpStyles = {
                 border: '2px solid var(--purple)',
             },
             input: {
-                width: '90%',
-                border: '2px solid var(--purple)',
-                fontSize: '1.25vw',
+                width: '65%',
                 color: 'var(--purple)',
+                fontSize: '14px',
+                border: '1px solid var(--purple)',
             },
             h3: {
                 color: 'var(--purple)',
@@ -402,7 +404,7 @@ const hpStyles = {
                 margin: '5px'
             },
             textarea: {
-                minWidth: '90%',
+                minWidth: '60%',
                 maxWidth: '125px',
                 maxHeight: '150px',
                 color: 'var(--purple)',
