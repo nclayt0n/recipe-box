@@ -98,7 +98,7 @@ const navStyles = {
                 textDecoration: 'none',
                 color: 'white',
                 fontFamily: 'arial',
-                fontSize: '14px',
+                fontSize: '20px',
                 cursor: 'pointer'
 
             },
@@ -110,7 +110,7 @@ const navStyles = {
                 textTransform: 'uppercase',
                 color: 'white',
                 fontFamily: 'arial',
-                fontSize: '14px',
+                fontSize: '20px',
                 whiteSpace: 'nowrap',
                 transition: 'all 0.3s ease-in-out',
                 cursor: 'pointer'
@@ -137,7 +137,7 @@ const navStyles = {
                 textDecoration: 'none',
                 color: 'white',
                 fontFamily: 'arial',
-                fontSize: '16px',
+                fontSize: '22px',
                 cursor: 'pointer'
 
             },
@@ -149,7 +149,7 @@ const navStyles = {
                 textTransform: 'uppercase',
                 color: 'white',
                 fontFamily: 'arial',
-                fontSize: '16px',
+                fontSize: '22px',
                 whiteSpace: 'nowrap',
                 transition: 'all 0.3s ease-in-out',
                 cursor: 'pointer'
