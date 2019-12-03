@@ -123,7 +123,7 @@ const hpStyles = {
         laptop: {
             addFolderDivStyle: {
                 backgroundColor: 'white',
-                border: '5px solid var(--darkPurple)',
+                border: '3px solid var(--darkPurple)',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
@@ -240,6 +240,7 @@ const hpStyles = {
             border: '1px solid var(--purple)',
         },
         textarea: {
+            fontSize: '14px',
             minWidth: '75%',
             maxWidth: '125px',
             minHeight: '75px',
@@ -256,28 +257,22 @@ const hpStyles = {
                 justifyContent: 'center',
                 margin: '50px auto 50px',
                 padding: '50px',
-                backgroundImage: `url(${backgroundImage2})`,
-                backgroundRepeat: 'noRepeat',
-                backgroundSize: 'cover',
                 backgroundColor: 'white',
-                backgroundPosition: 'top',
-                border: '2px solid var(--purple)',
+                border: '2px solid var(--darkPurple)',
                 fontWeight: 'bold',
-
             },
             select: {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '14px',
+                fontSize: '16px',
                 border: '1px solid var(--purple)',
-                padding: '5px',
-                margin: '5px'
-
+                margin: '5px',
+                padding: '5px'
             },
             option: {
                 color: 'var(--purple)',
-                fontSize: '14px',
+                fontSize: '16px',
             },
             form: {
                 border: '2px solid var(--purple)',
@@ -288,51 +283,51 @@ const hpStyles = {
             },
             fieldset: {
                 border: 'none',
-                margin: 'auto',
-                padding: '0'
             },
             label: {
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '16px',
+                fontSize: '18px',
                 margin: '5px'
             },
             h3: {
                 color: 'var(--purple)',
-                fontSize: '18px'
+                fontSize: '20px'
             },
             legend: {
-                color: 'var(--darkPurple)',
+                color: 'var(--purple)',
                 fontWeight: 'bolder',
-                fontSize: '16px',
+                fontSize: '18px',
             },
             button: {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
-                fontSize: '14px',
+                fontSize: '16px',
                 margin: '5px'
             },
             ingredientInput: {
-                width: '60%',
-                color: 'var(--purple)',
+                width: '150px',
+                padding: '5px',
                 fontSize: '16px',
+                color: 'var(--purple)',
                 border: '1px solid var(--purple)',
             },
             input: {
-                width: '70%',
+                width: '175px',
+                padding: '5px',
+                fontSize: '16px',
                 color: 'var(--purple)',
                 margin: '5px',
-                fontSize: '16px',
                 border: '1px solid var(--purple)',
 
             },
             textarea: {
+                fontSize: '16px',
                 minWidth: '90%',
-                maxWidth: '125px',
                 minHeight: '75px',
+                maxWidth: '125px',
                 maxHeight: '150px',
                 color: 'var(--purple)',
-                fontSize: '16px',
                 border: '1px solid var(--purple)',
             },
         },
@@ -344,69 +339,73 @@ const hpStyles = {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 margin: '20px auto 20px',
-                padding: '10px',
+                padding: '15px',
                 backgroundColor: 'white',
                 fontWeight: 'bold',
                 fontSize: '16px',
-                border: '5px solid var(--darkPurple)'
+                border: '3px solid var(--darkPurple)',
+                backgroundImage: `url(${backgroundImage2})`,
+                backgroundRepeat: 'noRepeat',
+                backgroundSize: 'cover',
+                backgroundPosition: 'top',
             },
             select: {
                 backgroundColor: 'white',
                 color: 'var(--purple)',
                 fontWeight: 'bold',
-                fontSize: '16px',
-                margin: '5px',
+                fontSize: '18px',
                 border: '2px solid var(--purple)',
-                width: '55%',
+                margin: '5px'
+
             },
             option: {
                 color: 'var(--purple)',
-                fontSize: '16px',
-                border: '2px solid var(--purple)',
+                fontSize: '18px',
             },
             form: {
-                border: '4px solid var(--purple)',
+                border: '2px solid var(--purple)',
                 backgroundColor: 'white',
-                width: '40%',
-                height: 'fit-content',
-                margin: ' auto',
+                width: '225px',
+                margin: 'auto',
                 padding: '5px',
-
             },
             label: {
                 color: 'var(--purple)',
                 fontSize: '18px',
                 fontWeight: 'bold',
-
+                padding: '5px',
             },
             legend: {
                 color: 'var(--purple)',
-                textShadow: '.25px .25px var(--darkPuple)',
                 fontWeight: 'bolder',
                 fontSize: '20px',
+                margin: ' 10px auto'
             },
             ingredientInput: {
-                width: '50%',
+                width: '150px',
                 fontSize: '18px',
                 color: 'var(--purple)',
                 border: '2px solid var(--purple)',
+                margin: '5px'
             },
             input: {
-                width: '55%',
-                color: 'var(--purple)',
+                width: '175px',
                 fontSize: '18px',
+                color: 'var(--purple)',
                 border: '2px solid var(--purple)',
+                margin: '5px'
+
             },
             h3: {
                 color: 'var(--purple)',
-                fontSize: '26px',
-                textShadow: '.25px .25px var(--darkPurple)',
-                margin: '5px'
+                fontSize: '26px'
             },
             textarea: {
-                minWidth: '60%',
-                maxWidth: '125px',
-                maxHeight: '150px',
+                fontSize: '18px',
+                minWidth: '175px',
+                minHeight: '75px',
+                maxWidth: '175px',
+                maxHeight: '200px',
                 color: 'var(--purple)',
                 border: '2px solid var(--purple)',
             },
@@ -418,9 +417,7 @@ const hpStyles = {
                 backgroundColor: 'var(--purple)',
                 color: 'white',
                 fontSize: '18px',
-                padding: '5px',
-                fontWeight: 'bold',
-                margin: '5px auto'
+                margin: '5px'
             },
         }
     },
