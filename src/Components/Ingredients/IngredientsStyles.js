@@ -280,7 +280,6 @@ const ingredientsStyles = {
         },
         ingredientLabel: {
             fontSize: '20px',
-            lineHeight: '24px',
             display: 'flex',
             color: 'white',
             textShadow: '1px 1px var(--purple)',
