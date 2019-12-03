@@ -50,13 +50,13 @@ const folderListStyles = {
             width: '40%',
             color: 'var(--purple)',
             margin: '10px',
-            fontSize: '18px',
+            fontSize: '16px',
             fontWeight: 'bold',
             backgroundColor: 'white'
         },
         buttonA: {
             color: 'var(--purple)',
-            fontSize: '18px',
+            fontSize: '16px',
             fontWeight: 'bold',
             backgroundColor: 'white'
         },

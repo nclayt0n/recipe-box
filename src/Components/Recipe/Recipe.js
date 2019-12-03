@@ -31,8 +31,7 @@ class Recipe extends React.Component{
             headers:{
           'content-type':'application/json',
           'Authorization': `Bearer ${TokenService.getAuthToken()}`,
-        },
-        body: JSON.stringify({'id':recipe.id})
+        }
     };
         fetch(url,options)
         .then(this.context.deleteRecipe(recipe.id,props))
