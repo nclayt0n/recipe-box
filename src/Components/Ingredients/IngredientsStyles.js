@@ -5,14 +5,14 @@ const ingredientsStyles = {
         display: 'flex',
         flexDirection: 'column',
         textAlign: 'center',
-        width: '80%',
+        width: '90%',
         margin: '10px auto 25px',
         padding: '15px',
         backgroundColor: 'white',
         textShadow: '1px 1px var(--purple)',
     },
     recipeSortLegend: {
-        fontSize: '3.25vw',
+        fontSize: '18px',
         color: 'var(--purple)',
         fontWeight: 'bolder',
         textShadow: '1px 1px white',
@@ -23,7 +23,7 @@ const ingredientsStyles = {
         border: '1px solid white',
         margin: 'auto',
         padding: '20px',
-        width: '80%',
+        width: '90%',
         backgroundColor: 'var(--purple)',
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'repeat-y',
@@ -34,22 +34,27 @@ const ingredientsStyles = {
     recipeSortLabel: {
         color: 'var(--purple)',
         textShadow: 'none',
-        fontSize: '3vw',
-        marginTop: '5PX'
+        fontSize: '18px',
+        marginTop: '5px'
     },
     recipeSortSelect: {
         padding: '10px',
         margin: '5px',
-        width: 'fit-content',
-        height: '50px',
-        fontSize: '3vw',
+        width: '60%',
+        height: '60px',
+        fontSize: '18px',
         fontWeight: 'bold',
         backgroundColor: 'var(--purple)',
         border: '1px solid var(--purple)',
         color: 'white',
         textShadow: '.5px .5px var(--purple)',
     },
+    recipeSortOption: {
+        fontSize: '18px',
+        padding: '1px',
+        color: 'white'
 
+    },
     ingredientDisplayFieldset: {
         width: 'fit-content',
         margin: 'auto',
@@ -59,52 +64,51 @@ const ingredientsStyles = {
     ingredientsDisplay: {
         padding: '5px'
     },
-    recipeSortOption: {
-        fontSize: '3vw',
-        padding: '1px',
-        color: 'white'
 
-    },
     ingredientLabel: {
-        fontSize: '3vw',
+        fontSize: '18px',
         height: '10px',
-        padding: '5px',
+        padding: '10px',
         display: 'flex',
         color: 'white',
         textShadow: '1px 1px var(--purple)',
         fontWeight: 'bold',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     ingredientCheckbox: {
-        height: '10px',
+        height: '15px',
         padding: '5px',
-        margin: '0',
+        margin: '10px',
         border: '1px solid var(--purple)'
 
     },
     sortButton: {
         backgroundColor: 'var(--purple)',
         color: 'white',
+        width: '60%',
         fontWeight: 'bold',
         padding: '5px',
-        fontSize: '2.75vw'
+        fontSize: '16px',
+        margin: 'auto'
     },
     H3: {
-        fontSize: '3.25vw',
+        fontSize: '18px',
         textAlign: 'center',
         color: 'white',
         textShadow: '1px 1px var(--purple)',
         fontWeight: 'bold',
         textTransform: 'uppercase',
+        textDecoration: 'underline'
     },
     tablet: {
         H3: {
-            fontSize: '2.5vw',
+            fontSize: '22px',
             color: 'white',
             textShadow: '1px 1px var(--purple)',
             fontWeight: 'bold',
             textTransform: 'uppercase',
             textAlign: 'center',
+            textDecoration: 'underline'
         },
         recipeSort: {
             border: '1px solid var(--lightPurple)',
@@ -120,17 +124,23 @@ const ingredientsStyles = {
         recipeSortSelect: {
             padding: '10px',
             margin: '5px',
-            width: '30%',
-            height: '50px',
-            fontSize: '2vw',
+            width: '45%',
+            height: '70px',
+            fontSize: '18px',
             fontWeight: 'bold',
             backgroundColor: 'var(--purple)',
             border: '1px solid var(--purple)',
             color: 'white',
             textShadow: '.5px .5px var(--purple)',
         },
+        recipeSortOption: {
+            fontSize: '20px',
+            padding: '1px',
+            color: 'white'
+
+        },
         recipeSortLegend: {
-            fontSize: '2.5vw',
+            fontSize: '20px',
             color: 'var(--purple)',
             fontWeight: 'bolder',
             textShadow: '1px 1px white',
@@ -139,15 +149,10 @@ const ingredientsStyles = {
         recipeSortLabel: {
             color: 'var(--purple)',
             textShadow: 'none',
-            fontSize: '2vw',
-            marginTop: '5PX'
+            fontSize: '20px',
+            margin: '5px'
         },
-        recipeSortOption: {
-            fontSize: '2vw',
-            padding: '1px',
-            color: 'white'
 
-        },
         ingredientDisplayFieldset: {
             width: 'fit-content',
             margin: '5px auto auto',
@@ -156,8 +161,9 @@ const ingredientsStyles = {
             backgroundColor: 'var(--purple)'
         },
         ingredientCheckbox: {
-            height: '15px',
-            margin: '0',
+            alignItems: 'center',
+            height: '20px',
+            margin: '0 10px 0 0',
             border: '1px solid var(--purple)'
 
         },
@@ -174,9 +180,9 @@ const ingredientsStyles = {
         },
 
         ingredientLabel: {
-            fontSize: '2vw',
-            height: '10px',
-            padding: '15px',
+            margin: '5px',
+            fontSize: '20px',
+            lineHeight: '20px',
             display: 'flex',
             color: 'white',
             textShadow: '1px 1px var(--purple)',
@@ -189,19 +195,20 @@ const ingredientsStyles = {
             color: 'white',
             fontWeight: 'bold',
             padding: '5px',
-            fontSize: '2vw',
+            fontSize: '18px',
             margin: 'auto',
-            width: '40%'
+            width: '45%'
         },
     },
     laptop: {
         H3: {
-            fontSize: '1.75vw',
+            fontSize: '24px',
             color: 'white',
             textShadow: '1px 1px var(--purple)',
             fontWeight: 'bold',
             textTransform: 'uppercase',
             textAlign: 'center',
+            textDecoration: 'underline'
         },
         recipeSort: {
             border: '1px solid var(--lightPurple)',
@@ -219,15 +226,20 @@ const ingredientsStyles = {
             margin: '5px',
             width: '35%',
             height: '70px',
-            fontSize: '1vw',
+            fontSize: '20px',
             fontWeight: 'bold',
             backgroundColor: 'var(--purple)',
             border: '1px solid var(--purple)',
             color: 'white',
             textShadow: '.5px .5px var(--purple)',
         },
+        recipeSortOption: {
+            fontSize: '20px',
+            padding: '1px',
+            color: 'white'
+        },
         recipeSortLegend: {
-            fontSize: '2vw',
+            fontSize: '24px',
             color: 'var(--purple)',
             fontWeight: 'bolder',
             textShadow: '1px 1px white',
@@ -236,15 +248,10 @@ const ingredientsStyles = {
         recipeSortLabel: {
             color: 'var(--purple)',
             textShadow: 'none',
-            fontSize: '1.5vw',
-            marginTop: '5PX'
+            fontSize: '20px',
+            marginTop: '5px'
         },
-        recipeSortOption: {
-            fontSize: '1vw',
-            padding: '1px',
-            color: 'white'
 
-        },
         ingredientDisplayFieldset: {
             width: 'fit-content',
             margin: 'auto',
@@ -262,20 +269,18 @@ const ingredientsStyles = {
             backgroundPosition: 'center',
             backgroundRepeat: 'repeat-y',
             backgroundSize: '100%'
-
         },
 
         ingredientCheckbox: {
-            height: '20px',
+            height: '22px',
             padding: '5px',
-            margin: '0',
+            margin: '0 10px 0 0',
             border: '1px solid var(--purple)'
 
         },
         ingredientLabel: {
-            fontSize: '1.5vw',
-            height: '15px',
-            padding: '15px',
+            fontSize: '20px',
+            lineHeight: '24px',
             display: 'flex',
             color: 'white',
             textShadow: '1px 1px var(--purple)',
@@ -287,9 +292,9 @@ const ingredientsStyles = {
             color: 'white',
             fontWeight: 'bold',
             padding: '5px',
-            fontSize: '1vw',
+            fontSize: '18px',
             margin: 'auto',
-            width: '40%'
+            width: '35%'
         },
     }
 }

@@ -179,7 +179,8 @@ class UpdateRecipe extends React.Component{
 }
     
     createIngredientFields=(recipe)=>{
-        return recipe.ingredients.map((ingredient,idx)=>
+        const displayedIngredients={
+            mobile:recipe.ingredients.map((ingredient,idx)=>
             <fieldset key={uuidv4()} style={updateRecipeStyles.fieldset}>
                 <h4 style={updateRecipeStyles.h4}> Ingredient:</h4>
                 <label key={uuidv4()} htmlFor='ingredient' style={updateRecipeStyles.label} > Name:<br/>
@@ -203,10 +204,8 @@ class UpdateRecipe extends React.Component{
                         <label htmlFor={`ingredientUnitOther${idx}`} style={updateRecipeStyles.label}> Other Unit:<br/>
                         <input type='text' name={`ingredientUnitOther${idx}`} style={updateRecipeStyles.input}/></label>
                 <button type='button' style={updateRecipeStyles.updateButtons} onClick={()=>this.deleteIngredient(idx)}>Delete</button>
-            </fieldset>)
-        }
-    createTabletIngredientFields=(recipe)=>{
-        return recipe.ingredients.map((ingredient,idx)=>
+            </fieldset>),
+            tablet:recipe.ingredients.map((ingredient,idx)=>
             <fieldset key={uuidv4()} style={updateRecipeStyles.tablet.fieldset}>
                 <h4 style={updateRecipeStyles.h4}> Ingredient:</h4>
                     <label key={uuidv4()} htmlFor='ingredient' style={updateRecipeStyles.label} > Name:<br/>
@@ -230,10 +229,8 @@ class UpdateRecipe extends React.Component{
                     <label htmlFor={`ingredientUnitOther${idx}`} style={updateRecipeStyles.label}> Other Unit:<br/>
                     <input type='text' name={`ingredientUnitOther${idx}`} style={updateRecipeStyles.input}/></label>
                     <button type='button' style={updateRecipeStyles.updateButtons} onClick={()=>this.deleteIngredient(idx)}>Delete</button>
-            </fieldset>)
-        }
-    createLaptopIngredientFields=(recipe)=>{
-        return recipe.ingredients.map((ingredient,idx)=>
+            </fieldset>),
+            laptop:recipe.ingredients.map((ingredient,idx)=>
             <fieldset key={uuidv4()} style={updateRecipeStyles.laptop.fieldset}>
                  <h4 style={updateRecipeStyles.laptop.h4}> Ingredient:</h4>
                     <label key={uuidv4()} htmlFor='ingredient' style={updateRecipeStyles.laptop.label} > Name:<br/>
@@ -263,6 +260,8 @@ class UpdateRecipe extends React.Component{
                     <button type='button' style={updateRecipeStyles.laptop.updateButtons} onClick={()=>this.deleteIngredient(idx)}>Delete</button>
             </fieldset>)
         }
+        return displayedIngredients
+        }
     render(){
         if(this.context.recipes.length===0){
            return  <GetRecipeAndFolders/>
@@ -285,8 +284,6 @@ class UpdateRecipe extends React.Component{
                }
            }
         const displayedIngredients= this.createIngredientFields(this.state);
-        const tabletDisplayedIngredients=this.createTabletIngredientFields(this.state);
-        const laptopDisplayedIngredients=this.createLaptopIngredientFields(this.state);
         return (
         <>
         <Header/>
@@ -297,7 +294,7 @@ class UpdateRecipe extends React.Component{
             <button type='button' onClick={()=>this.updateIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.updateButtons}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
             <form onSubmit={e=>this.handleSubmit(e,recipe)}>
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
-                {(this.state.ingredients.length===0)?(null):(displayedIngredients)}
+                {(this.state.ingredients.length===0)?(null):(displayedIngredients.mobile)}
                 {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):
                 (<button type='button' onClick={()=>this.addIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.updateButtons}>Add Another Ingredient</button>)}
                 <fieldset style={updateRecipeStyles.fieldset}>
@@ -342,7 +339,7 @@ class UpdateRecipe extends React.Component{
             <button type='button' onClick={()=>this.updateIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.updateButtons}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
             <form onSubmit={e=>this.handleSubmit(e,recipe)}>
                 <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
-                {(this.state.ingredients.length===0)?(null):(tabletDisplayedIngredients)}
+                {(this.state.ingredients.length===0)?(null):(displayedIngredients.tablet)}
                 {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):
                 (<button type='button' onClick={()=>this.addIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.updateButtons}>Add Another Ingredient</button>)}
                 <fieldset style={updateRecipeStyles.tablet.fieldset}>
@@ -398,7 +395,7 @@ class UpdateRecipe extends React.Component{
                 </form>):(null)}
                     <button type='button' onClick={()=>this.updateIngredient(recipe)} className='updateButtons' style={updateRecipeStyles.laptop.updateButtons}>{(this.state.ingredients.length===0&&this.state.deleted===false)?('Update Ingredients'):('Reset Ingredients')}</button> 
                     <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
-                    {(this.state.ingredients.length===0)?(null):(laptopDisplayedIngredients)}
+                    {(this.state.ingredients.length===0)?(null):(displayedIngredients.laptop)}
                     {(this.state.ingredients.length===0&&this.state.deleted===false)?(null):
                     (<button type='button' onClick={()=>this.addIngredient(recipe)} className='updateButtons' style=            {updateRecipeStyles.laptop.updateButtons}>Add Another Ingredient</button>)}
                 </div>

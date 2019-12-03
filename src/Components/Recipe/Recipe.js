@@ -43,8 +43,15 @@ class Recipe extends React.Component{
     }
 
     createDisplayedIngredients=(ingredients)=>{
-        return ingredients.map((ingredient,idx)=>{
-            return<li style={recipeStyles.mobile.recipeLi} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})
+        const displayedIngredients={
+            mobileIngredients:ingredients.map((ingredient,idx)=>{
+            return<li style={recipeStyles.mobile.recipeLi} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>}),
+            tabletIngredients:ingredients.map((ingredient,idx)=>{
+            return<li style={recipeStyles.tablet.recipeLi} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>}),
+            laptopIngredients:ingredients.map((ingredient,idx)=>{
+            return<li style={recipeStyles.laptop.recipeLi} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})
+        }
+        return displayedIngredients
         } 
    
     render(){
@@ -68,23 +75,22 @@ class Recipe extends React.Component{
             user: recipe.user,
             }
          }
-    const ingredients= this.createDisplayedIngredients(recipe.ingredients)
+        const ingredients= this.createDisplayedIngredients(recipe.ingredients)
         return(<>
-         <Header/>
-         <Nav/>
-            
+            <Header/>
+            <Nav/>
             <MediaQuery maxWidth={650}>
             <div className='recipe' style={recipeStyles.mobile.recipe}>
             <div className='recipeItems' style={recipeStyles.mobile.recipeItems}>
                     <h3 style={recipeStyles.mobile.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.mobile.recipeUl}>INSTRUCTIONS: 
-                        <li style={{letterSpacing: '2 px',width:'80%',margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'bold',color:'var(--darkPurple)'}}>{recipe.instructions}</li>
+                        <li style={recipeStyles.mobile.recipeLiInstructions}>{recipe.instructions}</li>
                     </ul>
                     <ul style={recipeStyles.mobile.recipeUl}>INGREDIENTS:
-                        {ingredients}
+                        {ingredients.mobileIngredients}
                     </ul>
                     {(recipe.created_by.length===0)?(null):
-                    (<ul style={recipeStyles.mobile.recipeUl}>Created By: 
+                    (<ul style={recipeStyles.mobile.recipeUl}> CREATED BY: 
                         <li style={recipeStyles.mobile.recipeLi}>{recipe.created_by}</li>
                     </ul>)}
                     {(recipe.link.length===0)?(null):(
@@ -92,7 +98,7 @@ class Recipe extends React.Component{
                         <li style={recipeStyles.mobile.recipeLi}>{recipe.link}</li>
                     </ul>)}
                     {(recipe.note.length===0)?(null):
-                    (<ul style={recipeStyles.mobile.recipeUl}>Note: 
+                    (<ul style={recipeStyles.mobile.recipeUl}>NOTE: 
                         <li style={recipeStyles.mobile.recipeLi}>{recipe.note}</li>
                     </ul>)}
                    
@@ -111,13 +117,13 @@ class Recipe extends React.Component{
                 <div className='recipeItems' style={recipeStyles.tablet.recipeItems}>
                     <h3 style={recipeStyles.tablet.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.tablet.recipeUl}>INSTRUCTIONS: 
-                        <li style={{letterSpacing: '2 px',width:'=fit-content', margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'bold',color:'var(--darkPurple)'}}>{recipe.instructions}</li>
+                        <li style={recipeStyles.tablet.recipeLiInstructions}>{recipe.instructions}</li>
                     </ul>
                     <ul style={recipeStyles.tablet.recipeUl}>INGREDIENTS:
-                        {ingredients}
+                        {ingredients.tabletIngredients}
                     </ul>
                     {(recipe.created_by.length===0)?(null):
-                    (<ul style={recipeStyles.tablet.recipeUl}>Created By: 
+                    (<ul style={recipeStyles.tablet.recipeUl}>CREATED BY: 
                         <li style={recipeStyles.tablet.recipeLi}>{recipe.created_by}</li>
                     </ul>)}
                     {(recipe.link.length===0)?(null):(
@@ -125,14 +131,14 @@ class Recipe extends React.Component{
                         <li style={recipeStyles.tablet.recipeLi}>{recipe.link}</li>
                     </ul>)}
                     {(recipe.note.length===0)?(null):
-                    (<ul style={recipeStyles.tablet.recipeUl}>Note: 
+                    (<ul style={recipeStyles.tablet.recipeUl}>NOTE: 
                         <li style={recipeStyles.tablet.recipeLi}>{recipe.note}</li>
                     </ul>)}
                     
                     <div className='buttons' style={recipeStyles.tablet.buttons}>
-                        <button style={recipeStyles.tablet.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}} >{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.tablet.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={recipeStyles.tablet.recipeButtonA} >{recipe.folderName}</Link></button>
                         <button style={recipeStyles.tablet.recipeButton}>
-                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}}>Update Recipe</Link>
+                            <Link to={`/update-recipe/${recipe.id}`} style={recipeStyles.tablet.recipeButtonA}>Update Recipe</Link>
                         </button>
                         <button style={recipeStyles.tablet.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe,this.props)}>Delete Recipe</button>
                     </div>
@@ -145,13 +151,13 @@ class Recipe extends React.Component{
                 <div className='recipeItems' style={recipeStyles.laptop.recipeItems}>
                     <h3 style={recipeStyles.laptop.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.laptop.recipeUl}>INSTRUCTIONS: 
-                        <li style={{letterSpacing: '2 px',width:'=fit-content', margin: 'auto',padding: '10 px',textAlign:'left',listStyle: 'none',fontWeight:'bold',color:'var(--darkPurple)'}}>{recipe.instructions}</li>
+                        <li style={recipeStyles.laptop.recipeLiInstructions}>{recipe.instructions}</li>
                     </ul>
                     <ul style={recipeStyles.laptop.recipeUl}>INGREDIENTS:
-                        {ingredients}
+                        {ingredients.laptopIngredients}
                     </ul>
                     {(recipe.created_by.length===0)?(null):
-                    (<ul style={recipeStyles.laptop.recipeUl}>Created By: 
+                    (<ul style={recipeStyles.laptop.recipeUl}>CREATED BY: 
                         <li style={recipeStyles.laptop.recipeLi}>{recipe.created_by}</li>
                     </ul>)}
                     {(recipe.link.length===0)?(null):(
@@ -159,14 +165,14 @@ class Recipe extends React.Component{
                         <li style={recipeStyles.laptop.recipeLi}>{recipe.link}</li>
                     </ul>)}
                     {(recipe.note.length===0)?(null):
-                    (<ul style={recipeStyles.laptop.recipeUl}>Note: 
+                    (<ul style={recipeStyles.laptop.recipeUl}>NOTE: 
                         <li style={recipeStyles.laptop.recipeLi}>{recipe.note}</li>
                     </ul>)}
                     
                     <div className='buttons' style={recipeStyles.laptop.buttons}>
-                        <button style={recipeStyles.laptop.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}} >{recipe.folderName}</Link></button>
+                        <button style={recipeStyles.laptop.recipeButton}><Link to={`/folder/${recipe.folder_id}`} style={recipeStyles.laptop.recipeButtonA}>{recipe.folderName}</Link></button>
                         <button style={recipeStyles.laptop.recipeButton}>
-                            <Link to={`/update-recipe/${recipe.id}`} style={{backgroundColor:'white',color:'var(--darkPurple)'}}>Update Recipe</Link>
+                            <Link to={`/update-recipe/${recipe.id}`} style={recipeStyles.laptop.recipeButtonA}>Update Recipe</Link>
                         </button>
                         <button style={recipeStyles.laptop.recipeButton} type='button' onClick={()=>this.deleteRecipe(recipe,this.props)}>Delete Recipe</button>
                     </div>
