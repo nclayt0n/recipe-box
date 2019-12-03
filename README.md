@@ -13,7 +13,7 @@ You can update recipes and folders as needed.
 email: testEmailFor@RecipeBox.com
 password: testP@ssw0rd
 
-Email is case-sensitive so type is exactly as is above. 
+Email is case-sensitive so type it exactly as is above. 
 ### `Screenshots`
 ![screen shot of landing screen](https://nclayt0n.github.io/recipe-box/src/images/landingscreen.png "App landing Page")
 ![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/laptopHome.png "App Home Page")
