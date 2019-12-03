@@ -232,7 +232,7 @@ class AddRecipe extends React.Component{
                             {(this.state.ingredients.length>0)?<><textarea className='ingredientsToDisplay' value={this.createDisplayedIngredients(this.state.ingredients)} readOnly style={style.addRecipeStyle.textarea}>
                             </textarea><br/></>:null}
                             <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
-                            <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:
+                            <label htmlFor='folder' style={style.addRecipeStyle.label}>Folder:<br/>
                             <select name='folder' style={style.addRecipeStyle.select}>
                                 {this.context.folders.map((folder)=>{
                                 return(<option name='folder' key={folder.id} value={folder.id} style={style.addRecipeStyle.option}>{folder.name}</option>)})}

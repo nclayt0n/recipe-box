@@ -18,8 +18,6 @@ const recipeListStyles = {
             textDecoration: 'none',
             listStyle: 'none',
             border: '1px solid white'
-
-
         },
         ul: {
             padding: '10px',
@@ -28,10 +26,9 @@ const recipeListStyles = {
             color: 'white'
         },
         ulA: {
-            fontSize: '4.5vw',
+            fontSize: '22px',
             color: 'white',
             textDecoration: 'none',
-            textShadow: '1px 1px var(--lightPurple)'
         },
         li: {
             padding: '10px',
@@ -40,10 +37,9 @@ const recipeListStyles = {
             textAlign: 'center',
         },
         liA: {
-
             color: 'white',
             textDecoration: 'none',
-            fontSize: '4vw'
+            fontSize: '18px'
         },
         button: {
             margin: '10px auto 10px ',
@@ -51,8 +47,9 @@ const recipeListStyles = {
             backgroundColor: 'white',
             fontWeight: 'bold',
             width: '40%',
-            fontSize: '4vw'
+            fontSize: '16px'
         },
+
         tablet: {
             div: {
                 backgroundImage: `url(${backgroundImage})`,
@@ -78,18 +75,19 @@ const recipeListStyles = {
             ul: {
                 textDecoration: 'none',
                 padding: '10px',
-                fontSize: '1.75vw',
+                fontSize: '20px',
                 fontWeight: 'bold',
                 cursor: 'pointer',
                 margin: 'auto'
             },
             ulA: {
                 color: 'white',
-                fontSize: '1.75vw',
+                fontSize: '20px',
+                textDecoration: 'none'
             },
             li: {
                 padding: '10px',
-                fontSize: '1.5vw',
+                fontSize: '18px',
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
@@ -97,11 +95,10 @@ const recipeListStyles = {
 
             },
             liA: {
-
                 color: 'white',
-                textDecoration: 'none',
                 margin: 'auto',
-                fontSize: '1.5vw',
+                fontSize: '18px',
+                textDecoration: 'none',
             },
             button: {
                 margin: '10px auto 10px ',
@@ -109,7 +106,7 @@ const recipeListStyles = {
                 backgroundColor: 'white',
                 fontWeight: 'bold',
                 width: '40%',
-                fontSize: '1.5vw'
+                fontSize: '16px'
             },
 
         },
@@ -119,7 +116,7 @@ const recipeListStyles = {
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
-                width: '50%',
+                width: '30%',
                 backgroundPosition: 'center',
                 textAlign: 'center',
                 display: 'flex',
@@ -134,21 +131,21 @@ const recipeListStyles = {
             ul: {
                 textDecoration: 'none',
                 padding: '10px',
-                fontSize: '1.75vw',
+                fontSize: '22px',
                 fontWeight: 'bold',
                 cursor: 'pointer',
 
             },
 
             ulA: {
-                fontSize: '1.75vw',
+                fontSize: '22px',
                 color: 'white',
                 textDecoration: 'none',
                 textShadow: '1px 1px var(--lightPurple)'
             },
             li: {
                 padding: '10px',
-                fontSize: '1.5vw',
+                fontSize: '18px',
                 cursor: 'pointer',
                 listStyle: 'none',
                 textAlign: 'center',
@@ -157,7 +154,7 @@ const recipeListStyles = {
 
                 color: 'white',
                 textDecoration: 'none',
-                fontSize: '1.5vw'
+                fontSize: '18px'
             },
             button: {
                 margin: '10px auto 10px ',
@@ -165,7 +162,7 @@ const recipeListStyles = {
                 backgroundColor: 'white',
                 fontWeight: 'bold',
                 width: '40%',
-                fontSize: '1.5vw'
+                fontSize: '16px'
             },
 
         }

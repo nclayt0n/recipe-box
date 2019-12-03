@@ -29,7 +29,7 @@ const folderListStyles = {
         ulA: {
             color: 'white',
             fontSize: '22px',
-            textDecoration: 'underline'
+            textDecoration: 'none'
         },
         li: {
             padding: '10px',
@@ -90,7 +90,7 @@ const folderListStyles = {
             ulA: {
                 color: 'white',
                 fontSize: '22px',
-                textDecoration: 'underline'
+                textDecoration: 'none'
             },
             li: {
                 padding: '10px',
@@ -152,7 +152,7 @@ const folderListStyles = {
             ulA: {
                 color: 'white',
                 fontSize: '22px',
-                textDecoration: 'underline'
+                textDecoration: 'none'
             },
             li: {
                 padding: '10px',

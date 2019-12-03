@@ -7,11 +7,8 @@ const addRStyles = {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            margin: '50px auto 50px',
-            padding: '50px',
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'noRepeat',
-            backgroundSize: 'cover',
+            margin: '50px auto',
+            padding: '30px',
             backgroundColor: 'white',
             backgroundPosition: 'top',
             border: '2px solid var(--purple)',
@@ -19,7 +16,9 @@ const addRStyles = {
         },
         h3: {
             color: 'var(--purple)',
-            fontSize: '18px'
+            textShadow: '.5px .25px var(--darkPurple)',
+            fontSize: '18px',
+            margin: '10px auto'
         },
         select: {
             backgroundColor: 'white',
@@ -28,7 +27,7 @@ const addRStyles = {
             fontSize: '14px',
             border: '1px solid var(--purple)',
             margin: '5px',
-
+            width: '65%'
         },
         option: {
             color: 'var(--purple)',
@@ -50,19 +49,20 @@ const addRStyles = {
             color: 'var(--purple)',
             fontWeight: 'bold',
             fontSize: '14px',
-
         },
 
         legend: {
             color: 'var(--purple)',
             fontWeight: 'bolder',
             fontSize: '16px',
+            textShadow: '.5px .25px var(--purple)',
         },
         button: {
             backgroundColor: 'var(--purple)',
             color: 'white',
             fontSize: '14px',
             margin: '5px'
+
         },
         ingredientInput: {
             width: '70%',
@@ -73,14 +73,13 @@ const addRStyles = {
         input: {
             width: '65%',
             color: 'var(--purple)',
-            margin: '5px',
             fontSize: '14px',
             border: '1px solid var(--purple)',
         },
         textarea: {
             minWidth: '75%',
-            minHeight: '75px',
             maxWidth: '125px',
+            minHeight: '75px',
             maxHeight: '250px',
             color: 'var(--purple)',
             border: '1px solid var(--purple)',
