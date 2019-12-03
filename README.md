@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Recipe Box
 ### `Live Link`
@@ -29,3 +29,4 @@ deployed using Heroku
 ![screen shot of recipe screen](https://nclayt0n.github.io/recipe-box/src/images/recipeWithNav.png "App Recipe Page")
 
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
