@@ -77,6 +77,7 @@ const addRStyles = {
             border: '1px solid var(--purple)',
         },
         textarea: {
+            fontSize: '14px',
             minWidth: '75%',
             maxWidth: '125px',
             minHeight: '75px',
@@ -158,6 +159,7 @@ const addRStyles = {
 
             },
             textarea: {
+                fontSize: '14px',
                 minWidth: '90%',
                 minHeight: '75px',
                 maxWidth: '125px',
