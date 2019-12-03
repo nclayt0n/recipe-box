@@ -85,7 +85,6 @@ class AddRecipe extends React.Component{
             this.setState({instructionsError:'*Required & Must add instruction'})
         }
         else{this.setState({instructionsError:''})}
-        console.log(recipe.name.length)
         if(recipe.name.length>15||recipe.name.length===0 || recipe.ingredients.length===0 || recipe.instructions.length===0 || recipe.folder_id===undefined){return null}else{
         this.callApi(recipe)
     }

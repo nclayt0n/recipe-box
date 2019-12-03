@@ -73,8 +73,8 @@ class Ingredients extends React.Component{
         <MediaQuery maxWidth={650}>
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} action='#ingredientsDisplay' style={style.recipeSort}>
         {(this.props.location.pathname===`/home-page`)?<legend style={style.recipeSortLegend}><Link to={'/ingredients'}style={style.recipeSortLegend}>Ingredients</Link></legend>:<legend style={style.recipeSortLegend}>Ingredients</legend>}
-                <label htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
-                <select  name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
+                <label  key={uuidv4()} htmlFor='recipeSort' style={style.recipeSortLabel}>Recipes<br/>
+                <select   key={uuidv4()}name='recipeSort' multiple size='1' style={style.recipeSortSelect}>
                 <option key={uuidv4()} value='allR' style={style.recipeSortOption}>All Recipes</option>
                    {recipeOptions}
                 </select>
@@ -114,10 +114,10 @@ class Ingredients extends React.Component{
         </MediaQuery>
 
         <MediaQuery minWidth={651} maxWidth={1050}>
-        <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.tablet.recipeSort}>
-            <legend style={style.tablet.recipeSortLegend}>Ingredients</legend>
-                <label htmlFor='recipeSort' style={style.tablet.recipeSortLabel}>Recipes<br/>
-                <select  name='recipeSort' multiple size='1' style={style.tablet.recipeSortSelect}>
+        <form  key={uuidv4()} className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.tablet.recipeSort}>
+            <legend  key={uuidv4()} style={style.tablet.recipeSortLegend}>Ingredients</legend>
+                <label  key={uuidv4()} htmlFor='recipeSort' style={style.tablet.recipeSortLabel}>Recipes<br/>
+                <select   key={uuidv4()} name='recipeSort' multiple size='1' style={style.tablet.recipeSortSelect}>
                 <option key={uuidv4()} value='allR' style={style.tablet.recipeSortOption}>All Recipes</option>
                    {tabletRecipeOptions}
                 </select>
@@ -131,7 +131,7 @@ class Ingredients extends React.Component{
             (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
             <ValidationError Ingredientsmessage={this.state.error}/>
            <form key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
-                <fieldset style={style.tablet.ingredientDisplayFieldset}>
+                <fieldset  key={uuidv4()} style={style.tablet.ingredientDisplayFieldset}>
                 {(this.state.displayed===undefined)?
                 (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
                 {(this.state.allRecipes===true)?
@@ -158,8 +158,8 @@ class Ingredients extends React.Component{
         <MediaQuery minWidth={1051}>
         <form className='recipeSort' onSubmit={(e)=>this.sortByRecipe(e)} style={style.laptop.recipeSort}>
             <legend style={style.laptop.recipeSortLegend}>Ingredients</legend>
-                <label htmlFor='recipeSort' style={style.laptop.recipeSortLabel}>Recipes<br/>
-                <select  name='recipeSort' multiple size='1' style={style.laptop.recipeSortSelect}>
+                <label  key={uuidv4()} htmlFor='recipeSort' style={style.laptop.recipeSortLabel}>Recipes<br/>
+                <select   key={uuidv4()} name='recipeSort' multiple size='1' style={style.laptop.recipeSortSelect}>
                 <option key={uuidv4()} value='allR' style={style.laptop.recipeSortOption}>All Recipes</option>
                    {laptopRecipeOptions}
                 </select>
@@ -167,16 +167,16 @@ class Ingredients extends React.Component{
                 <button type='submit' style={style.laptop.sortButton}>Submit</button>
         </form>
         {(this.state.displayed.length===0)?null:<>
-        <section className='ingredientsList'  key={uuidv4()} style={style.laptop.ingredientsList}>
+        <section className='ingredientsList' key={uuidv4()} style={style.laptop.ingredientsList}>
             <h3 key={uuidv4()} style={style.laptop.H3}>Ingredients</h3>
             {(this.state.clicked===false)?
             (<ValidationError Ingredientsmessage='Choose a Sort Field'/>):(null)}
             <ValidationError Ingredientsmessage={this.state.error}/>
             
            <form key={uuidv4()} className='ingredientsDisplay' style={style.ingredientsDisplay}>
-                <fieldset style={style.laptop.ingredientDisplayFieldset}>
+                <fieldset key={uuidv4()} style={style.laptop.ingredientDisplayFieldset}>
                 {(this.state.displayed===undefined)?
-                (<ValidationError Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
+                (<ValidationError  Ingredientsmessage={this.state.error||'No Recipe To Display'}/>): null}
                 {(this.state.allRecipes===true)?
                 (this.state.displayed.map(recipes=>{return recipes.ingredients.map(ingredient=>{
                         return <>
