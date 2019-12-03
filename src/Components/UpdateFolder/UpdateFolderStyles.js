@@ -10,14 +10,15 @@ const updateFolderStyles = {
         flexDirection: 'column',
         justifyContent: 'center',
         margin: '50px auto',
-        width: '90%'
+        width: '90%',
+        padding: '10px'
     },
 
     updateh3: {
         color: 'white',
         textAlign: 'center',
         textShadow: '1px 1px #8a64a3',
-        fontSize: '3.25vw',
+        fontSize: '16px',
         textTransform: 'uppercase',
         margin: '5px'
     },
@@ -29,17 +30,16 @@ const updateFolderStyles = {
     },
     updateFolderInput: {
         margin: '10px',
-        fontSize: '2vw',
-        padding: '5px',
+        fontSize: '16px',
         backgroundColor: 'var(--lightPurple)',
-        border: '2.5px solid var(--darkPurple)',
+        border: '2px solid var(--darkPurple)',
         fontWeight: 'bold',
         color: 'var(--darkPurple)'
     },
 
     updateFolderLabel: {
         textTransform: 'uppercase',
-        fontSize: '3vw',
+        fontSize: '16px',
         color: 'var(--darkPurple)',
         fontWeight: 'bolder'
     },
@@ -48,7 +48,7 @@ const updateFolderStyles = {
         backgroundColor: 'white',
         color: 'var(--darkPurple)',
         display: 'flex',
-        fontSize: '2.5vw',
+        fontSize: '14px',
         border: '2px solid white',
         margin: 'auto auto 5px',
         fontWeight: 'bolder'
@@ -56,7 +56,7 @@ const updateFolderStyles = {
 
     updateButtons: {
         display: 'flex',
-        fontSize: '2vw',
+        fontSize: '14px',
         color: 'var(--darkPurple)',
         border: '2px solid white',
         margin: 'auto auto 5px',
@@ -73,13 +73,14 @@ const updateFolderStyles = {
             flexDirection: 'column',
             justifyContent: 'center',
             margin: '50px auto',
-            width: '50%'
+            width: '50%',
+            padding: '10px'
         },
         updateh3: {
             color: 'white',
             textAlign: 'center',
             textShadow: '1px 1px #8a64a3',
-            fontSize: '2vw',
+            fontSize: '18px',
             textTransform: 'uppercase'
         },
         updateFolderFieldset: {
@@ -91,7 +92,7 @@ const updateFolderStyles = {
         },
         updateFolderInput: {
             margin: '10px',
-            fontSize: '1.5vw',
+            fontSize: '16px',
             padding: '5px',
             backgroundColor: 'var(--lightPurple)',
             border: '2px solid var(--darkPurple)',
@@ -100,7 +101,7 @@ const updateFolderStyles = {
         },
         updateFolderLabel: {
             textTransform: 'uppercase',
-            fontSize: '1.5vw',
+            fontSize: '16px',
             color: 'var(--darkPurple)',
             fontWeight: 'bolder'
         },
@@ -108,14 +109,14 @@ const updateFolderStyles = {
             backgroundColor: 'white',
             color: 'var(--darkPurple)',
             display: 'flex',
-            fontSize: '1.5vw',
+            fontSize: '16px',
             border: '2px solid white',
             margin: 'auto auto 5px',
             fontWeight: 'bolder'
         },
         updateButtons: {
             display: 'flex',
-            fontSize: '2vw',
+            fontSize: '16px',
             color: 'var(--darkPurple)',
             border: '2px solid white',
             margin: 'auto auto 5px',
@@ -133,14 +134,15 @@ const updateFolderStyles = {
             flexDirection: 'column',
             justifyContent: 'center',
             margin: '50px auto',
-            width: '30%'
+            width: '500px',
+            padding: '10px'
         },
         updateh3: {
             color: 'white',
             textAlign: 'center',
             textShadow: '1px 1px #8a64a3',
-            fontSize: '1vw',
-            textTransform: 'uppercase'
+            fontSize: '20px',
+            textTransform: 'uppercase',
         },
         updateFolderFieldset: {
             margin: 'auto auto 15px',
@@ -151,7 +153,7 @@ const updateFolderStyles = {
         },
         updateFolderInput: {
             margin: '10px',
-            fontSize: '1vw',
+            fontSize: '18px',
             padding: '5px',
             backgroundColor: 'var(--lightPurple)',
             border: '2px solid var(--darkPurple)',
@@ -160,7 +162,7 @@ const updateFolderStyles = {
         },
         updateFolderLabel: {
             textTransform: 'uppercase',
-            fontSize: '1vw',
+            fontSize: '18px',
             color: 'var(--darkPurple)',
             fontWeight: 'bolder'
         },
@@ -168,14 +170,14 @@ const updateFolderStyles = {
             backgroundColor: 'white',
             color: 'var(--darkPurple)',
             display: 'flex',
-            fontSize: '1vw',
+            fontSize: '18px',
             border: '2px solid white',
             margin: 'auto auto 5px',
             fontWeight: 'bolder'
         },
         updateButtons: {
             display: 'flex',
-            fontSize: '2vw',
+            fontSize: '18px',
             color: 'var(--darkPurple)',
             border: '2px solid white',
             margin: 'auto auto 5px',
