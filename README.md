@@ -14,6 +14,12 @@ email: testEmailFor@RecipeBox.com
 password: testP@ssw0rd
 
 Email is case-sensitive so type it exactly as is above. 
+### `Technologies`
+Technologies used within this project include;
+Front-End: React, Html, CSS
+deployed using Zeit Now
+Back-End: Node.js, Express, PostgreSQL
+deployed using Heroku
 ### `Screenshots`
 ![screen shot of landing screen](https://nclayt0n.github.io/recipe-box/src/images/landingscreen.png "App landing Page")
 ![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/laptopHome.png "App Home Page")
@@ -22,9 +28,4 @@ Email is case-sensitive so type it exactly as is above.
 ![screen shot of Recipe List screen](https://nclayt0n.github.io/recipe-box/src/images/RecipeList.png "App Recipe List Page")
 ![screen shot of recipe screen](https://nclayt0n.github.io/recipe-box/src/images/recipeWithNav.png "App Recipe Page")
 
-### `Technologies`
-Technologies used within this project include;
-Front-End: React, Html, CSS
-deployed using Zeit Now
-Back-End: Node.js, Express, PostgreSQL
-deployed using Heroku
+
