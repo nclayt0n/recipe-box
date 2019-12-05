@@ -126,24 +126,24 @@ class UpdateRecipe extends React.Component{
     validateRecipe=(updatedRecipe)=>{
         if(updatedRecipe.name.length<3){
             this.setState({nameError: '*Required & Must be atleast 3 characters'
-        }) 
-        }else{this.setState({nameError:''})}
+        })} 
+        if(updatedRecipe.name.length>20){
+            this.setState({nameError: '*20 characters max'}) 
+        }
         if(updatedRecipe.ingredients.length<1){
             this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'})
         }
-        if( updatedRecipe.ingredients!==undefined||updatedRecipe.ingredients[0].name.length){
+        if(updatedRecipe.ingredients!==undefined||updatedRecipe.ingredients[0].name.length){
             this.setState({ingredientsError:'*Required & Must add at least 1 ingredient name with 3 characters'})
         }
-        else{this.setState({ingredientsError:''})}
         if(updatedRecipe.instructions.length<1){
             this.setState({instructionsError:'*Required & Must add instruction'})
-            
         }
-        else{this.setState({instructionsError:''})}
+        else{this.setState({ingredientsError:'',nameError:'',instructionsError:''})}
       this.recipeCall(updatedRecipe)
     }
     recipeCall=(updatedRecipe)=>{
-        if(updatedRecipe.name.length===0 && updatedRecipe.ingredients.length===0 && updatedRecipe.instructions.length ===0){ return null}if(updatedRecipe.name.length<3|| updatedRecipe.ingredients.length<1||updatedRecipe.instructions.length<1 ||
+        if(updatedRecipe.name.length===0 && updatedRecipe.ingredients.length===0 && updatedRecipe.instructions.length ===0){ return null}if(updatedRecipe.name.length<3|| updatedRecipe.name.length>20||updatedRecipe.ingredients.length<1||updatedRecipe.instructions.length<1 ||
             updatedRecipe.ingredients[0].name.length<3){
            return null
         }
@@ -185,7 +185,6 @@ class UpdateRecipe extends React.Component{
                 <h4 style={updateRecipeStyles.h4}> Ingredient:</h4>
                 <label key={uuidv4()} htmlFor='ingredient' style={updateRecipeStyles.label} > Name:<br/>
                 <input key={uuidv4()} name={`alteredName${idx}`}  defaultValue={this.state.ingredients[idx].name} style={updateRecipeStyles.input}/></label>
-                <ValidationError Namemessage={this.state.nameError}/>
                 <label htmlFor='ingredient' style={updateRecipeStyles.label}>Quantity:<br/>
                 <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity} style={updateRecipeStyles.input}/></label>
                 <label htmlFor='ingredient' style={updateRecipeStyles.label}>Unit:<br/>
@@ -210,7 +209,6 @@ class UpdateRecipe extends React.Component{
                 <h4 style={updateRecipeStyles.h4}> Ingredient:</h4>
                     <label key={uuidv4()} htmlFor='ingredient' style={updateRecipeStyles.label} > Name:<br/>
                     <input key={uuidv4()} name={`alteredName${idx}`}  defaultValue={this.state.ingredients[idx].name} style={updateRecipeStyles.input}/></label>
-                    <ValidationError Namemessage={this.state.nameError}/>
                     <label htmlFor='ingredient' style={updateRecipeStyles.label}>Quantity:<br/>
                     <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity} style={updateRecipeStyles.input}/></label>
                     <label htmlFor='ingredient' style={updateRecipeStyles.label}>Unit:<br/>
@@ -236,7 +234,6 @@ class UpdateRecipe extends React.Component{
                     <label key={uuidv4()} htmlFor='ingredient' style={updateRecipeStyles.laptop.label} > Name:<br/>
                         <input key={uuidv4()} name={`alteredName${idx}`}  defaultValue={this.state.ingredients[idx].name} style={updateRecipeStyles.laptop.input}/>
                     </label>
-                    <ValidationError Namemessage={this.state.nameError}/>
                     <label htmlFor='ingredient' style={updateRecipeStyles.laptop.label}>Quantity:<br/>
                         <input key={uuidv4()} name={`alteredQuantity${idx}`} defaultValue={this.state.ingredients[idx].quantity} style={updateRecipeStyles.laptop.input}/>
                     </label>
