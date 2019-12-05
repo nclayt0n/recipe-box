@@ -74,8 +74,8 @@ class AddRecipe extends React.Component{
         if(recipe.name.length<3){
             this.setState({nameError: '*Required & Must be atleast 3 characters'}) 
         }
-        if(recipe.name.length>15){
-            this.setState({nameError: '*15 characters max'}) 
+        if(recipe.name.length>20){
+            this.setState({nameError: '*20 characters max'}) 
         }else{this.setState({nameError:''})}
         if(recipe.ingredients.length<1){
             this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'})
@@ -85,7 +85,7 @@ class AddRecipe extends React.Component{
             this.setState({instructionsError:'*Required & Must add instruction'})
         }
         else{this.setState({instructionsError:''})}
-        if(recipe.name.length>15||recipe.name.length===0 || recipe.ingredients.length===0 || recipe.instructions.length===0 || recipe.folder_id===undefined){return null}else{
+        if(recipe.name.length>20||recipe.name.length===0 || recipe.ingredients.length===0 || recipe.instructions.length===0 || recipe.folder_id===undefined){return null}else{
         this.callApi(recipe)
     }
 }
