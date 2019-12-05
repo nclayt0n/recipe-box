@@ -15,9 +15,9 @@ password: testP@ssw0rd
 
 Email is case-sensitive so type it exactly as is above. 
 ### `Technologies`
-Technologies used in this project include;\n
+Technologies used in this project include;<br/>
 Front-End: React, Html, CSS
-deployed using Zeit Now\n
+deployed using Zeit Now<br/>
 Back-End: Node.js, Express, PostgreSQL
 deployed using Heroku
 ### `Screenshots`
