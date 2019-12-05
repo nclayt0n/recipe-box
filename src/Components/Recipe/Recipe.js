@@ -46,9 +46,9 @@ class Recipe extends React.Component{
             mobileIngredients:ingredients.map((ingredient,idx)=>{
             return<li style={recipeStyles.mobile.recipeLi} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>}),
             tabletIngredients:ingredients.map((ingredient,idx)=>{
-            return<li style={recipeStyles.tablet.recipeLi} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>}),
+            return<li style={recipeStyles.tablet.recipeLiI} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>}),
             laptopIngredients:ingredients.map((ingredient,idx)=>{
-            return<li style={recipeStyles.laptop.recipeLi} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})
+            return<li style={recipeStyles.laptop.recipeLiI} key={uuidv4()}>{ingredient.name} {ingredient.quantity} {ingredient.unit}</li>})
         }
         return displayedIngredients
         } 
@@ -116,7 +116,7 @@ class Recipe extends React.Component{
                 <div className='recipeItems' style={recipeStyles.tablet.recipeItems}>
                     <h3 style={recipeStyles.tablet.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.tablet.recipeUl}>INSTRUCTIONS: 
-                        <li style={recipeStyles.tablet.recipeLiInstructions}>{recipe.instructions}</li>
+                        <li style={recipeStyles.tablet.recipeLiI}>{recipe.instructions}</li>
                     </ul>
                     <ul style={recipeStyles.tablet.recipeUl}>INGREDIENTS:
                         {ingredients.tabletIngredients}
@@ -150,7 +150,7 @@ class Recipe extends React.Component{
                 <div className='recipeItems' style={recipeStyles.laptop.recipeItems}>
                     <h3 style={recipeStyles.laptop.h3}>Recipe: {recipe.name}</h3>
                     <ul style={recipeStyles.laptop.recipeUl}>INSTRUCTIONS: 
-                        <li style={recipeStyles.laptop.recipeLiInstructions}>{recipe.instructions}</li>
+                        <li style={recipeStyles.laptop.recipeLiI}>{recipe.instructions}</li>
                     </ul>
                     <ul style={recipeStyles.laptop.recipeUl}>INGREDIENTS:
                         {ingredients.laptopIngredients}

@@ -5,7 +5,7 @@ const recipeStyles = {
             margin: '50px auto',
             display: 'flex',
             flexDirection: 'column',
-            width: '90%',
+            width: '100%',
             fontSize: '16px',
         },
 
@@ -34,7 +34,7 @@ const recipeStyles = {
             textAlign: 'center',
             margin: 'auto auto 10px',
             padding: '10px',
-            width: '80%',
+            width: '100%',
             fontWeight: 'bolder',
             color: 'var(--darkPurple)',
             backgroundColor: 'var(--lightPurple)',
@@ -46,7 +46,7 @@ const recipeStyles = {
             margin: '0 auto',
             padding: '10px',
             width: '70%',
-            textAlign: 'center',
+            textAlign: 'left',
             listStyle: 'none',
             fontWeight: 'bold',
             color: 'var(--darkPurple)',
@@ -95,7 +95,7 @@ const recipeStyles = {
             margin: '50px auto',
             display: 'flex',
             flexDirection: 'column',
-            width: '70%',
+            width: '90%',
             padding: '10px',
             fontSize: '18px'
         },
@@ -123,7 +123,7 @@ const recipeStyles = {
         recipeUl: {
             fontSize: '18px',
             textAlign: 'center',
-            width: '60%',
+            width: '80%',
             margin: 'auto auto 15px',
             padding: '15px',
             backgroundColor: 'var(--lightPurple)',
@@ -144,12 +144,12 @@ const recipeStyles = {
             fontWeight: 'bold',
             color: 'var(--darkPurple)'
         },
-        recipeLiInstructions: {
+        recipeLiI: {
             letterSpacing: '2px',
             width: '80%',
             margin: 'auto',
             padding: '10px',
-            textAlign: 'center',
+            textAlign: 'left',
             listStyle: 'none',
             textDecoration: 'none',
             fontWeight: 'bold',
@@ -186,7 +186,7 @@ const recipeStyles = {
             margin: '50px auto',
             display: 'flex',
             flexDirection: 'column',
-            width: '50%',
+            width: '70%',
             padding: '10px',
             fontSize: '18px',
 
@@ -214,7 +214,7 @@ const recipeStyles = {
         },
         recipeUl: {
             textAlign: 'center',
-            width: '60%',
+            width: '70%',
             margin: 'auto auto 15px',
             padding: '15px',
             backgroundColor: 'var(--lightPurple)',
@@ -226,7 +226,7 @@ const recipeStyles = {
 
         recipeLi: {
             letterSpacing: '2px',
-            width: '60%',
+            width: '80%',
             margin: 'auto',
             padding: '10px',
             textAlign: 'center',
@@ -236,12 +236,12 @@ const recipeStyles = {
             color: 'var(--darkPurple)',
             fontSize: '20px'
         },
-        recipeLiInstructions: {
+        recipeLiI: {
             letterSpacing: '2px',
-            width: '60%',
+            width: '80%',
             margin: 'auto',
             padding: '10px',
-            textAlign: 'center',
+            textAlign: 'left',
             listStyle: 'none',
             textDecoration: 'none',
             fontWeight: 'bold',
