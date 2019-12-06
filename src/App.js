@@ -23,16 +23,17 @@ import Context from './Context'
 import Nav from './Components/Nav/Nav'
 import './App.css'
 import TokenService from './services/token-service'
+
 class App extends React.Component {
   static defaultProps={folders:STORE.folders[0],
   recipes:STORE.recipes[0]} 
   constructor(){
     super()
-this.state={
-    folders:[],
-    recipes:[],
-    user_id:0
-  }
+      this.state={
+          folders:[],
+          recipes:[],
+          user_id:0
+      }
 }
   handleAddFolders=(folders)=>{
     this.setState({folders:[...folders]})
