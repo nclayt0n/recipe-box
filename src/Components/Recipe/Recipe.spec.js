@@ -7,7 +7,7 @@ import toJson from 'enzyme-to-json'
 import * as Context from '../../Context'
  import ShallowRenderer from 'react-test-renderer/shallow';
  
- describe.skip('<Recipe />', () => {
+ describe('<Recipe />', () => {
      const contextValues = { folders: [{
         "id": "d26e01a6-ffaf-11e8-8eb2-f2801f1b9fc3",
         "name": "Spangley",

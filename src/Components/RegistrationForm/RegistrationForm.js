@@ -28,7 +28,7 @@ class RegistrationForm extends React.Component{
           history.push('/login')
         })
         .catch(res=>{
-          this.setState({error:res.error})
+          this.setState({error:res.message})
         })
       }
     

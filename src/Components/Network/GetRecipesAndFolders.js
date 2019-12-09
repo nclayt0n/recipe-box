@@ -1,7 +1,7 @@
-import React from 'react'
-import TokenService from '../../services/token-service'
-import config from '../../config'
-import Context from '../../Context'
+import React from 'react';
+import TokenService from '../../services/token-service';
+import config from '../../config';
+import Context from '../../Context';
 
 class GetRecipeAndFolders extends React.Component{
     static contextType=Context
@@ -21,16 +21,18 @@ const options = {
           options)
             ])
             .then(([recipesRes, foldersRes]) => {
-                if (!recipesRes.ok)
+                if (!recipesRes.ok){
                     return recipesRes.json().then(e => Promise.reject(e));
-                if (!foldersRes.ok)
+                }
+                if (!foldersRes.ok){
                     return foldersRes.json().then(e => Promise.reject(e));
+                }
 
                 return Promise.all([recipesRes.json(), foldersRes.json()]);
             })
             .then(([recipes, folders]) => {
-                this.context.addFolders(folders)
-                this.context.addRecipes(recipes)
+                this.context.addFolders(folders);
+                this.context.addRecipes(recipes);
                 
             })
             .catch(error => {

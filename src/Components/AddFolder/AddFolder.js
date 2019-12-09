@@ -1,15 +1,15 @@
-import React from 'react'
-import {withRouter} from 'react-router-dom'
-import Context from '../../Context'
-import config from '../../config'
-import hpStyles from '../HomePage/HomePageStyles'
-import addFStyles from './AddFolderStyles'
-import Header from '../Header/Header'
-import Nav from '../Nav/Nav'
-import MediaQuery from 'react-responsive'
-import ValidationError from '../../Validation/ValidationError'
-import TokenService from '../../services/token-service'
-import GetRecipeAndFolders from '../Network/GetRecipesAndFolders'
+import React from 'react';
+import {withRouter} from 'react-router-dom';
+import Context from '../../Context';
+import config from '../../config';
+import hpStyles from '../HomePage/HomePageStyles';
+import addFStyles from './AddFolderStyles';
+import Header from '../Header/Header';
+import Nav from '../Nav/Nav';
+import MediaQuery from 'react-responsive';
+import ValidationError from '../../Validation/ValidationError';
+import TokenService from '../../services/token-service';
+import GetRecipeAndFolders from '../Network/GetRecipesAndFolders';
 
 class AddFolder extends React.Component{
     static contextType=Context;
@@ -17,11 +17,11 @@ class AddFolder extends React.Component{
         super()
         this.state={
             error:''
-        }
+        };
     }
     handleSubmit=(e)=>{
         e.preventDefault();
-        const folderName=(e.target.folderName.value)
+        const folderName=(e.target.folderName.value);
         if(folderName.length<3){
             this.setState({error:'Name Must contain at least 3 characters'})
         }if(folderName.length>20){
@@ -47,10 +47,10 @@ class AddFolder extends React.Component{
             })
             .then(responseJson =>this.context.addFolder(responseJson))
             .catch(error =>{
-                console.error(error)
-            })
+                console.error(error);
+            });
             if(this.props.location.pathname==='/home-page'){
-                this.props.history.push('/home-page')
+                this.props.history.push('/home-page');
                 document.getElementById('addFolderForm').reset();
                 
             }else{
@@ -62,9 +62,9 @@ class AddFolder extends React.Component{
     render(){ 
         let style;
          if(this.props.location.pathname===`/home-page`){
-            style=hpStyles.addFolder
+            style=hpStyles.addFolder;
         }if(this.props.location.pathname==='/add-folder'){
-            style=addFStyles  
+            style=addFStyles;
             if(this.context.folders.length===0){
             return <GetRecipeAndFolders/>
             }

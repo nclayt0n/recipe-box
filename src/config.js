@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 module.exports = {
     API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT,
     TOKEN_KEY: 'recipebox-client-auth-token',
