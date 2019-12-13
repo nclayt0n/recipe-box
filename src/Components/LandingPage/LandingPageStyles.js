@@ -75,7 +75,7 @@ const landingPageStyles = {
     landingPageLinkBox: {
         display: 'flex',
         flexDirection: 'column',
-        width: '170px',
+        width: '175px',
         marginTop: '150px',
     },
 
