@@ -67,18 +67,18 @@ class AddRecipe extends React.Component{
     }   
     validateRecipe=(recipe)=>{
         if(this.context.folders.length===0){
-            this.setState({folderError:'*Must create a folder before creating a recipe.'})
+            this.setState({folderError:'*Must create a folder before creating a recipe.'});
         }else{
             this.setState({folderError:''})
         }
         if(recipe.name.length<3){
-            this.setState({nameError: '*Required & Must be atleast 3 characters'}) 
+            this.setState({nameError: '*Required & Must be atleast 3 characters'}); 
         }
         if(recipe.name.length>20){
-            this.setState({nameError: '*20 characters max'}) 
+            this.setState({nameError: '*20 characters max'}); 
         }else{this.setState({nameError:''})}
         if(recipe.ingredients.length<1){
-            this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'})
+            this.setState({ingredientsError:'*Required & Must add at least 1 ingredient'});
         }
         else{this.setState({ingredientsError:''})}
         if(recipe.instructions.length<1){
@@ -176,9 +176,9 @@ class AddRecipe extends React.Component{
         <MediaQuery maxWidth={650}>
             <div 
                 className='addRecipe' 
-                style={style.addRecipeStyle.div}>
+                style={addRStyles.addRecipeStyle.div}>
                 {(this.props.location.pathname===`/home-page`)
-                    ?<h3 style={style.addRecipeStyle.h3}>
+                    ?<h3 style={addRStyles.addRecipeStyle.h3}>
                         <Link 
                             to={'/add-recipe'} 
                             style={{color:'var(--purple)'}}>
@@ -186,51 +186,51 @@ class AddRecipe extends React.Component{
                         </Link>
                     </h3>
                     :<h3 
-                    style={style.addRecipeStyle.h3}>
+                    style={addRStyles.addRecipeStyle.h3}>
                     ADD RECIPE
                     </h3>}   
                 <form 
                     id='ingredientForm' 
                     onSubmit={e=>this.addIngredient(e)} 
-                    style={style.addRecipeStyle.form}>
+                    style={addRStyles.addRecipeStyle.form}>
                     <ValidationError Foldermessage={this.state.folderError}/>
-                    <fieldset style={style.addRecipeStyle.fieldset}>
-                        <legend style={style.addRecipeStyle.legend}>Add Ingredient</legend>
+                    <fieldset style={addRStyles.addRecipeStyle.fieldset}>
+                        <legend style={addRStyles.addRecipeStyle.legend}>Add Ingredient</legend>
                         <label 
                             htmlFor='ingredientName' 
-                            style={style.addRecipeStyle.label}>
+                            style={addRStyles.addRecipeStyle.label}>
                             Name:<br/>
                             <input 
                                 type='text' 
                                 name='ingredientName' 
-                                style={style.addRecipeStyle.ingredientInput}/>
+                                style={addRStyles.addRecipeStyle.ingredientInput}/>
                         </label>
                         <ValidationError Ingredientmessage={this.state.ingredientError}/><br/>
                         <label 
                             htmlFor='ingredientQuantity' 
-                            style={style.addRecipeStyle.label}>
+                            style={addRStyles.addRecipeStyle.label}>
                             Quantity:<br/>
                             <input 
                                 type='text' 
                                 name='ingredientQuantity' 
-                                style={style.addRecipeStyle.ingredientInput}/>
+                                style={addRStyles.addRecipeStyle.ingredientInput}/>
                         </label>
                         <br/>
                         <label 
                             htmlFor='ingredientUnit' 
-                            style={style.addRecipeStyle.label}>
+                            style={addRStyles.addRecipeStyle.label}>
                             Unit: <br/>
                             <select 
                                 name='ingredientUnit' 
-                                style={style.addRecipeStyle.select}>
+                                style={addRStyles.addRecipeStyle.select}>
                                 <option 
                                     value='' 
-                                    style={style.addRecipeStyle.option}>
+                                    style={addRStyles.addRecipeStyle.option}>
                                     select a unit
                                 </option>
                                 <option 
                                     value='cup(s)'
-                                    style={style.addRecipeStyle.option}>
+                                    style={addRStyles.addRecipeStyle.option}>
                                     Cup(s)
                                 </option>
                                 <option 
@@ -240,39 +240,39 @@ class AddRecipe extends React.Component{
                             
                                 <option 
                                     value='package(s)'
-                                    style={style.addRecipeStyle.option}>
+                                    style={addRStyles.addRecipeStyle.option}>
                                     Package(s)
                                 </option>
                             
                                 <option 
                                     value='teaspoon(s)'
-                                    style={style.addRecipeStyle.option}>
+                                    style={addRStyles.addRecipeStyle.option}>
                                     Teaspoon(s)
                                 </option>
                             
                                 <option 
                                     value='tablespoon(s)'
-                                    style={style.addRecipeStyle.option}>
+                                    style={addRStyles.addRecipeStyle.option}>
                                     Tablespoon(s)
                                 </option>
                                 <option 
                                     value='ounce(s)'
-                                    style={style.addRecipeStyle.option}>
+                                    style={addRStyles.addRecipeStyle.option}>
                                     Ounce(s)
                                 </option>
                                 <option 
                                     value='pint(s)'
-                                    style={style.addRecipeStyle.option}>
+                                    style={addRStyles.addRecipeStyle.option}>
                                     Pint(s)
                                 </option>
                                 <option 
                                     value='bundle(s)'
-                                    style={style.addRecipeStyle.option}>
+                                    style={addRStyles.addRecipeStyle.option}>
                                     Bundle(s)
                                 </option>
                                 <option 
                                     value='other'
-                                    style={style.addRecipeStyle.option}>
+                                    style={addRStyles.addRecipeStyle.option}>
                                     Other
                                 </option>
                             </select>
@@ -280,17 +280,17 @@ class AddRecipe extends React.Component{
                         <br/>
                         <label 
                             htmlFor='ingredientUnitOther' 
-                            style={style.addRecipeStyle.label}> 
+                            style={addRStyles.addRecipeStyle.label}> 
                             Other Unit:<br/>
                             <input 
                                 type='text' 
                                 name='ingredientUnitOther' 
-                                style={style.addRecipeStyle.ingredientInput}/>
+                                style={addRStyles.addRecipeStyle.ingredientInput}/>
                         </label>
                         <br/>
                         <button 
                             type='submit' 
-                                style={style.addRecipeStyle.button}>    
+                                style={addRStyles.addRecipeStyle.button}>    
                                 Enter
                         </button>
                         <br/>
@@ -299,7 +299,7 @@ class AddRecipe extends React.Component{
                                 <textarea 
                                     className='ingredientsToDisplay' 
                                     value={this.createDisplayedIngredients(this.state.ingredients)}readOnly 
-                                    style={style.addRecipeStyle.textarea}>
+                                    style={addRStyles.addRecipeStyle.textarea}>
                                 </textarea>
                                 <br/>
                             </>
@@ -311,65 +311,65 @@ class AddRecipe extends React.Component{
                 <form 
                     id='recipeForm' 
                     onSubmit={e=>this.handleSubmit(e)} 
-                    style={style.addRecipeStyle.form}>
-                    <fieldset style={style.addRecipeStyle.fieldset}>
-                        <legend style={style.addRecipeStyle.legend}>Recipe</legend>
+                    style={addRStyles.addRecipeStyle.form}>
+                    <fieldset style={addRStyles.addRecipeStyle.fieldset}>
+                        <legend style={addRStyles.addRecipeStyle.legend}>Recipe</legend>
                             <label 
                                 htmlFor='name' 
-                                style={style.addRecipeStyle.label}>
+                                style={addRStyles.addRecipeStyle.label}>
                                 Name:<br/>
                                 <input 
                                     type='text' 
                                     name='name' 
-                                    style={style.addRecipeStyle.input}/>
+                                    style={addRStyles.addRecipeStyle.input}/>
                             </label>
                             <br/> 
                             <ValidationError Namemessage={this.state.nameError}/>
                             <label 
                                 htmlFor='instructions' 
-                                style={style.addRecipeStyle.label}>
+                                style={addRStyles.addRecipeStyle.label}>
                                 Instructions:<br/>
                                 <textarea 
                                     name='instructions' 
-                                    style={style.addRecipeStyle.textarea}>
+                                    style={addRStyles.addRecipeStyle.textarea}>
                                 </textarea>
                             </label>
                             <br/>
                             <ValidationError Instructionsmessage={this.state.instructionsError}/>
                             <label 
                                 htmlFor='note' 
-                                style={style.addRecipeStyle.label}>
+                                style={addRStyles.addRecipeStyle.label}>
                                 Note:<br/>
                                 <input 
                                     type='text' 
                                     name='note' 
-                                    style={style.addRecipeStyle.input}/>
+                                    style={addRStyles.addRecipeStyle.input}/>
                             </label>
                             <br/>
                             <label 
                                 htmlFor='link' 
-                                style={style.addRecipeStyle.label}>
+                                style={addRStyles.addRecipeStyle.label}>
                                 Link:<br/>
                                 <input 
                                     type='text' 
                                     name='link' 
-                                    style={style.addRecipeStyle.input}/>
+                                    style={addRStyles.addRecipeStyle.input}/>
                             </label>
                             <br/>
                             <label 
                                 htmlFor='createdBy' 
-                                style={style.addRecipeStyle.label}>
+                                style={addRStyles.addRecipeStyle.label}>
                                 Creator:<br/>
                                 <input 
                                     type='text' 
                                     name='createdBy' 
-                                    style={style.addRecipeStyle.input}/>
+                                    style={addRStyles.addRecipeStyle.input}/>
                             </label>
                             <br/>  
                             {(this.state.ingredients.length>0)
                                 ?<label 
                                     htmlFor='ingredientsToDisplay' 
-                                    style={style.addRecipeStyle.label}>
+                                    style={addRStyles.addRecipeStyle.label}>
                                     Ingredients: 
                                 </label>
                                 :null
@@ -380,7 +380,7 @@ class AddRecipe extends React.Component{
                                         className='ingredientsToDisplay' 
                                         value={this.createDisplayedIngredients(this.state.ingredients)} 
                                         readOnly 
-                                        style={style.addRecipeStyle.textarea}>
+                                        style={addRStyles.addRecipeStyle.textarea}>
                                     </textarea>
                                     <br/>
                                 </>
@@ -389,18 +389,18 @@ class AddRecipe extends React.Component{
                             <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                             <label 
                                 htmlFor='folder' 
-                                style={style.addRecipeStyle.label}>
+                                style={addRStyles.addRecipeStyle.label}>
                                 Folder:<br/>
                                 <select 
                                     name='folder' 
-                                    style={style.addRecipeStyle.select}>
+                                    style={addRStyles.addRecipeStyle.select}>
                                 {this.context.folders.map((folder)=>{
                                     return(
                                             <option 
                                                 name='folder' 
                                                 key={folder.id} 
                                                 value={folder.id} 
-                                                style={style.addRecipeStyle.option}>
+                                                style={addRStyles.addRecipeStyle.option}>
                                                 {folder.name}
                                             </option>
                                     )}
@@ -410,7 +410,7 @@ class AddRecipe extends React.Component{
                             <br/>
                             <button 
                                 type='submit' 
-                                style={style.addRecipeStyle.button}>
+                                style={addRStyles.addRecipeStyle.button}>
                                 Submit
                             </button>
                             <br/>
@@ -419,7 +419,7 @@ class AddRecipe extends React.Component{
                                 :<button    
                                     type='button' 
                                     onClick={()=>this.props.history.goBack()} 
-                                    style={style.addRecipeStyle.button}>
+                                    style={addRStyles.addRecipeStyle.button}>
                                     Cancel
                                 </button>
                             } 
@@ -430,92 +430,92 @@ class AddRecipe extends React.Component{
         <MediaQuery minWidth={651} maxWidth={1050}>
             <div 
                 className='addRecipe' 
-                style={style.addRecipeStyle.tablet.div}>
+                style={addRStyles.addRecipeStyle.tablet.div}>
                 {(this.props.location.pathname===`/home-page`)
-                    ?<h3 style={style.addRecipeStyle.tablet.h3}>
+                    ?<h3 style={addRStyles.addRecipeStyle.tablet.h3}>
                         <Link to={'/add-recipe'} 
                             style={{color:'var(--purple)',fontSize:'26px'}}>
                             ADD RECIPE
                         </Link>
                     </h3>
-                    :<h3 style={style.addRecipeStyle.tablet.h3}>ADD RECIPE</h3>
+                    :<h3 style={addRStyles.addRecipeStyle.tablet.h3}>ADD RECIPE</h3>
                 }  
                 <form 
                     id='ingredientForm' 
                     onSubmit={e=>this.addIngredient(e)} 
-                    style={style.addRecipeStyle.tablet.form}>
-                    <fieldset style={style.addRecipeStyle.tablet.fieldset}>
-                        <legend style={style.addRecipeStyle.tablet.legend}>Add Ingredient</legend>
+                    style={addRStyles.addRecipeStyle.tablet.form}>
+                    <fieldset style={addRStyles.addRecipeStyle.tablet.fieldset}>
+                        <legend style={addRStyles.addRecipeStyle.tablet.legend}>Add Ingredient</legend>
                         <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                         <label 
                             htmlFor='ingredientName' 
-                            style={style.addRecipeStyle.tablet.label}>
+                            style={addRStyles.addRecipeStyle.tablet.label}>
                             Name:<br/>
                             <input 
                                 type='text' 
                                 name='ingredientName' 
-                                style={style.addRecipeStyle.tablet.ingredientInput}/>
+                                style={addRStyles.addRecipeStyle.tablet.ingredientInput}/>
                         </label>
                         <br/>
                         <ValidationError Ingredientmessage={this.state.ingredientError}/>
                         <label 
                             htmlFor='ingredientQuantity' 
-                            style={style.addRecipeStyle.tablet.label}>
+                            style={addRStyles.addRecipeStyle.tablet.label}>
                             Quantity:<br/>
                             <input 
                                 type='text' 
                                 name='ingredientQuantity' 
-                                style={style.addRecipeStyle.tablet.ingredientInput}/>
+                                style={addRStyles.addRecipeStyle.tablet.ingredientInput}/>
                         </label>
                         <br/>
                         <label 
                             htmlFor='ingredientUnit' 
-                            style={style.addRecipeStyle.tablet.label}>
+                            style={addRStyles.addRecipeStyle.tablet.label}>
                             Unit: <br/>
                             <select 
                                 name='ingredientUnit' 
-                                style={style.addRecipeStyle.tablet.select}>
+                                style={addRStyles.addRecipeStyle.tablet.select}>
                                 <option 
                                     value=''
-                                    style={style.addRecipeStyle.tablet.option}>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>
                                     select a unit
                                 </option>
                                 <option 
                                     value='cup(s)' 
-                                    style={style.addRecipeStyle.tablet.option}>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>
                                     Cup(s)
                                     </option>
                                 <option 
                                     value='pinch(es)' 
-                                    style={style.addRecipeStyle.tablet.option}>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>
                                     Pinch(es)
                                     </option>
                                 <option value='package(s)' 
-                                    style={style.addRecipeStyle.tablet.option}>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>
                                     Package(s)
                                     </option>
                                 <option 
                                     value='teaspoon(s)' 
-                                    style={style.addRecipeStyle.tablet.option}>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>
                                     Teaspoon(s)</option>
                                 <option 
                                     value='tablespoon(s)' 
-                                    style={style.addRecipeStyle.tablet.option}>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>
                                     Tablespoon(s)
                                     </option>
                                 <option 
                                     value='ounce(s)' 
-                                    style={style.addRecipeStyle.tablet.option}>Ounce(s)</option>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>Ounce(s)</option>
                                 <option 
                                     value='pint(s)' 
-                                    style={style.addRecipeStyle.tablet.option}>Pint(s)</option>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>Pint(s)</option>
                                 <option 
                                     value='bundle(s)' 
-                                    style={style.addRecipeStyle.tablet.option}>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>
                                     Bundle(s)</option>
                                 <option 
                                     value='other' 
-                                    style={style.addRecipeStyle.tablet.option}>
+                                    style={addRStyles.addRecipeStyle.tablet.option}>
                                     Other
                                 </option>
                             </select>
@@ -523,17 +523,17 @@ class AddRecipe extends React.Component{
                         <br/>
                         <label 
                             htmlFor='ingredientUnitOther' 
-                            style={style.addRecipeStyle.tablet.label}> 
+                            style={addRStyles.addRecipeStyle.tablet.label}> 
                             Other Unit:<br/>
                             <input 
                                 type='text' 
                                 name='ingredientUnitOther' 
-                                style={style.addRecipeStyle.tablet.ingredientInput}/>
+                                style={addRStyles.addRecipeStyle.tablet.ingredientInput}/>
                         </label>
                         <br/>
                         <button 
                             type='submit' 
-                            style={style.addRecipeStyle.tablet.button}>
+                            style={addRStyles.addRecipeStyle.tablet.button}>
                             Enter
                         </button>
                         <br/>
@@ -542,25 +542,25 @@ class AddRecipe extends React.Component{
                 <form 
                     id='recipeForm' 
                     onSubmit={e=>this.handleSubmit(e)} 
-                    style={style.addRecipeStyle.tablet.form}>
-                    <fieldset style={style.addRecipeStyle.tablet.fieldset}>
-                        <legend style={style.addRecipeStyle.tablet.legend}>Recipe</legend>
+                    style={addRStyles.addRecipeStyle.tablet.form}>
+                    <fieldset style={addRStyles.addRecipeStyle.tablet.fieldset}>
+                        <legend style={addRStyles.addRecipeStyle.tablet.legend}>Recipe</legend>
                         <ValidationError Foldermessage={this.state.folderError}/>
                             <label 
                                 htmlFor='name' 
-                                style={style.addRecipeStyle.tablet.label}>
+                                style={addRStyles.addRecipeStyle.tablet.label}>
                                 Name:<br/>
                                 <input 
                                     type='text' 
                                     name='name' 
-                                    style={style.addRecipeStyle.tablet.input}/>
+                                    style={addRStyles.addRecipeStyle.tablet.input}/>
                             </label>
                             <br/>
                             <ValidationError Namemessage={this.state.nameError}/>
                             {(this.state.ingredients.length>0)
                                 ?<label 
                                     htmlFor='ingredientsToDisplay' 
-                                    style={style.addRecipeStyle.tablet.label}>
+                                    style={addRStyles.addRecipeStyle.tablet.label}>
                                     Ingredients: 
                                 </label>
                                 :null
@@ -570,7 +570,7 @@ class AddRecipe extends React.Component{
                                     <textarea 
                                         value={this.createDisplayedIngredients(this.state.ingredients)} 
                                         readOnly 
-                                        style={style.addRecipeStyle.tablet.textarea}>
+                                        style={addRStyles.addRecipeStyle.tablet.textarea}>
                                     </textarea>
                                     <br/>
                                 </>
@@ -578,59 +578,59 @@ class AddRecipe extends React.Component{
                             }
                             <label 
                                 htmlFor='instructions' 
-                                style={style.addRecipeStyle.tablet.label}>
+                                style={addRStyles.addRecipeStyle.tablet.label}>
                                 Instructions:<br/>
                                 <textarea 
                                     name='instructions' 
-                                    style={style.addRecipeStyle.tablet.textarea}>
+                                    style={addRStyles.addRecipeStyle.tablet.textarea}>
                                 </textarea>
                             </label>
                             <br/>
                             <ValidationError Instructionsmessage={this.state.instructionsError}/>
                             <label 
                                 htmlFor='note' 
-                                style={style.addRecipeStyle.tablet.label}>
+                                style={addRStyles.addRecipeStyle.tablet.label}>
                                 Note:<br/>
                                 <input 
                                     type='text' 
                                     name='note' 
-                                    style={style.addRecipeStyle.tablet.input}/>
+                                    style={addRStyles.addRecipeStyle.tablet.input}/>
                             </label>
                             <br/>
                             <label 
                                 htmlFor='link' 
-                                style={style.addRecipeStyle.tablet.label}>
+                                style={addRStyles.addRecipeStyle.tablet.label}>
                                 Link:<br/>
                                 <input 
                                     type='text' 
                                     name='link' 
-                                    style={style.addRecipeStyle.tablet.input}/>
+                                    style={addRStyles.addRecipeStyle.tablet.input}/>
                             </label>
                             <br/>
                             <label 
                                 htmlFor='createdBy' 
-                                style={style.addRecipeStyle.tablet.label}>
+                                style={addRStyles.addRecipeStyle.tablet.label}>
                                 Creator:<br/>
                                 <input 
                                     type='text' 
                                     name='createdBy' 
-                                    style={style.addRecipeStyle.tablet.input}/>
+                                    style={addRStyles.addRecipeStyle.tablet.input}/>
                             </label>
                             <br/>
                             <label 
                                 htmlFor='folder' 
-                                style={style.addRecipeStyle.tablet.label}>
+                                style={addRStyles.addRecipeStyle.tablet.label}>
                                 Folder:
                                 <select     
                                     name='folder' 
-                                    style={style.addRecipeStyle.tablet.select}>
+                                    style={addRStyles.addRecipeStyle.tablet.select}>
                                     {this.context.folders.map((folder)=>{
                                         return(
                                             <option 
                                                 name='folder' 
                                                 key={folder.id} 
                                                 value={folder.id} 
-                                                style={style.addRecipeStyle.tablet.option}>{folder.name}
+                                                style={addRStyles.addRecipeStyle.tablet.option}>{folder.name}
                                             </option>)
                                         })
                                     }
@@ -639,7 +639,7 @@ class AddRecipe extends React.Component{
                             <br/>
                             <button 
                                 type='submit' 
-                                style={style.addRecipeStyle.tablet.button}>
+                                style={addRStyles.addRecipeStyle.tablet.button}>
                                 Submit
                             </button>
                             <br/>
@@ -648,7 +648,7 @@ class AddRecipe extends React.Component{
                                 :<button 
                                     type='button' 
                                     onClick={()=>this.props.history.goBack()} 
-                                    style={style.addRecipeStyle.tablet.button}>
+                                    style={addRStyles.addRecipeStyle.tablet.button}>
                                     Cancel
                                 </button>
                             }
@@ -679,7 +679,7 @@ class AddRecipe extends React.Component{
                     id='ingredientForm' 
                     onSubmit={e=>this.addIngredient(e)} 
                     style={style.addRecipeStyle.laptop.form}>
-                    <fieldset style={style.addRecipeStyle.fieldset}>
+                    <fieldset style={style.addRecipeStyle.laptop.fieldset}>
                         <legend style={style.addRecipeStyle.laptop.legend}>Add Ingredient</legend>
                          <ValidationError Ingredientsmessage={this.state.ingredientsError}/>
                         <label 
@@ -779,7 +779,7 @@ class AddRecipe extends React.Component{
                 </form>
                
                 <form id='recipeForm' onSubmit={e=>this.handleSubmit(e)} style={style.addRecipeStyle.laptop.form}>
-                    <fieldset style={style.addRecipeStyle.fieldset}>
+                    <fieldset style={style.addRecipeStyle.laptop.fieldset}>
                         <legend style={style.addRecipeStyle.laptop.legend}>Recipe</legend>
                          
                             <label 
@@ -794,11 +794,14 @@ class AddRecipe extends React.Component{
                             <br/> 
                             <ValidationError Namemessage={this.state.nameError}/>    
                             {(this.state.ingredients.length>0)
-                                ?<label 
-                                    htmlFor='ingredientsToDisplay' 
-                                    style={style.addRecipeStyle.laptop.label}>
-                                    Ingredients: 
-                                </label>
+                                ?<>
+                                    <label 
+                                        htmlFor='ingredientsToDisplay' 
+                                        style={style.addRecipeStyle.laptop.label}>
+                                        Ingredients: 
+                                    </label>
+                                    <br/>
+                                </>
                                 :null
                             }
                             {(this.state.ingredients.length>0)

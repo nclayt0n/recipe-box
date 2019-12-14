@@ -310,10 +310,7 @@ const navStyles = {
         }
 
     }
-
-
-
-}
+};
 
 
 export default navStyles

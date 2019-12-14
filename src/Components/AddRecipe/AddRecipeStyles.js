@@ -1,4 +1,3 @@
-import backgroundImage from '../../images/purplelavleaves.jpg';
 const addRStyles = {
     addRecipeStyle: {
         div: {
@@ -9,20 +8,19 @@ const addRStyles = {
             justifyContent: 'center',
             margin: '50px auto',
             padding: '30px',
-            backgroundColor: 'white',
-            backgroundPosition: 'top',
+            backgroundColor: 'var(--lightPurple)',
             border: '2px solid var(--purple)',
             fontWeight: 'bold',
         },
         h3: {
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             textShadow: '.5px .25px var(--darkPurple)',
-            fontSize: '18px',
+            fontSize: '24px',
             margin: '10px auto'
         },
         select: {
             backgroundColor: 'white',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             fontWeight: 'bold',
             fontSize: '14px',
             border: '1px solid var(--purple)',
@@ -31,7 +29,7 @@ const addRStyles = {
             padding: '5px'
         },
         option: {
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             fontSize: '14px',
             padding: '5px'
         },
@@ -48,22 +46,24 @@ const addRStyles = {
             margin: 'auto'
         },
         label: {
-            color: 'var(--purple)',
+            color: 'var(--dakPurple)',
             fontWeight: 'bold',
             fontSize: '14px',
         },
 
         legend: {
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             fontWeight: 'bolder',
             fontSize: '16px',
             textShadow: '.5px .25px var(--purple)',
         },
         button: {
             backgroundColor: 'var(--purple)',
+            border: '1px solid var(--purple)',
             color: 'white',
             fontSize: '14px',
-            margin: '5px'
+            margin: '5px',
+            fontWeight: 'bold'
 
         },
         ingredientInput: {
@@ -96,13 +96,13 @@ const addRStyles = {
                 justifyContent: 'center',
                 margin: '50px auto 50px',
                 padding: '50px',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--lightPurple)',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
             },
             select: {
                 backgroundColor: 'white',
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontWeight: 'bold',
                 fontSize: '16px',
                 border: '1px solid var(--purple)',
@@ -110,11 +110,11 @@ const addRStyles = {
                 padding: '5px'
             },
             option: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontSize: '16px',
             },
             form: {
-                border: '2px solid var(--purple)',
+                border: '4px solid var(--purple)',
                 width: '80%',
                 margin: 'auto auto 10px',
                 padding: '5px'
@@ -124,25 +124,28 @@ const addRStyles = {
                 border: 'none',
             },
             label: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontWeight: 'bold',
                 fontSize: '18px',
                 margin: '5px'
             },
             h3: {
-                color: 'var(--purple)',
-                fontSize: '20px'
+                color: 'var(--darkPurple)',
+                fontSize: '28px'
             },
             legend: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontWeight: 'bolder',
                 fontSize: '18px',
             },
             button: {
                 backgroundColor: 'var(--purple)',
+                border: '1px solid var(--purple)',
                 color: 'white',
                 fontSize: '16px',
-                margin: '5px'
+                margin: '5px',
+                padding: '5px',
+                fontWeight: 'bold'
             },
             ingredientInput: {
                 width: '160px',
@@ -172,17 +175,14 @@ const addRStyles = {
         },
         laptop: {
             div: {
-                width: '850px',
+                width: '1050px',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 margin: '50px auto 50px',
                 padding: '50px',
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundRepeat: 'noRepeat',
-                backgroundSize: 'cover',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--lightPurple)',
                 backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
@@ -201,46 +201,48 @@ const addRStyles = {
                 fontSize: '18px',
             },
             form: {
-                border: '2px solid var(--purple)',
-                backgroundColor: 'white',
-                width: '275px',
+                border: '4px solid var(--purple)',
+                backgroundColor: 'var(--lightPurple)',
+                width: '375px',
                 margin: 'auto',
                 padding: '15px',
             },
+            fieldset: {
+                border: 'none',
+            },
             label: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontSize: '18px',
                 fontWeight: 'bold',
                 padding: '5px',
             },
             legend: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontWeight: 'bolder',
                 fontSize: '20px',
                 margin: ' 10px auto'
             },
             ingredientInput: {
-                width: '150px',
+                width: '180px',
                 fontSize: '18px',
                 color: 'var(--purple)',
                 border: '1px solid var(--purple)',
                 margin: '5px'
             },
             input: {
-                width: '175px',
+                width: '225px',
                 fontSize: '18px',
                 color: 'var(--purple)',
                 border: '1px solid var(--purple)',
                 margin: '5px'
-
             },
             h3: {
-                color: 'var(--purple)',
-                fontSize: '26px'
+                color: 'var(--darkPurple)',
+                fontSize: '32px'
             },
             textarea: {
                 fontSize: '18px',
-                minWidth: '175px',
+                minWidth: '225px',
                 minHeight: '75px',
                 maxWidth: '175px',
                 maxHeight: '200px',
@@ -253,13 +255,16 @@ const addRStyles = {
             },
             button: {
                 backgroundColor: 'var(--purple)',
+                border: '1px solid var(--purple)',
                 color: 'white',
                 fontSize: '18px',
-                margin: '5px'
+                padding: '5px',
+                margin: '5px',
+                fontWeight: 'bold'
             },
         }
     },
-}
+};
 
 
-export default addRStyles
+export default addRStyles;

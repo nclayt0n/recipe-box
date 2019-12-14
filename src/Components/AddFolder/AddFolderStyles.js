@@ -1,9 +1,5 @@
 const addFStyles = {
     addFolderDivStyle: {
-        // backgroundImage: `url(${backgroundImage})`,
-        // backgroundRepeat: 'no-repeat',
-        // backgroundSize: '100%',
-        // backgroundPosition: 'top',
         backgroundColor: 'var(--lightPurple)',
         border: '2px solid var(--purple)',
         textAlign: 'center',
@@ -16,7 +12,7 @@ const addFStyles = {
     },
     addFolderLabel: {
         fontSize: '16px',
-        color: 'var(--purple)',
+        color: 'var(--darkPurple)',
         fontWeight: 'bold'
     },
     addFolderInput: {
@@ -33,11 +29,12 @@ const addFStyles = {
         color: 'white',
         margin: 'auto',
         fontSize: '14px',
+        fontWeight: 'bold'
     },
     h3: {
-        color: 'var(--purple)',
+        color: 'var(--darkPurple)',
         textAlign: 'center',
-        textShadow: '1px 1px #8a64a3',
+        textShadow: '1px 1px var(--darkpurple)',
         fontSize: '20px',
         margin: '5px auto'
     },
@@ -46,11 +43,7 @@ const addFStyles = {
     },
     tablet: {
         addFolderDivStyle: {
-            // backgroundImage: `url(${backgroundImage})`,
-            // backgroundRepeat: 'no-repeat',
-            // backgroundSize: '100%',backgroundPosition: 'top',
             backgroundColor: 'var(--lightPurple)',
-
             border: '2px solid var(--purple)',
             textAlign: 'center',
             display: 'flex',
@@ -61,8 +54,8 @@ const addFStyles = {
             padding: '30px',
         },
         addFolderLabel: {
-            fontSize: '16px',
-            color: 'var(--purple)',
+            fontSize: '20px',
+            color: 'var(--darkPurple)',
             fontWeight: 'bold'
         },
         addFolderInput: {
@@ -78,24 +71,21 @@ const addFStyles = {
             border: '1px solid var(--purple)',
             color: 'white',
             margin: 'auto',
-            fontSize: '14px',
+            fontSize: '16px',
+            fontWeight: 'bold'
         },
         h3: {
-            color: 'var(--purple)',
+            color: 'var(--darkpurple)',
             textAlign: 'center',
             textShadow: '.5px .5px var(--darkPurple)',
-            fontSize: '18px',
+            fontSize: '24px',
             margin: '10px auto'
         },
 
     },
     laptop: {
         addFolderDivStyle: {
-            // backgroundImage: `url(${backgroundImage})`,
-            // backgroundRepeat: 'no-repeat',
-            // backgroundSize: '100%',backgroundPosition: 'top',
             backgroundColor: 'var(--lightPurple)',
-
             border: '2px solid var(--purple)',
             textAlign: 'center',
             display: 'flex',
@@ -107,7 +97,7 @@ const addFStyles = {
         },
         addFolderLabel: {
             fontSize: '20px',
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             fontWeight: 'bold'
         },
         addFolderInput: {
@@ -124,13 +114,14 @@ const addFStyles = {
             border: '1px solid var(--purple)',
             color: 'white',
             margin: 'auto',
-            fontSize: '20px',
+            fontSize: '18px',
+            fontWeight: 'bold'
         },
         h3: {
-            color: 'var(--purple)',
+            color: 'var(--darkPurple)',
             textAlign: 'center',
             textShadow: '.5px .5px var(--darkPurple)',
-            fontSize: '24px',
+            fontSize: '28px',
             margin: '10px auto'
         },
     }
