@@ -327,8 +327,18 @@ class Nav extends React.Component{
         </MediaQuery>
 
         <MediaQuery minWidth={1051}>
-        <nav className='nav-main' style={(this.state.clicked===false)?(this.state.visible.main):(this.state.hidden.main)}>
-            <button className='btn-toggle-nav' onClick={()=>this.navStyles()} style={(this.state.clicked===false)?(this.state.visible.laptop.toggleBtn):(this.state.hidden.laptop.toggleBtn)}></button>
+        <nav 
+            className='nav-main' 
+            style={(this.state.clicked===false)
+                ?(this.state.visible.main)
+                :(this.state.hidden.main)}>
+            <button 
+                className='btn-toggle-nav' 
+                onClick={()=>this.navStyles()} 
+                style={(this.state.clicked===false)
+                    ?(this.state.visible.laptop.toggleBtn)
+                    :(this.state.hidden.laptop.toggleBtn)}>
+            </button>
         </nav>
         <aside 
             className='nav-sidebar' 
@@ -399,7 +409,7 @@ class Nav extends React.Component{
                 {this.props.location.pathname==='/add-folder'
                     ?(null)
                     :(<li 
-                        style={(this.state.clicked===false)||this.context.recipes.length===0
+                        style={(this.state.clicked===false)
                         ?(this.state.hidden.laptop.sideBarUlLi)
                         :(this.state.visible.laptop.sideBarUlLi)}>
                         <Link 
@@ -441,8 +451,7 @@ class Nav extends React.Component{
                     </li>
                 {this.context.user_id===36
                     ?(null)
-                    :(<li 
-                        style={(this.state.clicked===false)
+                    :(<li style={(this.state.clicked===false)
                         ?(this.state.hidden.laptop.sideBarUlLi)
                         :(this.state.visible.laptop.sideBarUlLi)}>
                         <Link 

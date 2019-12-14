@@ -1,5 +1,4 @@
-import backgroundImage from '../../images/purpleWhiteLeaves.jpg'
-import backgroundImage2 from '../../images/purplelavleaves.jpg'
+import backgroundImage from '../../images/purpleWhiteLeaves.jpg';
 const hpStyles = {
     mainContainer: {
         display: 'flex',
@@ -30,13 +29,10 @@ const hpStyles = {
             borderRadius: '5px',
         },
         addFolderDivStyle: {
-            backgroundImage: `url(${backgroundImage2})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundColor: 'var(--purple)',
+            backgroundColor: 'var(--lightPurple)',
             width: '90%',
             backgroundPosition: 'top',
-            border: '2px solid var(--darkPurple)',
+            border: '2px solid var(--lightPurple)',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
@@ -54,7 +50,8 @@ const hpStyles = {
             fontWeight: 'bold',
             backgroundColor: 'var(--purple)',
             color: 'white',
-            fontSize: '14px'
+            fontSize: '14px',
+            border: '1px solid var(--purple)'
 
         },
         addFolderLabel: {
@@ -65,6 +62,7 @@ const hpStyles = {
         addFolderInput: {
             fontSize: '14px',
             color: 'var(--purple)',
+            margin: '5px auto',
             border: '1px solid var(--purple)',
         },
         h3: {
@@ -77,10 +75,7 @@ const hpStyles = {
         },
         tablet: {
             addFolderDivStyle: {
-                backgroundImage: `url(${backgroundImage2})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: '100%',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--lightPurple)',
                 backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 textAlign: 'center',
@@ -122,8 +117,7 @@ const hpStyles = {
         },
         laptop: {
             addFolderDivStyle: {
-                backgroundColor: 'white',
-                border: '3px solid var(--darkPurple)',
+                backgroundColor: 'var(--lightPurple)',
                 textAlign: 'center',
                 display: 'flex',
                 flexDirection: 'column',
@@ -133,7 +127,7 @@ const hpStyles = {
                 padding: '15px',
             },
             addFolderLabel: {
-                fontSize: '18px',
+                fontSize: '20px',
                 color: 'var(--purple)',
                 fontWeight: 'bold'
             },
@@ -149,6 +143,7 @@ const hpStyles = {
                 width: 'fit-content',
                 fontWeight: 'bold',
                 backgroundColor: 'var(--purple)',
+                border: '1px solid var(--purple)',
                 color: 'white',
                 margin: 'auto',
                 padding: '5px',
@@ -174,7 +169,7 @@ const hpStyles = {
             padding: '30px',
             backgroundColor: 'white',
             backgroundPosition: 'top',
-            border: '2px solid var(--purple)',
+            border: '2px solid var(--lightPurple)',
             fontWeight: 'bold',
         },
         h3: {
@@ -257,8 +252,8 @@ const hpStyles = {
                 justifyContent: 'center',
                 margin: '50px auto 50px',
                 padding: '50px',
-                backgroundColor: 'white',
-                border: '2px solid var(--darkPurple)',
+                backgroundColor: 'var(--lightPurple)',
+                border: '2px solid var(--lightPurple)',
                 fontWeight: 'bold',
             },
             select: {
@@ -340,14 +335,10 @@ const hpStyles = {
                 justifyContent: 'center',
                 margin: '20px auto 20px',
                 padding: '15px',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--lightPurple)',
                 fontWeight: 'bold',
                 fontSize: '16px',
-                border: '3px solid var(--darkPurple)',
-                backgroundImage: `url(${backgroundImage2})`,
-                backgroundRepeat: 'noRepeat',
-                backgroundSize: 'cover',
-                backgroundPosition: 'top',
+                border: '3px solid var(--lightPurple)',
             },
             select: {
                 backgroundColor: 'white',
@@ -363,23 +354,23 @@ const hpStyles = {
                 fontSize: '18px',
             },
             form: {
-                border: '2px solid var(--purple)',
-                backgroundColor: 'white',
-                width: '225px',
+                border: '4px solid var(--purple)',
+                backgroundColor: 'var(--lightPurple)',
+                width: '230px',
                 margin: 'auto',
-                padding: '5px',
+                padding: '10px',
             },
             label: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontSize: '18px',
                 fontWeight: 'bold',
                 padding: '5px',
             },
             legend: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontWeight: 'bolder',
-                fontSize: '20px',
-                margin: ' 10px auto'
+                fontSize: '22px',
+                margin: '10px'
             },
             ingredientInput: {
                 width: '150px',
@@ -397,7 +388,7 @@ const hpStyles = {
 
             },
             h3: {
-                color: 'var(--purple)',
+                color: 'var(--darkPurple)',
                 fontSize: '26px'
             },
             textarea: {
@@ -415,9 +406,11 @@ const hpStyles = {
             },
             button: {
                 backgroundColor: 'var(--purple)',
+                border: '1px solid var(--purple)',
                 color: 'white',
                 fontSize: '18px',
-                margin: '5px'
+                margin: '5px',
+                fontWeight: 'bold'
             },
         }
     },

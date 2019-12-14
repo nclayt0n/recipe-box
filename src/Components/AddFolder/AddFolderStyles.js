@@ -1,11 +1,10 @@
-import backgroundImage from '../../images/purplelavleaves.jpg'
 const addFStyles = {
     addFolderDivStyle: {
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: '100%',
-        backgroundColor: 'white',
-        backgroundPosition: 'top',
+        // backgroundImage: `url(${backgroundImage})`,
+        // backgroundRepeat: 'no-repeat',
+        // backgroundSize: '100%',
+        // backgroundPosition: 'top',
+        backgroundColor: 'var(--lightPurple)',
         border: '2px solid var(--purple)',
         textAlign: 'center',
         display: 'flex',
@@ -30,6 +29,7 @@ const addFStyles = {
     addFolderButtons: {
         width: '100px',
         backgroundColor: 'var(--purple)',
+        border: '1px solid var(--purple)',
         color: 'white',
         margin: 'auto',
         fontSize: '14px',
@@ -38,7 +38,7 @@ const addFStyles = {
         color: 'var(--purple)',
         textAlign: 'center',
         textShadow: '1px 1px #8a64a3',
-        fontSize: '18px',
+        fontSize: '20px',
         margin: '5px auto'
     },
     addFolderFieldset: {
@@ -46,17 +46,17 @@ const addFStyles = {
     },
     tablet: {
         addFolderDivStyle: {
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100%',
-            backgroundColor: 'white',
-            backgroundPosition: 'top',
+            // backgroundImage: `url(${backgroundImage})`,
+            // backgroundRepeat: 'no-repeat',
+            // backgroundSize: '100%',backgroundPosition: 'top',
+            backgroundColor: 'var(--lightPurple)',
+
             border: '2px solid var(--purple)',
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            width: '50%',
+            width: '70%',
             margin: '50px auto ',
             padding: '30px',
         },
@@ -75,6 +75,7 @@ const addFStyles = {
         addFolderButtons: {
             width: '100px',
             backgroundColor: 'var(--purple)',
+            border: '1px solid var(--purple)',
             color: 'white',
             margin: 'auto',
             fontSize: '14px',
@@ -90,11 +91,11 @@ const addFStyles = {
     },
     laptop: {
         addFolderDivStyle: {
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100%',
-            backgroundColor: 'white',
-            backgroundPosition: 'top',
+            // backgroundImage: `url(${backgroundImage})`,
+            // backgroundRepeat: 'no-repeat',
+            // backgroundSize: '100%',backgroundPosition: 'top',
+            backgroundColor: 'var(--lightPurple)',
+
             border: '2px solid var(--purple)',
             textAlign: 'center',
             display: 'flex',
@@ -102,17 +103,17 @@ const addFStyles = {
             justifyContent: 'center',
             width: '50%',
             margin: '50px auto ',
-            padding: '40px',
+            padding: '50px',
         },
         addFolderLabel: {
-            fontSize: '18px',
+            fontSize: '20px',
             color: 'var(--purple)',
             fontWeight: 'bold'
         },
         addFolderInput: {
-            width: '40%',
-            fontSize: '16px',
-            margin: '5px auto',
+            width: '50%',
+            fontSize: '18px',
+            margin: '10px auto',
             color: 'var(--purple)',
             border: '1px solid var(--darkPurple)'
 
@@ -120,20 +121,21 @@ const addFStyles = {
         addFolderButtons: {
             width: '100px',
             backgroundColor: 'var(--purple)',
+            border: '1px solid var(--purple)',
             color: 'white',
             margin: 'auto',
-            fontSize: '18px',
+            fontSize: '20px',
         },
         h3: {
             color: 'var(--purple)',
             textAlign: 'center',
             textShadow: '.5px .5px var(--darkPurple)',
-            fontSize: '20px',
+            fontSize: '24px',
             margin: '10px auto'
         },
     }
 
-}
+};
 
 
 export default addFStyles

@@ -1,4 +1,4 @@
-import backgroundImage from '../../images/purplelavleaves.jpg'
+import backgroundImage from '../../images/purplelavleaves.jpg';
 const addRStyles = {
     addRecipeStyle: {
         div: {
