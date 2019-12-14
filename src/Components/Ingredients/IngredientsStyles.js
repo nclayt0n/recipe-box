@@ -224,7 +224,7 @@ const ingredientsStyles = {
         recipeSortSelect: {
             padding: '10px',
             margin: '5px',
-            width: '35%',
+            width: '40%',
             height: '70px',
             fontSize: '20px',
             fontWeight: 'bold',
@@ -293,8 +293,8 @@ const ingredientsStyles = {
             padding: '5px',
             fontSize: '18px',
             margin: 'auto',
-            width: '35%'
+            width: '40%'
         },
     }
 }
-export default ingredientsStyles
+export default ingredientsStyles;
