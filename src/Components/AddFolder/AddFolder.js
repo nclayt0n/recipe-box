@@ -23,9 +23,9 @@ class AddFolder extends React.Component{
         e.preventDefault();
         const folderName=(e.target.folderName.value);
         if(folderName.length<3){
-            this.setState({error:'Name Must contain at least 3 characters'})
+            this.setState({error:'Name Must contain at least 3 characters'});
         }if(folderName.length>20){
-            this.setState({error:'Name Must no more than 20 characters'})
+            this.setState({error:'Name Must no more than 20 characters'});
         }
         if(folderName.length>=3&&folderName.length<=20){
             const url=`${config.API_ENDPOINT}/folders`;
@@ -54,7 +54,7 @@ class AddFolder extends React.Component{
                 document.getElementById('addFolderForm').reset();
                 
             }else{
-                this.props.history.push('/folder-list')
+                this.props.history.push('/folder-list');
                 document.getElementById('addFolderForm').reset();
             }  
         }

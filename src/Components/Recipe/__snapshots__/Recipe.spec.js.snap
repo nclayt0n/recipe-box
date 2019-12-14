@@ -1,7 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Recipe /> snapshot 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+  staticContext={Object {}}
+>
+  <withRouter(Recipe)
+    contextValues={
+      Object {
+        "folders": Array [
+          Object {
+            "id": "d26e01a6-ffaf-11e8-8eb2-f2801f1b9fc3",
+            "name": "Spangley",
+            "user_id": 1,
+          },
+          Object {
+            "id": "d26e01a6-ffaf-11e8-8eb2-f2801f1b9fc3",
+            "name": "Spangley",
+            "user_id": 1,
+          },
+        ],
+      }
+    }
+  />
+</Router>
 `;

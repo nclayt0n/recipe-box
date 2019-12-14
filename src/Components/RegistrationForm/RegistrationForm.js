@@ -5,8 +5,8 @@ import MediaQuery from 'react-responsive';
 import ValidationError from '../../Validation/ValidationError';
 import registrationFormStyles from './RegistrationFormStyles';
 class RegistrationForm extends React.Component{
-    static defaultProps = {
-        onRegistrationSuccess: () => {}
+    static defaultProps={
+        onRegistrationSuccess:()=>{}
       }
       state = { error: null }
     

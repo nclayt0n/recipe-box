@@ -96,11 +96,7 @@ const addRStyles = {
                 justifyContent: 'center',
                 margin: '50px auto 50px',
                 padding: '50px',
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundRepeat: 'noRepeat',
-                backgroundSize: 'cover',
                 backgroundColor: 'white',
-                backgroundPosition: 'top',
                 border: '2px solid var(--purple)',
                 fontWeight: 'bold',
             },
@@ -119,7 +115,7 @@ const addRStyles = {
             },
             form: {
                 border: '2px solid var(--purple)',
-                width: '60%',
+                width: '80%',
                 margin: 'auto auto 10px',
                 padding: '5px'
 
@@ -149,14 +145,14 @@ const addRStyles = {
                 margin: '5px'
             },
             ingredientInput: {
-                width: '150px',
+                width: '160px',
                 padding: '5px',
                 fontSize: '16px',
                 color: 'var(--purple)',
                 border: '1px solid var(--purple)',
             },
             input: {
-                width: '175px',
+                width: '180px',
                 padding: '5px',
                 fontSize: '16px',
                 color: 'var(--purple)',
@@ -166,7 +162,7 @@ const addRStyles = {
             },
             textarea: {
                 fontSize: '16px',
-                minWidth: '90%',
+                minWidth: '80%',
                 minHeight: '75px',
                 maxWidth: '125px',
                 maxHeight: '150px',

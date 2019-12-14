@@ -1,7 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<GetRecipeAndFolders>
+  <withRouter(AddFolder)
+    location={
+      Object {
+        "pathname": "/add-folder",
+      }
+    }
+    style={
+      Object {
+        "backgroundColor": "white",
+        "backgroundImage": "url(purplelavleaves.jpg)",
+        "backgroundPosition": "top",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "100%",
+        "border": "2px solid var(--purple)",
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "margin": "50px auto",
+        "padding": "30px",
+        "textAlign": "center",
+        "width": "300px",
+      }
+    }
+  />
+</GetRecipeAndFolders>
 `;
