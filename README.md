@@ -21,13 +21,11 @@ deployed using Zeit Now<br/>
 Back-End: Node.js, Express, PostgreSQL
 deployed using Heroku
 ### `Screenshots`
-<img src='https://nclayt0n.github.io/recipe-box/src/images/landingscreen.png' alt="App landing Page" width='200'>
-![screen shot of landing screen](https://nclayt0n.github.io/recipe-box/src/images/landingscreen.png =250 "App landing Page")
-![screen shot of loading screen](https://nclayt0n.github.io/recipe-box/src/images/tabletHomePage.png =250x "App Home Page")
-![screen shot of folder list screen](https://nclayt0n.github.io/recipe-box/src/images/folderList.png =250x "App Folder List Page")
-![screen shot of Ingredients screen](https://nclayt0n.github.io/recipe-box/src/images/ingredients.png =250x "App Ingredients Page")
-![screen shot of Recipe List screen](https://nclayt0n.github.io/recipe-box/src/images/RecipeList.png =250x "App Recipe List Page")
-![screen shot of recipe screen](https://nclayt0n.github.io/recipe-box/src/images/recipeWithNav.png =250x "App Recipe Page")
-
+<img src='https://nclayt0n.github.io/recipe-box/src/images/landingscreen.png' alt="App landing Page" width='250'>
+<img src='https://nclayt0n.github.io/recipe-box/src/images/tabletHomePage.png' alt='App Home Page'width='250'>
+<img src='https://nclayt0n.github.io/recipe-box/src/images/folderList.png' alt='App Folder List Page' width='250'>
+<img src='https://nclayt0n.github.io/recipe-box/src/images/ingredients.png' alt='App Ingredients Page' width='250'>
+<img src='https://nclayt0n.github.io/recipe-box/src/images/RecipeList.png' alt='App Recipe List Page' width='250'>
+<img src='https://nclayt0n.github.io/recipe-box/src/images/recipeWithNav.png' alt='App Recipe Page' width='250'>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
