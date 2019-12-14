@@ -21,7 +21,7 @@ deployed using Zeit Now<br/>
 Back-End: Node.js, Express, PostgreSQL
 deployed using Heroku
 ### `Screenshots`
-<img src='https://nclayt0n.github.io/recipe-box/src/images/landingscreen.png' alt="App landing Page" width='250'>
+<img src='https://nclayt0n.github.io/recipe-box/src/images/landingPage.png' alt="App landing Page" width='250'>
 <img src='https://nclayt0n.github.io/recipe-box/src/images/tabletHomePage.png' alt='App Home Page'width='250'>
 <img src='https://nclayt0n.github.io/recipe-box/src/images/folderList.png' alt='App Folder List Page' width='250'>
 <img src='https://nclayt0n.github.io/recipe-box/src/images/ingredients.png' alt='App Ingredients Page' width='250'>
