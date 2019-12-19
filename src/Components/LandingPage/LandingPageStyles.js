@@ -87,7 +87,7 @@ const landingPageStyles = {
     },
     tablet: {
         descriptionBox: {
-            width: '75%',
+            width: '85%',
             margin: '50px auto 50px',
             padding: '5px',
             backgroundColor: 'var(--medPurple)'
@@ -129,7 +129,7 @@ const landingPageStyles = {
     },
     laptop: {
         descriptionBox: {
-            width: '45%',
+            width: '950px',
             margin: '50px auto 50px',
             padding: '15px',
             backgroundColor: 'var(--medPurple)'
@@ -170,6 +170,5 @@ const landingPageStyles = {
 
         },
     }
-
-}
-export default landingPageStyles
+};
+export default landingPageStyles;
