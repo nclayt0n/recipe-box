@@ -1,12 +1,13 @@
-import React from 'react'
-import {withRouter,Link} from 'react-router-dom'
-import Context from '../../Context'
+import React from 'react';
+import {withRouter,Link} from 'react-router-dom';
+import Context from '../../Context';
 import Header from '../Header/Header';
-import hpStyles from '../HomePage/HomePageStyles'
-import folderListStyles from './FolderListStyles'
+import hpStyles from '../HomePage/HomePageStyles';
+import folderListStyles from './FolderListStyles';
 import Nav from '../Nav/Nav';
-import MediaQuery from 'react-responsive'
+import MediaQuery from 'react-responsive';
 import GetRecipeAndFolders from '../Network/GetRecipesAndFolders';
+const uuidv4 = require('uuid/v4');
 class FolderList extends React.Component{
     static contextType=Context;
     render(){
@@ -15,18 +16,18 @@ class FolderList extends React.Component{
         }
         let style;
         if(this.props.location.pathname===`/home-page`){
-            style=hpStyles
+            style=hpStyles;
         }if(this.props.location.pathname==='/folder-list'){
-            style=folderListStyles
+            style=folderListStyles;
         }
         const folders=this.context.folders.map(folder=>{
-            return <li key={folder.id} style={style.folderListStyle.li}><Link to={`/folder/${folder.id}`} style={style.folderListStyle.liA}>{folder.name}</Link></li>
+            return <li key={uuidv4()} style={style.folderListStyle.li}><Link to={`/folder/${folder.id}`} style={style.folderListStyle.liA}>{folder.name}</Link></li>
         })
         const tabletFolders=this.context.folders.map(folder=>{
-            return <li key={folder.id} style={style.folderListStyle.tablet.li}><Link to={`/folder/${folder.id}`} style={style.folderListStyle.tablet.liA}>{folder.name}</Link></li>
+            return <li key={uuidv4()} style={style.folderListStyle.tablet.li}><Link to={`/folder/${folder.id}`} style={style.folderListStyle.tablet.liA}>{folder.name}</Link></li>
         })
         const laptopFolders=this.context.folders.map(folder=>{
-            return <li key={folder.id} style={style.folderListStyle.laptop.li}><Link to={`/folder/${folder.id}`} style={style.folderListStyle.laptop.liA}>{folder.name}</Link></li>
+            return <li key={uuidv4()} style={style.folderListStyle.laptop.li}><Link to={`/folder/${folder.id}`} style={style.folderListStyle.laptop.liA}>{folder.name}</Link></li>
         })
         return(<>
         {(this.props.location.pathname===`/home-page`)?'':<Header/>}
@@ -51,7 +52,7 @@ class FolderList extends React.Component{
             </div>
             </MediaQuery>
             <MediaQuery minWidth={651} maxWidth={1050}>
-            <div className='folderList' style={style.folderListStyle.tablet.div}>
+            <div className='folderList' key={uuidv4()}style={style.folderListStyle.tablet.div}>
                 <ul className='list' style={style.folderListStyle.tablet.ul}><Link to={'/folder-list'}style={style.folderListStyle.tablet.ulA}>FOLDERS</Link>
                      {(this.props.location.pathname===`/home-page`)?
                         <div className='folderListDiv' style={{maxHeight:'175px',overflow:'auto'}}>
@@ -60,7 +61,7 @@ class FolderList extends React.Component{
                         tabletFolders}
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
-                    (<div>
+                    (<div key={uuidv4()}>
                         <button style={style.folderListStyle.tablet.button}>
                             <Link to={'/add-folder'} style={style.folderListStyle.tablet.buttonA}>Add Folder</Link>
                         </button><br/>
@@ -69,7 +70,7 @@ class FolderList extends React.Component{
             </div>
             </MediaQuery>
             <MediaQuery minWidth={1051}>
-            <div className='folderList' style={style.folderListStyle.laptop.div}>
+            <div className='folderList' key={uuidv4()} style={style.folderListStyle.laptop.div}>
                 <ul className='list' style={style.folderListStyle.laptop.ul}><Link to={'/folder-list'}style={style.folderListStyle.laptop.ulA}>FOLDERS</Link>
                 {(this.props.location.pathname===`/home-page`)?
                         <div className='folderListDiv' style={{maxHeight:'575px',overflow:'auto'}}>
@@ -78,7 +79,7 @@ class FolderList extends React.Component{
                         laptopFolders}
                 </ul>
                 {(this.props.location.pathname===`/home-page`)?null: 
-                    (<div>
+                    (<div key={uuidv4()}>
                         <button style={style.folderListStyle.laptop.button}>
                             <Link to={'/add-folder'} style={style.folderListStyle.laptop.buttonA}>Add Folder</Link></button><br/>
                         <button style={style.folderListStyle.laptop.button} type='button' onClick={()=>this.props.history.goBack()}>Back</button>

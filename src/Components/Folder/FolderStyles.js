@@ -212,5 +212,5 @@ const folderStyles = {
             fontWeight: 'bolder'
         },
     }
-}
-export default folderStyles
+};
+export default folderStyles;

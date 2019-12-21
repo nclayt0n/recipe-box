@@ -1,14 +1,14 @@
-import React from 'react'
-import {withRouter,Link} from 'react-router-dom'
-import config from '../../config'
-import Context from '../../Context'
-import folderStyles from './FolderStyles'
-import Nav from '../Nav/Nav'
-import Header from '../Header/Header'
-import TokenService from '../../services/token-service'
-import ValidationError from '../../Validation/ValidationError'
-import GetRecipeAndFolders from '../../Components/Network/GetRecipesAndFolders'
-import MediaQuery from 'react-responsive'
+import React from 'react';
+import {withRouter,Link} from 'react-router-dom';
+import config from '../../config';
+import Context from '../../Context';
+import folderStyles from './FolderStyles';
+import Nav from '../Nav/Nav';
+import Header from '../Header/Header';
+import TokenService from '../../services/token-service';
+import ValidationError from '../../Validation/ValidationError';
+import GetRecipeAndFolders from '../../Components/Network/GetRecipesAndFolders';
+import MediaQuery from 'react-responsive';
 const uuidv4 = require('uuid/v4');
 
 
@@ -47,8 +47,10 @@ class Folder extends React.Component{
             return null
         }else{
             let recipeList=recipes.filter(r=>r.folder_id===folderId);
-            return recipeList.map(recipe=><>
-            <li key={uuidv4()} style={style.folderRecipeListLi}><Link to={`/recipe/${recipe.id}`} style={style.folderRecipeListLiA}>{recipe.name}</Link></li></>)   
+                return recipeList.map(recipe=><>
+                    <li key={uuidv4()} style={style.folderRecipeListLi}>
+                        <Link to={`/recipe/${recipe.id}`} style={style.folderRecipeListLiA}>{recipe.name}</Link>
+                    </li></>)   
         }
     }
     findTabletRecipes=(folderId,recipes,style)=>{
@@ -56,8 +58,10 @@ class Folder extends React.Component{
             return null
         }else{
             let recipeList=recipes.filter(r=>r.folder_id===folderId);
-            return recipeList.map(recipe=><>
-            <li key={uuidv4()} style={style.tablet.folderRecipeListLi}><Link to={`/recipe/${recipe.id}`} style={style.tablet.folderRecipeListLiA}>{recipe.name}</Link></li></>)   
+                return recipeList.map(recipe=><>
+                    <li key={uuidv4()} style={style.tablet.folderRecipeListLi}>
+                        <Link to={`/recipe/${recipe.id}`} style={style.tablet.folderRecipeListLiA}>{recipe.name}</Link>
+                    </li></>)   
         }
     }
     findLaptopRecipes=(folderId,recipes,style)=>{
@@ -85,8 +89,8 @@ class Folder extends React.Component{
                 <Header/>
                 <Nav/>
                 <MediaQuery maxWidth={650}>
-                    <div className='folder' style={style.folder}>
-                        <div className='folderItems' style={style.folderItems}>
+                    <div className='folder'  key={uuidv4()} style={style.folder}>
+                        <div className='folderItems' key={uuidv4()} style={style.folderItems}>
                             <ul className='folderRecipeList' key={uuidv4()} style={style.folderRecipeList}>{folderName}
                                     {recipeList}
                             </ul>
@@ -105,7 +109,7 @@ class Folder extends React.Component{
                     </div>
                 </MediaQuery>
                 <MediaQuery minWidth={651} maxWidth={1050}>
-                    <div className='folder' style={style.tablet.folder}>
+                    <div className='folder' key={uuidv4()} style={style.tablet.folder}>
                         <div className='folderItems' style={style.tablet.folderItems}>
                             <ul className='folderRecipeList' key={uuidv4()} style={style.tablet.folderRecipeList}>{folderName}
                                 {tabletRecipeList}
@@ -125,8 +129,8 @@ class Folder extends React.Component{
                     </div>
                 </MediaQuery>
                 <MediaQuery minWidth={1051}>
-                    <div className='folder' style={style.laptop.folder}>
-                        <div className='folderItems' style={style.laptop.folderItems}>
+                    <div className='folder' key={uuidv4()} style={style.laptop.folder}>
+                        <div className='folderItems' key={uuidv4()} style={style.laptop.folderItems}>
                             <ul className='folderRecipeList' key={uuidv4()} style={style.laptop.folderRecipeList}>{folderName}
                                 {laptopRecipeList}
                             </ul>
