@@ -63,8 +63,7 @@ const recipeListStyles = {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                margin: 'auto',
-                marginTop: '50px',
+                margin: '50px auto 50px',
                 padding: '10px',
                 textDecoration: 'none',
                 listStyle: 'none',
@@ -78,7 +77,6 @@ const recipeListStyles = {
                 fontSize: '20px',
                 fontWeight: 'bold',
                 cursor: 'pointer',
-                margin: 'auto'
             },
             ulA: {
                 color: 'white',
@@ -168,7 +166,7 @@ const recipeListStyles = {
         }
     },
 
-}
+};
 
 
-export default recipeListStyles
+export default recipeListStyles;

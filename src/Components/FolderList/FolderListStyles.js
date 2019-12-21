@@ -129,7 +129,7 @@ const folderListStyles = {
                 backgroundRepeat: 'repeat-y',
                 backgroundSize: '100%',
                 backgroundColor: 'var(--purple)',
-                width: '40%',
+                width: '30%',
                 backgroundPosition: 'center',
                 textAlign: 'center',
                 display: 'flex',
@@ -171,7 +171,7 @@ const folderListStyles = {
                 fontSize: '18px',
             },
             button: {
-                width: '50%',
+                width: '40%',
                 color: 'var(--purple)',
                 margin: '10px',
                 fontSize: '18px',
@@ -186,7 +186,7 @@ const folderListStyles = {
             },
         }
     }
-}
+};
 
 
-export default folderListStyles
+export default folderListStyles;
